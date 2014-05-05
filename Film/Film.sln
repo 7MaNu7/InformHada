@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmBiblio", "FilmBiblio\FilmBiblio.csproj", "{09B9E041-FAFD-49B5-83B5-E18245F606FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmWeb", "FilmWeb\FilmWeb.csproj", "{AB3915CF-F429-4E07-A553-F10B93B7ECF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{641ACDCD-313D-44A1-B978-3A0ACB87A9D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09B9E041-FAFD-49B5-83B5-E18245F606FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09B9E041-FAFD-49B5-83B5-E18245F606FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09B9E041-FAFD-49B5-83B5-E18245F606FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09B9E041-FAFD-49B5-83B5-E18245F606FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB3915CF-F429-4E07-A553-F10B93B7ECF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB3915CF-F429-4E07-A553-F10B93B7ECF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB3915CF-F429-4E07-A553-F10B93B7ECF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB3915CF-F429-4E07-A553-F10B93B7ECF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{641ACDCD-313D-44A1-B978-3A0ACB87A9D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{641ACDCD-313D-44A1-B978-3A0ACB87A9D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{641ACDCD-313D-44A1-B978-3A0ACB87A9D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{641ACDCD-313D-44A1-B978-3A0ACB87A9D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
