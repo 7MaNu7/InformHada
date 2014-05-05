@@ -1,0 +1,107 @@
+﻿body, .page
+{
+    background:#e5e5e5;
+}
+
+.cabecerausuario {
+    position: relative;
+}
+
+.fondoblurreddiv {
+    height: 250px;
+    overflow: hidden;
+}
+
+.fotoperfilusuario {
+    position: absolute;
+    bottom: -20px;
+    left: calc(50% - 400px);
+    border-radius: 50%;
+    width: 202px;
+    height: 202px;
+}
+
+.infocabecera {
+    position: absolute;
+    bottom: 30px;
+    left: calc(50% - 170px);
+    color: White;
+}
+.infocabecera h2
+{
+    color:White;
+    font-size:50px;
+}
+
+
+.fondoblurred
+{
+    min-width: calc( 100% + 46px);
+    margin: -27px;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+
+
+
+
+
+
+
+
+.informacionusuario {
+width: 800px;
+overflow: hidden;
+margin: auto;
+}
+.usuarioinfcolizq {
+    float: left;
+    padding-top:50px;
+}
+.usuarioinfcolder {
+    float: right;
+    padding-top:50px;
+}
+
+.informacionpersonal, .infoamigos {
+    background: rgb(255, 255, 255);
+    border: solid 1px rgb(206, 206, 206);
+    border-top: solid 4px rgb(108, 118, 158);
+    padding: 0px 16px 3px 16px;
+    width: 354px;
+    text-align:justify;
+    margin-bottom:15px;
+    border-radius: 2px;
+}
+.infoamigos
+{
+    border-top: solid 4px rgb(110, 158, 108);
+}
+
+.infoamigos img {
+float: left;
+width: 45px;
+height: 45px;
+margin: 3px;
+}
+
+
+.infoamigos p
+{
+    clear:both;
+    text-align:center;
+}
+
+.informacionpersonal h2 {
+    bborder-bottom: solid 4px rgb(207, 207, 207);
+    margin-top: 3px;
+    padding: 4px 0px 7px 6px;
+    font-weight: bold;
+    font-size: 23px;
+}
+.informacionpersonal p {
+    margin: 0px 20px 0px 9px;
+}
