@@ -14,7 +14,7 @@
      <img class="papanatas2" src="https://lh5.googleusercontent.com/-gv9HDWtZqIA/AAAAAAAAAAI/AAAAAAAAAXQ/aeD4EsiTBao/s120-c/photo.jpg" alt="fotou_perfil"/>
         <div class="papanatas">
             <h2>Adolfo </h2>
-            <p>adolfo_342@hotmail.com </p>
+            <p>adolfo_342@hotmail.com</p>
         </div>
 
          
