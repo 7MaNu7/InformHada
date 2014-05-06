@@ -1,33 +1,30 @@
-﻿
-<%@ Page Title="La llave del mal" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeBehind="About.aspx.cs" Inherits="WebApplication1.Pelicula" %>
+﻿<%@ Page Title="Vikings" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+    CodeBehind="Pelicula.aspx.cs" Inherits="WebApplication1.Pelicula" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+    <link href="/Styles/Pelicula.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+   <div class="contenido">
 
-      <div class="fondo_blur" style="background-image:url('');">
-        <img src="http://image.tmdb.org/t/p/original/ouZfvjWcN2u2SFiJD3nfqLqp3Uc.jpg" />
-    </div>
-    <div class="pelicula_blur">
-        <img src="http://4.bp.blogspot.com/_qJx3wfBO98s/TRSkpQJls6I/AAAAAAAAAQ8/u7lWXgEJc0I/s1600/3131-la-llave-del-mal2005.jpg" alt="La llave del mal"/>
-        <div>
-            <h2>La llave del mal
-                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
-                    <AnonymousTemplate>
-                       
-                    </AnonymousTemplate>
-                    <LoggedInTemplate>  
-                        <i class="fa fa-pencil-square-o" style="font-size: 18px;vertical-align: bottom;cursor: pointer;"> </i>
-                    </LoggedInTemplate>
-                </asp:LoginView>
-            
-            </h2>
-            <p>Director: El señor de rojo</p>
-            <p>Banda sonora: Hans Zimmer</p>
-            <p>Año: 1994</p>
-        </div>
-    </div>
+
+
+        <!-- CABECERA DEL USUARIO  -->
+        <div class="cabecerausuario">
+            <div class="fondoblurreddiv" style="background-image:url('');">
+                <img class="fondoblurred" src="http://hdwpapers.com/download/vikings_tv_desktop_wallpaper-1920x1080.jpg" alt="fotou_portada"/>
+            </div>
+             <img class="caratula" src="http://pics.filmaffinity.com/Vikingos_Vikings_Serie_de_TV-616055151-large.jpg" alt="fotou_perfil"/>
+             <div class="infocabecera">
+                <h2>Vikings </h2>
+                <p>Los vampiros también lloramos</p>
+             </div>
+         </div>
+
+
+
+
+
     <div class="pelicula_contenido">
         <div class="pelicula_contenido_i">
             <h2>Puntuación: 1</h2>
