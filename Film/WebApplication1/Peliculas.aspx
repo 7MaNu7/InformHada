@@ -2,6 +2,7 @@
     CodeBehind="Peliculas.aspx.cs" Inherits="WebApplication1.Peliculas" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+<link href="/Styles/Peliculas.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div  style="

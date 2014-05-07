@@ -2,6 +2,7 @@
     CodeBehind="Series.aspx.cs" Inherits="WebApplication1.Series" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+<link href="/Styles/Series.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div  style="

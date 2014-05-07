@@ -1,2 +1,27 @@
-﻿body {
+﻿.cabecera_contenido, .cabecera_contenido2 {
+padding: 25px 25px 1.5px 25px;
+overflow: hidden;
+clear: both;
+}
+
+.peliculacaratula {
+float: left;
+margin: 13px;
+}
+
+
+.peliculacaratula p {
+margin: 0;
+}
+
+.peliculacaratula img {
+width: 100px;
+}
+
+.peliculacaratula {
+float: left;
+margin: 13px;
+width: 100px;
+height: 165px;
+overflow: hidden;
 }
