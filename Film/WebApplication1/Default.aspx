@@ -6,6 +6,31 @@
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     
+    <div class="cabecerausuario">
+        <div class="fondoblurreddiv" style="background-image:url('');">
+            <div class="oscurecer"></div>
+            <img class="fondoblurred" src="http://www.pordede.com/content/homecover.png" alt="fotou_portada"/>
+        </div>
+       
+        <div class="infocabecera">
+            <h2>InformaTV</h2>
+            <p>La mejor información de tus peliculas y series preferridas Dr.</p>
+            <div style="position:relative;">
+                <asp:TextBox ID="TextBox1" runat="server">Buscar Peliculas y Series </asp:TextBox>
+                <i style="
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 14px;
+    top: 25px;
+    position: absolute;
+    left: calc(50% - 230px);
+" class="fa fa-search"></i>
+            </div>
+        </div>
+   </div>
+
+
+   <div class="contenido">
+
     <div class="cabecera_contenido">
         <h2>
         Peliculas añadidas recientemente
@@ -109,5 +134,5 @@
             <p>Salvados por la campana</p>
         </div>
     </div>
-
+    </div>
 </asp:Content>

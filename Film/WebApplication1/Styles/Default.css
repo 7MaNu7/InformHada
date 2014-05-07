@@ -1,7 +1,78 @@
-﻿.cabecera_contenido, .cabecera_contenido2 {
-padding: 25px 25px 1.5px 25px;
+﻿.cabecerausuario {
+    position: relative;
+}
+
+.fondoblurreddiv {
+    height: 360px;
+    overflow: hidden;
+}
+.oscurecer {
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+left: 0;
+background: black;
+opacity: 0.6;
+}
+.caratula {
+position: absolute;
+bottom: -46px;
+left: 89px;
+height: 300px;
+}
+#MainContent_TextBox1 {
+text-align: left;
+padding-left: 26px;
+margin-top: 20px;
+width: 447px;
+color: gray;
+height: 24px;
+border-radius: 3px;
+border: none;
+box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.55);
+}
+.infocabecera {
+position: absolute;
+bottom: 57%;
+left: 50px;
+color: white;
+text-align: center;
+top:50px;
+width: calc(100% - 50px);
+}
+.infocabecera h2 {
+color: white;
+text-align: center;
+font-size: 112px;
+margin:0;
+}
+
+.infocabecera p {
+text-align: center;
+font-size: 28px;
+}
+
+.fondoblurred
+{
+    min-width: calc( 100% + 46px);
+    width:130%;
+    margin: -27px;
+}
+
+
+
+
+.cabecera_contenido, .cabecera_contenido2 {
+padding: 0px 25px 1.5px 25px;
 overflow: hidden;
 clear: both;
+}
+
+.contenido {
+margin-left: 300px;
+border-left: solid 1px rgba(128, 128, 128, 0.28);
+margin-top: 50px;
 }
 
 .peliculacaratula {
@@ -25,3 +96,8 @@ width: 100px;
 height: 165px;
 overflow: hidden;
 }
+
+.header
+{
+    visibility:hidden !important;
+    }
