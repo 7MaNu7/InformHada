@@ -45,8 +45,10 @@
                 </asp:LoginView>
             </div>
                 <div class="menu_buscar">
-                    Buscar: <asp:TextBox id="userTextBox" TextMode="SingleLine" Columns="30" runat="server" />
+                   <asp:TextBox id="userTextBox" TextMode="SingleLine" Columns="30" runat="server" />
+                   <asp:ImageButton ID="ImageSearchButton" runat="server" ImageUrl="http://i.imgur.com/UPiCX89.png"/>
                 </div>
+
             </div>
         </div>
         <div class="main">
