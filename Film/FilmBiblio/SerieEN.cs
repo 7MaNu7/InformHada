@@ -106,6 +106,14 @@ namespace FilmBiblio
             return serie;
         }
 
+        //Devuelve la información de todas las series similares a una con el id pasado por parámetro
+        public ArrayList DameSeriesSimilares()
+        {
+            ArrayList series = new ArrayList();
+            series = serieCad.DameSeriesSimilares(this.id);
+            return series;
+        }
+
         /////////////////
         // Propiedades //
         /////////////////

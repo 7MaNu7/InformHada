@@ -223,5 +223,34 @@ namespace FilmBiblio
 
             return serie;
         }
+
+        //Devuelve la información de todas las películas similares a una en concreto
+        public ArrayList DameSeriesSimilares(int id)
+        {
+            ArrayList series = new ArrayList();
+            SqlConnection c = null;
+
+            try
+            {
+                c = new SqlConnection(conexion);
+                c.Open();
+                SqlCommand select_genero = new SqlCommand("Select genero from film where id=" + id, c);
+                SqlDataReader read_genero = select_genero.ExecuteReader();
+                string genero = (string)read_genero["genero"];
+                SqlCommand select_series = new SqlCommand("Select id from film where genero=" + genero, c);
+                SqlDataReader read = select_series.ExecuteReader();
+
+                //Tenemos varios id de películas, vamos agregando una por una las películas con DamePelicula pasándole cada id
+                while (read.Read())
+                    series.Add(DameSerie((int)read["id"]));
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally
+            {
+                c.Close();
+            }
+
+            return series;
+        }
     }
 }

@@ -23,8 +23,10 @@ namespace FilmBiblio
         private string sexo;            //El sexo (Hombre o Mujer) del usuario
         private string email;           //El email del usuario
         private ArrayList amigos;       //Un vector del tipo UsuarioEn con sus amigos
-        private string imagen;          //Será una url con la dirección de la imagen
         private string informacion;     //La información que el usuario quiera poner en su perfil
+        private string fotoPerfil;     //Será una url con la dirección de la imagen
+        private string fotoPortada;    //Será una url con la dirección de la imagen
+ 
 
         ///////////////
         // Funciones //
@@ -35,7 +37,7 @@ namespace FilmBiblio
 
         //Constructor con parámetros que son las propiedades de dicho usuario
         public UsuarioEN(int pid, string pusuario, string ppsswd, string ppais, string pprovincia, 
-            string pfecha, string sexo, string pemail, ArrayList pamigos, string imagen, string informacion)
+            string pfecha, string sexo, string pemail, ArrayList pamigos, string informacion, string imagen1, string imagen2)
         {
             id = pid;
             usuario = pusuario;
@@ -46,8 +48,9 @@ namespace FilmBiblio
             fechaNacimiento = pfecha;
             this.sexo = sexo;
             amigos = (ArrayList)pamigos.Clone();
-            this.imagen = imagen;
             this.informacion = informacion;
+            fotoPerfil = imagen1;
+            fotoPortada = imagen2;
         }
 
         //Se añade en la BD (en una tabla con la relación amigos), el id del usuario y el de su amigo
@@ -96,6 +99,14 @@ namespace FilmBiblio
             UsuarioEN usuario = new UsuarioEN();
             usuario = usuarioCad.DameUsuario(this.id);
             return usuario;
+        }
+
+        //Devuelve un array con los amigos del usuario
+        public ArrayList DameAmigos()
+        {
+            ArrayList amigos = new ArrayList();
+            amigos = usuarioCad.DameAmigos(this.id);
+            return amigos;
         }
 
         /////////////////
@@ -165,18 +176,25 @@ namespace FilmBiblio
             set { amigos = (ArrayList)value.Clone(); }
         }
 
-        //Desde fuera de la clase se puede obtener la imágen del usuario y modificarla
-        public String Imagen
-        {
-            get { return imagen; }
-            set { imagen = value; }
-        }
-
         //Desde fuera de la clase se puede obtener la información del usuario y modificarla
         public String Informacion
         {
             get { return informacion; }
             set { informacion = value; }
+        }
+
+        //Desde fuera de la clase se puede obtener la imágen de perfil del usuario y modificarla
+        public String FotoPerfil
+        {
+            get { return fotoPerfil; }
+            set { fotoPerfil = value; }
+        }
+
+        //Desde fuera de la clase se puede obtener la imágen de la portada del usuario y modificarla
+        public String FotoPortada
+        {
+            get { return fotoPortada; }
+            set { fotoPortada = value; }
         }
     }
 }

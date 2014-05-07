@@ -107,6 +107,14 @@ namespace FilmBiblio
             return pelicula;
         }
 
+        //Devuelve la información de todas las películas similares a una con el id pasado por parámetro
+        public ArrayList DamePeliculasSimilares()
+        {
+            ArrayList peliculas = new ArrayList();
+            peliculas = peliculaCad.DamePeliculasSimilares(this.id);
+            return peliculas;
+        }
+
         /////////////////
         // Propiedades //
         /////////////////

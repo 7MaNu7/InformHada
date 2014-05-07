@@ -74,8 +74,9 @@ namespace FilmBiblio
             orden += "'" + usuario.FechaNacimiento + "', ";
             orden += "'" + usuario.Sexo + "', ";
             orden += "'" + usuario.Email + "', ";
-            orden += "'" + usuario.Imagen + "', ";
-            orden += "'" + usuario.Informacion + "')";
+            orden += "'" + usuario.Informacion + "', ";
+            orden += "'" + usuario.FotoPerfil + "', ";
+            orden += "'" + usuario.FotoPortada + "')";
 
             String orden2 = "";
             
@@ -114,8 +115,9 @@ namespace FilmBiblio
             orden += "fechaNacimiento = '" + usuario.FechaNacimiento + "', ";
             orden += "sexo = '" + usuario.Sexo + "', ";
             orden += "email = '" + usuario.Email + "', ";
-            orden += "imagen = '" + usuario.Imagen + "', ";
-            orden += "informacion = '" + usuario.Informacion + "' ";
+            orden += "informacion = '" + usuario.Informacion + "', ";
+            orden += "imagen = '" + usuario.FotoPerfil + "', ";
+            orden += "imagen = '" + usuario.FotoPortada + "' ";
             orden += "where id = " + usuario.Id;
 
             SqlConnection c = null;
@@ -159,7 +161,7 @@ namespace FilmBiblio
         //Devuelve la información de todos los usuarios
         public ArrayList DameUsuarios()
         {
-            ArrayList usuarios = new ArrayList(); //Para que no de error
+            ArrayList usuarios = new ArrayList();
             SqlConnection c = null;
 
             try
@@ -207,14 +209,15 @@ namespace FilmBiblio
                     SqlDataReader read3 = select_amigo.ExecuteReader();
                     UsuarioEN usuario_aux = new UsuarioEN((int)read3["id"], (string)read3["usuario"], (string)read3["psswd"],
                         (string)read3["pais"], (string)read3["provincia"], (string)read3["FechaNacimiento"], (string)read3["Sexo"],
-                        (string)read3["Email"], amigos_de_amigos, (string)read3["Imagen"], (string)read3["informacion"]);
+                        (string)read3["Email"], amigos_de_amigos, (string)read3["informacion"], (string)read3["fotoPerfil"],
+                        (string)read3["fotoPortada"]);
                     amigos_aux.Add(read2["id2"]);
                 }
 
                 //Finalmente creamos el usuario con sus datos y el array de amigos rellenado
                 usuario = new UsuarioEN((int)read["id"], (string)read["usuario"], (string)read["psswd"], (string)read["pais"],
                     (string)read["provincia"], (string)read["fechaNacimiento"], (string)read["sexo"], (string)read["email"],
-                    amigos_aux, (string)read["imagen"], (string)read["informacion"]);
+                    amigos_aux, (string)read["informacion"], (string)read["fotoPerfil"], (string)read["fotoPortada"]); ;
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally
@@ -223,6 +226,32 @@ namespace FilmBiblio
             }
 
             return usuario;
+        }
+
+        //Devuelve un array con los amigos y su información
+        public ArrayList DameAmigos(int id)
+        {
+            ArrayList amigos = new ArrayList(); //Para que no de error
+            SqlConnection c = null;
+
+            try
+            {
+                c = new SqlConnection(conexion);
+                c.Open();
+                SqlCommand select_amigos = new SqlCommand("Select id2 from amigos where id1="+id, c);
+                SqlDataReader leer_amigos = select_amigos.ExecuteReader();
+
+                //Tenemos varios id de usuarios, vamos agregando uno por uno los usuarios con DameUsuario pasándole cada id
+                while (leer_amigos.Read())
+                    amigos.Add(DameUsuario((int)leer_amigos["id"]));
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally
+            {
+                c.Close();
+            }
+
+            return amigos;
         }
     }   
 }
