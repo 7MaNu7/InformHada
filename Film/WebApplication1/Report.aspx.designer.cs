@@ -10,6 +10,15 @@
 namespace WebApplication1 {
     
     
-    public partial class Peliculas {
+    public partial class Report {
+        
+        /// <summary>
+        /// Control TextBoxInformacionAdicional.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxInformacionAdicional;
     }
 }

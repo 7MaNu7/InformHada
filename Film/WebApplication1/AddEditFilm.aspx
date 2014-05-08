@@ -14,10 +14,10 @@
             </div>
              <img class="caratula" src="http://pics.filmaffinity.com/Vikingos_Vikings_Serie_de_TV-616055151-large.jpg" alt="fotou_perfil"/>
              <div class="infocabecera">
-                <h2>Título: </h2>
-                <p>Director:</p>
-                <p>Soundtrack: </p>
-                <p>Año: </p>
+                <h2>Título: <asp:TextBox ID="TextBoxEdad" runat="server">Título</asp:TextBox> </h2>
+                <p>Director: <asp:TextBox ID="TextBox1" runat="server">Director</asp:TextBox> </p>
+                <p>Soundtrack: <asp:TextBox ID="TextBox2" runat="server">Soundtrack</asp:TextBox> </p>
+                <p>Año: <asp:TextBox ID="TextBox3" runat="server">Año</asp:TextBox> </p>
              </div>
          </div>
 
@@ -27,12 +27,13 @@
             </div>
             <div class="pelicula_contenido_d">
                <h2>Sinopsis</h2>
-               <p></p>
+               <p> <asp:TextBox ID="TextBox4" runat="server">Título</asp:TextBox> </p>
 
                <h2>Reparto</h2>
-               <p></p>
+               <p> <asp:TextBox ID="TextBox5" runat="server">Título</asp:TextBox> </p>
             
                 <h2>Trailer</h2>
+                <p> <asp:TextBox ID="TextBox6" runat="server">Título</asp:TextBox> </p>
                 <!--<iframe width="761" height="415" src="//www.youtube.com/embed/5aASH8HMJbo" frameborder="0" allowfullscreen="trailer"></iframe>-->
             
                 <h2>Capitulos</h2>

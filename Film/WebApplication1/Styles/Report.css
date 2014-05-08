@@ -1,4 +1,7 @@
-﻿.cabecerausuario {
+﻿body {
+}
+
+.cabecerausuario {
     position: relative;
 }
 
@@ -46,4 +49,10 @@ top: 22px;
 
 .pelicula_contenido {
 position: relative;
+}
+
+.pelicula_contenido asp:TextBox
+{
+    height:100px;
+    width:100px; 
 }

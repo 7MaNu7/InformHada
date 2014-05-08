@@ -7,8 +7,7 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div  style="
     position: absolute;
-    padding-top: 33px;
-">
+    padding-top: 33px;">
    
     <div class="peliculas_contenido" style="padding: 25px 25px 1.5px 25px;">
         <h2>Peliculas</h2>
