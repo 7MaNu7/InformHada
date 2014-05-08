@@ -66,6 +66,7 @@
     <Content Include="AddEditUsuario.aspx" />
     <Content Include="Capitulo.aspx" />
     <Content Include="Pelicula.aspx" />
+    <Content Include="Report.aspx" />
     <Content Include="Scripts\JScript1.js" />
     <Content Include="Serie.aspx" />
     <Content Include="Series.aspx" />
@@ -73,6 +74,7 @@
     <Content Include="Styles\Default.css" />
     <Content Include="Styles\Pelicula.css" />
     <Content Include="Styles\Peliculas.css" />
+    <Content Include="Styles\Report.css" />
     <Content Include="Styles\Serie.css" />
     <Content Include="Styles\Series.css" />
     <Content Include="Styles\Site.css" />
@@ -167,6 +169,13 @@
       <DependentUpon>Pelicula.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Serie.aspx.cs">
       <DependentUpon>Serie.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -36,7 +36,7 @@
                 <iframe width="761" height="415" src="//www.youtube.com/embed/5aASH8HMJbo" frameborder="0" allowfullscreen="trailer"></iframe>
             
                 <h2>Capitulos</h2>
-                <div class="Serie_capitulos">
+                <div class="Serie_capitulos" >
                     <h2>Temporada 1</h2>
                     <p> <a runat="server" href="~/Capitulo.aspx"> 1 - La venganza del Señor Potato </a> </p>
                     <p>2 - La maldición mantecosa</p>

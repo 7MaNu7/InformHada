@@ -66,5 +66,8 @@ border-left: solid 2px rgb(194, 194, 188);
     margin-bottom: 8px;
 }
 
-a:link {text-decoration:none; color: Gray ;} /* Link no visitado*/
-a:visited {text-decoration:none; color: Black} /*Link visitado*/
+.Serie_capitulos a 
+{
+     color: Gray;
+     text-decoration:none;
+}

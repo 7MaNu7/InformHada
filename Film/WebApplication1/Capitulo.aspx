@@ -30,8 +30,8 @@
                <h2>Sinopsis</h2>
                <p>Serie de TV (2013-Actualidad). Sigue las aventuras de Ragnar Lothbrok, el héroe más grande de su época. La serie narra las sagas de la banda de hermanos vikingos de Ragnar y su familia, cuando él se levanta para convertirse en el rey de las tribus vikingas. Además de ser un guerrero valiente, Ragnar encarna las tradiciones nórdicas de la devoción a los dioses, la leyenda dice que él era un descendiente directo de Odín, el dios de la guerra y los guerreros.</p>
 
-               <div class="volver_serie" style="float:right">
-                <p> <a id="A1" runat="server" href="~/Capitulo.aspx"> Volver a la serie </a> </p>
+               <div class="volver_serie" style="float:right;">
+                <p> <a id="A1" runat="server" href="~/Serie.aspx"> Volver a la serie </a> </p>
                </div>
             </div>
 

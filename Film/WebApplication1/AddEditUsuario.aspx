@@ -7,8 +7,6 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
    <div class="contenido">
 
-
-
         <!-- CABECERA DEL USUARIO  -->
         <div class="cabecerausuario">
             <div class="fondoblurreddiv">
@@ -43,7 +41,8 @@
             <div class="usuarioinfcolder">
                 <div class="informacionpersonal" style="border-top: solid 4px rgb(51, 162, 197)">
                     <h2>Información adicional: </h2>
-                <p><asp:TextBox ID="TextBoxInformacionAdicional" runat="server"></asp:TextBox></p>                   
+                    <p> <asp:TextBox ID="TextBoxInformacionAdicional" runat="server"  ></asp:TextBox> 
+                    </p>                   
                 </div>
 
                 <div class="informacionpersonal" style="border-top: solid 4px rgb(158, 108, 108);">
