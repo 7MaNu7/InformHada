@@ -5,11 +5,13 @@
 <link href="/Styles/Series.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-    <div  style=" position: absolute;
-    padding-top: 33px;">
+    <div  style="
+    position: absolute;
+    padding-top: 33px;
+">
    
     <div class="peliculas_contenido" style="padding: 25px 25px 1.5px 25px;">
-        <h2>Series</h2>
+        <h2>Peliculas</h2>
         <div class="peliculacaratula">
             <img src="http://cdn.glamour.mx/uploads/images/thumbs/201306/peliculas_brujas_cine_2013_671571654_699x.jpg" alt="Mago de Oz"/>
             <p>Mago de Oz</p>

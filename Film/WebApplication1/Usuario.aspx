@@ -7,6 +7,8 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
    <div class="contenido">
 
+
+
         <!-- CABECERA DEL USUARIO  -->
         <div class="cabecerausuario">
             <div class="fondoblurreddiv">
@@ -34,19 +36,6 @@
                 </div>
                 <div class="infoamigos">
                     <h2>Amigos</h2>
-                    <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
-                    <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
-                    <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
-                    <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
-                    <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
-                    <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
-                    <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
-                    <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
-                    <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
-                    <p>Ver más</p>
-                </div>
-                <div class="infoamigos">
-                    <h2>Quizás conozcas a...</h2>
                     <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
                     <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
                     <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
