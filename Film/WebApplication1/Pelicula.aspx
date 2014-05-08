@@ -24,6 +24,18 @@
         <div class="pelicula_contenido">
             <div class="pelicula_contenido_i">
                 <h2>Puntuación: 1</h2>
+
+                <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                     <h2> Editar película 1</h2>        
+                   </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+
             </div>
             <div class="pelicula_contenido_d">
                <h2>Sinopsis</h2>

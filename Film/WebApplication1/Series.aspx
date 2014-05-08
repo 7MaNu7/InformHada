@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Página principal" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="Series" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeBehind="Series.aspx.cs" Inherits="WebApplication1.Series" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
@@ -11,7 +11,7 @@
 ">
    
     <div class="peliculas_contenido" style="padding: 25px 25px 1.5px 25px;">
-        <h2>Peliculas</h2>
+        <h2>Series</h2>
         <div class="peliculacaratula">
             <img src="http://cdn.glamour.mx/uploads/images/thumbs/201306/peliculas_brujas_cine_2013_671571654_699x.jpg" alt="Mago de Oz"/>
             <p>Mago de Oz</p>
