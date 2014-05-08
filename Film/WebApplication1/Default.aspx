@@ -63,8 +63,13 @@
         Peliculas añadidas recientemente
         </h2>
         <div class="peliculacaratula">
-            <img src="http://cdn.glamour.mx/uploads/images/thumbs/201306/peliculas_brujas_cine_2013_671571654_699x.jpg" alt="Mago de Oz"/>
+            <img class="peliculacaratulaimg" src="http://cdn.glamour.mx/uploads/images/thumbs/201306/peliculas_brujas_cine_2013_671571654_699x.jpg" alt="Mago de Oz"/>
             <p>Mago de Oz</p>
+            <div class="infopelicula">
+                <p>7.6/10</p>
+                <p>1995</p>
+                <p>Ver pelicula</p>
+            </div>
         </div>
 
         <div class="peliculacaratula">
