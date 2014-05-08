@@ -30,7 +30,16 @@
 
 
    <div class="contenido">
+    <div class="menuizq">
+        <h2>Ver perliculas</h2>  
+        <h2>Ver series</h2>  
+        <h2>Añadir pelicula</h2>
+        <h2>Añadir serie</h2>
+        <h2>Entrar / registrarse</h2>
+        <h2>Ver mi usuario</h2>
+        <h2>Reportar error</h2>
 
+    </div>
     <div class="cabecera_contenido">
         <h2>
         Peliculas añadidas recientemente

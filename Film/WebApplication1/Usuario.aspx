@@ -11,7 +11,7 @@
 
         <!-- CABECERA DEL USUARIO  -->
         <div class="cabecerausuario">
-            <div class="fondoblurreddiv" style="background-image:url('');">
+            <div class="fondoblurreddiv">
                 <img class="fondoblurred" src="http://t1.gstatic.com/images?q=tbn:ANd9GcT3HhDuErxy_xMEFj9ie_T5q2sxgM5mB9Kp5CRGrC1BO1zqQ9Cl" alt="fotou_portada"/>
             </div>
              <img class="fotoperfilusuario" src="https://lh5.googleusercontent.com/-gv9HDWtZqIA/AAAAAAAAAAI/AAAAAAAAAXQ/aeD4EsiTBao/s120-c/photo.jpg" alt="fotou_perfil"/>
