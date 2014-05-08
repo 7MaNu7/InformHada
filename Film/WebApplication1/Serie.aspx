@@ -38,7 +38,6 @@
                 <h2>Capitulos</h2>
                 <div class="Serie_capitulos">
                     <h2>Temporada 1</h2>
-                    <p>1 - La venganza del Señor Potato</p>
                     <p> <a runat="server" href="~/Capitulo.aspx"> 1 - La venganza del Señor Potato </a> </p>
                     <p>2 - La maldición mantecosa</p>
                     <p>3 - La vida no está hecha para contar Kcal</p>
