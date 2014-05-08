@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Películas" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="Página principal" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeBehind="Peliculas.aspx.cs" Inherits="WebApplication1.Peliculas" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
