@@ -66,6 +66,7 @@
     <Content Include="AddEditUsuario.aspx" />
     <Content Include="Capitulo.aspx" />
     <Content Include="Pelicula.aspx" />
+    <Content Include="Scripts\JScript1.js" />
     <Content Include="Serie.aspx" />
     <Content Include="Series.aspx" />
     <Content Include="Styles\About.css" />

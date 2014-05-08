@@ -6,6 +6,13 @@
     height: 360px;
     overflow: hidden;
 }
+
+.fixed {
+position: fixed !important;
+top: 50px !important;
+z-index: 1;
+left: 32px !important;
+}
 .oscurecer {
 width: 100%;
 height: 100%;
@@ -109,6 +116,11 @@ left: 0;
 width: 300px;
 }
 
+.menuizq h2:hover {
+background: rgba(243, 243, 243, 0.26);
+color: black;
+font-size: 1.6em;
+}
 .menuizq h2 {
 padding: 5px 0px 5px 0px;
 border-bottom: solid 1px rgba(148, 148, 148, 0.11);
@@ -118,8 +130,9 @@ margin: 0px 0 0px 0px;
 text-align: center;
 /* box-shadow: 0 0 1px rgba(128, 128, 128, 0.21); */
 /* background: rgb(240, 240, 240); */
+cursor: pointer;
+color: rgb(141, 141, 141);
 }
-
 
 .menuizq {
 position: absolute;

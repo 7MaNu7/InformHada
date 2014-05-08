@@ -3,9 +3,26 @@
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <link href="/Styles/Default.css" rel="stylesheet" type="text/css" />
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   
+
+
+
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-    
+     <script>
+         $(document).ready(function () {
+             $(window).bind('scroll', function () {
+                 var navHeight = 399 - 50;
+                 if ($(window).scrollTop() > navHeight) {
+                     $('.menuizq').addClass('fixed');
+                 }
+                 else {
+                     $('.menuizq').removeClass('fixed');
+                 }
+             });
+         });
+    </script>
     <div class="cabecerausuario">
         <div class="fondoblurreddiv" style="background-image:url('');">
             <div class="oscurecer"></div>
@@ -30,7 +47,7 @@
 
 
    <div class="contenido">
-    <div class="menuizq">
+    <div id="menuizq" class="menuizq">
         <h2>Ver perliculas</h2>  
         <h2>Ver series</h2>  
         <h2>Añadir pelicula</h2>
