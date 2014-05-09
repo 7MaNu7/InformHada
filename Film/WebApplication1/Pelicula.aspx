@@ -19,12 +19,13 @@
                 <p>Soundtrack: Hans Zimmer</p>
                 <p>Año: 2014</p>
              </div>
+             <div class="afff">
+             7,6
+             </div>
          </div>
 
         <div class="pelicula_contenido">
-            <div class="pelicula_contenido_i">
-                <h2>Puntuación: 1</h2>
-            </div>
+            
             <div class="pelicula_contenido_d">
                <h2>Sinopsis</h2>
                <p>'Divergente' es la historia de una sociedad que se divide en cinco categorías: Verdad, Abnegación, Osadía, Cordialidad y Erudición. Todos los miembros de esta sociedad tienen que elegir a una edad temprana, los dieciséis años, a qué bando creen pertenecer, atendiendo a sus virtudes personales más destacadas. En este dilema se encuentra la protagonista, Beatrice, que sorprende a todos sus allegados y amigos con la decisión que tema. Beatrice, que pasa a llamarse más tarde Tris, tiene que buscar su lugar adecuado, pero ella no es como el resto. Guarda un secreto que podría ser definitivo para mantener el orden social descrito y también para salvar su propia vida.</p>

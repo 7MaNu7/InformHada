@@ -22,8 +22,16 @@
          </div>
 
         <div class="pelicula_contenido">
-            <div class="pelicula_contenido_i">
-                <h2>Puntuación: 1</h2>
+             <div id="menuizq" class="menuizq">
+                <h2> <a id="A1" runat="server" href="~/Peliculas.aspx"> Ver perliculas </a> </h2>  
+                <h2> <a id="A2" runat="server" href="~/Series.aspx"> Ver series </a> </h2>  
+                <h2> <a id="A3" runat="server" href="~/AddEditFilm.aspx"> Añadir pelicula </a> </h2>
+                <h2> <a id="A4" runat="server" href="~/AddEditFilm.aspx"> Añadir serie </a> </h2>
+                <h2> <a id="A5" runat="server" href="~/AddEditUsuario.aspx"> Entrar / registrarse </a> </h2>
+                <h2> <a id="A6" runat="server" href="~/Usuario.aspx"> Ver mi usuario </a> </h2>
+                <h2> <a id="A8" runat="server" href="~/About.aspx"> Quienes somos </a> </h2>
+                <h2> <a id="A7" runat="server" href="~/Report.aspx"> Reportar error </a> </h2>
+
             </div>
             <div class="pelicula_contenido_d">
                <h2>Sinopsis</h2>

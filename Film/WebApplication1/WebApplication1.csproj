@@ -64,6 +64,10 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="AddEditFilm.aspx" />
     <Content Include="AddEditUsuario.aspx" />
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="Capitulo.aspx" />
     <Content Include="Pelicula.aspx" />
     <Content Include="Report.aspx" />
@@ -212,12 +216,16 @@
       <DependentUpon>Usuario.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FilmBiblio\FilmBiblio.csproj">
+      <Project>{09B9E041-FAFD-49B5-83B5-E18245F606FC}</Project>
+      <Name>FilmBiblio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
