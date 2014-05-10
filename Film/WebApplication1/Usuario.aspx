@@ -14,7 +14,14 @@
             </div>
              <img class="fotoperfilusuario" src="https://lh5.googleusercontent.com/-gv9HDWtZqIA/AAAAAAAAAAI/AAAAAAAAAXQ/aeD4EsiTBao/s120-c/photo.jpg" alt="fotou_perfil"/>
              <div class="infocabecera">
-                <h2>Adolfo </h2>
+                <h2>Adolfo <span style="
+    background: rgba(54, 50, 100, 0.44);
+    font-size: 15px;
+    vertical-align: middle;
+    cursor: pointer;
+    padding: 4px 12px 4px 12px;
+    border-radius: 4px;
+">AÑADIR AMIGO</span></h2>
                 <p>adolfo_342@hotmail.com</p>
              </div>
          </div>
@@ -70,7 +77,7 @@
                 <div class="informacionpersonal" style="border-top: solid 4px rgb(158, 108, 108);">
                     <h2>Herramientas</h2>
                     <p>Crear una ficha</p>
-                    <p>Editar información personal</p>
+                    <p>Editar mi usuario</p>
                     <p>Eliminar mi cuenta</p>
                 </div>
             </div>

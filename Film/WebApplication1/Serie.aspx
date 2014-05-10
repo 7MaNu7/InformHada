@@ -22,15 +22,10 @@
          </div>
 
         <div class="pelicula_contenido">
-             <div id="menuizq" class="menuizq">
-                <h2> <a id="A1" runat="server" href="~/Peliculas.aspx"> Ver perliculas </a> </h2>  
-                <h2> <a id="A2" runat="server" href="~/Series.aspx"> Ver series </a> </h2>  
-                <h2> <a id="A3" runat="server" href="~/AddEditFilm.aspx"> Añadir pelicula </a> </h2>
-                <h2> <a id="A4" runat="server" href="~/AddEditFilm.aspx"> Añadir serie </a> </h2>
-                <h2> <a id="A5" runat="server" href="~/AddEditUsuario.aspx"> Entrar / registrarse </a> </h2>
-                <h2> <a id="A6" runat="server" href="~/Usuario.aspx"> Ver mi usuario </a> </h2>
-                <h2> <a id="A8" runat="server" href="~/About.aspx"> Quienes somos </a> </h2>
-                <h2> <a id="A7" runat="server" href="~/Report.aspx"> Reportar error </a> </h2>
+                        <div class="pelicula_contenido_i">
+                <asp:Button ID="Button1" CssClass="anadir" runat="server" Text="Editar pelicula" />
+                <asp:Button ID="Button2" CssClass="reportar" runat="server" Text="Reportar error" />
+                <div class="basic" data-average="5" data-id="1" style="margin:auto;"></div>
 
             </div>
             <div class="pelicula_contenido_d">
@@ -43,7 +38,7 @@
                 <h2>Trailer</h2>
                 <iframe width="761" height="415" src="//www.youtube.com/embed/5aASH8HMJbo" frameborder="0" allowfullscreen="trailer"></iframe>
             
-                <h2>Capitulos</h2>
+                <h2>Capitulos - AÑADIR</h2>
                 <div class="Serie_capitulos" >
                     <h2>Temporada 1</h2>
                     <p> <a runat="server" href="~/Capitulo.aspx"> 1 - La venganza del Señor Potato </a> </p>

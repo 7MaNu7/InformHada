@@ -67,7 +67,7 @@
                 $(".basic").jRating({
                     decimalLength: 0,
                     step: true,
-                    showRateInfo: false
+                    showRateInfo: false  
             
             });
         });
