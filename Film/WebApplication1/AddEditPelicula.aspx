@@ -35,7 +35,9 @@
             
                 <h2>Trailer</h2>
                 <p> <asp:TextBox ID="TextBox6" runat="server" style="width:945px;">Indique el enlace o archivo del trailer de la película</asp:TextBox> </p>
-                <!--<iframe width="761" height="415" src="//www.youtube.com/embed/5aASH8HMJbo" frameborder="0" allowfullscreen="trailer"></iframe>-->
+                
+                <p> <asp:TextBox ID="TextBox1" runat="server" style="width:945px;">Indique el enlace o archivo de la foto de la carátula de la película</asp:TextBox> </p>
+                <p> <asp:TextBox ID="TextBox2" runat="server" style="width:945px;">Indique el enlace o archivo de la foto de la portada de la película</asp:TextBox> </p>
                     
                 </div>
             </div>

@@ -55,33 +55,33 @@ height: 300px;
 }
 
 .pelicula_contenido_i {
-position: absolute;
-left: 88px;
-top: 39px;
-width: 201px;
+    position: absolute;
+    left: 88px;
+    top: 39px;
+    width: 201px;
 }
 
 .pelicula_contenido {
-position: relative;
+    position: relative;
 }
 
 .anadir, .reportar{
-width: 100%;
-border: none;
-height: 30px;
-margin: 0px 0px 8px 0px;
-cursor:pointer;
-border-radius: 2px;
-color: white;
-font-weight: bold;
-font-size: 15px;
-box-shadow: 0 0 7px -3px rgba(0, 0, 0, 0.52);
+    width: 100%;
+    border: none;
+    height: 30px;
+    margin: 0px 0px 8px 0px;
+    cursor:pointer;
+    border-radius: 2px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0 0 7px -3px rgba(0, 0, 0, 0.52);
 }
 
 .anadir
 {
-background: rgb(30, 103, 196);
-border-bottom: solid 2px rgb(66, 66, 155);
+    background: rgb(30, 103, 196);
+    border-bottom: solid 2px rgb(66, 66, 155);
 }
 
 .reportar

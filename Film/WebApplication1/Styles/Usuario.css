@@ -69,6 +69,19 @@ margin: auto;
     margin-bottom:15px;
     border-radius: 2px;
 }
+
+.informacionpersonal, .registro {
+    background: rgb(255, 255, 255);
+    border: solid 1px rgb(206, 206, 206);
+    border-top: solid 4px rgb(108, 118, 158);
+    padding: 0px 0px 3px 16px;
+    width: 354px;
+    text-align:justify;
+    margin-bottom:15px;
+    border-radius: 2px;
+}
+
+
 .infoamigos
 {
     border-top: solid 4px rgb(110, 158, 108);
@@ -97,4 +110,23 @@ margin: 3px;
 }
 .informacionpersonal p {
     margin: 0px 20px 0px 9px;
+}
+
+.anadir {
+    width: 100%;
+    border: none;
+    height: 30px;
+    margin: 0px 0px 8px 0px;
+    cursor:pointer;
+    border-radius: 2px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0 0 7px -3px rgba(0, 0, 0, 0.52);
+}
+
+.anadir
+{
+    background: rgb(154, 178, 210, 1);
+    border-bottom: solid 2px rgb(66, 66, 155);
 }

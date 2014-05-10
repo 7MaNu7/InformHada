@@ -12,9 +12,9 @@
             <div class="fondoblurreddiv">
                 <img class="fondoblurred" src="http://4.bp.blogspot.com/-8JGsKAeWkB8/T3yuvVFrc9I/AAAAAAAACPE/lLBQtC2F_hs/s1600/The_Grass_aint_Greener.jpg" alt="fotou_portada"/>
             </div>
-             <img class="fotoperfilusuario" src="http://www.fisioclinica.es/wp-content/uploads/2014/02/imagenes-de-fondo-blanco-2.jpg" alt="fotou_perfil"/>
+             <img class="fotoperfilusuario" src="http://sintoniageek.com/wp-content/uploads/2011/03/avatar-geek-mario1.jpg" alt="fotou_perfil"/>
              <div class="infocabecera">=
-                <h2><asp:TextBox CssClass="cabecerasAddEdit" ID="TextBoxNombre" runat="server"  Font-Size="1.5em"  >Nombre</asp:TextBox></h2>
+                <h2><asp:TextBox CssClass="cabecerasAddEdit" ID="TextBoxNombre" runat="server" Font-Italic  Font-Size="1.5em"  >Nombre</asp:TextBox></h2>
                     <p><asp:TextBox CssClass="cabecerasAddEdit" ID="TextBoxemail" runat="server">e-mail</asp:TextBox></p>
              </div>
          </div>
@@ -38,6 +38,7 @@
                     <p><asp:TextBox ID="TextBox2" runat="server">Contraseña</asp:TextBox></p>
                     <p><asp:TextBox ID="TextBox3" runat="server">Repita contraseña</asp:TextBox></p>
                 </div>
+                
             </div>
             <div class="usuarioinfcolder">
                 <div class="informacionpersonal" style="border-top: solid 4px rgb(51, 162, 197);margin-top:43px">
@@ -51,8 +52,7 @@
                     <p>Eliminar mi cuenta</p>
                 </div>
             </div>
-         </div>
-        
+         </div>   
 
     </div>
 </asp:Content>

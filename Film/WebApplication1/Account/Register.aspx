@@ -37,6 +37,24 @@
                                          CssClass="failureNotification" ErrorMessage="El nombre de usuario es obligatorio." ToolTip="El nombre de usuario es obligatorio." 
                                          ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
                                 </p>
+
+                                <p>
+                                    <asp:Label ID="Label1" runat="server" AssociatedControlID="UserName">Pais:</asp:Label>
+                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="textEntry"></asp:TextBox>
+                                    
+                                </p>
+
+                                <p>
+                                    <asp:Label ID="Label2" runat="server" AssociatedControlID="UserName">Provincia:</asp:Label>
+                                    <asp:TextBox ID="TextBox2" runat="server" CssClass="textEntry"></asp:TextBox>
+                                   
+                                </p>
+
+                                <p>Sexo:</p>
+                                <p><asp:RadioButton ID="RadioButtonsexohombre" runat="server" Text="Varón"/> 
+                                <asp:RadioButton ID="RadioButtonsexomujer" runat="server" Text="Mujer"/></p>
+                    
+
                                 <p>
                                     <asp:Label ID="EmailLabel" runat="server" AssociatedControlID="Email">Correo electrónico:</asp:Label>
                                     <asp:TextBox ID="Email" runat="server" CssClass="textEntry"></asp:TextBox>

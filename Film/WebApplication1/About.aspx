@@ -27,7 +27,7 @@
                 <p> El propósito de esta página es la de una aplicación web a la que puedan acceder las distintas personas para consultar información sobre
                     películas, series y los capítulos de las distintas. </p>
                 <p> Además, si se es usuario, la persona puede añadir nuevas películas, series o editar su información.  </p>
-                <p> Contará con un un perfil propio, tenedrá su lista de amigos, etc. </p>
+                <p> Contará con un un perfil propio, tendrá su lista de amigos, etc. </p>
                 <h2>
                     Contacto
                 </h2>

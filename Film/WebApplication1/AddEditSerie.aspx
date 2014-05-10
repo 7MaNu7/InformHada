@@ -35,6 +35,10 @@
             
                 <h2>Trailer</h2>
                 <p> <asp:TextBox ID="TextBox6" runat="server" style="width:945px;">Indique el enlace o archivo del trailer de la serie</asp:TextBox> </p>
+                
+                <p> <asp:TextBox ID="TextBox1" runat="server" style="width:945px;">Indique el enlace o archivo de la foto de la carátula de la serie</asp:TextBox> </p>
+                <p> <asp:TextBox ID="TextBox2" runat="server" style="width:945px;">Indique el enlace o archivo de la foto de la portada de la serie</asp:TextBox> </p>
+                
                     
                 <p> </p>
                 <h2>Capitulos - <span style="

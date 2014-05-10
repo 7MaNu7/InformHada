@@ -66,7 +66,7 @@ border-left: solid 2px rgb(194, 194, 188);
     margin-bottom: 8px;
 }
 
-.Serie_capitulos a 
+.Serie_capitulos, .volver_serie a 
 {
      color: Gray;
      text-decoration:none;

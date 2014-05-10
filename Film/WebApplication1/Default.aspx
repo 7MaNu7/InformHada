@@ -3,8 +3,8 @@
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <link href="/Styles/Default.css" rel="stylesheet" type="text/css" />
-
 </asp:Content>
+
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
      <script>
          $(document).ready(function () {
@@ -21,21 +21,22 @@
     </script>
 
     <div class="cabecerausuario">
-        <div class="fondoblurreddiv" style="background-image:url('');">
+        <div class="fondo_cabecera" style="background-image:url('');">
             <div class="oscurecer"></div>
-            <img class="fondoblurred" src="http://www.pordede.com/content/homecover.png" alt="fotou_portada"/>
+            <img class="foto_cabecera" src="http://www.pordede.com/content/homecover.png" alt="foto_portada"/>
         </div>
        
         <div class="infocabecera">
             <h2>InformaTV</h2>
             <p>La mejor información de tus peliculas y series preferridas Dr.</p>
             <div style="position:relative;">
-                <asp:TextBox ID="TextBox1" runat="server">Buscar Peliculas y Series </asp:TextBox>
+                <asp:TextBox ID="TextBox1" runat="server">Buscar Peliculas y Series</asp:TextBox>
                 <i style="color: rgba(0, 0, 0, 0.54);
                             font-size: 14px;
                             top: 25px;
                             position: absolute;
-                            left: calc(50% - 230px);" class="fa fa-search"></i>
+                            left: calc(50% - 230px);" class="fa fa-search">
+                </i>
            </div>
         </div>
    </div>
@@ -45,14 +46,14 @@
     <div id="menuizq" class="menuizq">
         <h2> <a id="A1" runat="server" href="~/Peliculas.aspx"> Ver perliculas </a> </h2>  
         <h2> <a id="A2" runat="server" href="~/Series.aspx"> Ver series </a> </h2>  
-        <h2> <a id="A3" runat="server" href="~/AddEditFilm.aspx"> Añadir pelicula </a> </h2>
-        <h2> <a id="A4" runat="server" href="~/AddEditFilm.aspx"> Añadir serie </a> </h2>
-        <h2> <a id="A5" runat="server" href="~/AddEditUsuario.aspx"> Entrar / registrarse </a> </h2>
+        <h2> <a id="A3" runat="server" href="~/AddEditPelicula.aspx"> Añadir pelicula </a> </h2>
+        <h2> <a id="A4" runat="server" href="~/AddEditSerie.aspx"> Añadir serie </a> </h2>
+        <h2> <a id="A5" runat="server" href="~/Account/Login.aspx"> Entrar / registrarse </a> </h2>
         <h2> <a id="A6" runat="server" href="~/Usuario.aspx"> Ver mi usuario </a> </h2>
         <h2> <a id="A8" runat="server" href="~/About.aspx"> Quienes somos </a> </h2>
         <h2> <a id="A7" runat="server" href="~/Report.aspx"> Reportar error </a> </h2>
-
     </div>
+
     <div class="cabecera_contenido">
         <h2>
         Peliculas añadidas recientemente
@@ -161,5 +162,5 @@
             <p>Salvados por la campana</p>
         </div>
     </div>
-    </div>
+  </div>
 </asp:Content>
