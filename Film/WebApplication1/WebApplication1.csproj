@@ -62,7 +62,9 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
-    <Content Include="AddEditFilm.aspx" />
+    <Content Include="AddCapitulo.aspx" />
+    <Content Include="AddEditPelicula.aspx" />
+    <Content Include="AddEditSerie.aspx" />
     <Content Include="AddEditUsuario.aspx" />
     <Content Include="App_Data\Database1.mdf" />
     <Content Include="App_Data\Database1_log.ldf">
@@ -134,12 +136,26 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddEditFilm.aspx.cs">
-      <DependentUpon>AddEditFilm.aspx</DependentUpon>
+    <Compile Include="AddCapitulo.aspx.cs">
+      <DependentUpon>AddCapitulo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddEditFilm.aspx.designer.cs">
-      <DependentUpon>AddEditFilm.aspx</DependentUpon>
+    <Compile Include="AddCapitulo.aspx.designer.cs">
+      <DependentUpon>AddCapitulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditPelicula.aspx.cs">
+      <DependentUpon>AddEditPelicula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditPelicula.aspx.designer.cs">
+      <DependentUpon>AddEditPelicula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditSerie.aspx.cs">
+      <DependentUpon>AddEditSerie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditSerie.aspx.designer.cs">
+      <DependentUpon>AddEditSerie.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddEditUsuario.aspx.cs">
       <DependentUpon>AddEditUsuario.aspx</DependentUpon>

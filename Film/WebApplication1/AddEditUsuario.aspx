@@ -14,7 +14,7 @@
             </div>
              <img class="fotoperfilusuario" src="http://www.fisioclinica.es/wp-content/uploads/2014/02/imagenes-de-fondo-blanco-2.jpg" alt="fotou_perfil"/>
              <div class="infocabecera">=
-                <h2><asp:TextBox CssClass="cabecerasAddEdit" ID="TextBoxNombre" runat="server" Font-Size="1.5em" >Nombre</asp:TextBox></h2>
+                <h2><asp:TextBox CssClass="cabecerasAddEdit" ID="TextBoxNombre" runat="server"  Font-Size="1.5em"  >Nombre</asp:TextBox></h2>
                     <p><asp:TextBox CssClass="cabecerasAddEdit" ID="TextBoxemail" runat="server">e-mail</asp:TextBox></p>
              </div>
          </div>

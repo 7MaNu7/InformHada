@@ -38,7 +38,14 @@
                 <h2>Trailer</h2>
                 <iframe width="761" height="415" src="//www.youtube.com/embed/5aASH8HMJbo" frameborder="0" allowfullscreen="trailer"></iframe>
             
-                <h2>Capitulos - AÑADIR</h2>
+                <h2>Capitulos - <span style="
+                                background: rgba(195, 195, 199, 0.44);
+                                font-size: 15px;
+                                vertical-align: middle;
+                                cursor: pointer;
+                                padding: 4px 12px 4px 12px;
+                                border-radius: 4px;">AÑADIR</span>
+                </h2>
                 <div class="Serie_capitulos" >
                     <h2>Temporada 1</h2>
                     <p> <a runat="server" href="~/Capitulo.aspx"> 1 - La venganza del Señor Potato </a> </p>

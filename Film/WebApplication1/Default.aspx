@@ -4,10 +4,6 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <link href="/Styles/Default.css" rel="stylesheet" type="text/css" />
 
-   
-
-
-
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
      <script>
@@ -23,6 +19,7 @@
              });
          });
     </script>
+
     <div class="cabecerausuario">
         <div class="fondoblurreddiv" style="background-image:url('');">
             <div class="oscurecer"></div>
@@ -34,14 +31,12 @@
             <p>La mejor información de tus peliculas y series preferridas Dr.</p>
             <div style="position:relative;">
                 <asp:TextBox ID="TextBox1" runat="server">Buscar Peliculas y Series </asp:TextBox>
-                <i style="
-    color: rgba(0, 0, 0, 0.54);
-    font-size: 14px;
-    top: 25px;
-    position: absolute;
-    left: calc(50% - 230px);
-" class="fa fa-search"></i>
-            </div>
+                <i style="color: rgba(0, 0, 0, 0.54);
+                            font-size: 14px;
+                            top: 25px;
+                            position: absolute;
+                            left: calc(50% - 230px);" class="fa fa-search"></i>
+           </div>
         </div>
    </div>
 
