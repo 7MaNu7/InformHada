@@ -352,3 +352,14 @@ color: rgb(141, 141, 141);
     text-decoration:none;    
 }
 
+
+.cabecerasAddEdit 
+{
+    Font-Italic:true;
+    Width:60%;
+    BackColor:Transparent;
+    ForeColor:White;
+    BorderStyle:Solid;
+    BorderColor:White;   
+    
+}
