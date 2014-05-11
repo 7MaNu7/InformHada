@@ -77,7 +77,8 @@
 
                 <div class="informacionpersonal" style="border-top: solid 4px rgb(158, 108, 108);">
                     <h2>Herramientas</h2>
-                    <p>Crear una ficha</p>
+                    <p>Añadir película</p>
+                    <p>Añadir serie</p>
                     <p>Editar mi usuario</p>
                     <p>Eliminar mi cuenta</p>
                 </div>
