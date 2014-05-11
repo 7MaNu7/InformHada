@@ -51,8 +51,12 @@
                                 </p>
 
                                 <p>Sexo:</p>
-                                <p><asp:RadioButton ID="RadioButtonsexohombre" runat="server" Text="Varón"/> 
-                                <asp:RadioButton ID="RadioButtonsexomujer" runat="server" Text="Mujer"/></p>
+                                <asp:RadioButtonList ID="Sexo" runat="server" CellPadding="8" TextAlign="Left" RepeatDirection="Horizontal">
+                                    <asp:ListItem ID="SexoHombre" runat="server" value="Varón" />
+                                    <asp:ListItem ID="SexoMujer" runat="server" value="Mujer" />
+                                </asp:RadioButtonList>
+                                
+                                
                     
 
                                 <p>
