@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Adolfo" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="Mario" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeBehind="Usuario.aspx.cs" Inherits="WebApplication1.Usuario" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
@@ -12,9 +12,9 @@
             <div class="fondoblurreddiv">
                 <img class="fondoblurred" src="http://t1.gstatic.com/images?q=tbn:ANd9GcT3HhDuErxy_xMEFj9ie_T5q2sxgM5mB9Kp5CRGrC1BO1zqQ9Cl" alt="fotou_portada"/>
             </div>
-             <img class="fotoperfilusuario" src="https://lh5.googleusercontent.com/-gv9HDWtZqIA/AAAAAAAAAAI/AAAAAAAAAXQ/aeD4EsiTBao/s120-c/photo.jpg" alt="fotou_perfil"/>
+             <img class="fotoperfilusuario" src="http://vang.blob.core.windows.net/images/2013/03/26/dempseey.jpg" alt="fotou_perfil"/>
              <div class="infocabecera">
-                <h2>Adolfo <span style="
+                <h2>Mario <span style="
                 background: rgba(54, 50, 100, 0.44);
                 font-size: 15px;
                 vertical-align: middle;
@@ -22,7 +22,7 @@
                 padding: 4px 12px 4px 12px;
                 border-radius: 4px;">AÑADIR AMIGO</span>
                 </h2>
-                <p>adolfo_342@hotmail.com</p>
+                <p>mario_gutierrez79@hotmail.com</p>
              </div>
          </div>
 
@@ -33,11 +33,11 @@
             <div class="usuarioinfcolizq">
                 <div class="informacionpersonal">
                     <h2>Información personal</h2>
-                    <p>Adolfo el cerdo</p>
-                    <p>24 años</p>
-                    <p>Hombreton</p>
+                    <p>Mario Gutiérrez</p>
+                    <p>35 años</p>
+                    <p>Varón</p>
                     <p>Alicante, España</p>
-                    <p>Adolfo@gcerdos.com</p>
+                    <p>mario_deportesRiesgo.blogspot.es</p>
                 </div>
                 <div class="infoamigos">
                     <h2>Amigos</h2>
@@ -69,9 +69,10 @@
             <div class="usuarioinfcolder">
                 <div class="informacionpersonal" style="border-top: solid 4px rgb(51, 162, 197)">
                     <h2>Información adicional</h2>
-                    <p>Me llaman Afolf, el trampolín es mi vida, surfear me da vida, creo que mi destino es la vida es cazar la ola más grande
-                    y para eso necesito a mi perrito.
-                    Me gustan las películas de acción y de animales, sobretodo la de "Los 4 fantásticos y Silver Surfer"</p>                    
+                    <p>Buenas, me llamo Mario y en mi tiempo libre me gusta jugar a fútbol con mis amigos, salir a tomar unas cañas,
+                        el deporte de riesgo (como la escalada), jugar a la Play Station 3 con mi pareja y los sábados y domingos ver alguna película
+                        de terror después de comer. Un saludo.
+                    </p>                    
                 </div>
 
                 <div class="informacionpersonal" style="border-top: solid 4px rgb(158, 108, 108);">
