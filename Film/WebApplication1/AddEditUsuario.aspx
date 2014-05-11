@@ -55,8 +55,9 @@
                     <h2>Herramientas</h2>
                     <p>Eliminar mi cuenta</p>
                 </div>
+                 <asp:Button ID="Button1" CssClass="botonanadireditarusr" runat="server" Text="Crear" />
             </div>
          </div>   
-
+      
     </div>
 </asp:Content>
