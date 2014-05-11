@@ -28,7 +28,7 @@
        
         <div class="infocabecera">
             <h2>InformaTV</h2>
-            <p>La mejor información de tus peliculas y series preferridas Dr.</p>
+            <p>La mejor información de tus peliculas y series preferidas.</p>
             <div style="position:relative;">
                 <asp:TextBox ID="TextBox1" runat="server">Buscar Peliculas y Series</asp:TextBox>
                 <i style="color: rgba(0, 0, 0, 0.54);

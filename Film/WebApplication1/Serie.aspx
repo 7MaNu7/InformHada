@@ -24,7 +24,7 @@
         <div class="pelicula_contenido">
                         <div class="pelicula_contenido_i">
        
-                <asp:Button ID="Button1" CssClass="anadir" runat="server" Text="Editar pelicula" />
+                <asp:Button ID="Button1" CssClass="anadir" runat="server" Text="Editar serie" />
                 <asp:Button ID="Button2" CssClass="reportar" runat="server" Text="Reportar error" />
                 <div class="basic" data-average="5" data-id="1" style="margin:auto;"></div>
 
@@ -49,17 +49,21 @@
                 </h2>
                 <div class="Serie_capitulos" >
                     <h2>Temporada 1</h2>
-                    <p> <a runat="server" href="~/Capitulo.aspx"> 1 - La venganza del Señor Potato </a> </p>
-                    <p>2 - La maldición mantecosa</p>
-                    <p>3 - La vida no está hecha para contar Kcal</p>
-                    <p>4 - Más vale pájaro en mano que ciervo volando</p>
-                    <p>5 - El armario de Narnia</p>
+                    <p> <a runat="server" href="~/Capitulo.aspx"> 1 - Ritos de iniciación </a> </p>
+                    <p>2 - La ira de los vikingos</p>
+                    <p>3 - Despojados</p>
+                    <p>4 - Prueba</p>
+                    <p>5 - Ataque</p>
+                    <p>6 - Sepultura para los muertos</p>
+                    <p>7 - Rescate real</p>
+                    <p>8 - Sacrificio</p>
+                    <p>9 - Fin del trayecto</p>
                     <h2>Temporada 2</h2>
-                    <p>1 - Adolfo se regocija en el barro</p>
-                    <p>2 - Un McFlurry</p>
-                    <p>3 - El burguerking da asco</p>
-                    <p>4 - McDonald's mola más</p>
-                    <p>5 - Eduardo ha matado a Adolfo</p>
+                    <p>1 - Hermanos en guerra</p>
+                    <p>2 - Invasión</p>
+                    <p>3 - Traición</p>
+                    <p>4 - Ojo por ojo</p>
+                    <p>5 - Respuestas sangrientas</p>
                 </div>
             </div>
         </div>

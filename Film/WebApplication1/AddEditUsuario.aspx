@@ -29,7 +29,10 @@
                     <asp:RequiredFieldValidator ID="UserNameReq" runat="server" ControlToValidate="TextBoxUsuario" ErrorMessage="¡Introduce el usuario!"> </asp:RequiredFieldValidator>
                     <p><asp:TextBox ID="TextBoxEdad" runat="server">Edad</asp:TextBox></p>
                     <p>Sexo:</p>
-                    <p><asp:RadioButton ID="RadioButtonsexohombre" runat="server" Text="Varón"/> <asp:RadioButton ID="RadioButtonsexomujer" runat="server" Text="Mujer"/></p>
+                    <asp:RadioButtonList ID="Sexo" runat="server" CellPadding="8" TextAlign="Left" RepeatDirection="Horizontal">
+                         <asp:ListItem ID="SexoHombre" runat="server" value="Varón" />
+                         <asp:ListItem ID="SexoMujer" runat="server" value="Mujer" />
+                    </asp:RadioButtonList>
                     <p><asp:TextBox ID="TextBoxPais" runat="server">País</asp:TextBox></p>
                     <p><asp:TextBox ID="TextBoxPrivincia" runat="server">Provincia</asp:TextBox></p>
                 </div>

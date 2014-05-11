@@ -58,22 +58,31 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox TextBoxEdad;
         
         /// <summary>
-        /// Control RadioButtonsexohombre.
+        /// Control Sexo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButtonsexohombre;
+        protected global::System.Web.UI.WebControls.RadioButtonList Sexo;
         
         /// <summary>
-        /// Control RadioButtonsexomujer.
+        /// Control SexoHombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButtonsexomujer;
+        protected global::System.Web.UI.WebControls.ListItem SexoHombre;
+        
+        /// <summary>
+        /// Control SexoMujer.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListItem SexoMujer;
         
         /// <summary>
         /// Control TextBoxPais.
