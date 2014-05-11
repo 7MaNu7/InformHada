@@ -10,6 +10,7 @@
         <!-- CABECERA DEL USUARIO  -->
         <div class="cabecerausuario">
             <div class="fondoblurreddiv">
+                <asp:FileUpload ID="FileUpload1" runat="server" />
                 <img class="fondoblurred" src="http://4.bp.blogspot.com/-8JGsKAeWkB8/T3yuvVFrc9I/AAAAAAAACPE/lLBQtC2F_hs/s1600/The_Grass_aint_Greener.jpg" alt="fotou_portada"/>
             </div>
              <img class="fotoperfilusuario" src="http://sintoniageek.com/wp-content/uploads/2011/03/avatar-geek-mario1.jpg" alt="fotou_perfil"/>

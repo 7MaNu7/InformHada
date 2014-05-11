@@ -23,9 +23,8 @@
 
         <div class="pelicula_contenido">
                         <div class="pelicula_contenido_i">
-       
-                <asp:Button ID="Button1" CssClass="anadir" runat="server" Text="Editar serie" />
-                <asp:Button ID="Button2" CssClass="reportar" runat="server" Text="Reportar error" />
+        <asp:HyperLink ID="ButtonEdit" CssClass="anadir" runat="server" EnableViewState="false" Text="Editar" />
+                <asp:HyperLink ID="ButtonEdit2" CssClass="reportar" runat="server" Text="Reportar error" />
                 <div class="basic" data-average="5" data-id="1" style="margin:auto;"></div>
 
             </div>
