@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Añadir capitulo" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeBehind="AddCapitulo.aspx.cs" Inherits="WebApplication1.AddCapitulo" %>
+    CodeBehind="AddEditCapitulo.aspx.cs" Inherits="WebApplication1.AddCapitulo" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <link href="/Styles/Serie.css" rel="stylesheet" type="text/css" />

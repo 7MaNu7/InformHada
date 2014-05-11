@@ -62,7 +62,7 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
-    <Content Include="AddCapitulo.aspx" />
+    <Content Include="AddEditCapitulo.aspx" />
     <Content Include="AddEditPelicula.aspx" />
     <Content Include="AddEditSerie.aspx" />
     <Content Include="AddEditUsuario.aspx" />
@@ -136,12 +136,12 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddCapitulo.aspx.cs">
-      <DependentUpon>AddCapitulo.aspx</DependentUpon>
+    <Compile Include="AddEditCapitulo.aspx.cs">
+      <DependentUpon>AddEditCapitulo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddCapitulo.aspx.designer.cs">
-      <DependentUpon>AddCapitulo.aspx</DependentUpon>
+    <Compile Include="AddEditCapitulo.aspx.designer.cs">
+      <DependentUpon>AddEditCapitulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddEditPelicula.aspx.cs">
       <DependentUpon>AddEditPelicula.aspx</DependentUpon>
