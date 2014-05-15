@@ -17,9 +17,8 @@ namespace FilmBiblio
         // Datos //
         ///////////
 
-        //private string conexion = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ToString();
-        private string conexion = @"data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnetdb.mdf;User Instance=true";
-
+        private string conexion = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ToString();
+        
         ///////////////
         // Funciones //
         ///////////////
