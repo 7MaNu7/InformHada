@@ -10,7 +10,7 @@
 namespace WebApplication1 {
     
     
-    public partial class Serie {
+    public partial class AddEditPelicula {
         
         /// <summary>
         /// Control TextBoxTitulo.
@@ -58,48 +58,57 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.HyperLink ButtonEdit;
         
         /// <summary>
-        /// Control TextBox4.
+        /// Control Button1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// Control TextBox5.
+        /// Control TextBoxSinopsis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxSinopsis;
         
         /// <summary>
-        /// Control TextBox6.
+        /// Control TextBoxReparto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxReparto;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control TextBoxTrailer.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxTrailer;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control TextBoxCaratula.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxCaratula;
+        
+        /// <summary>
+        /// Control TextBoxPortada.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPortada;
     }
 }

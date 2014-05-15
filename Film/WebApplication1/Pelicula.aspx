@@ -20,7 +20,7 @@
                 <p>Año: 2014</p>
              </div>
              <div class="puntuacion">
-             7,6
+                7,6
              </div>
          </div>
 
