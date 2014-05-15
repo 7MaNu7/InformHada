@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.Configuration;
 
 namespace FilmBiblio
 {
@@ -16,7 +17,8 @@ namespace FilmBiblio
         // Datos //
         ///////////
 
-        private string conexion="";
+        //private string conexion = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ToString();
+        private string conexion = @"data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnetdb.mdf;User Instance=true";
 
         ///////////////
         // Funciones //
