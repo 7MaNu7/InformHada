@@ -8,12 +8,12 @@
    <div class="contenido">
 
        <!-- CABECERA DE LA SERIE  -->
-        <div class="cabecerausuario">
-            <div class="fondoblurreddiv" style="background-image:url('');">
+        <div class="cabecera_serie">
+            <div class="portada_serie" style="background-image:url('');">
                 <img class="fondoblurred" src="http://t2.gstatic.com/images?q=tbn:ANd9GcS5JCvSU5SqavKeAPTwr6syUG3y9tAIBfUYsqH7ZpxFnMMz_dw3Gg" alt="fotou_portada"/>
             </div>
              <img class="caratula" src="http://pics.filmaffinity.com/Vikingos_Vikings_Serie_de_TV-616055151-large.jpg" alt="fotou_perfil"/>
-             <div class="infocabecera">
+             <div class="info_cabecera">
                 <h2> <asp:TextBox ID="TextBoxTitulo" runat="server" Font-Italic Font-Size="1.5em"  style="width:223px">Título</asp:TextBox> </h2>
                 <p> <asp:TextBox ID="TextBoxDirector" runat="server"> Director </asp:TextBox> </p>
                 <p> <asp:TextBox ID="TextBoxSoundtrack" runat="server">Soundtrack</asp:TextBox> </p>
@@ -22,11 +22,11 @@
              </div>
          </div>
 
-        <div class="pelicula_contenido">
-            <div class="pelicula_contenido_i">
-                <h2> </h2>
+        <div class="contenido_serie">
+            <div class="contenido_serie_i">
+               <asp:HyperLink ID="ButtonEdit" CssClass="anadir" runat="server" EnableViewState="false" Text="Guardar cambios" />
             </div>
-            <div class="pelicula_contenido_d">
+            <div class="contenido_serie_d">
                <h2>Sinopsis</h2>
                <p> <asp:TextBox ID="TextBox4" runat="server"  style="height:131px; width:945px;">Escriba la sinopsis de la serie aquí</asp:TextBox> </p>
 

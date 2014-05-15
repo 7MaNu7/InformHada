@@ -8,8 +8,8 @@
    <div class="contenido">
 
         <!-- CABECERA DEL USUARIO  -->
-        <div class="cabecerausuario">
-            <div class="fondoblurreddiv">
+        <div class="cabecera_usuario">
+            <div class="portada_usuario">
                 <asp:FileUpload ID="FileUpload1" runat="server" />
                 <img class="fondoblurred" src="http://4.bp.blogspot.com/-8JGsKAeWkB8/T3yuvVFrc9I/AAAAAAAACPE/lLBQtC2F_hs/s1600/The_Grass_aint_Greener.jpg" alt="fotou_portada"/>
             </div>
@@ -55,7 +55,17 @@
                     <h2>Herramientas</h2>
                     <p>Eliminar mi cuenta</p>
                 </div>
-                 <asp:Button ID="Button1" CssClass="botonanadireditarusr" runat="server" Text="Crear usuario/Añadir cambios" />
+                 
+                 <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        <asp:Button ID="Button1" CssClass="botonanadireditarusr" runat="server" Text="Crear usuario" />
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <span><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        <asp:Button ID="Button1" CssClass="botonanadireditarusr" runat="server" Text="Añadir cambios" />
+                    </LoggedInTemplate>
+                </asp:LoginView>
+                 
             </div>
          </div>   
       

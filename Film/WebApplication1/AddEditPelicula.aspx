@@ -24,7 +24,7 @@
 
         <div class="pelicula_contenido">
             <div class="pelicula_contenido_i">
-                <h2> </h2>
+                <asp:HyperLink ID="ButtonEdit" CssClass="anadir" runat="server" EnableViewState="false" Text="Guardar cambios" />
             </div>
             <div class="pelicula_contenido_d">
                <h2>Sinopsis</h2>
@@ -39,6 +39,7 @@
                 <p> <asp:TextBox ID="TextBox1" runat="server" style="width:945px;">Indique el enlace o archivo de la foto de la carátula de la película</asp:TextBox> </p>
                 <p> <asp:TextBox ID="TextBox2" runat="server" style="width:945px;">Indique el enlace o archivo de la foto de la portada de la película</asp:TextBox> </p>
                     
+                
                 </div>
             </div>
         </div>

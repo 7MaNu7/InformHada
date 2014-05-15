@@ -3,11 +3,11 @@
     background:#e5e5e5;
 }
 
-.cabecerausuario {
+.cabecera_usuario {
     position: relative;
 }
 
-.fondo_portada {
+.portada_usuario {
     height: 250px;
     overflow: hidden;
 }
