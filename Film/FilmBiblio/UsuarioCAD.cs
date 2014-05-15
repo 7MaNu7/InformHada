@@ -109,15 +109,15 @@ namespace FilmBiblio
         {
             String orden = "update usuario ";
             orden += "set usuario = '" + usuario.Usuario + "', ";
-            orden += "pswwd = '" + usuario.Psswd + "', ";
+            orden += "psswd = '" + usuario.Psswd + "', ";
             orden += "pais = '" + usuario.Pais + "', ";
             orden += "provincia = '" + usuario.Provincia + "', ";
             orden += "fechaNacimiento = '" + usuario.FechaNacimiento + "', ";
             orden += "sexo = '" + usuario.Sexo + "', ";
             orden += "email = '" + usuario.Email + "', ";
             orden += "informacion = '" + usuario.Informacion + "', ";
-            orden += "imagen = '" + usuario.FotoPerfil + "', ";
-            orden += "imagen = '" + usuario.FotoPortada + "' ";
+            orden += "fotoPerfil = '" + usuario.FotoPerfil + "', ";
+            orden += "fotoPortada = '" + usuario.FotoPortada + "' ";
             orden += "where id = " + usuario.Id;
 
             SqlConnection c = null;

@@ -173,7 +173,7 @@ namespace FilmBiblio
             {
                 c = new SqlConnection(conexion);
                 c.Open();
-                SqlCommand select_series = new SqlCommand("Select id from film", c);
+                SqlCommand select_series = new SqlCommand("Select id from film, serie where film.id=serie.id", c);
                 SqlDataReader read = select_series.ExecuteReader();
 
                 //Tenemos varios id de series, vamos agregando una por una las películas con DameSerie pasándole cada id
