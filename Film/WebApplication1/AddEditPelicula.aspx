@@ -8,12 +8,12 @@
    <div class="contenido">
 
         <!-- CABECERA DE LA SERIE  -->
-        <div class="cabecerausuario">
-            <div class="fondoblurreddiv" style="background-image:url('');">
+        <div class="cabecera_pelicula">
+            <div class="portada_serie" style="background-image:url('');">
                 <img class="fondoblurred" src="http://t2.gstatic.com/images?q=tbn:ANd9GcS5JCvSU5SqavKeAPTwr6syUG3y9tAIBfUYsqH7ZpxFnMMz_dw3Gg" alt="fotou_portada"/>
             </div>
              <img class="caratula" src="http://s3-eu-west-1.amazonaws.com/abandomedia/db/foto/db_18973_41.jpg" alt="fotou_perfil"/>
-             <div class="infocabecera">
+             <div class="info_cabecera">
                 <h2> <asp:TextBox ID="TextBoxTitulo" runat="server" Font-Italic Font-Size="1.5em"  style="width:223px">Título</asp:TextBox> </h2>
                 <p> <asp:TextBox ID="TextBoxDirector" runat="server"> Director </asp:TextBox> </p>
                 <p> <asp:TextBox ID="TextBoxSoundtrack" runat="server">Soundtrack</asp:TextBox> </p>

@@ -1,8 +1,8 @@
-﻿.cabecerausuario {
+﻿.cabecera_serie {
     position: relative;
 }
 
-.fondoblurreddiv {
+.portada_serie {
     height: 315px;
     overflow: hidden;
 }
@@ -14,13 +14,13 @@ left: 89px;
 height: 300px;
 }
 
-.infocabecera {
+.info_cabecera {
     position: absolute;
     bottom: 57px;
     left: 336px;
     color: white;
 }
-.infocabecera h2
+.info_cabecera h2
 {
     color:White;
     font-size:50px;
@@ -37,17 +37,17 @@ height: 300px;
     -ms-filter: blur(10px);
     filter: blur(10px);
 }
-.pelicula_contenido {
+.contenido_serie {
 position: relative;
 }
-.pelicula_contenido_d {
+.contenido_serie_d {
     margin-left: 335px;
     margin-right: 100px;
     text-align: justify;
 }
 
 
-.pelicula_contenido_i {
+.contenido_serie_i {
 position: absolute;
 left: 88px;
 top: 39px;
@@ -88,6 +88,12 @@ text-align: center;
 vertical-align: middle;
 font-size: 19px;
 padding-top: 4px;
+}
+
+.Serie_capitulos a 
+{
+     color: Gray;
+     text-decoration:none;
 }
 
 .anadir

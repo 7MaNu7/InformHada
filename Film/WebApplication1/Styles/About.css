@@ -1,19 +1,19 @@
-﻿.cabecerausuario {
+﻿.cabecera_about {
     position: relative;
 }
 
-.fondoblurreddiv {
+.portada_about {
     height: 215px;
     overflow: hidden;
 }
 
-.infocabecera {
+.info_cabecera {
     position: absolute;
     bottom: 57px;
     left: 160px; /*336px;*/
     color: white;
 }
-.infocabecera h2
+.info_cabecera h2
 {
     color:White;
     font-size:50px;
@@ -31,19 +31,19 @@
     filter: blur(10px);
 }
 
-.pelicula_contenido_d {
+.contenido_about_d {
     margin-left: 335px;
     margin-right: 300px;
     text-align: justify;
 }
 
 
-.pelicula_contenido_i {
+.contenido_about_i {
 position: absolute;
 left: 90px;
 top: 22px;
 }
 
-.pelicula_contenido {
+.contenido_about {
 position: relative;
 }

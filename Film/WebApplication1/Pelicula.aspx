@@ -8,18 +8,18 @@
    <div class="contenido">
 
         <!-- CABECERA DE LA PELICULA  -->
-        <div class="cabecerausuario">
-            <div class="fondoblurreddiv" style="background-image:url('');">
+        <div class="cabecera_pelicula">
+            <div class="portada_serie" style="background-image:url('');">
                 <img class="fondoblurred" src="http://3.bp.blogspot.com/-tREmR3WN5LE/UwryZrZBKPI/AAAAAAAAu-s/E_UwmO8UvKM/s1600/divergente-banner.jpg" alt="fotou_portada"/>
             </div>
              <img class="caratula" src="http://s3-eu-west-1.amazonaws.com/abandomedia/db/foto/db_18973_41.jpg" alt="fotou_perfil"/>
-             <div class="infocabecera">
+             <div class="info_cabecera">
                 <h2>Divergente </h2>
                 <p>Director: Neil Burger</p>
                 <p>Soundtrack: Hans Zimmer</p>
                 <p>Año: 2014</p>
              </div>
-             <div class="afff">
+             <div class="puntuacion">
              7,6
              </div>
          </div>

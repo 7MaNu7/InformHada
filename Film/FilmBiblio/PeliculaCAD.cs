@@ -187,7 +187,25 @@ namespace FilmBiblio
                 c.Close();
             }
 
-            return peliculas;
+            return peliculas;/*
+
+            //Con acceso desconectado:
+            //bool cambiado = true;
+            //PeliculaEN pelicula = null;
+            SqlConnection c = new SqlConnection(conexion);
+         //   try
+         //   {
+                String select_pelicula = "Select * from film, pelicula where film.id=pelicula.id";
+
+                DataSet bdvirtual = new DataSet();
+                SqlDataAdapter ejecuta = new SqlDataAdapter(select_pelicula, c);
+
+                ejecuta.Fill(bdvirtual, "peliculas");
+         //   }
+         //   catch (Exception ex) { Console.WriteLine(ex.Message); cambiado = false; }
+                //   finally { c.Close(); }
+            //return pelicula;
+                return bdvirtual;*/
         }
 
         //Devuelve la información de la película que tiene como clave primaria el id pasado por parámetro
@@ -222,7 +240,24 @@ namespace FilmBiblio
                 c.Close();
             }
 
-            return pelicula;
+            return pelicula;/*
+
+            //Con acceso desconectado:
+            //bool cambiado = true;
+            PeliculaEN pelicula = null;
+            SqlConnection c = new SqlConnection(conexion);
+            try
+            {
+                String select_pelicula = "Select * from film where id=" + id;
+
+                DataSet bdvirtual = new DataSet();
+                SqlDataAdapter ejecuta = new SqlDataAdapter(select_pelicula, c);
+
+                ejecuta.Fill(bdvirtual, "peliculas");
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }//cambiado = false; }
+            finally { c.Close(); }
+            return pelicula;*/
         }
 
         //Devuelve la información de todas las películas similares a una en concreto

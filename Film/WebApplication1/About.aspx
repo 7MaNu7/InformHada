@@ -9,18 +9,18 @@
        <div class="contenido">
 
         <!-- CABECERA DE LA PELICULA -->
-        <div class="cabecerausuario">
-            <div class="fondoblurreddiv" style="background-image:url('');">
+        <div class="cabecera_about">
+            <div class="portada_about" style="background-image:url('');">
                 <img class="fondoblurred" src="http://t3.gstatic.com/images?q=tbn:ANd9GcQExlQNgwgAIZb_PS-hrpzUKe4fSpVLuXqrJrrdV-Rt1dcc41PQ" alt="fotou_portada"/>
             </div>
-             <div class="infocabecera">
+             <div class="info_cabecera">
                 <h2> Acerca de nosotros </h2>
              </div>
          </div>
 
-        <div class="pelicula_contenido">
+        <div class="contenido_about">
 
-            <div class="pelicula_contenido_d">
+            <div class="contenido_about_d">
                 <h2>
                     Sobre la página
                 </h2>

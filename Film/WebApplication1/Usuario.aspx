@@ -9,7 +9,7 @@
 
         <!-- CABECERA DEL USUARIO  -->
         <div class="cabecerausuario">
-            <div class="fondoblurreddiv">
+            <div class="fondo_portada">
                 <img class="fondoblurred" src="http://t1.gstatic.com/images?q=tbn:ANd9GcT3HhDuErxy_xMEFj9ie_T5q2sxgM5mB9Kp5CRGrC1BO1zqQ9Cl" alt="fotou_portada"/>
             </div>
              <img class="fotoperfilusuario" src="http://vang.blob.core.windows.net/images/2013/03/26/dempseey.jpg" alt="fotou_perfil"/>
@@ -25,8 +25,6 @@
                 <p>mario_gutierrez79@hotmail.com</p>
              </div>
          </div>
-
-
 
          <!-- PARTE DE ABAJO DEL USUARIO  -->
          <div class="informacionusuario">

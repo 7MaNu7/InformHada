@@ -8,12 +8,12 @@
    <div class="contenido">
 
         <!-- CABECERA DE LA SERIE  -->
-        <div class="cabecerausuario">
-            <div class="fondoblurreddiv" style="background-image:url('');">
+        <div class="cabecera_serie">
+            <div class="portada_serie" style="background-image:url('');">
                 <img class="fondoblurred" src="http://hdwpapers.com/download/vikings_tv_desktop_wallpaper-1920x1080.jpg" alt="fotou_portada"/>
             </div>
              <img class="caratula" src="http://pics.filmaffinity.com/Vikingos_Vikings_Serie_de_TV-616055151-large.jpg" alt="fotou_perfil"/>
-             <div class="infocabecera">
+             <div class="info_cabecera">
                 <h2>Vikings </h2>
                 <p>Director: Michael Hirst</p>
                 <p>Soundtrack: Hans Zimmer</p>
@@ -21,14 +21,13 @@
              </div>
          </div>
 
-        <div class="pelicula_contenido">
-                        <div class="pelicula_contenido_i">
-        <asp:HyperLink ID="ButtonEdit" CssClass="anadir" runat="server" EnableViewState="false" Text="Editar" />
+        <div class="contenido_serie">
+            <div class="contenido_serie_i">
+                <asp:HyperLink ID="ButtonEdit" CssClass="anadir" runat="server" EnableViewState="false" Text="Editar" />
                 <asp:HyperLink ID="ButtonEdit2" CssClass="reportar" runat="server" Text="Reportar error" />
                 <div class="basic" data-average="5" data-id="1" style="margin:auto;"></div>
-
             </div>
-            <div class="pelicula_contenido_d">
+            <div class="contenido_serie_d">
                <h2>Sinopsis</h2>
                <p>Serie de TV (2013-Actualidad). Sigue las aventuras de Ragnar Lothbrok, el héroe más grande de su época. La serie narra las sagas de la banda de hermanos vikingos de Ragnar y su familia, cuando él se levanta para convertirse en el rey de las tribus vikingas. Además de ser un guerrero valiente, Ragnar encarna las tradiciones nórdicas de la devoción a los dioses, la leyenda dice que él era un descendiente directo de Odín, el dios de la guerra y los guerreros.</p>
 

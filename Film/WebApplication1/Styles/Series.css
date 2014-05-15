@@ -4,7 +4,7 @@ overflow: hidden;
 clear: both;
 }
 
-.peliculacaratula {
+.pelicula_caratula {
 float: left;
 margin: 13px;
 width: 100px;
@@ -12,11 +12,11 @@ height: 165px;
 overflow: hidden;
 }
 
-.peliculacaratula p {
+.pelicula_caratula p {
 margin: 0;
 }
 
-.peliculacaratula img {
+.pelicula_caratula img {
 width: 100px;
 height:144px;
 }
