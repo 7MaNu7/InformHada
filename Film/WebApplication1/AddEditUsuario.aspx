@@ -56,15 +56,8 @@
                     <p>Eliminar mi cuenta</p>
                 </div>
                  
-                 <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
-                    <AnonymousTemplate>
-                        <asp:Button ID="Button1" CssClass="botonanadireditarusr" runat="server" Text="Crear usuario" />
-                    </AnonymousTemplate>
-                    <LoggedInTemplate>
-                        <span><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
-                        <asp:Button ID="Button1" CssClass="botonanadireditarusr" runat="server" Text="Añadir cambios" />
-                    </LoggedInTemplate>
-                </asp:LoginView>
+                 <asp:Button ID="BotonEditar" CssClass="botonanadireditarusr" runat="server" Text="Crear usuario" />
+                    
                  
             </div>
          </div>   
