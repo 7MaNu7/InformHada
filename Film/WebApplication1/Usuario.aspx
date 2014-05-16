@@ -80,6 +80,7 @@
                     <p>Editar mi usuario</p>
                     <p>Eliminar mi cuenta</p>
                 </div>
+                <asp:Button ID="BotonEditar" CssClass="botonanadireditarusr" runat="server" OnClick=BotonEditarOnClick Text="Editar" />
             </div>
          </div>
         
