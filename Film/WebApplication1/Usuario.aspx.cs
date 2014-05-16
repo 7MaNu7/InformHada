@@ -16,6 +16,10 @@ namespace WebApplication1
             {
                 BotonEditar.Text = "Editar";
             }
+            else if (param1 == "Registro")
+            {
+                BotonEditar.Text = "Registrarme";
+            }
             else
             {
                 BotonEditar.Visible = false;
@@ -29,6 +33,10 @@ namespace WebApplication1
             if (param1 == "verUsuario")
             {
                 Response.Redirect("AddEditUsuario.aspx?par1=editarUsuario");
+            }
+            else if (param1 == "Registro")
+            {
+                Response.Redirect("AddEditUsuario.aspx?par1=registrarUsuario");
             }
         
         }
