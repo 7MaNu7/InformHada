@@ -17,7 +17,7 @@ namespace FilmBiblio
         // Datos //
         ///////////
 
-        private string conexion = ConfigurationManager.ConnectionStrings["ApplicationServices"].ToString();
+        private string conexion = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ToString();
         
         ///////////////
         // Funciones //
@@ -160,21 +160,29 @@ namespace FilmBiblio
         }
 
         //Devuelve la información de todos los usuarios
-        public DataSet DameUsuarios()
+        public ArrayList DameUsuarios()
         {
-            SqlConnection c = new SqlConnection(conexion);
-            DataSet bdvirtual = new DataSet();
+            ArrayList usuarios = new ArrayList();
+            SqlConnection c = null;
 
             try
             {
-                String select_usuarios = "Select * from film, serie where film.id=serie.id";
-                SqlDataAdapter ejecuta = new SqlDataAdapter(select_usuarios, c);
-                ejecuta.Fill(bdvirtual, "series");
+                c = new SqlConnection(conexion);
+                c.Open();
+                SqlCommand select_usuarios = new SqlCommand("Select id from usuario", c);
+                SqlDataReader leer_usuarios = select_usuarios.ExecuteReader();
+
+                //Tenemos varios id de usuarios, vamos agregando uno por uno los usuarios con DameUsuario pasándole cada id
+                while (leer_usuarios.Read())
+                    usuarios.Add(DameUsuario((int)leer_usuarios["id"]));
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally { c.Close(); }
+            finally
+            {
+                c.Close();
+            }
 
-            return bdvirtual;
+            return usuarios;
         }
 
         //Devuelve la información del usuario que tiene como clave primaria el id pasado por parámetro
@@ -222,21 +230,29 @@ namespace FilmBiblio
         }
 
         //Devuelve un array con los amigos y su información
-        public DataSet DameAmigos(int id)
+        public ArrayList DameAmigos(int id)
         {
-            SqlConnection c = new SqlConnection(conexion);
-            DataSet bdvirtual = new DataSet();
+            ArrayList amigos = new ArrayList(); //Para que no de error
+            SqlConnection c = null;
 
             try
             {
-                String select_amigos = "Select id2 from amigos where id1="+id;
-                SqlDataAdapter ejecuta = new SqlDataAdapter(select_amigos, c);
-                ejecuta.Fill(bdvirtual, "series");
+                c = new SqlConnection(conexion);
+                c.Open();
+                SqlCommand select_amigos = new SqlCommand("Select id2 from amigos where id1="+id, c);
+                SqlDataReader leer_amigos = select_amigos.ExecuteReader();
+
+                //Tenemos varios id de usuarios, vamos agregando uno por uno los usuarios con DameUsuario pasándole cada id
+                while (leer_amigos.Read())
+                    amigos.Add(DameUsuario((int)leer_amigos["id"]));
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally { c.Close(); }
+            finally
+            {
+                c.Close();
+            }
 
-            return bdvirtual;
+            return amigos;
         }
     }   
 }

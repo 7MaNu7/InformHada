@@ -11,14 +11,17 @@ namespace WebApplication1 {
     
     
     public partial class Peliculas {
+<<<<<<< HEAD
         
         /// <summary>
-        /// Control GridView1.
+        /// Control ListViewPeliculas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.ListView ListViewPeliculas;
+=======
+>>>>>>> b4de745d152f3feb4ac7a2b93a51b618b36225da
     }
 }
