@@ -15,7 +15,7 @@ namespace FilmBiblio
         // Datos //
         ///////////
 
-        private ComentarioCAD comentarioCad = new ComentarioCAD();//Instancia de ComentarioCAD para gestionar la información de usuarios en la base de datos
+        private ComentarioCAD comentarioCad = new ComentarioCAD();//Instancia de PeliculaCAD para gestionar la información de usuarios en la base de datos
         private DataSet bd = new DataSet();
 
         private int id;                      //identificador del comentario
@@ -31,7 +31,7 @@ namespace FilmBiblio
         //Constructor por defecto
         public ComentarioEN() { }
 
-                //Constructor con parámetros que son las propiedades de dicho comentario
+                //Constructor con parámetros que son las propiedades de dicho capítulo
         public ComentarioEN(int pid, string ptexto, int pusuario, string pfecha, int pfilm)
         {
             id = pid;
@@ -41,25 +41,25 @@ namespace FilmBiblio
             film = pfilm;
         }
 
-        //Se inserta en la BD el nuevo comentario cuyos datos están en esta instancia this de ComentarioEN
+        //Se inserta en la BD el nuevo capítulo cuyos datos están en esta instancia this de CapituloEN
         public void InsertarComentario()
         {
             comentarioCad.InsertarComentario(this);
         }
 
-        //Se modifica en la BD un comentario cuyos datos están en esta instancia this de ComentarioEN
+        //Se modifica en la BD un capítulo cuyos datos están en esta instancia this de CapituloEN
         public void UpdateComentario()
         {
             comentarioCad.UpdateComentario(this);
         }
 
-        //Se borra en la BD un comentario diferenciado de los demás por su id
+        //Se borra en la BD un capítulo diferenciado de los demás por su id
         public void BorrarComentario()
         {
             comentarioCad.BorrarComentario(this.id);
         }
 
-        //Devuelve la información de todas los comentarios
+        //Devuelve la información de todas las películas
         public DataSet DameComentarios()
         {
             try
@@ -70,7 +70,7 @@ namespace FilmBiblio
             return bd;
         }
 
-        //Devuelve la información del comentario que tiene como clave primaria el id pasado por parámetro
+        //Devuelve la información de la película que tiene como clave primaria el id pasado por parámetro
         public ComentarioEN DameComentario()
         {
             ComentarioEN comentario = new ComentarioEN();
@@ -89,28 +89,28 @@ namespace FilmBiblio
             set { id = value; }
         }
 
-        //Desde fuera de la clase se puede obtener el texto y modificarlo
+        //Desde fuera de la clase se puede obtener el id y modificarlo
         public string Texto
         {
             get { return texto; }
             set { texto = value; }
         }
 
-        //Desde fuera de la clase se puede obtener el usuario y modificarlo
+        //Desde fuera de la clase se puede obtener el id y modificarlo
         public int Usuario
         {
             get { return usuario; }
             set { usuario = value; }
         }
 
-        //Desde fuera de la clase se puede obtener la fecha y modificarlo
+        //Desde fuera de la clase se puede obtener el id y modificarlo
         public string Fecha
         {
             get { return fecha; }
             set { fecha = value; }
         }
 
-        //Desde fuera de la clase se puede obtener el film y modificarlo
+        //Desde fuera de la clase se puede obtener el id y modificarlo
         public int Film
         {
             get { return film; }

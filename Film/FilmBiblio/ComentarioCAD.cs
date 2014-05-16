@@ -27,9 +27,9 @@ namespace FilmBiblio
         {
             String orden = "insert into comentario values ";
             orden += "( " + comentario.Id + ", ";
-            orden += "'" + comentario.Fecha + "', ";
             orden += "'" + comentario.Texto + "', ";
             orden += comentario.Usuario + ", ";
+            orden += "'" + comentario.Fecha + "', ";
             orden += comentario.Film + ")";
 
             SqlConnection c = null;
@@ -48,7 +48,9 @@ namespace FilmBiblio
         {
             String orden = "update comentario ";
             orden += "set texto = '" + comentario.Texto + "', ";
+            orden += "usuario = " + comentario.Usuario + ", ";
             orden += "fecha = '" + comentario.Fecha + "', ";
+            orden += "film = " + comentario.Film + ", ";
             orden += "where id = " + comentario.Id;
 
             SqlConnection c = null;
@@ -63,8 +65,8 @@ namespace FilmBiblio
             finally { c.Close(); }
         }
 
-        //Borra un comentario en la BD que tiene la clave primaria que se pasa por parámetro
-        public void BorrarComentario(int id)
+        //Borra una película en la BD que tiene la clave primaria que se pasa por parámetro
+        public void BorrarPelicula(int id)
         {
             String orden = "delete from comentario where id= " + id;
 
@@ -81,7 +83,7 @@ namespace FilmBiblio
             finally { c.Close(); }
         }
 
-        //Devuelve la información de todos los comentarios
+        //Devuelve la información de todas las películas
         public DataSet DameComentarios()
         {
             SqlConnection c = new SqlConnection(conexion);
@@ -99,7 +101,7 @@ namespace FilmBiblio
             return bdvirtual;
         }
 
-        //Devuelve la información del comentario que tiene como clave primaria el id pasado por parámetro
+        //Devuelve la información de la película que tiene como clave primaria el id pasado por parámetro
         public ComentarioEN DameComentario(int id)
         {
             SqlConnection c = null;
