@@ -10,13 +10,17 @@
     padding-top: 33px;">
    
     <div class="peliculas_contenido" style="padding: 25px 25px 1.5px 25px;">
-        <asp:GridView ID="GridView1" runat="server">
-        
+<<<<<<< HEAD
+        <asp:ListView ID="ListViewPeliculas" runat="server">
+        <ItemTemplate> </ItemTemplate>
          
 
-        </asp:GridView>
+        </asp:ListView>
 
         <!--<h2>Peliculas</h2>
+=======
+        <h2>Peliculas</h2>
+>>>>>>> b4de745d152f3feb4ac7a2b93a51b618b36225da
         <div class="peliculacaratula">
             <img src="http://cdn.glamour.mx/uploads/images/thumbs/201306/peliculas_brujas_cine_2013_671571654_699x.jpg" alt="Mago de Oz"/>
             <p>Mago de Oz</p>
@@ -103,8 +107,10 @@
         <div class="peliculacaratula">
             <img src="http://cdn.opensly.com/series/SR43CKE932.jpg" alt="Salvados por la campana"/>
             <p>Salvados por la campana</p>
-        </div>-->
+        </div>
     </div>
-    <!--<p style="text-align: center;">Página 1 &gt;&gt;</p>-->
+    <p style="
+    text-align: center;
+">Página 1 &gt;&gt;</p>
     </div>
 </asp:Content>
