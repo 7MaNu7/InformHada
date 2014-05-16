@@ -13,12 +13,15 @@ namespace WebApplication1
         {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (!Page.IsPostBack)
             {
                 d = pelicula.DamePeliculas();
                 ListViewPeliculas.DataSource = d;
                 ListViewPeliculas.DataBind();
             }
+=======
+>>>>>>> b4de745d152f3feb4ac7a2b93a51b618b36225da
 =======
 >>>>>>> b4de745d152f3feb4ac7a2b93a51b618b36225da
         }

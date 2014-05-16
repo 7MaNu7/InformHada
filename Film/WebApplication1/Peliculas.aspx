@@ -11,6 +11,7 @@
    
     <div class="peliculas_contenido" style="padding: 25px 25px 1.5px 25px;">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <asp:ListView ID="ListViewPeliculas" runat="server">
         <ItemTemplate> </ItemTemplate>
          
@@ -18,6 +19,9 @@
         </asp:ListView>
 
         <!--<h2>Peliculas</h2>
+=======
+        <h2>Peliculas</h2>
+>>>>>>> b4de745d152f3feb4ac7a2b93a51b618b36225da
 =======
         <h2>Peliculas</h2>
 >>>>>>> b4de745d152f3feb4ac7a2b93a51b618b36225da
