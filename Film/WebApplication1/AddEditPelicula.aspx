@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Añadir/Editar película" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="Anadir o Editar película" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeBehind="AddEditPelicula.aspx.cs" Inherits="WebApplication1.AddEditPelicula" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
@@ -24,8 +24,7 @@
 
         <div class="pelicula_contenido">
             <div class="pelicula_contenido_i">
-                <asp:HyperLink ID="ButtonEdit" CssClass="anadir" runat="server" EnableViewState="false" Text="Guardar cambios" />
-               <!-- <asp:Button ID="Button1" CssClass="anadir"  Text="Guardar cambios" OnClick="Button_anadir" runat="server" />-->
+                <asp:HyperLink ID="ButtonAddEdit" CssClass="anadir" runat="server" EnableViewState="false" Text="Guardar cambios" />
             </div>
             <div class="pelicula_contenido_d">
                <h2>Sinopsis</h2>

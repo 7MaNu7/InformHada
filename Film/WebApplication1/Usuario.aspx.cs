@@ -11,7 +11,26 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            String param1 = Request.QueryString["par1"];
+            if (param1 == "verUsuario")
+            {
+                BotonEditar.Text = "Editar";
+            }
+            else
+            {
+                BotonEditar.Visible = false;
+            }
+        }
 
+        protected void BotonEditarOnClick(object sender, EventArgs e)
+        {
+            String param1 = Request.QueryString["par1"];
+            Response.BufferOutput = true;
+            if (param1 == "verUsuario")
+            {
+                Response.Redirect("AddEditUsuario.aspx?par1=editarUsuario");
+            }
+        
         }
     }
 }

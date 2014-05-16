@@ -49,22 +49,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox TextBoxAno;
         
         /// <summary>
-        /// Control ButtonEdit.
+        /// Control ButtonAddEdit.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink ButtonEdit;
-        
-        /// <summary>
-        /// Control Button1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.HyperLink ButtonAddEdit;
         
         /// <summary>
         /// Control TextBoxSinopsis.
