@@ -71,6 +71,7 @@
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="Capitulo.aspx" />
+    <Content Include="Copy of Pelicula.aspx" />
     <Content Include="Pelicula.aspx" />
     <Content Include="Report.aspx" />
     <Content Include="Scripts\JScript1.js" />
@@ -173,6 +174,13 @@
     </Compile>
     <Compile Include="Capitulo.aspx.designer.cs">
       <DependentUpon>Capitulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Copy of Pelicula.aspx.cs">
+      <DependentUpon>Copy of Pelicula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Copy of Pelicula.aspx.designer.cs">
+      <DependentUpon>Copy of Pelicula.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

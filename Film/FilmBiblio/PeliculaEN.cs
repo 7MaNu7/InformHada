@@ -111,7 +111,12 @@ namespace FilmBiblio
         public PeliculaEN DamePelicula()
         {
             PeliculaEN pelicula = new PeliculaEN();
+             try
+            {
             pelicula = peliculaCad.DamePelicula(this.id);
+            }
+             catch (Exception ex) { Console.WriteLine(ex.Message); }
+
             return pelicula;
         }
 
