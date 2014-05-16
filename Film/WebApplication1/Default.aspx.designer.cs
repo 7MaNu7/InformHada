@@ -76,9 +76,8 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor A6;
         
         /// <summary>
-<<<<<<< HEAD
         /// A8 control.
-=======
+
         /// Control HyperLinkUsuario.
         /// </summary>
         /// <remarks>
@@ -89,7 +88,6 @@ namespace WebApplication1 {
         
         /// <summary>
         /// Control A8.
->>>>>>> fe65867c66ad486ae070309a4cf2998c0a2909f3
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
