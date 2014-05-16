@@ -139,12 +139,12 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox TextBoxInformacionAdicional;
         
         /// <summary>
-        /// Control HeadLoginView.
+        /// Control BotonEditar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView HeadLoginView;
+        protected global::System.Web.UI.WebControls.Button BotonEditar;
     }
 }

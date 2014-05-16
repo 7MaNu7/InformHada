@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using FilmBiblio.UsuarioEN;
 
 namespace WebApplication1
 {
@@ -11,7 +12,33 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            String param1 = Request.QueryString["par1"];
+            if (param1 == "editarUsuario")
+            {
+                BotonEditar.Text = "Guardar cambios";
+            }
+            else if (param1 == "registrarUsuario")
+            {
+                BotonEditar.Text = "Completar registro";
+            }
+            else
+            {
+                BotonEditar.Visible = false;
+            }
+        }
 
+        protected void BotonEditarOnClick(object sender, EventArgs e)
+        {
+            String param1 = Request.QueryString["par1"];
+            Response.BufferOutput = true;
+            if (param1 == "editarUsuario")
+            {
+                //Guardar datos y update
+            }
+            else if (param1 == "registrarUsuario")
+            {
+                //Guardar datos y insert
+            }
         }
 
          /*protected void Button_anadir(object sender, EventArgs e)
