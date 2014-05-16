@@ -56,7 +56,7 @@ namespace FilmBiblio
         //Se borra en la BD un capítulo diferenciado de los demás por su id
         public void BorrarComentario()
         {
-         //   comentarioCad.BorrarComentario(this.id);
+            comentarioCad.BorrarComentario(this.id);
         }
 
         //Devuelve la información de todas las películas

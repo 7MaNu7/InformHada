@@ -179,20 +179,19 @@ namespace FilmBiblio
                 c.Open();
                 SqlCommand select_pelicula = new SqlCommand("Select * from film where id=" + id, c);
                 SqlDataReader read = select_pelicula.ExecuteReader();
-                read.Read();
-                pelicula = new PeliculaEN();
-                pelicula.Id = read.GetInt32(0);
-                pelicula.Titulo= read["titulo"].ToString();
-                pelicula.Director=read["director"].ToString();
-                pelicula.Ano= Convert.ToInt32( read["ano"].ToString());
-                pelicula.Sinopsis=read["sinopsis"].ToString();
-                pelicula.Genero=   read["genero"].ToString();
-                pelicula.BandaSonora= read["bandaSonora"].ToString();
-                pelicula.Puntuacion= Convert.ToSingle( read["puntuacion"]);
-                pelicula.Portada=  read["portada"].ToString();
-                pelicula.Caratula=  read["caratula"].ToString();
-                pelicula.Trailer=   read["trailer"].ToString();
-                
+
+                //Consulta para leer todos los artistas que forman parte del reparto de la película
+                SqlCommand select_artista = new SqlCommand("Select artista from reparto where id_film=" + id, c);
+                SqlDataReader leer_artistas = select_artista.ExecuteReader();
+
+                ArrayList reparto_aux = new ArrayList();
+                //Varias filas de artistas, agregamos los artistas a un array
+                while (leer_artistas.Read())
+                    reparto_aux.Add(leer_artistas["artista"]);
+
+                pelicula = new PeliculaEN((int)read["id"], (string)read["titulo"], (string)read["director"], (int)read["ano"],
+                    (string)read["sinopsis"], (string)read["genero"], reparto_aux, (string)read["bandaSonora"], (float)read["puntuacion"],
+                    (string)read["portada"], (string)read["caratula"], (string)read["trailer"]);
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { c.Close(); }
