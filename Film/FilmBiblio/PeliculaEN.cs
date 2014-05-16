@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace FilmBiblio
 {
@@ -12,7 +16,8 @@ namespace FilmBiblio
         // Patos //
         ///////////
 
-        private PeliculaCAD peliculaCad;//Instancia de PeliculaCAD para gestionar la información de usuarios en la base de datos
+        private PeliculaCAD peliculaCad = new PeliculaCAD();//Instancia de PeliculaCAD para gestionar la información de usuarios en la base de datos
+        private DataSet bd = new DataSet();
 
         private int id;                 //Se utilizará como clave primaria en la base de datos
         private string titulo;          //El título de la película
@@ -92,11 +97,14 @@ namespace FilmBiblio
         }
 
         //Devuelve la información de todas las películas
-        public ArrayList DamePeliculas()
+        public DataSet DamePeliculas()
         {
-            ArrayList peliculas = new ArrayList();
-            peliculas = peliculaCad.DamePeliculas();
-            return peliculas;
+            try
+            {
+                bd = peliculaCad.DamePeliculas();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            return bd;
         }
 
         //Devuelve la información de la película que tiene como clave primaria el id pasado por parámetro
@@ -108,11 +116,10 @@ namespace FilmBiblio
         }
 
         //Devuelve la información de todas las películas similares a una con el id pasado por parámetro
-        public ArrayList DamePeliculasSimilares()
+        public DataSet DamePeliculasSimilares()
         {
-            ArrayList peliculas = new ArrayList();
-            peliculas = peliculaCad.DamePeliculasSimilares(this.id);
-            return peliculas;
+            bd = peliculaCad.DamePeliculasSimilares(this);
+            return bd;
         }
 
         /////////////////
