@@ -41,7 +41,7 @@ namespace FilmBiblio
             film = pfilm;
         }
 
-        //Se inserta en la BD el nuevo caomentario cuyos datos están en esta instancia this de ComentarioEN
+        //Se inserta en la BD el nuevo comentario cuyos datos están en esta instancia this de ComentarioEN
         public void InsertarComentario()
         {
             comentarioCad.InsertarComentario(this);
