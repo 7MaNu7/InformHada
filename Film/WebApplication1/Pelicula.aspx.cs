@@ -9,7 +9,7 @@ namespace WebApplication1
 {
     public partial class Pelicula : System.Web.UI.Page
     {
-        private FilmBiblio.PeliculaEN peliculas = new FilmBiblio.PeliculaEN();
+    
 
         protected void Page_Load(object sender, EventArgs e)
         {
