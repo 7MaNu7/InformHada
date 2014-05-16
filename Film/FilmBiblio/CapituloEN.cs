@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+using System.Configuration;
 
 namespace FilmBiblio
 {
@@ -12,7 +17,8 @@ namespace FilmBiblio
         // Datos //
         ///////////
 
-        private CapituloCAD capituloCad;//Instancia de CapituloCAD para gestionar la información de usuarios en la base de datos
+        private CapituloCAD capituloCad = new CapituloCAD();//Instancia de CapituloCAD para gestionar la información de usuarios en la base de datos
+        private DataSet bd = new DataSet();
 
         private int id;                 //Se usará como clave primaria en la base de datos
         private string titulo;          //El título del capítulo
@@ -58,11 +64,10 @@ namespace FilmBiblio
         }
 
         //Devuelve la información de todas los capítulos
-        public ArrayList DameCapitulos()
+        public DataSet DameCapitulos()
         {
-            ArrayList capitulos = new ArrayList();
-            capitulos = capituloCad.DameCapitulos();
-            return capitulos;
+            bd = capituloCad.DameCapitulos();
+            return bd;
         }
 
         //Devuelve la información del capítulo que tiene como clave primaria el id pasado por parámetro

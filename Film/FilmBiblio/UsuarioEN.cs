@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+using System.Configuration;
 
 namespace FilmBiblio
 {
@@ -12,7 +17,8 @@ namespace FilmBiblio
         // Datos //
         ///////////
 
-        private UsuarioCAD usuarioCad;  //Instancia de UsuarioCAD para gestionar la información de usuarios en la base de datos
+        private UsuarioCAD usuarioCad = new UsuarioCAD();  //Instancia de UsuarioCAD para gestionar la información de usuarios en la base de datos
+        DataSet bd = new DataSet();
 
         private int id;                 //Se usará como clave primaria en la base de datos
         private string usuario;         //El nombre del usuario en la página web
@@ -86,11 +92,10 @@ namespace FilmBiblio
         }
 
         //Devuelve la información de todas los usuarios
-        public ArrayList DameUsuarios()
+        public DataSet DameUsuarios()
         {
-            ArrayList usuarios = new ArrayList();
-            usuarios = usuarioCad.DameUsuarios();
-            return usuarios;
+            bd = usuarioCad.DameUsuarios();
+            return bd;
         }
 
         //Devuelve la información del usuario que tiene como clave primaria el id pasado por parámetro
@@ -102,11 +107,10 @@ namespace FilmBiblio
         }
 
         //Devuelve un array con los amigos del usuario
-        public ArrayList DameAmigos()
+        public DataSet DameAmigos()
         {
-            ArrayList amigos = new ArrayList();
-            amigos = usuarioCad.DameAmigos(this.id);
-            return amigos;
+            bd = usuarioCad.DameAmigos(this.id);
+            return bd;
         }
 
         /////////////////

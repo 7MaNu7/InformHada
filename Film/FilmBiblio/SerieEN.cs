@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+using System.Configuration;
 
 namespace FilmBiblio
 {
@@ -12,7 +17,8 @@ namespace FilmBiblio
         // Datos //
         ///////////
 
-        private SerieCAD serieCad;      //Instancia de SerieCAD para gestionar la información de usuarios en la base de datos
+        private SerieCAD serieCad = new SerieCAD();      //Instancia de SerieCAD para gestionar la información de usuarios en la base de datos
+        private DataSet bd = new DataSet();
 
         private int id;                 //Se utilizará como clave primaria en la base de datos
         private string titulo;          //El título de la serie
@@ -91,11 +97,10 @@ namespace FilmBiblio
         }
 
         //Devuelve la información de todas las series
-        public ArrayList DameSeries()
+        public DataSet DameSeries()
         {
-            ArrayList series = new ArrayList();
-            series = serieCad.DameSeries();
-            return series;
+            bd = serieCad.DameSeries();
+            return bd;
         }
 
         //Devuelve la información de la serie que tiene como clave primaria el id pasado por parámetro
@@ -107,11 +112,10 @@ namespace FilmBiblio
         }
 
         //Devuelve la información de todas las series similares a una con el id pasado por parámetro
-        public ArrayList DameSeriesSimilares()
+        public DataSet DameSeriesSimilares()
         {
-            ArrayList series = new ArrayList();
-            series = serieCad.DameSeriesSimilares(this.id);
-            return series;
+            bd = serieCad.DameSeriesSimilares(this);
+            return bd;
         }
 
         /////////////////

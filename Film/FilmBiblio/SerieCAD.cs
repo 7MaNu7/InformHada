@@ -43,10 +43,7 @@ namespace FilmBiblio
                 insert_artista.ExecuteNonQuery();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
         }
 
         //Cuando un usuario elimina un artista del reparto, se elimina en la BD donde se refleja el reparto de esa serie
@@ -63,10 +60,7 @@ namespace FilmBiblio
                 delete_artista.ExecuteNonQuery();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
         }
 
         //Realiza una operación select en la BD para añadir una nueva serie cuyos datos se pasan por parámetro en el objeto SerieEN
@@ -104,10 +98,7 @@ namespace FilmBiblio
                 }
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
         }
 
         //Modifica una serie en la BD cuyos datos se pasan por parámetro en el objeto SerieEN
@@ -135,10 +126,7 @@ namespace FilmBiblio
                 update_pelicula.ExecuteNonQuery();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
         }
 
         //Borra una serie en la BD que tiene la clave primaria que se pasa por parámetro
@@ -158,36 +146,25 @@ namespace FilmBiblio
                 delete_reparto.ExecuteNonQuery();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
         }
 
         //Devuelve la información de todas las series
-        public ArrayList DameSeries()
+        public DataSet DameSeries()
         {
-            ArrayList series = new ArrayList();
-            SqlConnection c = null;
+            SqlConnection c = new SqlConnection(conexion);
+            DataSet bdvirtual = new DataSet();
 
             try
             {
-                c = new SqlConnection(conexion);
-                c.Open();
-                SqlCommand select_series = new SqlCommand("Select id from film, serie where film.id=serie.id", c);
-                SqlDataReader read = select_series.ExecuteReader();
-
-                //Tenemos varios id de series, vamos agregando una por una las películas con DameSerie pasándole cada id
-                while (read.Read())
-                    series.Add(DameSerie((int)read["id"]));
+                String select_series = "Select * from film, serie where film.id=serie.id";
+                SqlDataAdapter ejecuta = new SqlDataAdapter(select_series, c);
+                ejecuta.Fill(bdvirtual, "series");
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
 
-            return series;
+            return bdvirtual; 
         }
 
         //Devuelve la información de la serie que tiene como clave primaria el id pasado por parámetro
@@ -217,41 +194,27 @@ namespace FilmBiblio
                     (float)read["puntuacion"], (string)read["portada"], (string)read["caratula"], (string)read["trailer"]);
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
 
             return serie;
         }
 
         //Devuelve la información de todas las películas similares a una en concreto
-        public ArrayList DameSeriesSimilares(int id)
+        public DataSet DameSeriesSimilares(SerieEN serie)
         {
-            ArrayList series = new ArrayList();
-            SqlConnection c = null;
+            SqlConnection c = new SqlConnection(conexion);
+            DataSet bdvirtual = new DataSet();
 
             try
             {
-                c = new SqlConnection(conexion);
-                c.Open();
-                SqlCommand select_genero = new SqlCommand("Select genero from film where id=" + id, c);
-                SqlDataReader read_genero = select_genero.ExecuteReader();
-                string genero = (string)read_genero["genero"];
-                SqlCommand select_series = new SqlCommand("Select id from film where genero=" + genero, c);
-                SqlDataReader read = select_series.ExecuteReader();
-
-                //Tenemos varios id de películas, vamos agregando una por una las películas con DamePelicula pasándole cada id
-                while (read.Read())
-                    series.Add(DameSerie((int)read["id"]));
+                String select_similares = "Select * from film where genero=" + "'" + serie.Genero + "'";
+                SqlDataAdapter ejecuta = new SqlDataAdapter(select_similares, c);
+                ejecuta.Fill(bdvirtual, "peliculas");
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
 
-            return series;
+            return bdvirtual; 
         }
     }
 }

@@ -43,10 +43,7 @@ namespace FilmBiblio
                 insert_capitulo.ExecuteNonQuery();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
         }
 
         //Modifica un capítulo en la BD cuyos datos se pasan por parámetro en el objeto CapituloEN
@@ -69,10 +66,7 @@ namespace FilmBiblio
                 update_capitulo.ExecuteNonQuery();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
         }
 
         //Borra un capítulo en la BD que tiene la clave primaria que se pasa por parámetro
@@ -89,36 +83,25 @@ namespace FilmBiblio
                 delete_capitulo.ExecuteNonQuery();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
         }
         
         //Devuelve la información de todos los capítulos
-        public ArrayList DameCapitulos()
+        public DataSet DameCapitulos()
         {
-            ArrayList capitulos = new ArrayList(); //Para que no de error
+            SqlConnection c = new SqlConnection(conexion);
+            DataSet bdvirtual = new DataSet();
 
-            SqlConnection c = null;
             try
             {
-                c = new SqlConnection(conexion);
-                c.Open();
-                SqlCommand select_capitulos = new SqlCommand("Select id from capitulo", c);
-                SqlDataReader leer_capitulos = select_capitulos.ExecuteReader();
-
-                //Tenemos varios id de capitulos, vamos agregando uno por uno los capítulos con DameCapitulo pasándole cada id
-                while (leer_capitulos.Read())
-                    capitulos.Add(DameCapitulo((int)leer_capitulos["id"]));
+                String select_capitulos = "Select * from film, serie where film.id=serie.id";
+                SqlDataAdapter ejecuta = new SqlDataAdapter(select_capitulos, c);
+                ejecuta.Fill(bdvirtual, "series");
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
 
-            return capitulos;
+            return bdvirtual;
         }
 
         //Devuelve la información del capítulo que tiene como clave primaria el id pasado por parámetro
@@ -154,11 +137,7 @@ namespace FilmBiblio
                     (int)read["nCapitulo"], (string)read["sinopsis"], serie_aux);
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
-            c.Close();
+            finally { c.Close(); }
 
             return capitulo;
         }
