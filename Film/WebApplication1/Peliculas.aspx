@@ -11,7 +11,8 @@
    
     <div class="peliculas_contenido" style="padding: 25px 25px 1.5px 25px;">
         <asp:GridView ID="GridView1" runat="server">
-
+        
+         
 
         </asp:GridView>
 

@@ -17,7 +17,7 @@ namespace FilmBiblio
         // Datos //
         ///////////
 
-        private string conexion = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ToString();
+        private string conexion = ConfigurationManager.ConnectionStrings["ApplicationServices"].ToString();
         
         ///////////////
         // Funciones //
