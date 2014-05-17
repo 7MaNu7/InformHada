@@ -46,8 +46,8 @@
     <div id="menuizq" class="menuizq">
         <h2> <a id="A1" runat="server" href="~/Peliculas.aspx"> Ver perliculas </a> </h2>  
         <h2> <a id="A2" runat="server" href="~/Series.aspx"> Ver series </a> </h2>  
-        <h2> <a id="A3" runat="server" href="~/AddEditPelicula.aspx"> Añadir pelicula </a> </h2>
-        <h2> <a id="A4" runat="server" href="~/AddEditSerie.aspx"> Añadir serie </a> </h2>
+        <h2> <asp:HyperLink ID="HyperLinkAnadirPelicula" runat="server" EnableViewState="false" PostBackUrl="String"> Añadir pelicula </asp:HyperLink> </h2>
+        <h2>  <asp:HyperLink ID="HyperLinkAnadirSerie" runat="server" EnableViewState="false" PostBackUrl="String"> Añadir serie </asp:HyperLink>  </h2>
         <h2> <asp:HyperLink ID="HyperLinkRegistro" runat="server" EnableViewState="false" PostBackUrl="String"> Entrar / registrarse </asp:HyperLink> </h2>
         <h2> <asp:HyperLink ID="HyperLinkUsuario" runat="server" EnableViewState="false" PostBackUrl="String"> Ver mi usuario </asp:HyperLink> </h2>
         <h2> <a id="A8" runat="server" href="~/About.aspx"> Quienes somos </a> </h2>

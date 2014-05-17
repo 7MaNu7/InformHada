@@ -31,13 +31,22 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox TextBoxDirector;
         
         /// <summary>
-        /// Control TextBoxSoundtrack.
+        /// Control TextBoxGenero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxSoundtrack;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxGenero;
+        
+        /// <summary>
+        /// Control TextBoxBandaSonora.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxBandaSonora;
         
         /// <summary>
         /// Control TextBoxAno.
@@ -49,40 +58,40 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox TextBoxAno;
         
         /// <summary>
-        /// Control ButtonEdit.
+        /// Control BotonAddEdit.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink ButtonEdit;
+        protected global::System.Web.UI.WebControls.Button BotonAddEdit;
         
         /// <summary>
-        /// Control TextBox4.
+        /// Control TextBoxSinopsis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxSinopsis;
         
         /// <summary>
-        /// Control TextBox5.
+        /// Control TextBoxReparto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxReparto;
         
         /// <summary>
-        /// Control TextBox6.
+        /// Control TextBoxTrailer.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxTrailer;
         
         /// <summary>
         /// Control TextBox1.

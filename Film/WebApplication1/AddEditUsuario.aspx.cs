@@ -64,21 +64,6 @@ namespace WebApplication1
             }
         }
 
-         /*protected void Button_anadir(object sender, EventArgs e)
-         {
-             PeliculaEN pelicula = new PeliculaEN();
-             pelicula.Titulo = TextBoxTitulo.Text;
-             pelicula.Director = TextBoxDirector.Text;
-             pelicula.Ano = TextBoxAno.Text;
-             pelicula.Sinopsis = TextBoxAnoSinopsis.text;
-             pelicula.Genero = TextBoxGenero.text;
-             //pelicula.Reparto = TextBoxAno.Reparto;
-             pelicula.BandaSonora = TextBoxBandaSonora.text;
-             pelicula.Portada = TextBoxPortada.text;
-             pelicula.Caratula = TextBoxCaratula.text;
-             pelicula.Trailer = TextBoxTrailer.text;
-             pelicula.InsertarCliente();
-         }*/
 
     }
 }

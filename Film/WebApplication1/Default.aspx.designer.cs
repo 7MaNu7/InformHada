@@ -40,22 +40,22 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor A2;
         
         /// <summary>
-        /// Control A3.
+        /// Control HyperLinkAnadirPelicula.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A3;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLinkAnadirPelicula;
         
         /// <summary>
-        /// Control A4.
+        /// Control HyperLinkAnadirSerie.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A4;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLinkAnadirSerie;
         
         /// <summary>
         /// Control HyperLinkRegistro.

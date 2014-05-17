@@ -26,7 +26,7 @@ namespace FilmBiblio
         //Devuelve el máximo id de la base de datos
         public int MaximoId()
         {
-            string orden = "select * from usuario where id=(select max(id) from usuario)";
+            string orden = "select * from capitulo where id=(select max(id) from capitulo)";
             int id = 0;
 
             SqlConnection c = null;

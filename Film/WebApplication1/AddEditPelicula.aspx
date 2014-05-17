@@ -16,7 +16,8 @@
              <div class="info_cabecera">
                 <h2> <asp:TextBox ID="TextBoxTitulo" runat="server" Font-Italic Font-Size="1.5em"  style="width:223px">Título</asp:TextBox> </h2>
                 <p> <asp:TextBox ID="TextBoxDirector" runat="server"> Director </asp:TextBox> </p>
-                <p> <asp:TextBox ID="TextBoxSoundtrack" runat="server">Soundtrack</asp:TextBox> </p>
+                <p> <asp:TextBox ID="TextBoxGenero" runat="server"> Genero </asp:TextBox> </p>
+                <p> <asp:TextBox ID="TextBoxBandaSonora" runat="server">Banda sonora</asp:TextBox> </p>
                 <p> <asp:TextBox ID="TextBoxAno" runat="server">Año</asp:TextBox> </p>
                
              </div>
@@ -24,7 +25,7 @@
 
         <div class="pelicula_contenido">
             <div class="pelicula_contenido_i">
-                <asp:Button ID="BotonAddEdit" CssClass="anadir" runat="server" Text="Guardar cambios" OnClick=BotonAddEditOnClick />
+                <asp:Button ID="BotonAddEdit" CssClass="anadir" runat="server" Text="Guardar cambios" OnClick="BotonAddEditOnClick" />
             </div>
             <div class="pelicula_contenido_d">
                <h2>Sinopsis</h2>

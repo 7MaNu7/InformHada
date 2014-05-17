@@ -26,7 +26,7 @@ namespace FilmBiblio
         //Devuelve el máximo id de la base de datos
         public int MaximoId()
         {
-            string orden = "select * from usuario where id=(select max(id) from usuario)";
+            string orden = "select * from film where id=(select max(id) from film)";
             int id = 0;
 
             SqlConnection c = null;
@@ -75,13 +75,17 @@ namespace FilmBiblio
             orden += "'" + serie.Caratula + "', ";
             orden += "'" + serie.Trailer + "')";
 
+            String orden2 = "insert into pelicula values " + "( " + id + ", ";
+
             SqlConnection c = null;
             try
             {
                 c = new SqlConnection(conexion);
                 c.Open();
-                SqlCommand insert_pelicula = new SqlCommand(orden, c);
-                insert_pelicula.ExecuteNonQuery();
+                SqlCommand insert_serie = new SqlCommand(orden, c);
+                insert_serie.ExecuteNonQuery();
+                insert_serie = new SqlCommand(orden2, c);
+                insert_serie.ExecuteNonQuery();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { c.Close(); }
@@ -119,7 +123,7 @@ namespace FilmBiblio
         public void BorrarSerie(int id)
         {
             String orden = "delete from film where id= " + id;
-            String orden2 = "delete from reparto where id_film= " + id;
+            String orden2 = "delete from serie where id= " + id;
 
             SqlConnection c = null;
             try

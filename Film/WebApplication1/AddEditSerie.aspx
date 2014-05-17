@@ -16,7 +16,8 @@
              <div class="info_cabecera">
                 <h2> <asp:TextBox ID="TextBoxTitulo" runat="server" Font-Italic Font-Size="1.5em"  style="width:223px">Título</asp:TextBox> </h2>
                 <p> <asp:TextBox ID="TextBoxDirector" runat="server"> Director </asp:TextBox> </p>
-                <p> <asp:TextBox ID="TextBoxSoundtrack" runat="server">Soundtrack</asp:TextBox> </p>
+                <p> <asp:TextBox ID="TextBoxGenero" runat="server"> Genero </asp:TextBox> </p>
+                <p> <asp:TextBox ID="TextBoxBandaSonora" runat="server"> Banda sonora </asp:TextBox> </p>
                 <p> <asp:TextBox ID="TextBoxAno" runat="server">Año</asp:TextBox> </p>
                
              </div>
@@ -24,17 +25,17 @@
 
         <div class="contenido_serie">
             <div class="contenido_serie_i">
-               <asp:HyperLink ID="ButtonEdit" CssClass="anadir" runat="server" EnableViewState="false" Text="Guardar cambios" />
+                <asp:Button ID="BotonAddEdit" CssClass="anadir" runat="server" Text="Guardar cambios" OnClick="BotonAddEditOnClick"/>
             </div>
             <div class="contenido_serie_d">
                <h2>Sinopsis</h2>
-               <p> <asp:TextBox ID="TextBox4" runat="server"  style="height:131px; width:945px;">Escriba la sinopsis de la serie aquí</asp:TextBox> </p>
+               <p> <asp:TextBox ID="TextBoxSinopsis" runat="server"  style="height:131px; width:945px;">Escriba la sinopsis de la serie aquí</asp:TextBox> </p>
 
                <h2>Reparto</h2>
-               <p> <asp:TextBox ID="TextBox5" runat="server" style="height:50px; width:945px;">Escriba el reparto de actores que participan en la serie</asp:TextBox> </p>
+               <p> <asp:TextBox ID="TextBoxReparto" runat="server" style="height:50px; width:945px;">Escriba el reparto de actores que participan en la serie</asp:TextBox> </p>
             
                 <h2>Trailer</h2>
-                <p> <asp:TextBox ID="TextBox6" runat="server" style="width:945px;">Indique el enlace o archivo del trailer de la serie</asp:TextBox> </p>
+                <p> <asp:TextBox ID="TextBoxTrailer" runat="server" style="width:945px;">Indique el enlace o archivo del trailer de la serie</asp:TextBox> </p>
                 
                 <p> <asp:TextBox ID="TextBox1" runat="server" style="width:945px;">Indique el enlace o archivo de la foto de la carátula de la serie</asp:TextBox> </p>
                 <p> <asp:TextBox ID="TextBox2" runat="server" style="width:945px;">Indique el enlace o archivo de la foto de la portada de la serie</asp:TextBox> </p>
