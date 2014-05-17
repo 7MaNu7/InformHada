@@ -59,6 +59,11 @@ namespace FilmBiblio
             fotoPortada = imagen2;
         }
 
+        public bool sonAmigos(int id2)
+        {
+            return usuarioCad.SonAmigos(this.id, id2);
+        }
+
         public int MaximoId()
         {
             int id = 0;
@@ -69,14 +74,14 @@ namespace FilmBiblio
         //Se añade en la BD (en una tabla con la relación amigos), el id del usuario y el de su amigo
         public void AnyadirAmigo(UsuarioEN amigo_bueno)
         {
-            amigos.Add(amigo_bueno);
+            //amigos.Add(amigo_bueno);
             usuarioCad.AnyadirAmigo(this.id, amigo_bueno.id);
         }
 
         //Se elimina en la BD (en una tabla con la relación amigos), el id del usuario y el de su amigo
         public void EliminarAmigo(UsuarioEN amigo_malo)
         {
-            amigos.Remove(amigo_malo);
+            //amigos.Remove(amigo_malo);
             usuarioCad.EliminarAmigo(this.id, amigo_malo.id);
         }
 
@@ -110,6 +115,14 @@ namespace FilmBiblio
         {
             UsuarioEN usuario = new UsuarioEN();
             usuario = usuarioCad.DameUsuario(this.id);
+            return usuario;
+        }
+
+        //Devuelve la información del usuario que tiene como clave primaria el id pasado por parámetro
+        public UsuarioEN DameUsuarioPorEmail(string email)
+        {
+            UsuarioEN usuario = new UsuarioEN();
+            usuario = usuarioCad.DameUsuarioPorEmail(email);
             return usuario;
         }
 

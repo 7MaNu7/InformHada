@@ -23,6 +23,33 @@ namespace FilmBiblio
         // Funciones //
         ///////////////
 
+        public bool SonAmigos(int id1, int id2)
+        {
+            bool amigos = false;
+            string orden = "select id1 from amigos where id1=" + id1 + " and id2=" + id2;
+            SqlConnection c = null;
+            SqlDataReader read = null;
+
+            try
+            {
+                c = new SqlConnection(conexion);
+                c.Open();
+
+                SqlCommand select_amigos = new SqlCommand(orden, c);
+                read = select_amigos.ExecuteReader();
+                while (read.HasRows)
+                {
+                    amigos = true;
+                    break;
+                }
+                
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { read.Close(); c.Close(); }
+
+            return amigos;
+        }
+
         //Devuelve el máximo id de la base de datos
         public int MaximoId()
         {
@@ -52,7 +79,7 @@ namespace FilmBiblio
         //Cuando un usuario agrega a un amigo, su id y el id de su amigo pasan a la tabla Amigos indicando dicha relación
         public void AnyadirAmigo(int mi_id, int id_amigo)
         {
-            String orden = "insert into amigos values " + mi_id + ", " + id_amigo;
+            String orden = "insert into amigos values (" + mi_id + ", " + id_amigo+ ")";
 
             SqlConnection c = null;
             try
@@ -199,7 +226,7 @@ namespace FilmBiblio
         public UsuarioEN DameUsuario(int id)
         {
             SqlConnection c = null;
-            UsuarioEN usuario = null;
+            UsuarioEN usuario = new UsuarioEN();
 
             try
             {
@@ -208,32 +235,58 @@ namespace FilmBiblio
                 SqlCommand select_usuario = new SqlCommand("Select * from usuario where id=" + id, c);
                 SqlDataReader read = select_usuario.ExecuteReader();
 
-                //Para obtener los datos de los amigos del usuario
-                SqlCommand select_amigos = new SqlCommand("Select id2 from amigos where id1=" + id, c);
-                SqlDataReader read2 = select_amigos.ExecuteReader();
-                //Tenemos varios usuarios amigos, array auxiliar donde se introducirán los amigos del usuario uno a uno con sus datos
                 ArrayList amigos_aux = new ArrayList();
-                while (read2.Read())
-                {
-                    ArrayList amigos_de_amigos = null;
-                    SqlCommand select_amigo = new SqlCommand("Select * from usuario where id=" + (int)read2["id2"], c);
-                    SqlDataReader read3 = select_amigo.ExecuteReader();
-                    read3.Read();
-                    UsuarioEN usuario_aux = new UsuarioEN((int)read3["id"], (string)read3["usuario"], (string)read3["psswd"],
-                        (string)read3["pais"], (string)read3["provincia"], (string)read3["FechaNacimiento"], (string)read3["Sexo"],
-                        (string)read3["Email"], amigos_de_amigos, (string)read3["informacion"], (string)read3["fotoPerfil"],
-                        (string)read3["fotoPortada"]);
-                    amigos_aux.Add(read2["id2"]);
-                }
-
                 read.Read();
-                //Finalmente creamos el usuario con sus datos y el array de amigos rellenado
-                usuario = new UsuarioEN((int)read["id"], (string)read["usuario"], (string)read["psswd"], (string)read["pais"],
-                    (string)read["provincia"], (string)read["fechaNacimiento"], (string)read["sexo"], (string)read["email"],
-                    amigos_aux, (string)read["informacion"], (string)read["fotoPerfil"], (string)read["fotoPortada"]); ;
+                //Finalmente creamos el usuario con sus datos
+                usuario.Id = Convert.ToInt32(read["id"].ToString());
+                usuario.Usuario = read["usuario"].ToString();
+                usuario.Psswd = read["psswd"].ToString();
+                usuario.Pais = read["pais"].ToString();
+                usuario.Provincia = read["Provincia"].ToString();
+                usuario.FechaNacimiento = read["fechaNacimiento"].ToString();
+                usuario.Sexo = read["sexo"].ToString();
+                usuario.Email = read["email"].ToString();
+                usuario.FechaNacimiento = read["fechaNacimiento"].ToString();
+                usuario.Informacion = read["informacion"].ToString();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally
+            {
+                c.Close();
+            }
+
+            return usuario;
+        }
+
+        //Devuelve la información del usuario que tiene como clave primaria el id pasado por parámetro
+        public UsuarioEN DameUsuarioPorEmail(string email)
+        {
+            SqlConnection c = null;
+            UsuarioEN usuario = new UsuarioEN();
+
+            try
+            {
+                c = new SqlConnection(conexion);
+                c.Open();
+                SqlCommand select_usuario = new SqlCommand("Select * from usuario where email='"+email+"'", c);
+                SqlDataReader read = select_usuario.ExecuteReader();
+
+                ArrayList amigos_aux = new ArrayList();
+                read.Read();
+
+                usuario.Id = Convert.ToInt32(read["id"].ToString());
+                usuario.Usuario = read["usuario"].ToString();
+                usuario.Psswd = read["psswd"].ToString();
+                usuario.Pais = read["pais"].ToString();
+                usuario.Provincia = read["Provincia"].ToString();
+                usuario.FechaNacimiento = read["fechaNacimiento"].ToString();
+                usuario.Sexo = read["sexo"].ToString();
+                usuario.Email = read["email"].ToString();
+                usuario.FechaNacimiento = read["fechaNacimiento"].ToString();
+                usuario.Informacion = read["informacion"].ToString();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally 
             {
                 c.Close();
             }

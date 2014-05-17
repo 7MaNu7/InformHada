@@ -22,6 +22,9 @@ namespace WebApplication1
 
             HyperLinkAddPelicula.NavigateUrl = "AddEditPelicula.aspx?par1=anadirPelicula";
 
+            if (Session["usuario"] == null)
+                HyperLinkAddPelicula.Visible = false;
+
             if (!Page.IsPostBack)
             {
                 d = pelicula.DamePeliculas();
