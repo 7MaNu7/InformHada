@@ -36,6 +36,16 @@ namespace WebApplication1
             if (param1 == "editarUsuario")
             {
                 //Guardar datos y update
+                usuario.Usuario = TextBoxUsuario.Text;
+                usuario.Psswd = TextBoxPsswd.Text;
+                usuario.Pais = TextBoxPais.Text;
+                usuario.Provincia = TextBoxProvincia.Text;
+                usuario.FechaNacimiento = TextBoxFechaNacimiento.Text;
+                usuario.Sexo = Sexo.Text;
+                usuario.Email = TextBoxEmail.Text;
+                usuario.Informacion = TextBoxInformacion.Text;
+
+                usuario.UpdateUsuario();
                 
             }
             else if (param1 == "registrarUsuario")

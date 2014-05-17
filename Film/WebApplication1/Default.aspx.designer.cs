@@ -58,22 +58,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor A4;
         
         /// <summary>
-        /// Control A5.
+        /// Control HyperLinkRegistro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A5;
-        
-        /// <summary>
-        /// Control A6.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A6;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLinkRegistro;
         
         /// <summary>
         /// Control HyperLinkUsuario.
@@ -83,15 +74,6 @@ namespace WebApplication1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink HyperLinkUsuario;
-        
-        /// <summary>
-        /// Control HyperLinkRegistro.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLinkRegistro;
         
         /// <summary>
         /// Control A8.

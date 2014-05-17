@@ -40,7 +40,7 @@ namespace FilmBiblio
                 SqlCommand max_id = new SqlCommand(orden, c);
                 read_id = max_id.ExecuteReader();
                 //max_id.ExecuteNonQuery();
-                while(read_id.Read())
+                read_id.Read();
                     id=(int)read_id["id"];
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
@@ -221,6 +221,7 @@ namespace FilmBiblio
                     ArrayList amigos_de_amigos = null;
                     SqlCommand select_amigo = new SqlCommand("Select * from usuario where id=" + (int)read2["id2"], c);
                     SqlDataReader read3 = select_amigo.ExecuteReader();
+                    read3.Read();
                     UsuarioEN usuario_aux = new UsuarioEN((int)read3["id"], (string)read3["usuario"], (string)read3["psswd"],
                         (string)read3["pais"], (string)read3["provincia"], (string)read3["FechaNacimiento"], (string)read3["Sexo"],
                         (string)read3["Email"], amigos_de_amigos, (string)read3["informacion"], (string)read3["fotoPerfil"],
@@ -228,6 +229,7 @@ namespace FilmBiblio
                     amigos_aux.Add(read2["id2"]);
                 }
 
+                read.Read();
                 //Finalmente creamos el usuario con sus datos y el array de amigos rellenado
                 usuario = new UsuarioEN((int)read["id"], (string)read["usuario"], (string)read["psswd"], (string)read["pais"],
                     (string)read["provincia"], (string)read["fechaNacimiento"], (string)read["sexo"], (string)read["email"],

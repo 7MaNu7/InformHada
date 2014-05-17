@@ -12,7 +12,7 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             HyperLinkUsuario.NavigateUrl = "Usuario.aspx?par1=verUsuario";
-            HyperLinkRegistro.NavigateUrl = "AddEditUsuario.aspx?par1=registrarUsuario";
+            HyperLinkRegistro.NavigateUrl = "Login.aspx";
         
         }
     }

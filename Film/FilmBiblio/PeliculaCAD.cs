@@ -40,8 +40,8 @@ namespace FilmBiblio
                 SqlCommand max_id = new SqlCommand(orden, c);
                 read_id = max_id.ExecuteReader();
                 //max_id.ExecuteNonQuery();
-                while (read_id.Read())
-                    id = (int)read_id["id"];
+                read_id.Read();
+                id = (int)read_id["id"];
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { read_id.Close(); c.Close(); }

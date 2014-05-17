@@ -221,6 +221,7 @@ namespace FilmBiblio
                 while (leer_artistas.Read())
                     reparto_aux.Add(leer_artistas["artista"]);
 
+                read.Read();
                 serie = new SerieEN((int)read["id"], (string)read["titulo"], (string)read["director"], (int)read["ano"],
                     (string)read["sinopsis"], (string)read["genero"], reparto_aux, (string)read["bandaSonora"],
                     (float)read["puntuacion"], (string)read["portada"], (string)read["caratula"], (string)read["trailer"]);

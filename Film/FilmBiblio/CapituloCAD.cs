@@ -161,10 +161,12 @@ namespace FilmBiblio
                 while (leer_reparto.Read())
                     reparto_aux.Add(leer_reparto["artista"]);
 
+                leer_s.Read();
                 SerieEN serie_aux = new SerieEN((int)leer_s["id"], (string)leer_s["titulo"], (string)leer_s["director"], (int)leer_s["ano"],
                     (string)leer_s["sinopsis"], (string)leer_s["genero"], reparto_aux, (string)leer_s["bandaSonora"], (float)leer_s["puntuacion"],
                     (string)leer_s["portada"], (string)leer_s["caratula"], (string)leer_s["trailer"]);
 
+                read.Read();
                 capitulo = new CapituloEN((int)read["id"], (string)read["titulo"], (int)read["temporada"],
                     (int)read["nCapitulo"], (string)read["sinopsis"], serie_aux);
             }
