@@ -30,10 +30,9 @@
             </div>
             </a>
         
-        </ItemTemplate>
-         
-            
+            </ItemTemplate>  
         </asp:ListView>
+
         </div>
         <div class="datapager">
         <asp:DataPager ID="DataPagerProducts" runat="server" PagedControlID="ListViewPeliculas"

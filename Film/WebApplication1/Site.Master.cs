@@ -15,7 +15,9 @@ namespace WebApplication1
         {
             usuarioLogeado = (FilmBiblio.UsuarioEN)Session["usuario"];
             if (usuarioLogeado == null)
+            {
                 BotonIniciarSesion.Text = "Iniciar Sesión";
+            }
             else
                 BotonIniciarSesion.Text = "Cerrar sesión";
         }

@@ -79,7 +79,7 @@ namespace FilmBiblio
         //Cuando un usuario agrega a un amigo, su id y el id de su amigo pasan a la tabla Amigos indicando dicha relación
         public void AnyadirAmigo(int mi_id, int id_amigo)
         {
-            String orden = "insert into amigos values " + mi_id + ", " + id_amigo;
+            String orden = "insert into amigos values (" + mi_id + ", " + id_amigo+ ")";
 
             SqlConnection c = null;
             try

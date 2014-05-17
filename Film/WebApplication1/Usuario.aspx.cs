@@ -42,7 +42,7 @@ namespace WebApplication1
                     BotonAmigo.Text = "Añadir amigo";
                 }
             }
-            if (Session["usuario"] != null)
+            else if (Session["usuario"] != null && id == 0)
             {
                 usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
                 LiteralNombre1.Text = usuario.Usuario;
@@ -54,6 +54,10 @@ namespace WebApplication1
                 LiteralEmail1.Text = usuario.Email;
                 LiteralEmail.Text = usuario.Email;
                 LiteralInformacion.Text = usuario.Informacion;
+            }
+            else
+            {
+                Response.Redirect("Default.aspx");
             }
 
             HyperLinkAddPelicula.NavigateUrl="AddEditPelicula.aspx?par1=anadirPelicula";
@@ -72,19 +76,24 @@ namespace WebApplication1
 
         protected void BotonAmigoOnClick(object sender, EventArgs e)
         {
-            if (Session["usuario"] != null)
+            int id = Convert.ToInt32(Request.QueryString["id"]);
+                
+            if (Session["usuario"] != null && id!=0)
             {
-                usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
+               usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
 
-                int id = Convert.ToInt32(Request.QueryString["id"]);
+                amigo.Id = id;
+                amigo = amigo.DameUsuario();
 
                 if (usuario.sonAmigos(id))
                 {
                     usuario.EliminarAmigo(amigo);
+                    Response.Redirect("Usuario.aspx?id=" + id);
                 }
                 else
                 {
                     usuario.AnyadirAmigo(amigo);
+                    Response.Redirect("Usuario.aspx?id=" + id);
                 }
             }
 

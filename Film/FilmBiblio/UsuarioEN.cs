@@ -74,14 +74,14 @@ namespace FilmBiblio
         //Se añade en la BD (en una tabla con la relación amigos), el id del usuario y el de su amigo
         public void AnyadirAmigo(UsuarioEN amigo_bueno)
         {
-            amigos.Add(amigo_bueno);
+            //amigos.Add(amigo_bueno);
             usuarioCad.AnyadirAmigo(this.id, amigo_bueno.id);
         }
 
         //Se elimina en la BD (en una tabla con la relación amigos), el id del usuario y el de su amigo
         public void EliminarAmigo(UsuarioEN amigo_malo)
         {
-            amigos.Remove(amigo_malo);
+            //amigos.Remove(amigo_malo);
             usuarioCad.EliminarAmigo(this.id, amigo_malo.id);
         }
 
