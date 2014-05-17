@@ -46,7 +46,7 @@ namespace WebApplication1
                 usuario.Pais = TextBoxPais.Text;
                 usuario.Provincia = TextBoxProvincia.Text;
                 usuario.FechaNacimiento = TextBoxFechaNacimiento.Text;
-                usuario.Sexo = "";// Sexo.SelectedItem.ToString();
+                usuario.Sexo = Sexo.Text;
                 usuario.Email = TextBoxEmail.Text;
                 usuario.Informacion = TextBoxInformacion.Text;
 

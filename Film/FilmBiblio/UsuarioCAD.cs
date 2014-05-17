@@ -25,7 +25,7 @@ namespace FilmBiblio
 
         public int MaximoId()
         {
-            String orden = "select max(id) from usuario where (select count(*) from usuario) <> 0;";
+            String orden = "select * from usuario where id=(select max(id) from usuario)";
             int id = 0;
 
             SqlConnection c = null;
@@ -37,7 +37,7 @@ namespace FilmBiblio
                 SqlCommand max_id = new SqlCommand(orden, c);
                 max_id.ExecuteNonQuery();
                 SqlDataReader read_id = max_id.ExecuteReader();
-                id=(int)read_id[0];
+                id=(int)read_id["id"];
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { c.Close(); }
@@ -92,7 +92,7 @@ namespace FilmBiblio
         public void InsertarUsuario(UsuarioEN usuario)
         {
             int id = MaximoId();
-            id = 6;
+            id++;
 
             String orden = "insert into usuario values ";
             orden += "( " + id + ", ";
