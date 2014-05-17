@@ -33,6 +33,9 @@ namespace WebApplication1
                 LiteralEmail.Text = amigo.Email;
                 LiteralInformacion.Text = amigo.Informacion;
 
+                
+
+
                 if (usuario.sonAmigos(id))
                 {
                     BotonAmigo.Text = "Eliminar amigo";
@@ -71,6 +74,11 @@ namespace WebApplication1
             else
             {
                 BotonEditar.Visible = false;
+            }
+
+            if (id == usuario.Id || id == 0)
+            {
+                BotonAmigo.Visible = false;
             }
         }
 

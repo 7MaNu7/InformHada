@@ -23,31 +23,16 @@ namespace WebApplication1
             }
             else
             {
-                BotonRegistro.Visible = false;
+                HyperRegistro.Visible = false;
             }
-
-            HyperLinkPeliculas.NavigateUrl = "Peliculas.aspx?";
+            HyperRegistro.NavigateUrl = "Login.aspx";
+            HyperLinkPeliculas.NavigateUrl = "Peliculas.aspx";
             HyperLinkSeries.NavigateUrl = "Series.aspx";
             HyperLinkUsuario.NavigateUrl = "Usuario.aspx?par1=verUsuario";
-            HyperLinkAnadirPelicula.NavigateUrl = "AddEditPelicula.aspx?par1=anadirPelicula";
-            HyperLinkAnadirSerie.NavigateUrl = "AddEditSerie.aspx?par1=anadirSerie";
+            HyperLinkAnadirPelicula.NavigateUrl = "AddEditPelicula.aspx";
+            HyperLinkAnadirSerie.NavigateUrl = "AddEditSerie.aspx";
             HyperLinkAbout.NavigateUrl = "About.aspx";
             HyperLinkReport.NavigateUrl = "Report.aspx";       
-        }
-
-        protected void BotonLoginOnClick(object sender, EventArgs e)
-        {
-            if (usuarioLogeado == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
-            else 
-            {
-                Session["usuario"] = null;
-                Response.Redirect("Default.aspx");
-            }
-        
-        
         }
     }
 }

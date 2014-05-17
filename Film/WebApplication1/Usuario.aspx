@@ -14,15 +14,8 @@
             </div>
              <img class="fotoperfilusuario" src="http://vang.blob.core.windows.net/images/2013/03/26/dempseey.jpg" alt="fotou_perfil"/>
              <div class="infocabecera">
-                <h2> <p> <asp:Literal ID="LiteralNombre1" runat="server"> </asp:Literal>  </p>  
-                <span
-                    style="
-                background: rgba(54, 50, 100, 0.44);
-                font-size: 15px;
-                vertical-align: middle;
-                cursor: pointer;
-                padding: 4px 12px 4px 12px;
-                border-radius: 4px;"> <asp:Button ID="BotonAmigo" runat="server" OnClick="BotonAmigoOnClick" /> </span>
+                <h2> <asp:Literal ID="LiteralNombre1" runat="server"> </asp:Literal>    
+               <asp:Button ID="BotonAmigo" CssClass="botonamigo" runat="server" OnClick="BotonAmigoOnClick" /> 
                 </h2>
                 <p> <asp:Literal ID="LiteralEmail1" runat="server"> </asp:Literal>  </p>
              </div>

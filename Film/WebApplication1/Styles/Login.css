@@ -1,0 +1,63 @@
+﻿body {
+    background: url('http://www.pordede.com/content/homecover.png');
+}
+
+.page {
+width: 100%;
+background-color: rgba(0, 0, 0, 0.73);
+margin: 0px auto 0px auto;
+position: absolute;
+height: 100%;
+top: 0;
+left: 0;
+}
+
+.Login {
+position: absolute;
+top: 25%;
+left: 36%;
+width: 28%;
+/* background: rgb(240, 240, 240); */
+/* box-shadow: 0 0 5px black; */
+border-radius: 1px;
+padding: 0px;
+}
+
+.Login h2 {
+margin: 0;
+padding: 7px;
+/* background: rgb(14, 53, 90); */
+color: white;
+font-size: 61px;
+text-shadow: 0 0 7px black;
+margin-bottom: 15px;
+text-align: left;
+}
+
+.Login input {
+background: white;
+display: block;
+border: solid 1px rgb(58, 58, 58);
+width: 71%;
+border-radius: 5px;
+box-shadow: inset 0 0 3px 0px rgba(0, 0, 0, 0.44);
+padding: 6px 13px 6px 13px;
+margin: auto;
+margin-top: 11px;
+color: rgb(85, 85, 85);
+}
+
+.Login a {
+color: white;
+text-decoration: none;
+text-align: right;
+padding-right:30px;
+display: block;
+margin: 9px 0 9px 0px;
+}
+.botton {
+width: 101px !important;
+color: black !important;
+border-radius: 0px !important;
+box-shadow: 0 0 5px black !important;
+}

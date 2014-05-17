@@ -25,13 +25,17 @@ namespace WebApplication1
                 Response.Write(@"<script language='javascript'>alert('No hay un usuario con este email');</script>");
             else
             {
-               if (usuario.Psswd != TextBoxPsswd.Text)
-                usuario = null;
-               else
-               {
-                   Session["usuario"] = usuario;
-                   Response.Redirect("Default.aspx");
-               }
+                if (usuario.Psswd != TextBoxPsswd.Text)
+                {
+                    Response.Write(@"<script language='javascript'>alert('No es una contraseña correcta');</script>");
+                    usuario = null;
+                }
+                else
+                {
+                    Response.Write(@"<script language='javascript'>alert('Iniciando Sesión...');</script>");
+                    Session["usuario"] = usuario;
+                    Response.Redirect("Default.aspx");
+                }
             }
             
         }

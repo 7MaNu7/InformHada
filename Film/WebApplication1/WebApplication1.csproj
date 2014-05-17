@@ -80,6 +80,7 @@
     <Content Include="Styles\About.css" />
     <Content Include="Styles\Capitulo.css" />
     <Content Include="Styles\Default.css" />
+    <Content Include="Styles\Login.css" />
     <Content Include="Styles\Pelicula.css" />
     <Content Include="Styles\Peliculas.css" />
     <Content Include="Styles\Report.css" />
