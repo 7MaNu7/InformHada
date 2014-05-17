@@ -241,6 +241,42 @@ namespace FilmBiblio
             return usuario;
         }
 
+        //Devuelve la información del usuario que tiene como clave primaria el id pasado por parámetro
+        public UsuarioEN DameUsuarioPorEmail(string email)
+        {
+            SqlConnection c = null;
+            UsuarioEN usuario = new UsuarioEN();
+
+            try
+            {
+                c = new SqlConnection(conexion);
+                c.Open();
+                SqlCommand select_usuario = new SqlCommand("Select * from usuario where email='" + email+"'", c);
+                SqlDataReader read = select_usuario.ExecuteReader();
+
+                ArrayList amigos_aux = new ArrayList();
+                read.Read();
+
+                //usuario.Id = Convert.ToInt32(read["id"].ToString());
+                usuario.Usuario = read["usuario"].ToString();
+                usuario.Psswd = read["psswd"].ToString();
+                usuario.Pais = read["pais"].ToString();
+                usuario.Provincia = read["Provincia"].ToString();
+                usuario.FechaNacimiento = read["fechaNacimiento"].ToString();
+                usuario.Sexo = read["sexo"].ToString();
+                usuario.Email = read["email"].ToString();
+                usuario.FechaNacimiento = read["fechaNacimiento"].ToString();
+                usuario.Informacion = read["informacion"].ToString();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally 
+            {
+                c.Close();
+            }
+
+            return usuario;
+        }
+
         //Devuelve un array con los amigos y su información
         public DataSet DameAmigos(int id)
         {

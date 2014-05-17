@@ -113,6 +113,14 @@ namespace FilmBiblio
             return usuario;
         }
 
+        //Devuelve la información del usuario que tiene como clave primaria el id pasado por parámetro
+        public UsuarioEN DameUsuarioPorEmail(string email)
+        {
+            UsuarioEN usuario = new UsuarioEN();
+            usuario = usuarioCad.DameUsuarioPorEmail(email);
+            return usuario;
+        }
+
         //Devuelve un array con los amigos del usuario
         public DataSet DameAmigos()
         {
