@@ -26,7 +26,7 @@ namespace FilmBiblio
         private int ano;                //El año en el que se creó la serie
         private string sinopsis;        //La descripción de la serie
         private string genero;          //El género de la serie
-        private ArrayList reparto;      //El conjunto de artistas/actores de la serie
+        private string reparto;      //El conjunto de artistas/actores de la serie
         private string bandaSonora;     //La banda sonora de la serie
         private float puntuacion;       //La puntuación media de la serie
         private string portada;         //Imagen de la portada de la serie
@@ -41,7 +41,7 @@ namespace FilmBiblio
         public SerieEN() {}
 
         //Constructor con parámetros que son las propiedades de dicha serie
-        public SerieEN(int pid, string ptitulo, string pdirector, int pano, string psinopsis, string genero, ArrayList preparto,
+        public SerieEN(int pid, string ptitulo, string pdirector, int pano, string psinopsis, string genero, string preparto,
             string pbandaSonora, float ppuntuacion, string pportada, string pcaratula, string ptrailer)
         {
             id = pid;
@@ -49,7 +49,7 @@ namespace FilmBiblio
             director = pdirector;
             ano = pano;
             sinopsis = psinopsis;
-            reparto = (ArrayList)preparto.Clone();
+            reparto = preparto;
             bandaSonora = pbandaSonora;
             puntuacion = ppuntuacion;
             portada = pportada;
@@ -62,20 +62,6 @@ namespace FilmBiblio
         {
             //El método AnyadirPuntuacionSerie de SerieCAD devuelve la puntuación recalculada
             puntuacion = serieCad.AnyadirPuntuacionSerie(id_usuario, this.id, calificacion);
-        }
-
-        //Se añade en la BD un nuevo artista en el reparto de la serie
-        public void AnyadirArtistaSerie(string artista)
-        {
-            reparto.Add(artista);
-            serieCad.AnyadirArtistaSerie(this.id, artista);
-        }
-
-        //Se elimina en la BD el artista pasado por parámetro en el reparto de la serie
-        public void EliminarArtistaSerie(string artista)
-        {
-            reparto.Remove(artista);
-            serieCad.EliminarArtistaSerie(this.id, artista);
         }
 
         //Se inserta en la BD la nueva serie cuyos datos están en esta instancia this de SerieEN
@@ -165,10 +151,10 @@ namespace FilmBiblio
         }
 
         //Desde fuera de la clase se puede obtener el reparto de actores y modificarlo
-        public ArrayList Reparto
+        public string Reparto
         {
             get { return reparto; }
-            set { reparto = (ArrayList)value.Clone(); }
+            set { reparto = value; }
         }
 
         //Desde fuera de la clase se puede obtener la banda sonora y modificarla

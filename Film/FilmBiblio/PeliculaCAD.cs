@@ -45,10 +45,7 @@ namespace FilmBiblio
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { read_id.Close(); c.Close(); }
-
-            if (id == null)
-                id = 0;
-
+            
             return id;
         }
 
@@ -56,40 +53,6 @@ namespace FilmBiblio
         public float AnyadirPuntuacionPelicula(int id_usuario, int id, float calificacion)
         { 
             return 0; /*Para que no de error*/ 
-        }
-
-        //Cuando un usuario añade un artista que trabaja en el reparto, se agrega en la BD donde se refleja el reparto de esa película
-        public void AnyadirArtistaPelicula(int id, string artista)
-        {
-            String orden = "insert into reparto values " + id + ", " + artista;
-
-            SqlConnection c = null;
-            try
-            {
-                c = new SqlConnection(conexion);
-                c.Open();
-                SqlCommand insert_artista = new SqlCommand(orden, c);
-                insert_artista.ExecuteNonQuery();
-            }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally { c.Close(); }
-        }
-
-        //Cuando un usuario elimina un artista del reparto, se elimina en la BD donde se refleja el reparto de esa película
-        public void EliminarArtistaPelicula(int id, string artista)
-        {
-            String orden = "delete from reparto where id_film=" + id + " and artista='" + artista +"'";
-
-            SqlConnection c = null;
-            try
-            {
-                c = new SqlConnection(conexion);
-                c.Open();
-                SqlCommand delete_artista = new SqlCommand(orden, c);
-                delete_artista.ExecuteNonQuery();
-            }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally { c.Close(); }
         }
 
         //Realiza una operación select en la BD para añadir una nueva película cuyos datos se pasan por parámetro en el objeto PeliculaEN
@@ -105,13 +68,12 @@ namespace FilmBiblio
             orden += pelicula.Ano +", ";
             orden += "'" + pelicula.Sinopsis + "', ";
             orden += "'" + pelicula.Genero + "', ";
+            orden += "'" + pelicula.Reparto + "', ";
             orden += "'" + pelicula.BandaSonora + "', ";
             orden += pelicula.Puntuacion + ", ";
             orden += "'" + pelicula.Portada + "', ";
             orden += "'" + pelicula.Caratula + "', ";
             orden += "'" + pelicula.Trailer + "')";
-
-            String orden2 = "";
 
             SqlConnection c = null;
             try
@@ -120,14 +82,6 @@ namespace FilmBiblio
                 c.Open();
                 SqlCommand insert_pelicula = new SqlCommand(orden, c);
                 insert_pelicula.ExecuteNonQuery();
-
-                //Para insertar cada artista de la película en la tabla reparto (id_film, artista)
-                for (int i = 0; i < pelicula.Reparto.Capacity; i++)
-                {
-                    orden2 = "insert into reparto values " + pelicula.Id + ", " + pelicula.Reparto[i];
-                    SqlCommand insert_reparto = new SqlCommand(orden2, c);
-                    insert_reparto.ExecuteNonQuery();
-                }
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { c.Close(); }
@@ -142,6 +96,7 @@ namespace FilmBiblio
             orden += "ano = " + pelicula.Ano + ", ";
             orden += "sinopsis = '" + pelicula.Sinopsis + "', ";
             orden += "genero = '" + pelicula.Genero + "', ";
+            orden += "reparto = '" + pelicula.Reparto + "', ";
             orden += "bandaSonora = '" + pelicula.BandaSonora + "', ";
             orden += "puntuacion = " + pelicula.Puntuacion + ", ";
             orden += "portada = " + pelicula.Portada + ", ";
@@ -219,8 +174,9 @@ namespace FilmBiblio
                 pelicula.Ano = Convert.ToInt32(read["ano"].ToString());
                 pelicula.Sinopsis = read["sinopsis"].ToString();
                 pelicula.Genero = read["genero"].ToString();
+                pelicula.Reparto = read["reparto"].ToString();
                 pelicula.BandaSonora = read["bandaSonora"].ToString();
-                pelicula.Puntuacion = Convert.ToSingle(read["puntuacion"]);
+                pelicula.Puntuacion = (float)(read["puntuacion"]);
                 pelicula.Portada = read["portada"].ToString();
                 pelicula.Caratula = read["caratula"].ToString();
                 pelicula.Trailer = read["trailer"].ToString();

@@ -46,9 +46,6 @@ namespace FilmBiblio
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { read_id.Close(); c.Close(); }
 
-            if (id == null)
-                id = 0;
-
             return id;
         }
 
@@ -156,14 +153,9 @@ namespace FilmBiblio
                 SqlCommand buscar_reparto = new SqlCommand("Select artista from reparto where id_film=" + id, c);
                 SqlDataReader leer_reparto = buscar_serie.ExecuteReader();
 
-                //Varias filas de artistas, los agregamos a un array que será el reparto de la serie a la que pertenece el capítulo
-                ArrayList reparto_aux = new ArrayList();
-                while (leer_reparto.Read())
-                    reparto_aux.Add(leer_reparto["artista"]);
-
                 leer_s.Read();
                 SerieEN serie_aux = new SerieEN((int)leer_s["id"], (string)leer_s["titulo"], (string)leer_s["director"], (int)leer_s["ano"],
-                    (string)leer_s["sinopsis"], (string)leer_s["genero"], reparto_aux, (string)leer_s["bandaSonora"], (float)leer_s["puntuacion"],
+                    (string)leer_s["sinopsis"], (string)leer_s["genero"], (string)leer_s["reparto"], (string)leer_s["bandaSonora"], (float)leer_s["puntuacion"],
                     (string)leer_s["portada"], (string)leer_s["caratula"], (string)leer_s["trailer"]);
 
                 read.Read();

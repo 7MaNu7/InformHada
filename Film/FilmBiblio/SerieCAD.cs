@@ -46,9 +46,6 @@ namespace FilmBiblio
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { read_id.Close(); c.Close(); }
 
-            if (id == null)
-                id = 0;
-
             return id;
         }
 
@@ -56,40 +53,6 @@ namespace FilmBiblio
         public float AnyadirPuntuacionSerie(int id_usuario, int id, float calificacion)
         { 
             return 0; /*Para que no de error*/ 
-        }
-
-        //Cuando un usuario añade un artista que trabaja en el reparto, se agrega en la BD donde se refleja el reparto de esa serie
-        public void AnyadirArtistaSerie(int id, string artista)
-        {
-            String orden = "insert into reparto values " + id + ", " + artista;
-
-            SqlConnection c = null;
-            try
-            {
-                c = new SqlConnection(conexion);
-                c.Open();
-                SqlCommand insert_artista = new SqlCommand(orden, c);
-                insert_artista.ExecuteNonQuery();
-            }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally { c.Close(); }
-        }
-
-        //Cuando un usuario elimina un artista del reparto, se elimina en la BD donde se refleja el reparto de esa serie
-        public void EliminarArtistaSerie(int id, string artista)
-        {
-            String orden = "delete from reparto where id_film=" + id + " and artista='" + artista + "'";
-
-            SqlConnection c = null;
-            try
-            {
-                c = new SqlConnection(conexion);
-                c.Open();
-                SqlCommand delete_artista = new SqlCommand(orden, c);
-                delete_artista.ExecuteNonQuery();
-            }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally { c.Close(); }
         }
 
         //Realiza una operación select en la BD para añadir una nueva serie cuyos datos se pasan por parámetro en el objeto SerieEN
@@ -105,13 +68,12 @@ namespace FilmBiblio
             orden += serie.Ano + ", ";
             orden += "'" + serie.Sinopsis + "', ";
             orden += "'" + serie.Genero + "', ";
+            orden += "'" + serie.Reparto + "', ";
             orden += "'" + serie.BandaSonora + "', ";
             orden += serie.Puntuacion + ", ";
             orden += "'" + serie.Portada + "', ";
             orden += "'" + serie.Caratula + "', ";
             orden += "'" + serie.Trailer + "')";
-
-            String orden2 = "";
 
             SqlConnection c = null;
             try
@@ -120,14 +82,6 @@ namespace FilmBiblio
                 c.Open();
                 SqlCommand insert_pelicula = new SqlCommand(orden, c);
                 insert_pelicula.ExecuteNonQuery();
-
-                //Para insertar cada artista de la serie en la tabla reparto (id_film, artista)
-                for (int i = 0; i < serie.Reparto.Capacity; i++)
-                {
-                    orden2 = "insert into reparto values " + serie.Id + ", " + serie.Reparto[i];
-                    SqlCommand insert_reparto = new SqlCommand(orden2, c);
-                    insert_reparto.ExecuteNonQuery();
-                }
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { c.Close(); }
@@ -223,7 +177,7 @@ namespace FilmBiblio
 
                 read.Read();
                 serie = new SerieEN((int)read["id"], (string)read["titulo"], (string)read["director"], (int)read["ano"],
-                    (string)read["sinopsis"], (string)read["genero"], reparto_aux, (string)read["bandaSonora"],
+                    (string)read["sinopsis"], (string)read["genero"], (string)read["reparto"], (string)read["bandaSonora"],
                     (float)read["puntuacion"], (string)read["portada"], (string)read["caratula"], (string)read["trailer"]);
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }

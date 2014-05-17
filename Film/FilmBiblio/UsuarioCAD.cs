@@ -46,9 +46,6 @@ namespace FilmBiblio
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { read_id.Close(); c.Close(); }
 
-            if (id == null)
-                id = 0;
-
             return id;
         }
 

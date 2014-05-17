@@ -24,7 +24,7 @@
 
         <div class="pelicula_contenido">
             <div class="pelicula_contenido_i">
-                <asp:HyperLink ID="ButtonAddEdit" CssClass="anadir" runat="server" EnableViewState="false" Text="Guardar cambios" />
+                <asp:Button ID="BotonAddEdit" CssClass="anadir" runat="server" Text="Guardar cambios" OnClick=BotonAddEditOnClick />
             </div>
             <div class="pelicula_contenido_d">
                <h2>Sinopsis</h2>
