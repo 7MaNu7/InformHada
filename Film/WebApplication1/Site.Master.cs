@@ -9,9 +9,29 @@ namespace WebApplication1
 {
     public partial class SiteMaster : System.Web.UI.MasterPage
     {
+        private FilmBiblio.UsuarioEN usuarioLogeado = new FilmBiblio.UsuarioEN();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            usuarioLogeado = (FilmBiblio.UsuarioEN)Session["usuario"];
+            if (usuarioLogeado == null)
+                BotonIniciarSesion.Text = "Iniciar Sesión";
+            else
+                BotonIniciarSesion.Text = "Cerrar sesión";
+        }
 
+        protected void BotonLoginOnClick(object sender, EventArgs e)
+        {
+            usuarioLogeado = (FilmBiblio.UsuarioEN)Session["usuario"];
+            if (usuarioLogeado == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                Session["usuario"] = null;
+                Response.Redirect("Default.aspx");
+            }
         }
     }
 }

@@ -18,14 +18,14 @@ namespace WebApplication1
 
         protected void IniciarSesionOnClick(object sender, EventArgs e)
         {
-            string email = TextBoxEmail.ToString();
+            string email = TextBoxEmail.Text;
             usuario = usuario.DameUsuarioPorEmail(email);
 
             if (usuario == null)
                 Response.Write(@"<script language='javascript'>alert('No hay un usuario con este email');</script>");
             else
             {
-               if (usuario.Psswd != TextBoxPsswd.ToString())
+               if (usuario.Psswd != TextBoxPsswd.Text)
                 usuario = null;
                else
                {

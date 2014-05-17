@@ -59,6 +59,11 @@ namespace FilmBiblio
             fotoPortada = imagen2;
         }
 
+        public bool sonAmigos(int id2)
+        {
+            return usuarioCad.SonAmigos(this.id, id2);
+        }
+
         public int MaximoId()
         {
             int id = 0;
