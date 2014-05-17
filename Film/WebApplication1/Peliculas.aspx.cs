@@ -29,5 +29,12 @@ namespace WebApplication1
                 ListViewPeliculas.DataBind();
             }
         }
+
+        protected void DataPagerProducts_PreRender(object sender, EventArgs e)
+        {
+            d = pelicula.DamePeliculas();
+            ListViewPeliculas.DataSource = d;
+            ListViewPeliculas.DataBind();
+        }
     }
 }

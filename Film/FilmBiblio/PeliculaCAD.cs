@@ -168,7 +168,7 @@ namespace FilmBiblio
             {
                 c = new SqlConnection(conexion);
                 c.Open();
-                SqlCommand select_pelicula = new SqlCommand("Select * from film where id=" + id, c);
+                SqlCommand select_pelicula = new SqlCommand("Select * from film where id=" +id , c);
                 SqlDataReader read = select_pelicula.ExecuteReader();
                 read.Read();
                 pelicula = new PeliculaEN();
@@ -180,7 +180,7 @@ namespace FilmBiblio
                 pelicula.Genero = read["genero"].ToString();
                 pelicula.Reparto = read["reparto"].ToString();
                 pelicula.BandaSonora = read["bandaSonora"].ToString();
-                pelicula.Puntuacion = (float)(read["puntuacion"]);
+                pelicula.Puntuacion = Convert.ToSingle(read["puntuacion"].ToString());
                 pelicula.Portada = read["portada"].ToString();
                 pelicula.Caratula = read["caratula"].ToString();
                 pelicula.Trailer = read["trailer"].ToString();

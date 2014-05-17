@@ -22,12 +22,7 @@ left: 0;
 background: black;
 opacity: 0.6;
 }
-.caratula {
-position: absolute;
-bottom: -46px;
-left: 89px;
-height: 300px;
-}
+
 #MainContent_TextBox1 {
 text-align: left;
 padding-left: 26px;
@@ -92,7 +87,12 @@ height: 165px;
 cursor: pointer;
 position: relative;
 }
-
+.caratula {
+position: absolute;
+bottom: -46px;
+left: 89px;
+height: 300px;
+}
 .peliculacaratula:hover .peliculacaratulaimg {
 top: -35px;
 width: 78px;
