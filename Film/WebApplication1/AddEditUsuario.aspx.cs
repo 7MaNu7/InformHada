@@ -4,12 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//using FilmBiblio.UsuarioEN;
 
 namespace WebApplication1
 {
     public partial class AddEditUsuario : System.Web.UI.Page
     {
+
+        private FilmBiblio.UsuarioEN usuario=new FilmBiblio.UsuarioEN();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             String param1 = Request.QueryString["par1"];
@@ -34,10 +36,21 @@ namespace WebApplication1
             if (param1 == "editarUsuario")
             {
                 //Guardar datos y update
+                
             }
             else if (param1 == "registrarUsuario")
             {
                 //Guardar datos y insert
+                usuario.Usuario = TextBoxUsuario.Text;
+                usuario.Psswd = TextBoxPsswd.Text;
+                usuario.Pais = TextBoxPais.Text;
+                usuario.Provincia = TextBoxProvincia.Text;
+                usuario.FechaNacimiento = TextBoxFechaNacimiento.Text;
+                usuario.Sexo = "";// Sexo.SelectedItem.ToString();
+                usuario.Email = TextBoxEmail.Text;
+                usuario.Informacion = TextBoxInformacion.Text;
+
+                usuario.InsertarUsuario();
             }
         }
 

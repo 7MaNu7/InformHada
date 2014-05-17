@@ -31,13 +31,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox TextBoxNombre;
         
         /// <summary>
-        /// Control TextBoxemail.
+        /// Control TextBoxEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxemail;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxEmail;
         
         /// <summary>
         /// Control TextBoxUsuario.
@@ -58,13 +58,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator UserNameReq;
         
         /// <summary>
-        /// Control TextBoxEdad.
+        /// Control TextBoxFechaNacimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxEdad;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxFechaNacimiento;
         
         /// <summary>
         /// Control Sexo.
@@ -103,22 +103,22 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox TextBoxPais;
         
         /// <summary>
-        /// Control TextBoxPrivincia.
+        /// Control TextBoxProvincia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPrivincia;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxProvincia;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control TextBoxPsswd.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPsswd;
         
         /// <summary>
         /// Control TextBox3.
@@ -130,13 +130,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox TextBox3;
         
         /// <summary>
-        /// Control TextBoxInformacionAdicional.
+        /// Control TextBoxInformacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxInformacionAdicional;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxInformacion;
         
         /// <summary>
         /// Control BotonEditar.

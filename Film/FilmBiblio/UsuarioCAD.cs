@@ -23,6 +23,31 @@ namespace FilmBiblio
         // Funciones //
         ///////////////
 
+        public int MaximoId()
+        {
+            String orden = "select max(id) from usuario where (select count(*) from usuario) <> 0;";
+            int id = 0;
+
+            SqlConnection c = null;
+            try
+            {
+                c = new SqlConnection(conexion);
+                c.Open();
+
+                SqlCommand max_id = new SqlCommand(orden, c);
+                max_id.ExecuteNonQuery();
+                SqlDataReader read_id = max_id.ExecuteReader();
+                id=(int)read_id[0];
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            if (id == null)
+                id = 0;
+
+            return id;
+        }
+
         //Cuando un usuario agrega a un amigo, su id y el id de su amigo pasan a la tabla Amigos indicando dicha relación
         public void AnyadirAmigo(int mi_id, int id_amigo)
         {
@@ -66,8 +91,11 @@ namespace FilmBiblio
         //Realiza una operación select en la BD para añadir un nuevo usuario cuyos datos se pasan por parámetro en el objeto UsuarioEN
         public void InsertarUsuario(UsuarioEN usuario)
         {
+            int id = MaximoId();
+            id = 6;
+
             String orden = "insert into usuario values ";
-            orden += "( " + usuario.Id + ", ";
+            orden += "( " + id + ", ";
             orden += "'" + usuario.Usuario + "', ";
             orden += "'" + usuario.Psswd + "', ";
             orden += "'" + usuario.Pais + "', ";
@@ -78,8 +106,6 @@ namespace FilmBiblio
             orden += "'" + usuario.Informacion + "', ";
             orden += "'" + usuario.FotoPerfil + "', ";
             orden += "'" + usuario.FotoPortada + "')";
-
-            String orden2 = "";
             
             SqlConnection c = null;
             try
@@ -88,15 +114,6 @@ namespace FilmBiblio
                 c.Open();
                 SqlCommand insert_usuario = new SqlCommand(orden, c);
                 insert_usuario.ExecuteNonQuery();
-
-                //Vamos agregando cada amigo del usuario a la tabla muchos a muchos llamada amigos (id1, id2)
-                SqlCommand insert_amigo = null;
-                for (int i = 0; i < usuario.Amigos.Capacity; i++)
-                {
-                    orden2 = "insert into amigos values " + usuario.Id + ", " + usuario.Amigos[i];
-                    insert_amigo = new SqlCommand(orden2, c);
-                    insert_amigo.ExecuteNonQuery();
-                }
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally

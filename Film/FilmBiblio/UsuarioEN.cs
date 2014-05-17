@@ -59,6 +59,13 @@ namespace FilmBiblio
             fotoPortada = imagen2;
         }
 
+        public int MaximoId()
+        {
+            int id = 0;
+            id = usuarioCad.MaximoId();
+            return id;
+        }
+
         //Se añade en la BD (en una tabla con la relación amigos), el id del usuario y el de su amigo
         public void AnyadirAmigo(UsuarioEN amigo_bueno)
         {

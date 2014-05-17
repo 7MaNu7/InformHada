@@ -16,7 +16,7 @@
              <img class="fotoperfilusuario" src="http://sintoniageek.com/wp-content/uploads/2011/03/avatar-geek-mario1.jpg" alt="fotou_perfil"/>
              <div class="infocabecera">=
                 <h2><asp:TextBox CssClass="cabecerasAddEdit" ID="TextBoxNombre" runat="server" Font-Italic  Font-Size="1.5em"  >Nombre</asp:TextBox></h2>
-                    <p><asp:TextBox CssClass="cabecerasAddEdit" ID="TextBoxemail" runat="server">e-mail</asp:TextBox></p>
+                    <p><asp:TextBox CssClass="cabecerasAddEdit" ID="TextBoxEmail" runat="server">e-mail</asp:TextBox></p>
              </div>
          </div>
 
@@ -28,18 +28,18 @@
                     <h2>Información personal: </h2>
                     <p><asp:TextBox ID="TextBoxUsuario" runat="server">Usuario</asp:TextBox></p>
                     <asp:RequiredFieldValidator ID="UserNameReq" runat="server" ControlToValidate="TextBoxUsuario" ErrorMessage="¡Introduce el usuario!"> </asp:RequiredFieldValidator>
-                    <p><asp:TextBox ID="TextBoxEdad" runat="server">Edad</asp:TextBox></p>
+                    <p><asp:TextBox ID="TextBoxFechaNacimiento" runat="server">Fecha nacimiento</asp:TextBox></p>
                     <p>Sexo:</p>
                     <asp:RadioButtonList ID="Sexo" runat="server" CellPadding="8" TextAlign="Left" RepeatDirection="Horizontal">
                          <asp:ListItem ID="SexoHombre" runat="server" value="Varón" />
                          <asp:ListItem ID="SexoMujer" runat="server" value="Mujer" />
                     </asp:RadioButtonList>
                     <p><asp:TextBox ID="TextBoxPais" runat="server">País</asp:TextBox></p>
-                    <p><asp:TextBox ID="TextBoxPrivincia" runat="server">Provincia</asp:TextBox></p>
+                    <p><asp:TextBox ID="TextBoxProvincia" runat="server">Provincia</asp:TextBox></p>
                 </div>
                 <div class="infoamigos">
                     <h2>Contraseña</h2>
-                    <p><asp:TextBox ID="TextBox2" runat="server">Contraseña</asp:TextBox></p>
+                    <p><asp:TextBox ID="TextBoxPsswd" runat="server">Contraseña</asp:TextBox></p>
                     <p><asp:TextBox ID="TextBox3" runat="server">Repita contraseña</asp:TextBox></p>
                 </div>
                 
@@ -47,7 +47,7 @@
             <div class="usuarioinfcolder">
                 <div class="informacionpersonal" style="border-top: solid 4px rgb(51, 162, 197);margin-top:43px">
                    <h2>Información adicional: </h2>
-                    <p> <asp:TextBox ID="TextBoxInformacionAdicional" runat="server"  ></asp:TextBox> 
+                    <p> <asp:TextBox ID="TextBoxInformacion" runat="server"  ></asp:TextBox> 
                     </p>                   
                 </div>
 
@@ -56,7 +56,7 @@
                     <p>Eliminar mi cuenta</p>
                 </div>
                  
-                 <asp:Button ID="BotonEditar" CssClass="botonanadireditarusr" runat="server" Text="Crear usuario" />
+                 <asp:Button ID="BotonEditar" CssClass="botonanadireditarusr" runat="server" Text="Crear usuario" OnClick=BotonEditarOnClick />
                     
                  
             </div>
