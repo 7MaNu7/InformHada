@@ -13,6 +13,42 @@ namespace WebApplication1 {
     public partial class Usuario {
         
         /// <summary>
+        /// Control HyperLinkAddPelicula.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLinkAddPelicula;
+        
+        /// <summary>
+        /// Control HyperLinkAddSerie.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLinkAddSerie;
+        
+        /// <summary>
+        /// Control HyperLinkEditUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLinkEditUsuario;
+        
+        /// <summary>
+        /// Control HyperLinkEliminarUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLinkEliminarUsuario;
+        
+        /// <summary>
         /// Control BotonEditar.
         /// </summary>
         /// <remarks>

@@ -9,9 +9,10 @@ namespace WebApplication1
 {
     public partial class Series : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            HyperLinkAddSerie.NavigateUrl = "AddEditSerie.aspx?par1=anadirSerie";
         }
     }
 }

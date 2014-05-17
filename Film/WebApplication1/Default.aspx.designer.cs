@@ -22,22 +22,22 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
-        /// Control A1.
+        /// Control HyperLinkPeliculas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLinkPeliculas;
         
         /// <summary>
-        /// Control A2.
+        /// Control HyperLinkSeries.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A2;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLinkSeries;
         
         /// <summary>
         /// Control HyperLinkAnadirPelicula.
@@ -76,21 +76,21 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.HyperLink HyperLinkUsuario;
         
         /// <summary>
-        /// Control A8.
+        /// Control HyperLinkAbout.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A8;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLinkAbout;
         
         /// <summary>
-        /// Control A7.
+        /// Control HyperLinkReport.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A7;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLinkReport;
     }
 }

@@ -11,10 +11,14 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            HyperLinkPeliculas.NavigateUrl = "Peliculas.aspx?";
+            HyperLinkSeries.NavigateUrl = "Series.aspx";
             HyperLinkUsuario.NavigateUrl = "Usuario.aspx?par1=verUsuario";
             HyperLinkRegistro.NavigateUrl = "Login.aspx";
             HyperLinkAnadirPelicula.NavigateUrl = "AddEditPelicula.aspx?par1=anadirPelicula";
-            HyperLinkAnadirSerie.NavigateUrl = "AddEditSerie.aspx?par1=anadirSerie";        
+            HyperLinkAnadirSerie.NavigateUrl = "AddEditSerie.aspx?par1=anadirSerie";
+            HyperLinkAbout.NavigateUrl = "About.aspx";
+            HyperLinkReport.NavigateUrl = "Report.aspx";       
         }
     }
 }

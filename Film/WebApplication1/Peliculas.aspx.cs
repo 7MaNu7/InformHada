@@ -20,6 +20,8 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            HyperLinkAddPelicula.NavigateUrl = "AddEditPelicula.aspx?par1=anadirPelicula";
+
             if (!Page.IsPostBack)
             {
                 d = pelicula.DamePeliculas();

@@ -75,10 +75,10 @@
 
                 <div class="informacionpersonal" style="border-top: solid 4px rgb(158, 108, 108);">
                     <h2>Herramientas</h2>
-                    <p>Añadir película</p>
-                    <p>Añadir serie</p>
-                    <p>Editar mi usuario</p>
-                    <p>Eliminar mi cuenta</p>
+                    <p> <asp:HyperLink ID="HyperLinkAddPelicula" runat="server" EnableViewState="false" PostBackUrl="String"> Añadir película </asp:HyperLink> </p>
+                    <p> <asp:HyperLink ID="HyperLinkAddSerie" runat="server" EnableViewState="false" PostBackUrl="String"> Añadir serie </asp:HyperLink> </p>
+                    <p> <asp:HyperLink ID="HyperLinkEditUsuario" runat="server" EnableViewState="false" PostBackUrl="String"> Editar mi usuario </asp:HyperLink> </p>
+                    <p> <asp:HyperLink ID="HyperLinkEliminarUsuario" runat="server" EnableViewState="false" PostBackUrl="String"> Eliminar mi cuenta </asp:HyperLink> </p>
                 </div>
                 <asp:Button ID="BotonEditar" CssClass="botonanadireditarusr" runat="server" OnClick=BotonEditarOnClick Text="Editar" />
             </div>

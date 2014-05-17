@@ -13,6 +13,15 @@ namespace WebApplication1 {
     public partial class Peliculas {
         
         /// <summary>
+        /// Control HyperLinkAddPelicula.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLinkAddPelicula;
+        
+        /// <summary>
         /// Control ListViewPeliculas.
         /// </summary>
         /// <remarks>

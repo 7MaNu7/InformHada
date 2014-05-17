@@ -11,6 +11,10 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            HyperLinkAddPelicula.NavigateUrl="AddEditPelicula.aspx?par1=anadirPelicula";
+            HyperLinkAddSerie.NavigateUrl="AddEditSerie.aspx?par1=anadirSerie";
+            HyperLinkEditUsuario.NavigateUrl="AddEditUsuario.aspx?par1=editarUsuario";
+            
             String param1 = Request.QueryString["par1"];
             if (param1 == "verUsuario")
             {
@@ -20,6 +24,12 @@ namespace WebApplication1
             {
                 BotonEditar.Visible = false;
             }
+        }
+
+        protected void EliminarUsuario(object sender, EventArgs e)
+        {
+            //id??
+            HyperLinkEliminarUsuario.NavigateUrl = "Default.aspx";
         }
 
         protected void BotonEditarOnClick(object sender, EventArgs e)

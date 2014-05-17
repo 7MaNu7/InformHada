@@ -7,6 +7,8 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div  style=" position: absolute;
     padding-top: 33px;">
+
+    <h2> <asp:HyperLink ID="HyperLinkAddSerie" runat="server" EnableViewState="false" PostBackUrl="String" style="padding: 25px 25px 1.5px 25px;"> Añadir serie </asp:HyperLink> </h2>
    
     <div class="peliculas_contenido" style="padding: 25px 25px 1.5px 25px;">
         <h2>Series</h2>
