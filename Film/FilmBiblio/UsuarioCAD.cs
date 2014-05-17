@@ -23,24 +23,28 @@ namespace FilmBiblio
         // Funciones //
         ///////////////
 
+        //Devuelve el máximo id de la base de datos
         public int MaximoId()
         {
-            String orden = "select * from usuario where id=(select max(id) from usuario)";
+            string orden = "select * from usuario where id=(select max(id) from usuario)";
             int id = 0;
 
             SqlConnection c = null;
+            SqlDataReader read_id = null;
+
             try
             {
                 c = new SqlConnection(conexion);
                 c.Open();
 
                 SqlCommand max_id = new SqlCommand(orden, c);
-                max_id.ExecuteNonQuery();
-                SqlDataReader read_id = max_id.ExecuteReader();
-                id=(int)read_id["id"];
+                read_id = max_id.ExecuteReader();
+                //max_id.ExecuteNonQuery();
+                while(read_id.Read())
+                    id=(int)read_id["id"];
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally { c.Close(); }
+            finally { read_id.Close(); c.Close(); }
 
             if (id == null)
                 id = 0;

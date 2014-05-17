@@ -23,6 +23,35 @@ namespace FilmBiblio
         // Funciones //
         ///////////////
 
+        //Devuelve el máximo id de la base de datos
+        public int MaximoId()
+        {
+            string orden = "select * from usuario where id=(select max(id) from usuario)";
+            int id = 0;
+
+            SqlConnection c = null;
+            SqlDataReader read_id = null;
+
+            try
+            {
+                c = new SqlConnection(conexion);
+                c.Open();
+
+                SqlCommand max_id = new SqlCommand(orden, c);
+                read_id = max_id.ExecuteReader();
+                //max_id.ExecuteNonQuery();
+                while (read_id.Read())
+                    id = (int)read_id["id"];
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { read_id.Close(); c.Close(); }
+
+            if (id == null)
+                id = 0;
+
+            return id;
+        }
+
         //Si un usuario vota una película, se registra lo que ha votado y se recalcula la puntuación de la pelicula
         public float AnyadirPuntuacionPelicula(int id_usuario, int id, float calificacion)
         { 
@@ -66,8 +95,11 @@ namespace FilmBiblio
         //Realiza una operación select en la BD para añadir una nueva película cuyos datos se pasan por parámetro en el objeto PeliculaEN
         public void InsertarPelicula(PeliculaEN pelicula) 
         {
+            int id = MaximoId();
+            id++;
+
             String orden ="insert into film values ";
-			orden+="( "+pelicula.Id+", ";
+			orden+="( "+ id+", ";
 			orden+="'"+pelicula.Titulo+"', ";
 			orden+="'"+pelicula.Director+"', ";
             orden += pelicula.Ano +", ";
