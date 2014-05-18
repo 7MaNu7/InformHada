@@ -121,6 +121,20 @@ namespace FilmBiblio
             return bd;
         }
 
+        //Devuelve la información de todas las películas con mejor puntuación (hasta un top)
+        public DataSet DamePeliculasMejorPuntuadas(int numero)
+        {
+            bd = peliculaCad.DamePeliculasMejorPuntuadas(numero);
+            return bd;
+        }
+
+        //Devuelve la información de todas las películas recientes (hasta un top)
+        public DataSet DamePeliculasRecientes(int numero)
+        {
+            bd = peliculaCad.DamePeliculasRecientes(numero);
+            return bd;
+        }
+
         /////////////////
         // Propiedades //
         /////////////////

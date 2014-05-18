@@ -279,5 +279,41 @@ namespace FilmBiblio
 
             return bdvirtual;
         }
+
+        //Devuelve la información de todas las películas con mejor puntuación (hasta un top)
+        public DataSet DamePeliculasMejorPuntuadas(int numero)
+        {
+            SqlConnection c = new SqlConnection(conexion);
+            DataSet bdvirtual = new DataSet();
+            string select = "Select * top " + numero + " from pelicula order by puntuacion desc";
+
+            try
+            {
+                SqlDataAdapter ejecuta = new SqlDataAdapter(select, c);
+                ejecuta.Fill(bdvirtual, "peliculas");
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return bdvirtual;
+        }
+
+        //Devuelve la información de todas las peliculas recientes (hasta un top)
+        public DataSet DamePeliculasRecientes(int numero)
+        {
+            SqlConnection c = new SqlConnection(conexion);
+            DataSet bdvirtual = new DataSet();
+            string select = "Select * top " + numero + " from pelicula order by id desc";
+
+            try
+            {
+                SqlDataAdapter ejecuta = new SqlDataAdapter(select, c);
+                ejecuta.Fill(bdvirtual, "peliculas");
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return bdvirtual;
+        }
     } 
 }
