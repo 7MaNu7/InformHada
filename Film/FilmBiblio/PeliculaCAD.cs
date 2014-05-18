@@ -140,18 +140,18 @@ namespace FilmBiblio
         //Modifica una película en la BD cuyos datos se pasan por parámetro en el objeto PeliculaEN
         public void UpdatePelicula(PeliculaEN pelicula)
         {
-            String orden = "update film ";
-            orden += "set titulo = '" + pelicula.Titulo + "', ";
+            String orden = "update Film ";
+            orden += "set titulo = '" + pelicula.Titulo + "', "; 
             orden += "director = '" + pelicula.Director + "', ";
             orden += "ano = " + pelicula.Ano + ", ";
             orden += "sinopsis = '" + pelicula.Sinopsis + "', ";
-            orden += "genero = '" + pelicula.Genero + "', ";
+            orden += "genero = '" + pelicula.Genero + "', "; 
             orden += "reparto = '" + pelicula.Reparto + "', ";
             orden += "bandaSonora = '" + pelicula.BandaSonora + "', ";
             orden += "puntuacion = " + pelicula.Puntuacion + ", ";
-            orden += "portada = " + pelicula.Portada + ", ";
-            orden += "caratula = " + pelicula.Caratula + ", ";
-            orden += "caratula = " + pelicula.Trailer + " ";
+            orden += "portada = '" + pelicula.Portada + "', ";
+            orden += "caratula = '" + pelicula.Caratula + "', ";
+            orden += "trailer = '" + pelicula.Trailer + "' ";
             orden += "where id = " + pelicula.Id;
 
             SqlConnection c = new SqlConnection(conexion);

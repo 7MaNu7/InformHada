@@ -2,98 +2,70 @@
     CodeBehind="Register.aspx.cs" Inherits="WebApplication1.Account.Register" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+    <link href="/Styles/Register.css" rel="stylesheet" type="text/css" />
 </asp:Content>
+
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-    <asp:CreateUserWizard ID="RegisterUser" runat="server" EnableViewState="false" OnCreatedUser="RegisterUser_CreatedUser">
-        <LayoutTemplate>
-            <asp:PlaceHolder ID="wizardStepPlaceholder" runat="server"></asp:PlaceHolder>
-            <asp:PlaceHolder ID="navigationPlaceholder" runat="server"></asp:PlaceHolder>
-        </LayoutTemplate>
-        <WizardSteps>
-            <asp:CreateUserWizardStep ID="RegisterUserWizardStep" runat="server">
-                <ContentTemplate>
-                    <div class="cabecera_contenido">
-                        <h2>
-                            Crear una nueva cuenta
-                        </h2>
+   
+                    <div class="Login">
+
+
+                     <div style="margin-bottom: 24px;"><h2>Registro</h2></div>
+                     
                         <p>
                             Use el formulario siguiente para crear una cuenta nueva.
                         </p>
+                        
+                        <legend>Información de cuenta</legend>
                         <p>
-                            Las contraseñas deben tener una longitud mínima de <%= Membership.MinRequiredPasswordLength %> caracteres.
+                            <asp:Label ID="LabelUsuario" runat="server" >Nombre de usuario:</asp:Label>
+                            <asp:TextBox ID="TextBoxUsuario" runat="server" CssClass="textEntry"></asp:TextBox>
                         </p>
-                        <span class="failureNotification">
-                            <asp:Literal ID="ErrorMessage" runat="server"></asp:Literal>
-                        </span>
-                        <asp:ValidationSummary ID="RegisterUserValidationSummary" runat="server" CssClass="failureNotification" 
-                             ValidationGroup="RegisterUserValidationGroup"/>
-                        <div class="accountInfo">
-                            <fieldset class="register">
-                                <legend>Información de cuenta</legend>
-                                <p>
-                                    <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Nombre de usuario:</asp:Label>
-                                    <asp:TextBox ID="UserName" runat="server" CssClass="textEntry"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" 
-                                         CssClass="failureNotification" ErrorMessage="El nombre de usuario es obligatorio." ToolTip="El nombre de usuario es obligatorio." 
-                                         ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
-                                </p>
+                        <p>
+                            <asp:Label ID="LabelPais" runat="server">Pais:</asp:Label>
+                            <asp:TextBox ID="TextBoxPais" runat="server" CssClass="textEntry"></asp:TextBox>
+                        </p>
 
-                                <p>
-                                    <asp:Label ID="Label1" runat="server" AssociatedControlID="UserName">Pais:</asp:Label>
-                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="textEntry"></asp:TextBox>
-                                    
-                                </p>
-
-                                <p>
-                                    <asp:Label ID="Label2" runat="server" AssociatedControlID="UserName">Provincia:</asp:Label>
-                                    <asp:TextBox ID="TextBox2" runat="server" CssClass="textEntry"></asp:TextBox>
+                        <p>
+                            <asp:Label ID="LabelProvincia" runat="server" >Provincia:</asp:Label>
+                            <asp:TextBox ID="TextBoxProvincia" runat="server" CssClass="textEntry"></asp:TextBox>
                                    
-                                </p>
+                        </p>
 
-                                <p>Sexo:</p>
-                                <asp:RadioButtonList ID="Sexo" runat="server" CellPadding="8" TextAlign="Left" RepeatDirection="Horizontal">
-                                    <asp:ListItem ID="SexoHombre" runat="server" value="Varón" />
-                                    <asp:ListItem ID="SexoMujer" runat="server" value="Mujer" />
-                                </asp:RadioButtonList>
-                                
-                                
-                    
+                        <p>Sexo:</p>
+                        <asp:RadioButtonList ID="Sexo" runat="server" CellPadding="8" TextAlign="Left" RepeatDirection="Horizontal">
+                            <asp:ListItem ID="SexoHombre" runat="server" value="Varón" />
+                            <asp:ListItem ID="SexoMujer" runat="server" value="Mujer" />
+                        </asp:RadioButtonList>
 
-                                <p>
-                                    <asp:Label ID="EmailLabel" runat="server" AssociatedControlID="Email">Correo electrónico:</asp:Label>
-                                    <asp:TextBox ID="Email" runat="server" CssClass="textEntry"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email" 
-                                         CssClass="failureNotification" ErrorMessage="El correo electrónico es obligatorio." ToolTip="El correo electrónico es obligatorio." 
-                                         ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
-                                </p>
-                                <p>
-                                    <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Contraseña:</asp:Label>
-                                    <asp:TextBox ID="Password" runat="server" CssClass="passwordEntry" TextMode="Password"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" 
-                                         CssClass="failureNotification" ErrorMessage="La contraseña es obligatoria." ToolTip="La contraseña es obligatoria." 
-                                         ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
-                                </p>
-                                <p>
-                                    <asp:Label ID="ConfirmPasswordLabel" runat="server" AssociatedControlID="ConfirmPassword">Confirmar contraseña:</asp:Label>
-                                    <asp:TextBox ID="ConfirmPassword" runat="server" CssClass="passwordEntry" TextMode="Password"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ControlToValidate="ConfirmPassword" CssClass="failureNotification" Display="Dynamic" 
-                                         ErrorMessage="Confirmar contraseña es obligatorio." ID="ConfirmPasswordRequired" runat="server" 
-                                         ToolTip="Confirmar contraseña es obligatorio." ValidationGroup="RegisterUserValidationGroup">*</asp:RequiredFieldValidator>
-                                    <asp:CompareValidator ID="PasswordCompare" runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword" 
-                                         CssClass="failureNotification" Display="Dynamic" ErrorMessage="Contraseña y Confirmar contraseña deben coincidir."
-                                         ValidationGroup="RegisterUserValidationGroup">*</asp:CompareValidator>
-                                </p>
-                            </fieldset>
-                            <p class="submitButton">
-                                <asp:Button ID="CreateUserButton" runat="server" CommandName="MoveNext" Text="Crear usuario" 
-                                     ValidationGroup="RegisterUserValidationGroup"/>
-                            </p>
-                        </div>
-                    </div>
-                </ContentTemplate>
-                <CustomNavigationTemplate>
-                </CustomNavigationTemplate>
-            </asp:CreateUserWizardStep>
-        </WizardSteps>
-    </asp:CreateUserWizard>
+                        <asp:Calendar ID="Calendar" runat="server"> </asp:Calendar>
+
+                        <p>
+                            <asp:Label ID="LabelEmail" runat="server" >Correo electrónico:</asp:Label>
+                            <asp:TextBox ID="TextBoxEmail" runat="server" CssClass="textEntry"></asp:TextBox>
+                        
+                        </p>
+                        <p>
+                            <asp:Label ID="LabelPsswd" runat="server" >Contraseña:</asp:Label>
+                            <asp:TextBox ID="TextBoxPsswd" runat="server" CssClass="passwordEntry" TextMode="Password"></asp:TextBox>
+                        
+                        </p>
+                        <p>
+                            <asp:Label ID="LabelPasswd2" runat="server" >Confirmar contraseña:</asp:Label>
+                            <asp:TextBox ID="TextBoxPasswd2" runat="server" CssClass="passwordEntry" TextMode="Password"></asp:TextBox>
+                        </p>
+                     
+                        <asp:Button ID="BotonRegistro" runat="server" OnClick="BotonRegistroOnClick" Text="Completar registro" />
+                        
+                     <div>
+                        <a href="Default.aspx">Volver a la página principal</a>
+                     </div>
+
+
+                     </div>
+
+
+
+                        
+
 </asp:Content>

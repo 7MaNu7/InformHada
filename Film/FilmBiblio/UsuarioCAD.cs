@@ -107,7 +107,7 @@ namespace FilmBiblio
             int id = MaximoId();
             id++;
 
-            String orden = "insert into usuario values ";
+            String orden = "insert into Usuario values ";
             orden += "( " + id + ", ";
             orden += "'" + usuario.Usuario + "', ";
             orden += "'" + usuario.Psswd + "', ";

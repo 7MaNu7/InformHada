@@ -10,22 +10,28 @@ namespace WebApplication1.Account
 {
     public partial class Register : System.Web.UI.Page
     {
+        FilmBiblio.UsuarioEN usuario = new FilmBiblio.UsuarioEN();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            RegisterUser.ContinueDestinationPageUrl = Request.QueryString["ReturnUrl"];
+            
         }
 
-        protected void RegisterUser_CreatedUser(object sender, EventArgs e)
+        protected void BotonRegistroOnClick(object sender, EventArgs e)
         {
-            FormsAuthentication.SetAuthCookie(RegisterUser.UserName, false /* createPersistentCookie */);
-
-            string continueUrl = RegisterUser.ContinueDestinationPageUrl;
-            if (String.IsNullOrEmpty(continueUrl))
+            if(Session["usuario"]==null)
             {
-                continueUrl = "~/";
+                //Guardar datos y insert
+                usuario.Usuario = TextBoxUsuario.Text;
+                usuario.Psswd = TextBoxPsswd.Text;
+                usuario.Pais = TextBoxPais.Text;
+                usuario.Provincia = TextBoxProvincia.Text;
+                usuario.FechaNacimiento = Calendar.SelectedDate.ToString();
+                usuario.Sexo = Sexo.Text;
+                usuario.Email = TextBoxEmail.Text;
+
+                usuario.InsertarUsuario();
             }
-            Response.Redirect(continueUrl);
         }
 
     }

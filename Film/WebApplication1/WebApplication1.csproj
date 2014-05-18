@@ -83,6 +83,7 @@
     <Content Include="Styles\Login.css" />
     <Content Include="Styles\Pelicula.css" />
     <Content Include="Styles\Peliculas.css" />
+    <Content Include="Styles\Register.css" />
     <Content Include="Styles\Report.css" />
     <Content Include="Styles\Serie.css" />
     <Content Include="Styles\Series.css" />

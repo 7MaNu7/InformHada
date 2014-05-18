@@ -9,58 +9,70 @@ namespace WebApplication1
 {
     public partial class AddEditSerie : System.Web.UI.Page
     {
-        private FilmBiblio.SerieEN Serie = new FilmBiblio.SerieEN();
+        private FilmBiblio.SerieEN serie = new FilmBiblio.SerieEN();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            String param1 = Request.QueryString["par1"];
-            if (param1 == "editarSerie")
+            if (!Page.IsPostBack)
             {
-                BotonAddEdit.Text = "Guardar cambios";
-            }
-            else if (param1 == "anadirSerie")
-            {
-                BotonAddEdit.Text = "Añadir serie";
-            }
-            else
-            {
-                BotonAddEdit.Visible = false;
+                if (Session["usuario"] == null)
+                    Response.Redirect("Default.aspx");
+
+                int id = Convert.ToInt32(Request.QueryString["id"]);
+                if (id != 0)
+                {
+                    serie.Id = id;
+                    serie = serie.DameSerie();
+                    LiteralTitulo.Text = serie.Titulo;
+                    TextBoxDirector.Text = serie.Director;
+                    TextBoxAno.Text = serie.Ano.ToString();
+                    TextBoxGenero.Text = serie.Genero;
+                    TextBoxSinopsis.Text = serie.Sinopsis;
+                    TextBoxReparto.Text = serie.Reparto;
+                    TextBoxBandaSonora.Text = serie.BandaSonora;
+                    TextBoxTrailer.Text = serie.Trailer;
+                    BotonAddEdit.Text = "Guardar cambios";
+                }
+                else
+                {
+                    BotonAddEdit.Text = "Añadir película";
+                }
             }
 
         }
 
         protected void BotonAddEditOnClick(object sender, EventArgs e)
         {
-            String param1 = Request.QueryString["par1"];
+            int id = Convert.ToInt32(Request.QueryString["id"]);
             Response.BufferOutput = true;
-            if (param1 == "editarSerie")
+            if (id != 0)
             {
                 //Guardar datos y update
-                Serie.Titulo = TextBoxTitulo.Text;
-                Serie.Director = TextBoxDirector.Text;
-                Serie.Ano = int.Parse(TextBoxAno.Text);
-                Serie.Sinopsis = TextBoxSinopsis.Text;
-                Serie.Genero = TextBoxGenero.Text;
-                Serie.Reparto = TextBoxReparto.Text;
-                Serie.BandaSonora = TextBoxBandaSonora.Text;
-                Serie.Trailer = TextBoxTrailer.Text;
-                Serie.UpdateSerie();
+                serie.Id = id;
+                serie = serie.DameSerie();
+                serie.Director = TextBoxDirector.Text;
+                serie.Ano = Convert.ToInt32(TextBoxAno.Text);
+                serie.Sinopsis = TextBoxSinopsis.Text;
+                serie.Genero = TextBoxGenero.Text;
+                serie.Reparto = TextBoxReparto.Text;
+                serie.BandaSonora = TextBoxBandaSonora.Text;
+                serie.Trailer = TextBoxTrailer.Text;
+                serie.UpdateSerie();
+                Response.Redirect("serie.aspx?id=" + id);
             }
-            else if (param1 == "anadirSerie")
+            else
             {
                 //Guardar datos y insert
-                Serie.Titulo = TextBoxTitulo.Text;
-                Serie.Director = TextBoxDirector.Text;
-                Serie.Ano = Convert.ToInt32(TextBoxAno.Text);
-                Serie.Sinopsis = TextBoxSinopsis.Text;
-                Serie.Genero = TextBoxGenero.Text;
-                Serie.Reparto = TextBoxReparto.Text;
-                Serie.BandaSonora = TextBoxBandaSonora.Text;
-                Serie.Trailer = TextBoxTrailer.Text;
-                Serie.InsertarSerie();
+                serie.Director = TextBoxDirector.Text;
+                serie.Ano = int.Parse(TextBoxAno.Text);
+                serie.Sinopsis = TextBoxSinopsis.Text;
+                serie.Genero = TextBoxGenero.Text;
+                serie.Reparto = TextBoxReparto.Text;
+                serie.BandaSonora = TextBoxBandaSonora.Text;
+                serie.Trailer = TextBoxTrailer.Text;
+                serie.InsertarSerie();
             }
         }
-
         
     }
 }

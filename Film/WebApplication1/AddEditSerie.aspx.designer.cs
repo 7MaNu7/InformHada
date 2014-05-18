@@ -13,13 +13,13 @@ namespace WebApplication1 {
     public partial class AddEditSerie {
         
         /// <summary>
-        /// Control TextBoxTitulo.
+        /// Control LiteralTitulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxTitulo;
+        protected global::System.Web.UI.WebControls.Literal LiteralTitulo;
         
         /// <summary>
         /// Control TextBoxDirector.

@@ -22,13 +22,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
         
         /// <summary>
-        /// Control TextBoxNombre.
+        /// Control LiteralNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxNombre;
+        protected global::System.Web.UI.WebControls.Literal LiteralNombre;
         
         /// <summary>
         /// Control TextBoxEmail.
@@ -121,13 +121,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox TextBoxPsswd;
         
         /// <summary>
-        /// Control TextBox3.
+        /// Control TextBoxPsswd2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPsswd2;
         
         /// <summary>
         /// Control TextBoxInformacion.

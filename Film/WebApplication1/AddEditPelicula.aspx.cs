@@ -13,44 +13,56 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                if (Session["usuario"] == null)
+                    Response.Redirect("Default.aspx");
 
-            String param1 = Request.QueryString["par1"];
-            if (param1 == "editarPelicula")
-            {
-                BotonAddEdit.Text = "Guardar cambios";
-            }
-            else if (param1 == "anadirPelicula")
-            {
-                BotonAddEdit.Text = "Añadir película";
-            }
-            else
-            {
-                BotonAddEdit.Visible = false;
+                int id = Convert.ToInt32(Request.QueryString["id"]);
+                if (id != 0)
+                {
+                    pelicula.Id = id;
+                    pelicula = pelicula.DamePelicula();
+                    LiteralTitulo.Text = pelicula.Titulo;
+                    TextBoxDirector.Text = pelicula.Director;
+                    TextBoxAno.Text = pelicula.Ano.ToString();
+                    TextBoxGenero.Text = pelicula.Genero;
+                    TextBoxSinopsis.Text = pelicula.Sinopsis;
+                    TextBoxReparto.Text = pelicula.Reparto;
+                    TextBoxBandaSonora.Text = pelicula.BandaSonora;
+                    TextBoxTrailer.Text = pelicula.Trailer;
+                    BotonAddEdit.Text = "Guardar cambios";
+                }
+                else
+                {
+                    BotonAddEdit.Text = "Añadir película";
+                }
             }
 
         }
 
         protected void BotonAddEditOnClick(object sender, EventArgs e)
         {
-            String param1 = Request.QueryString["par1"];
+            int id = Convert.ToInt32(Request.QueryString["id"]);
             Response.BufferOutput = true;
-            if (param1 == "editarPelicula")
+            if (id!=0)
             {
                 //Guardar datos y update
-                pelicula.Titulo = TextBoxTitulo.Text;
+                pelicula.Id = id;
+                pelicula = pelicula.DamePelicula();
                 pelicula.Director = TextBoxDirector.Text;
-                pelicula.Ano = int.Parse(TextBoxAno.Text);
+                pelicula.Ano = Convert.ToInt32(TextBoxAno.Text);
                 pelicula.Sinopsis = TextBoxSinopsis.Text;
                 pelicula.Genero = TextBoxGenero.Text;
                 pelicula.Reparto = TextBoxReparto.Text;
                 pelicula.BandaSonora = TextBoxBandaSonora.Text;
                 pelicula.Trailer = TextBoxTrailer.Text;
                 pelicula.UpdatePelicula();
+                Response.Redirect("Pelicula.aspx?id=" + id);
             }
-            else if (param1 == "anadirPelicula")
+            else
             {
                 //Guardar datos y insert
-                pelicula.Titulo = TextBoxTitulo.Text;
                 pelicula.Director = TextBoxDirector.Text;
                 pelicula.Ano = int.Parse(TextBoxAno.Text);
                 pelicula.Sinopsis = TextBoxSinopsis.Text;

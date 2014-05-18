@@ -14,7 +14,7 @@
             </div>
              <img class="caratula" src="http://pics.filmaffinity.com/Vikingos_Vikings_Serie_de_TV-616055151-large.jpg" alt="fotou_perfil"/>
              <div class="info_cabecera">
-                <h2> <asp:TextBox ID="TextBoxTitulo" runat="server" Font-Italic Font-Size="1.5em"  style="width:223px">Título</asp:TextBox> </h2>
+                <h2>  <asp:Literal ID="LiteralTitulo" runat="server" > </asp:Literal> </h2>
                 <p> <asp:TextBox ID="TextBoxDirector" runat="server"> Director </asp:TextBox> </p>
                 <p> <asp:TextBox ID="TextBoxGenero" runat="server"> Genero </asp:TextBox> </p>
                 <p> <asp:TextBox ID="TextBoxBandaSonora" runat="server"> Banda sonora </asp:TextBox> </p>

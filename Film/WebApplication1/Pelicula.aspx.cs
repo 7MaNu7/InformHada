@@ -23,9 +23,10 @@ namespace WebApplication1
                 FilmBiblio.PeliculaEN pelicula = new FilmBiblio.PeliculaEN();
                 pelicula.Id = Convert.ToInt32(id);
 
+                BotonEditar.NavigateUrl = "AddEditPelicula.aspx?id="+id;
+                BotonReport.NavigateUrl = "Report.aspx";
 
                 pelicula = pelicula.DamePelicula();
-
                 caratula.ImageUrl = pelicula.Caratula;
                 fondo.ImageUrl = pelicula.Portada;
                 titulo.Text = pelicula.Titulo;
@@ -33,7 +34,7 @@ namespace WebApplication1
                 sinopsis.Text = pelicula.Sinopsis;
                 trailer.Text = pelicula.Trailer;
                 puntuacion.Text = pelicula.Puntuacion.ToString();
-                // reparto.Text = pelicula.Reparto.ToString();
+                reparto.Text = pelicula.Reparto.ToString();
                 ano.Text = pelicula.Ano.ToString();
             }
         }

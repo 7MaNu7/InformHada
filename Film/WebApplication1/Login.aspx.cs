@@ -34,6 +34,7 @@ namespace WebApplication1
                 {
                     Response.Write(@"<script language='javascript'>alert('Iniciando Sesión...');</script>");
                     Session["usuario"] = usuario;
+                    Session.Timeout = 30;
                     Response.Redirect("Default.aspx");
                 }
             }

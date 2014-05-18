@@ -14,29 +14,42 @@
             </div>
              <img class="caratula" src="http://pics.filmaffinity.com/Vikingos_Vikings_Serie_de_TV-616055151-large.jpg" alt="fotou_perfil"/>
              <div class="info_cabecera">
-                <h2>Vikings </h2>
-                <p>Director: Michael Hirst</p>
-                <p>Soundtrack: Hans Zimmer</p>
-                <p>Año: 2013</p>
+                <h2><asp:Literal ID="titulo" runat="server"></asp:Literal></h2>
+                <p>Director: <asp:Literal ID="director" runat="server"></asp:Literal></p>
+                <p>Soundtrack: <asp:Literal ID="musica" runat="server"></asp:Literal></p>
+                <p>Año: <asp:Literal ID="ano" runat="server"></asp:Literal></p>
+             </div>
+             <div class="puntuacion">
+                <asp:Literal ID="puntuacion" runat="server"></asp:Literal>
              </div>
          </div>
 
-        <div class="contenido_serie">
-            <div class="contenido_serie_i">
-                <asp:HyperLink ID="ButtonEdit" CssClass="anadir" runat="server" EnableViewState="false" Text="Editar" />
-                <asp:HyperLink ID="ButtonEdit2" CssClass="reportar" runat="server" Text="Reportar error" />
-                <div class="basic" data-average="5" data-id="1" style="margin:auto;"></div>
+        <div class="pelicula_contenido">
+            <div class="pelicula_contenido_i">
+              <asp:HyperLink ID="BotonEditar" CssClass="anadir" runat="server" EnableViewState="false" Text="Editar" />
+                <asp:HyperLink ID="BotonReport" CssClass="reportar" runat="server" Text="Reportar error" />
+                        <!--aa sp:Rating ID="Rating1" runat="servr" 
+                    CurrentRating="2"
+                    MaxRating="5"
+                    StarCssClass="ratingStar"
+                   WaitingStarCssClass="waitingstar" FilledStarCssClass="shiningstar"
+            EmptyStarCssClass="blankstar"
+
+                     -->
+     
+
+
             </div>
-            <div class="contenido_serie_d">
+            <div class="pelicula_contenido_d">
                <h2>Sinopsis</h2>
-               <p>Serie de TV (2013-Actualidad). Sigue las aventuras de Ragnar Lothbrok, el héroe más grande de su época. La serie narra las sagas de la banda de hermanos vikingos de Ragnar y su familia, cuando él se levanta para convertirse en el rey de las tribus vikingas. Además de ser un guerrero valiente, Ragnar encarna las tradiciones nórdicas de la devoción a los dioses, la leyenda dice que él era un descendiente directo de Odín, el dios de la guerra y los guerreros.</p>
+               <p><asp:Literal ID="sinopsis" runat="server"></asp:Literal></p>
 
                <h2>Reparto</h2>
-               <p>Travis Fimmel, Clive Standen, Katheryn Winnick, Gabriel Byrne, Jessalyn Gilsig, Gustaf Skarsgård, George Blagden, Tadhg Murphy, Diarmaid Murtagh, David Pearse, Vladimir Kulich, Donal Logue</p>
+               <p><asp:Literal ID="reparto" runat="server"></asp:Literal></p>
             
                 <h2>Trailer</h2>
-                <iframe width="761" height="415" src="//www.youtube.com/embed/5aASH8HMJbo" frameborder="0" allowfullscreen="trailer"></iframe>
-            
+                <iframe width="761" height="415" src="//www.youtube.com/embed/<asp:Literal ID="trailer" runat="server"></asp:Literal>" frameborder="0" allowfullscreen></iframe>
+                        
                 <h2>Capitulos - <span style="
                                 background: rgba(195, 195, 199, 0.44);
                                 font-size: 15px;

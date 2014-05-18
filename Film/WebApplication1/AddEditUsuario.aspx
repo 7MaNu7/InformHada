@@ -15,7 +15,9 @@
             </div>
              <img class="fotoperfilusuario" src="http://sintoniageek.com/wp-content/uploads/2011/03/avatar-geek-mario1.jpg" alt="fotou_perfil"/>
              <div class="infocabecera">=
-                <h2><asp:TextBox CssClass="cabecerasAddEdit" ID="TextBoxNombre" runat="server" Font-Italic  Font-Size="1.5em"  >Nombre</asp:TextBox></h2>
+                <h2>
+                    <asp:Literal ID="LiteralNombre" runat="server" > </asp:Literal>
+                </h2>
                     <p><asp:TextBox CssClass="cabecerasAddEdit" ID="TextBoxEmail" runat="server">e-mail</asp:TextBox></p>
              </div>
          </div>
@@ -38,9 +40,9 @@
                     <p><asp:TextBox ID="TextBoxProvincia" runat="server">Provincia</asp:TextBox></p>
                 </div>
                 <div class="infoamigos">
-                    <h2>Contraseña</h2>
-                    <p><asp:TextBox ID="TextBoxPsswd" runat="server">Contraseña</asp:TextBox></p>
-                    <p><asp:TextBox ID="TextBox3" runat="server">Repita contraseña</asp:TextBox></p>
+                    <h2>Nueva contraseña</h2>
+                    <p><asp:TextBox ID="TextBoxPsswd" runat="server"></asp:TextBox></p>
+                    <p><asp:TextBox ID="TextBoxPsswd2" runat="server"></asp:TextBox></p>
                 </div>
                 
             </div>
@@ -56,9 +58,7 @@
                     <p>Eliminar mi cuenta</p>
                 </div>
                  
-                 <asp:Button ID="BotonEditar" CssClass="botonanadireditarusr" runat="server" Text="Crear usuario" OnClick=BotonEditarOnClick />
-                    
-                 
+                 <asp:Button ID="BotonEditar" CssClass="botonanadireditarusr" runat="server" Text="Crear usuario" OnClick="BotonEditarOnClick" />
             </div>
          </div>   
       

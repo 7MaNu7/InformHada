@@ -26,8 +26,8 @@
 
         <div class="pelicula_contenido">
             <div class="pelicula_contenido_i">
-              <asp:HyperLink ID="ButtonEdit" CssClass="anadir" runat="server" EnableViewState="false" Text="Editar" />
-                <asp:HyperLink ID="ButtonEdit2" CssClass="reportar" runat="server" Text="Reportar error" />
+              <asp:HyperLink ID="BotonEditar" CssClass="anadir" runat="server" EnableViewState="false" Text="Editar" />
+                <asp:HyperLink ID="BotonReport" CssClass="reportar" runat="server" Text="Reportar error" />
                         <!--aa sp:Rating ID="Rating1" runat="servr" 
                     CurrentRating="2"
                     MaxRating="5"
