@@ -284,5 +284,23 @@ namespace FilmBiblio
 
             return bdvirtual;
         }
+
+        //Devuelve la información de todas los usuarios que tengan un usuario que contenga el texto
+        public DataSet DameUsuariosBusqueda(string texto)
+        {
+            SqlConnection c = new SqlConnection(conexion);
+            DataSet bdvirtual = new DataSet();
+            string select_busqueda = "Select * from usuarios where usuario is like '%" + texto + "%'";
+
+            try
+            {
+                SqlDataAdapter ejecuta = new SqlDataAdapter(select_busqueda, c);
+                ejecuta.Fill(bdvirtual, "usuarios");
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return bdvirtual;
+        }
     }   
 }

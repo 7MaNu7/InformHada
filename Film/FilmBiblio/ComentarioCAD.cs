@@ -122,5 +122,23 @@ namespace FilmBiblio
 
             return comentario;
         }
+
+        //Devuelve la información de todas los comentarios que contenga el texto
+        public DataSet DameComentariosBusqueda(string texto)
+        {
+            SqlConnection c = new SqlConnection(conexion);
+            DataSet bdvirtual = new DataSet();
+            string select_busqueda = "Select * from comentarios where texto is like '%" + texto + "%'";
+
+            try
+            {
+                SqlDataAdapter ejecuta = new SqlDataAdapter(select_busqueda, c);
+                ejecuta.Fill(bdvirtual, "comentarios");
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return bdvirtual;
+        }
     }
 }

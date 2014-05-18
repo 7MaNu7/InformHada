@@ -114,6 +114,13 @@ namespace FilmBiblio
             return bd;
         }
 
+        //Devuelve la información de todas las películas que tengan un título que contenga el texto
+        public DataSet DameSeriesBusqueda(string texto)
+        {
+            bd = peliculaCad.DamePeliculasBusqueda(texto);
+            return bd;
+        }
+
         /////////////////
         // Propiedades //
         /////////////////

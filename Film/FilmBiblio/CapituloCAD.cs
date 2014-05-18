@@ -175,6 +175,24 @@ namespace FilmBiblio
 
             return capitulo;
         }
+
+        //Devuelve la información de todas los capítulos que tengan un título que contenga el texto
+        public DataSet DameCapitulosBusqueda(string texto)
+        {
+            SqlConnection c = new SqlConnection(conexion);
+            DataSet bdvirtual = new DataSet();
+            string select_busqueda = "Select * from capitulo where titulo is like '%" + texto + "%'";
+
+            try
+            {
+                SqlDataAdapter ejecuta = new SqlDataAdapter(select_busqueda, c);
+                ejecuta.Fill(bdvirtual, "capitulos");
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return bdvirtual;
+        }
     }
 
 }

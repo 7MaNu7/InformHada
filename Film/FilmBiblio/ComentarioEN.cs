@@ -78,6 +78,13 @@ namespace FilmBiblio
             return comentario;
         }
 
+        //Devuelve la información de todas los comentarios que contenga el texto
+        public DataSet DameComentariosBusqueda(string texto)
+        {
+            bd = comentarioCad.DameComentariosBusqueda(texto);
+            return bd;
+        }
+
         /////////////////
         // Propiedades //
         /////////////////

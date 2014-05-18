@@ -77,7 +77,7 @@ namespace FilmBiblio
         {
             float puntos=0;
             string orden1 = "insert into votar values (" + id_usuario + ", " + id + ", " + calificacion + ")";
-            string orden2 = "select avg(voto) from votar where usuario=" + id_usuario + "and film=" + id;
+            string orden2 = "select avg(voto) from votar where film=" + id;
             string orden3 = "update film set puntuacion=" + puntos + " where id=" + id;
             SqlConnection c = new SqlConnection(conexion);
 
@@ -259,6 +259,25 @@ namespace FilmBiblio
             finally { c.Close(); }
 
             return bdvirtual;    
+        }
+
+        //Devuelve la información de todas las películas que tengan un título que contenga el texto
+        public DataSet DamePeliculasBusqueda(string texto)
+        {
+            SqlConnection c = new SqlConnection(conexion);
+            DataSet bdvirtual = new DataSet();
+            string select_busqueda = "Select * from film where titulo is like '%" + texto + "%'";
+            select_busqueda += "and id exists in (select id from pelicula)";
+
+            try
+            {
+                SqlDataAdapter ejecuta = new SqlDataAdapter(select_busqueda, c);
+                ejecuta.Fill(bdvirtual, "peliculas");
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return bdvirtual;
         }
     } 
 }

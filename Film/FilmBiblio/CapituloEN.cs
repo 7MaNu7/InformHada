@@ -78,6 +78,13 @@ namespace FilmBiblio
             return capitulo;
         }
 
+        //Devuelve la información de todas los capitulos que tengan un título que contenga el texto
+        public DataSet DameCapitulosBusqueda(string texto)
+        {
+            bd = capituloCad.DameCapitulosBusqueda(texto);
+            return bd;
+        }
+
         /////////////////
         // Propiedades //
         /////////////////

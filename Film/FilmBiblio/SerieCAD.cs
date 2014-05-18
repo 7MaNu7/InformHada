@@ -78,7 +78,7 @@ namespace FilmBiblio
         {
             float puntos = 0;
             string orden1 = "insert into votar values (" + id_usuario + ", " + id + ", " + calificacion + ")";
-            string orden2 = "select avg(voto) from votar where usuario=" + id_usuario + "and film=" + id;
+            string orden2 = "select avg(voto) from votar where film=" + id;
             string orden3 = "update film set puntuacion=" + puntos + " where id=" + id;
             SqlConnection c = new SqlConnection(conexion);
 
@@ -242,7 +242,7 @@ namespace FilmBiblio
             return serie;
         }
 
-        //Devuelve la información de todas las películas similares a una en concreto
+        //Devuelve la información de todas las series similares a una en concreto
         public DataSet DameSeriesSimilares(SerieEN serie)
         {
             SqlConnection c = new SqlConnection(conexion);
@@ -252,12 +252,31 @@ namespace FilmBiblio
             {
                 String select_similares = "Select * from film where genero=" + "'" + serie.Genero + "'";
                 SqlDataAdapter ejecuta = new SqlDataAdapter(select_similares, c);
-                ejecuta.Fill(bdvirtual, "peliculas");
+                ejecuta.Fill(bdvirtual, "series");
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { c.Close(); }
 
             return bdvirtual; 
+        }
+
+        //Devuelve la información de todas las series que tengan un título que contenga el texto
+        public DataSet DameSeriesBusqueda(string texto)
+        {
+            SqlConnection c = new SqlConnection(conexion);
+            DataSet bdvirtual = new DataSet();
+            string select_busqueda = "Select * from film where titulo is like '%" + texto + "%'";
+            select_busqueda+="and id exists in (select id from serie)";
+
+            try
+            {
+                SqlDataAdapter ejecuta = new SqlDataAdapter(select_busqueda, c);
+                ejecuta.Fill(bdvirtual, "series");
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return bdvirtual;
         }
     }
 }

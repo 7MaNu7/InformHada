@@ -133,6 +133,13 @@ namespace FilmBiblio
             return bd;
         }
 
+        //Devuelve la información de todas los usuarios que tengan un usuario que contenga el texto
+        public DataSet DameUsuariosBusqueda(string texto)
+        {
+            bd = usuarioCad.DameUsuariosBusqueda(texto);
+            return bd;
+        }
+
         /////////////////
         // Propiedades //
         /////////////////
