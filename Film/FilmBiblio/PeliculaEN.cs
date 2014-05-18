@@ -57,6 +57,12 @@ namespace FilmBiblio
             trailer = ptrailer;
         }
 
+        //True si un usuario ha votado este film
+        public bool HaVotado(int id_usuario)
+        {
+            return peliculaCad.HaVotado(this.id, id_usuario);
+        }
+
         //Se añade en la BD la puntuación de un usuario para una película concreta
         public void AnyadirPuntuacionPelicula(int id_usuario, float calificacion)
         {

@@ -27,25 +27,22 @@ namespace FilmBiblio
         {
             bool amigos = false;
             string orden = "select id1 from amigos where id1=" + id1 + " and id2=" + id2;
-            SqlConnection c = null;
-            SqlDataReader read = null;
-
+            SqlConnection c = new SqlConnection(conexion);
+            
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
-
                 SqlCommand select_amigos = new SqlCommand(orden, c);
-                read = select_amigos.ExecuteReader();
+                SqlDataReader read = select_amigos.ExecuteReader();
                 while (read.HasRows)
                 {
                     amigos = true;
                     break;
                 }
-                
+                read.Close();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally { read.Close(); c.Close(); }
+            finally { c.Close(); }
 
             return amigos;
         }
@@ -55,20 +52,17 @@ namespace FilmBiblio
         {
             string orden = "select * from usuario where id=(select max(id) from usuario)";
             int id = 0;
-
-            SqlConnection c = null;
+            SqlConnection c = new SqlConnection(conexion);
             SqlDataReader read_id = null;
 
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
-
                 SqlCommand max_id = new SqlCommand(orden, c);
                 read_id = max_id.ExecuteReader();
-                //max_id.ExecuteNonQuery();
                 read_id.Read();
-                    id=(int)read_id["id"];
+                id=(int)read_id["id"];
+                read_id.Close();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { read_id.Close(); c.Close(); }
@@ -80,40 +74,31 @@ namespace FilmBiblio
         public void AnyadirAmigo(int mi_id, int id_amigo)
         {
             String orden = "insert into amigos values (" + mi_id + ", " + id_amigo+ ")";
-
-            SqlConnection c = null;
+            SqlConnection c = new SqlConnection(conexion);
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
                 SqlCommand insert_usuario = new SqlCommand(orden, c);
                 insert_usuario.ExecuteNonQuery();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
         }
 
         //Cuando un usuario elimina a un amigo, su id y el id de su amigo se eliminan de la tabla Amigos que indica dicha relación
         public void EliminarAmigo(int mi_id, int id_amigo)
         {
             String orden = "delete from amigos where id1=" + mi_id + " and id2=" + id_amigo;
+            SqlConnection c = new SqlConnection(conexion);
 
-            SqlConnection c = null;
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
                 SqlCommand delete_amigo = new SqlCommand(orden, c);
                 delete_amigo.ExecuteNonQuery();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
         }
 
         //Realiza una operación select en la BD para añadir un nuevo usuario cuyos datos se pasan por parámetro en el objeto UsuarioEN
@@ -134,20 +119,16 @@ namespace FilmBiblio
             orden += "'" + usuario.Informacion + "', ";
             orden += "'" + usuario.FotoPerfil + "', ";
             orden += "'" + usuario.FotoPortada + "')";
-            
-            SqlConnection c = null;
+
+            SqlConnection c = new SqlConnection(conexion);
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
                 SqlCommand insert_usuario = new SqlCommand(orden, c);
                 insert_usuario.ExecuteNonQuery();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
         }
 
         //Modifica un usuario en la BD cuyos datos se pasan por parámetro en el objeto UsuarioEN
@@ -166,42 +147,44 @@ namespace FilmBiblio
             orden += "fotoPortada = '" + usuario.FotoPortada + "' ";
             orden += "where id = " + usuario.Id;
 
-            SqlConnection c = null;
+            SqlConnection c = new SqlConnection(conexion);
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
                 SqlCommand update_usuario = new SqlCommand(orden, c);
                 update_usuario.ExecuteNonQuery();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
         }
 
         //Borra un usuario en la BD que tiene la clave primaria que se pasa por parámetro
         public void BorrarUsuario(int id)
         {
-            String orden = "delete from usuario where id= " + id;
-            String orden2 = "delete from amigos where id1= " + id;
+            //Por claves ajenas y claves primarias es necesario eliminar en este orden
+            String orden1 = "delete from votar where usuario=" + id;
+            String orden2 = "delete from comentario where usuario=" + id;
+            String orden3 = "delete from amigos where id2= " + id;
+            String orden4 = "delete from amigos where id1= " + id;
+            String orden5 = "delete from usuario where id= " + id;
 
-            SqlConnection c = null;
+            SqlConnection c = new SqlConnection(conexion);
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
-                SqlCommand delete_usuario = new SqlCommand(orden, c);
+                SqlCommand delete_usuario = new SqlCommand(orden1, c);
                 delete_usuario.ExecuteNonQuery();
-                SqlCommand delete_amigos = new SqlCommand(orden2, c);
-                delete_amigos.ExecuteNonQuery();
+                delete_usuario = new SqlCommand(orden2, c);
+                delete_usuario.ExecuteNonQuery();
+                delete_usuario = new SqlCommand(orden3, c);
+                delete_usuario.ExecuteNonQuery();
+                delete_usuario = new SqlCommand(orden4, c);
+                delete_usuario.ExecuteNonQuery();
+                delete_usuario = new SqlCommand(orden5, c);
+                delete_usuario.ExecuteNonQuery();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
         }
 
         //Devuelve la información de todos los usuarios
@@ -225,17 +208,15 @@ namespace FilmBiblio
         //Devuelve la información del usuario que tiene como clave primaria el id pasado por parámetro
         public UsuarioEN DameUsuario(int id)
         {
-            SqlConnection c = null;
+            SqlConnection c = new SqlConnection(conexion);
             UsuarioEN usuario = new UsuarioEN();
 
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
                 SqlCommand select_usuario = new SqlCommand("Select * from usuario where id=" + id, c);
                 SqlDataReader read = select_usuario.ExecuteReader();
 
-                ArrayList amigos_aux = new ArrayList();
                 read.Read();
                 //Finalmente creamos el usuario con sus datos
                 usuario.Id = Convert.ToInt32(read["id"].ToString());
@@ -248,32 +229,26 @@ namespace FilmBiblio
                 usuario.Email = read["email"].ToString();
                 usuario.FechaNacimiento = read["fechaNacimiento"].ToString();
                 usuario.Informacion = read["informacion"].ToString();
+                read.Close();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally
-            {
-                c.Close();
-            }
-
+            finally { c.Close(); }
             return usuario;
         }
 
         //Devuelve la información del usuario que tiene como clave primaria el id pasado por parámetro
         public UsuarioEN DameUsuarioPorEmail(string email)
         {
-            SqlConnection c = null;
+            SqlConnection c = new SqlConnection(conexion);
             UsuarioEN usuario = new UsuarioEN();
 
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
-                SqlCommand select_usuario = new SqlCommand("Select * from usuario where email='"+email+"'", c);
+                SqlCommand select_usuario = new SqlCommand("Select * from usuario where email='" + email + "'", c);
                 SqlDataReader read = select_usuario.ExecuteReader();
-
-                ArrayList amigos_aux = new ArrayList();
+                
                 read.Read();
-
                 usuario.Id = Convert.ToInt32(read["id"].ToString());
                 usuario.Usuario = read["usuario"].ToString();
                 usuario.Psswd = read["psswd"].ToString();
@@ -284,12 +259,10 @@ namespace FilmBiblio
                 usuario.Email = read["email"].ToString();
                 usuario.FechaNacimiento = read["fechaNacimiento"].ToString();
                 usuario.Informacion = read["informacion"].ToString();
+                read.Close();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally 
-            {
-                c.Close();
-            }
+            finally { c.Close(); }
 
             return usuario;
         }

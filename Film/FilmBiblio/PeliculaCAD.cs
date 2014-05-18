@@ -23,36 +23,83 @@ namespace FilmBiblio
         // Funciones //
         ///////////////
 
+        //True si ha votado este film
+        public bool HaVotado(int id_film, int id_usuario)
+        {
+            bool test = false;
+            string orden = "select usuario from votar where usuario=" + id_usuario+" and film="+id_film;
+            SqlConnection c = new SqlConnection(conexion);
+
+            try
+            {
+                c.Open();
+                SqlCommand select_voto = new SqlCommand(orden, c);
+                SqlDataReader read = select_voto.ExecuteReader();
+                while (read.HasRows)
+                {
+                    test = true;
+                    break;
+                }
+                read.Close();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return test;
+        }
+
         //Devuelve el máximo id de la base de datos
         public int MaximoId()
         {
             string orden = "select * from film where id=(select max(id) from film)";
             int id = 0;
-
-            SqlConnection c = null;
+            SqlConnection c = new SqlConnection(conexion);
             SqlDataReader read_id = null;
 
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
 
                 SqlCommand max_id = new SqlCommand(orden, c);
                 read_id = max_id.ExecuteReader();
-                //max_id.ExecuteNonQuery();
                 read_id.Read();
                 id = (int)read_id["id"];
+                read_id.Close();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
-            finally { read_id.Close(); c.Close(); }
+            finally { c.Close(); }
             
             return id;
         }
 
         //Si un usuario vota una película, se registra lo que ha votado y se recalcula la puntuación de la pelicula
         public float AnyadirPuntuacionPelicula(int id_usuario, int id, float calificacion)
-        { 
-            return 0; /*Para que no de error*/ 
+        {
+            float puntos=0;
+            string orden1 = "insert into votar values (" + id_usuario + ", " + id + ", " + calificacion + ")";
+            string orden2 = "select avg(voto) from votar where usuario=" + id_usuario + "and film=" + id;
+            string orden3 = "update film set puntuacion=" + puntos + " where id=" + id;
+            SqlConnection c = new SqlConnection(conexion);
+
+            try
+            {
+                c.Open();
+                SqlCommand sentencia = new SqlCommand(orden1, c);
+                sentencia.ExecuteNonQuery();
+                
+                sentencia = new SqlCommand(orden2, c);
+                SqlDataReader leer_media = sentencia.ExecuteReader();
+                leer_media.Read();
+                puntos = Convert.ToInt32(leer_media[0].ToString());
+                leer_media.Close();
+
+                sentencia = new SqlCommand(orden3, c);
+                sentencia.ExecuteNonQuery();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return puntos;
         }
 
         //Realiza una operación select en la BD para añadir una nueva película cuyos datos se pasan por parámetro en el objeto PeliculaEN
@@ -75,12 +122,11 @@ namespace FilmBiblio
             orden += "'" + pelicula.Caratula + "', ";
             orden += "'" + pelicula.Trailer + "')";
 
-            String orden2 = "insert into pelicula values "+"( " + id + ", ";
+            String orden2 = "insert into pelicula values "+"( " + id + ") ";
 
-            SqlConnection c = null;
+            SqlConnection c = new SqlConnection(conexion);
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
                 SqlCommand insert_pelicula = new SqlCommand(orden, c);
                 insert_pelicula.ExecuteNonQuery();
@@ -108,10 +154,9 @@ namespace FilmBiblio
             orden += "caratula = " + pelicula.Trailer + " ";
             orden += "where id = " + pelicula.Id;
 
-            SqlConnection c = null;
+            SqlConnection c = new SqlConnection(conexion);
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
                 SqlCommand update_pelicula = new SqlCommand(orden, c);
                 update_pelicula.ExecuteNonQuery();
@@ -123,18 +168,24 @@ namespace FilmBiblio
         //Borra una película en la BD que tiene la clave primaria que se pasa por parámetro
         public void BorrarPelicula(int id)
         {
-            String orden = "delete from film where id= " + id;
-            String orden2 = "delete from serie where id= " + id;
+            String orden1 = "delete from votar where film="+id;
+            String orden2 = "delete from comentario where film="+id;
+            String orden3 = "delete from pelicula where id= "+id;
+            String orden4 = "delete from film where id= "+id;
 
-            SqlConnection c = null;
+            SqlConnection c = new SqlConnection(conexion);
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
-                SqlCommand delete_pelicula = new SqlCommand(orden, c);
+                SqlCommand delete_pelicula = new SqlCommand(orden1, c);
                 delete_pelicula.ExecuteNonQuery();
-                SqlCommand delete_reparto = new SqlCommand(orden2, c);
-                delete_reparto.ExecuteNonQuery();
+                delete_pelicula = new SqlCommand(orden2, c);
+                delete_pelicula.ExecuteNonQuery();
+                delete_pelicula = new SqlCommand(orden3, c);
+                delete_pelicula.ExecuteNonQuery();
+                delete_pelicula = new SqlCommand(orden4, c);
+                delete_pelicula.ExecuteNonQuery();
+                
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { c.Close(); }
@@ -161,12 +212,11 @@ namespace FilmBiblio
         //Devuelve la información de la película que tiene como clave primaria el id pasado por parámetro
         public PeliculaEN DamePelicula(int id)
         {
-            SqlConnection c = null;
-            PeliculaEN pelicula = null;
+            SqlConnection c = new SqlConnection(conexion);
+            PeliculaEN pelicula = new PeliculaEN();
 
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
                 SqlCommand select_pelicula = new SqlCommand("Select * from film where id=" +id , c);
                 SqlDataReader read = select_pelicula.ExecuteReader();
@@ -184,7 +234,7 @@ namespace FilmBiblio
                 pelicula.Portada = read["portada"].ToString();
                 pelicula.Caratula = read["caratula"].ToString();
                 pelicula.Trailer = read["trailer"].ToString();
-
+                read.Close();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { c.Close(); }

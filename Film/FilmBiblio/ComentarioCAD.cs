@@ -23,6 +23,7 @@ namespace FilmBiblio
         // Funciones //
         ///////////////
 
+        //Inserta un comentario en la BD
         public void InsertarComentario(ComentarioEN comentario)
         {
             String orden = "insert into comentario values ";
@@ -32,10 +33,9 @@ namespace FilmBiblio
             orden += comentario.Usuario + ", ";
             orden += comentario.Film + ")";
 
-            SqlConnection c = null;
+            SqlConnection c = new SqlConnection(conexion);
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
                 SqlCommand insert_comentario = new SqlCommand(orden, c);
                 insert_comentario.ExecuteNonQuery();
@@ -44,6 +44,7 @@ namespace FilmBiblio
             finally { c.Close(); }
         }
 
+        //No se cambian ni la película a la que refiere ni el autor (usuario)
         public void UpdateComentario(ComentarioEN comentario)
         {
             String orden = "update comentario ";
@@ -51,10 +52,9 @@ namespace FilmBiblio
             orden += "texto = '" + comentario.Texto + "', ";
             orden += "where id = " + comentario.Id;
 
-            SqlConnection c = null;
+            SqlConnection c = new SqlConnection(conexion);
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
                 SqlCommand update_comentario = new SqlCommand(orden, c);
                 update_comentario.ExecuteNonQuery();
@@ -68,10 +68,9 @@ namespace FilmBiblio
         {
             String orden = "delete from comentario where id= " + id;
 
-            SqlConnection c = null;
+            SqlConnection c = new SqlConnection(conexion);
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
                 SqlCommand delete_comentario = new SqlCommand(orden, c);
                 delete_comentario.ExecuteNonQuery();
@@ -102,18 +101,21 @@ namespace FilmBiblio
         //Devuelve la información del comentario que tiene como clave primaria el id pasado por parámetro
         public ComentarioEN DameComentario(int id)
         {
-            SqlConnection c = null;
-            ComentarioEN comentario = null;
+            SqlConnection c = new SqlConnection(conexion);
+            ComentarioEN comentario = new ComentarioEN();
 
             try
             {
-                c = new SqlConnection(conexion);
                 c.Open();
-                SqlCommand select_comentario = new SqlCommand("Select * from comentario where id=" + id, c);
+                SqlCommand select_comentario = new SqlCommand("select * from comentario where id=" + id, c);
                 SqlDataReader read = select_comentario.ExecuteReader();
-
-                comentario = new ComentarioEN((int)read["id"], (string)read["texto"], (int)read["usuario"],
-                    (string)read["fecha"], (int)read["film"]);
+                read.Read();
+                comentario.Id = Convert.ToInt32(read["id"].ToString());
+                comentario.Fecha = read["fecha"].ToString();
+                comentario.Texto = read["texto"].ToString();
+                comentario.Usuario = Convert.ToInt32(read["usuario"].ToString());
+                comentario.Film = Convert.ToInt32(read["film"].ToString());
+                read.Close();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { c.Close(); }
