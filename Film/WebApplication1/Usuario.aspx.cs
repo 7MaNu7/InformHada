@@ -133,11 +133,11 @@ namespace WebApplication1
 
         }
 
-        protected void EliminarUsuario(object sender, EventArgs e)
+        protected void BotonEliminarUsuario(object sender, EventArgs e)
         {
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
             usuario.BorrarUsuario();
-            HyperLinkEliminarUsuario.NavigateUrl = "Default.aspx";
+            //Bu = "Default.aspx";
         }
 
         protected void BotonEditarOnClick(object sender, EventArgs e)
@@ -147,7 +147,6 @@ namespace WebApplication1
             {
                 Response.Redirect("AddEditUsuario.aspx");
             }
-        
         }
     }
 }

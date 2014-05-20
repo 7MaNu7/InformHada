@@ -334,8 +334,8 @@ namespace FilmBiblio
 
             try
             {
-                String select_amigos = "Select id2 from amigos where id1=" + id_amigo;
-                select_amigos+=" and id2 not in (select id2 from amigos where id1="+id_usuario+")";
+                String select_amigos = "select id2 from amigos where id1=" + id_amigo;
+                select_amigos += "and id2!="+id_usuario+" and id2 not in (select id2 from amigos where id1="+id_usuario+")";
                 SqlDataAdapter ejecuta = new SqlDataAdapter(select_amigos, c);
                 ejecuta.Fill(bdvirtual, "series");
             }
