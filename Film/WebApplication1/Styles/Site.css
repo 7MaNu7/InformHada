@@ -11,22 +11,10 @@ body
     color: #696969;
 }
 
-a:link, a:visited
+a
 {
-    color: #034af3;
+    text-decoration:none;
 }
-
-a:hover
-{
-    color: #1d60ff;
-    text-decoration: none;
-}
-
-a:active
-{
-    color: #034af3;
-}
-
 p
 {
     margin-bottom: 10px;
@@ -94,14 +82,14 @@ first child of the left and right table columns */
     border: 0px solid #496077;
 }
 
-.header
-{
-    position: fixed;
-    z-index: 999;
-    margin: 0px;
-    padding: 0px;
-  
-    width: 100%;
+.header {
+position: fixed;
+z-index: 999;
+margin: 0px;
+padding: 0px;
+vertical-align: middle;
+width: 100%;
+height: 33px;
 }
 
 .header h1
@@ -257,7 +245,7 @@ div.accountInfo
     font-size: 1.1em;
     float: right;
     text-align: right;
-    padding: 7px 0px 0px 15px;
+    padding: 4px 0px 0px 15px;
     color: White;
 }
 
@@ -309,13 +297,15 @@ a.header
 }
 
 
-.cabecera_contenido
-{
-    padding: 25px 25px 1.5px 25px;
-    overflow:hidden;
+.menu_buscar {
+float: right;
+padding: 6px 0px 4px 8px;
+color: #dde4ec;
 }
 
-
+#ImageSearchButton {
+vertical-align: middle;
+}
 
 .menuizq 
 {
@@ -409,3 +399,55 @@ width: 16px;
 height: 16px;
 }
 
+.comentario
+{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.comentario_txt
+{
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 17px;
+    padding-top: 0;
+}
+
+.comentario_img
+{
+    display: table-cell;
+    width: 41px;
+    border-right: solid 1px rgb(218, 218, 218);
+    
+}
+
+.comentario_p
+{
+    margin: 0;
+}
+
+.comentario_f
+{
+    margin: 0;
+    font-size: 0.9em;
+    color: rgb(180, 180, 180);
+}
+.comentario_img img {
+width: 32px;
+padding-left: 2px;
+border-radius: 2px;
+}
+
+
+#BotonIniciarSesion {
+border: none;
+background: none;
+color: white;
+cursor: pointer;
+text-decoration: underline;
+}
+
+#userTextBox {
+border-radius: 2px;
+border: none;
+box-shadow: inset 0 0 2px black;
+}

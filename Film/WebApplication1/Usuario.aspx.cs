@@ -4,6 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+using System.Configuration;
 
 namespace WebApplication1
 {
@@ -11,6 +16,8 @@ namespace WebApplication1
     {
         private FilmBiblio.UsuarioEN usuario = new FilmBiblio.UsuarioEN();
         private FilmBiblio.UsuarioEN amigo = new FilmBiblio.UsuarioEN();
+        private DataSet d = new DataSet();
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -54,6 +61,7 @@ namespace WebApplication1
                 LiteralEmail1.Text = usuario.Email;
                 LiteralEmail.Text = usuario.Email;
                 LiteralInformacion.Text = usuario.Informacion;
+                
             }
             else
             {
@@ -76,7 +84,26 @@ namespace WebApplication1
             if (id == usuario.Id || id == 0)
             {
                 BotonAmigo.Visible = false;
+                
+                    d = usuario.DameAmigos();
+                    ListViewAmigos.DataSource = d;
+                    ListViewAmigos.DataBind();
+
+
+                
             }
+
+
+            if (!Page.IsPostBack && id!=0 )
+            {
+                d = amigo.DameAmigos();
+                ListViewAmigos.DataSource = d;
+                ListViewAmigos.DataBind();
+
+                
+            }
+
+
         }
 
         protected void BotonAmigoOnClick(object sender, EventArgs e)

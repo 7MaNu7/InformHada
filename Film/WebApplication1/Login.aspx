@@ -14,7 +14,7 @@
          <asp:TextBox ID="TextBoxPsswd" runat="server" TextMode="Password" Text="Contraseña">PASSWORD</asp:TextBox>
          <asp:Button ID="ButtonIniciarSesion" CssClass="botton" runat="server" Text="Iniciar sesión" OnClick="IniciarSesionOnClick" />
          <div>
-            <a href="AddEditUsuario.aspx">Registrarse</a>
+            <a href="Register.aspx">Registrarse</a>
          </div>
      </div>
 

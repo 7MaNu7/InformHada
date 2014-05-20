@@ -49,6 +49,23 @@
             
                 <h2>Trailer</h2>
                 <iframe width="761" height="415" src="//www.youtube.com/embed/<asp:Literal ID="trailer" runat="server"></asp:Literal>" frameborder="0" allowfullscreen></iframe>
+
+                <h2>Comentarios</h2>
+                <div class="comentarios">
+                    <asp:ListView ID="ListViewComentarios" runat="server">
+                        <ItemTemplate>
+                            <div class="comentario">
+                                <div class="comentario_img">
+                                     <img src="img/users/<%# Eval("usuario")%>.jpg" />
+                                </div>
+                                <div class="comentario_txt">     
+                                    <span class="comentario_p" ><%# Eval("texto")%></span>
+                                    <span class="comentario_f"><%# Eval("fecha")%></span>
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                    </asp:ListView>
+                </div>
             </div>
         </div>
     </div>

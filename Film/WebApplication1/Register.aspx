@@ -10,36 +10,38 @@
                     <div class="Login">
 
 
-                     <div style="margin-bottom: 24px;"><h2>Registro</h2></div>
-                     
-                        <p>
-                            Use el formulario siguiente para crear una cuenta nueva.
-                        </p>
-                        
-                        <legend>Información de cuenta</legend>
-                        <p>
-                            <asp:Label ID="LabelUsuario" runat="server" >Nombre de usuario:</asp:Label>
-                            <asp:TextBox ID="TextBoxUsuario" runat="server" CssClass="textEntry"></asp:TextBox>
-                        </p>
-                        <p>
-                            <asp:Label ID="LabelPais" runat="server">Pais:</asp:Label>
-                            <asp:TextBox ID="TextBoxPais" runat="server" CssClass="textEntry"></asp:TextBox>
-                        </p>
+                     <div style="margin-bottom: 24px; margin-left: 69px;"><h2>Registro</h2></div>
+                    
+                        <div class="cont_columna">
+                        <div class="columna">
+                            <p>
+                                <asp:Label ID="LabelUsuario" runat="server" >Nombre de usuario:</asp:Label>
+                                <asp:TextBox ID="TextBoxUsuario" runat="server" CssClass="textEntry"></asp:TextBox>
+                            </p>
+                            <p>
+                                <asp:Label ID="LabelPais" runat="server">Pais:</asp:Label>
+                                <asp:TextBox ID="TextBoxPais" runat="server" CssClass="textEntry"></asp:TextBox>
+                            </p>
 
-                        <p>
-                            <asp:Label ID="LabelProvincia" runat="server" >Provincia:</asp:Label>
-                            <asp:TextBox ID="TextBoxProvincia" runat="server" CssClass="textEntry"></asp:TextBox>
+                            <p>
+                                <asp:Label ID="LabelProvincia" runat="server" >Provincia:</asp:Label>
+                                <asp:TextBox ID="TextBoxProvincia" runat="server" CssClass="textEntry"></asp:TextBox>
                                    
-                        </p>
+                            </p>
 
-                        <p>Sexo:</p>
-                        <asp:RadioButtonList ID="Sexo" runat="server" CellPadding="8" TextAlign="Left" RepeatDirection="Horizontal">
-                            <asp:ListItem ID="SexoHombre" runat="server" value="Varón" />
-                            <asp:ListItem ID="SexoMujer" runat="server" value="Mujer" />
-                        </asp:RadioButtonList>
+                            <asp:Label ID="Label1" runat="server" >Fecha nacimiento:</asp:Label>
+                            <asp:TextBox ID="calendario" runat="server"></asp:TextBox>
 
-                        <asp:Calendar ID="Calendar" runat="server"> </asp:Calendar>
-
+                            <p style="vertical-align:top;">Sexo:</p>
+                            <div style="display:inline;">
+                            <asp:RadioButtonList ID="Sexo" runat="server" CellPadding="8" TextAlign="Left" RepeatDirection="Horizontal">
+                                <asp:ListItem ID="SexoHombre" runat="server" value="Varón" />
+                                <asp:ListItem ID="SexoMujer" runat="server" value="Mujer" />
+                                     </asp:RadioButtonList>
+                                </div>
+                       
+                      </div>
+                      <div class="columna">
                         <p>
                             <asp:Label ID="LabelEmail" runat="server" >Correo electrónico:</asp:Label>
                             <asp:TextBox ID="TextBoxEmail" runat="server" CssClass="textEntry"></asp:TextBox>
@@ -55,8 +57,9 @@
                             <asp:TextBox ID="TextBoxPasswd2" runat="server" CssClass="passwordEntry" TextMode="Password"></asp:TextBox>
                         </p>
                      
-                        <asp:Button ID="BotonRegistro" runat="server" OnClick="BotonRegistroOnClick" Text="Completar registro" />
-                        
+                        <asp:Button ID="BotonRegistro" CssClass="completar" runat="server" OnClick="BotonRegistroOnClick" Text="Completar registro" />
+                     </div>
+                     </div>   
                      <div>
                         <a href="Default.aspx">Volver a la página principal</a>
                      </div>

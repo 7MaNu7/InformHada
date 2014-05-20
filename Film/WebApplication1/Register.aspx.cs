@@ -26,7 +26,7 @@ namespace WebApplication1.Account
                 usuario.Psswd = TextBoxPsswd.Text;
                 usuario.Pais = TextBoxPais.Text;
                 usuario.Provincia = TextBoxProvincia.Text;
-                usuario.FechaNacimiento = Calendar.SelectedDate.ToString();
+                usuario.FechaNacimiento =  calendario.Text;
                 usuario.Sexo = Sexo.Text;
                 usuario.Email = TextBoxEmail.Text;
 
