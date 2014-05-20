@@ -16,7 +16,7 @@ namespace WebApplication1
     {
         private DataSet d=new DataSet();
         private FilmBiblio.PeliculaEN pelicula=new FilmBiblio.PeliculaEN();
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -30,6 +30,8 @@ namespace WebApplication1
                 d = pelicula.DamePeliculas();
                 ListViewPeliculas.DataSource = d;
                 ListViewPeliculas.DataBind();
+
+              
             }
         }
 
