@@ -86,6 +86,28 @@ namespace FilmBiblio
             return bd;
         }
 
+        //Devuelve los comentarios de una película/serie
+        public DataSet DameComentariosFilm(int id_film)
+        {
+            bd = comentarioCad.DameComentariosFilm(id_film);
+            return bd;
+        }
+
+        //Devuelve los comentarios de un capítulo
+        public DataSet DameComentariosCapitulo(int id_capitulo)
+        {
+            bd = comentarioCad.DameComentariosCapitulo(id_capitulo);
+            return bd;
+        }
+
+        //Devuelve los comentarios más recientes de un usuario
+        public DataSet DameComentariosRecientesUsuario(int id_usuario)
+        {
+            bd = comentarioCad.DameComentariosCapitulo(id_usuario);
+            return bd;
+        }
+
+
         /////////////////
         // Propiedades //
         /////////////////

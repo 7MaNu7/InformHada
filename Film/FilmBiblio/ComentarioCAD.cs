@@ -103,11 +103,12 @@ namespace FilmBiblio
         {
             SqlConnection c = new SqlConnection(conexion);
             ComentarioEN comentario = new ComentarioEN();
+            string consulta="select comentario.* from comentario, film where id="+id;
 
             try
             {
                 c.Open();
-                SqlCommand select_comentario = new SqlCommand("select * from comentario where id=" + id, c);
+                SqlCommand select_comentario = new SqlCommand(consulta, c);
                 SqlDataReader read = select_comentario.ExecuteReader();
                 read.Read();
                 comentario.Id = Convert.ToInt32(read["id"].ToString());
@@ -133,6 +134,61 @@ namespace FilmBiblio
             try
             {
                 SqlDataAdapter ejecuta = new SqlDataAdapter(select_busqueda, c);
+                ejecuta.Fill(bdvirtual, "comentarios");
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return bdvirtual;
+        }
+
+        //Devuelve los comentarios de una película/serie
+        public DataSet DameComentariosFilm(int id_film)
+        {
+            SqlConnection c = new SqlConnection(conexion);
+            DataSet bdvirtual = new DataSet();
+
+            try
+            {
+                string select_comentarios = "select * from comentario where comentario.film" + id_film;
+
+                SqlDataAdapter ejecuta = new SqlDataAdapter(select_comentarios, c);
+                ejecuta.Fill(bdvirtual, "comentarios");
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return bdvirtual;
+        }
+
+        //Devuelve los comentarios de un capítulo
+        public DataSet DameComentariosCapitulo(int id_capitulo)
+        {
+            SqlConnection c = new SqlConnection(conexion);
+            DataSet bdvirtual = new DataSet();
+
+            try
+            {
+                string select_comentarios = "select * from comentario where comentario.capitulo=id=" + id_capitulo;
+                SqlDataAdapter ejecuta = new SqlDataAdapter(select_comentarios, c);
+                ejecuta.Fill(bdvirtual, "comentarios");
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return bdvirtual;
+        }
+
+        //Devuelve los comentarios más recientes de un usuario
+        public DataSet DameComentariosRecientesUsuario(int id_usuario)
+        {
+            SqlConnection c = new SqlConnection(conexion);
+            DataSet bdvirtual = new DataSet();
+
+            try
+            {
+                string select_comentarios = "select * top 5 from comentario where usuario="+id_usuario+" order by fecha desc";
+                SqlDataAdapter ejecuta = new SqlDataAdapter(select_comentarios, c);
                 ejecuta.Fill(bdvirtual, "comentarios");
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
