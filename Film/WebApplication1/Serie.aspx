@@ -1,12 +1,14 @@
 ﻿<%@ Page Title="Divergente" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeBehind="Serie.aspx.cs" Inherits="WebApplication1.Serie" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <link href="/Styles/Serie.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
    <div class="contenido">
-
+   
        <!-- CABECERA DE LA serie  -->
         <div class="cabecera_serie">
             <div class="portada_serie" style="background-image:url('');">
@@ -44,7 +46,18 @@
 
                <h2>Reparto</h2>
                <p><asp:Literal ID="reparto" runat="server"></asp:Literal></p>
-            
+                
+                <h2>Capitulos</h2>
+                <div class="acordeon">
+                <asp:ToolkitScriptManager ID="ToolkitScriptManager2" runat="server">
+                    </asp:ToolkitScriptManager>
+                    <asp:Accordion ID="Accordion1" runat="server">
+                        <Panes>
+                             
+                        </Panes>
+                    </asp:Accordion>
+                </div>
+
                 <h2>Trailer</h2>
                 <iframe width="761" height="415" src="//www.youtube.com/embed/<asp:Literal ID="trailer" runat="server"></asp:Literal>" frameborder="0" allowfullscreen></iframe>
 
