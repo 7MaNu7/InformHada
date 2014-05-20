@@ -19,8 +19,12 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuario"] == null)
+            {
+                BotonEditar.Visible = false;
+            }
+            
             String id = Request.QueryString["id"];
-
             if (id == null)
             {
                 Response.Redirect("peliculas.aspx");

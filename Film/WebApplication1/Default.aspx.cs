@@ -43,20 +43,26 @@ namespace WebApplication1
             HyperLinkAbout.NavigateUrl = "About.aspx";
             HyperLinkReport.NavigateUrl = "Report.aspx";
 
+            int numero = 5;
+
             if (!Page.IsPostBack)
             {
-                d = pelicula.DamePeliculas();
+                d = pelicula.DamePeliculasRecientes(numero);
                 ListViewRecientes.DataSource = d;
                
                 ListViewRecientes.DataBind();
 
-                d = serie.DameSeries();
+                d = serie.DameSeriesRecientes(numero);
                 ListViewSrecientes.DataSource = d;
                 ListViewSrecientes.DataBind();
 
-                d = pelicula.DamePeliculas();
+                d = pelicula.DamePeliculasMejorPuntuadas(numero);
                 ListViewPuntuadas.DataSource = d;
                 ListViewPuntuadas.DataBind();
+
+                d = serie.DameSeriesMejorPuntuadas(numero);
+                ListViewSPuntuadas.DataSource = d;
+                ListViewSPuntuadas.DataBind();
             }
         }
     }

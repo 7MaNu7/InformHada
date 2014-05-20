@@ -14,6 +14,16 @@ left: 89px;
 height: 300px;
 }
 
+.puntuacion 
+{
+    position: absolute;
+    right: 100px;
+    font-size: 150px;
+    top: 90px;
+    color: White;
+    text-shadow: 0 0 2px black;
+    
+}
 .info_cabecera {
     position: absolute;
     bottom: 57px;
@@ -37,69 +47,46 @@ height: 300px;
     -ms-filter: blur(10px);
     filter: blur(10px);
 }
-.contenido_serie {
-position: relative;
-}
-.contenido_serie_d {
+
+.serie_contenido_d {
     margin-left: 335px;
     margin-right: 100px;
     text-align: justify;
 }
 
-
-.contenido_serie_i {
-position: absolute;
-left: 88px;
-top: 39px;
-width: 201px;
-}
-.Serie_capitulos p {
-padding: 2px 0px 2px 7px;
-margin: 0;
-margin-left: 29px;
-border-left: solid 2px rgb(194, 194, 188);
+.serie_contenido_i {
+    position: absolute;
+    left: 88px;
+    top: 39px;
+    width: 201px;
 }
 
-.Serie_capitulos h2 {
-    padding-left: 15px;
-    color: rgb(43, 43, 43);
-    margin-bottom: 8px;
-}
-
-.Serie_capitulos, .volver_serie a 
-{
-     color: Gray;
-     text-decoration:none;
+.serie_contenido {
+    position: relative;
 }
 
 .anadir, .reportar{
-width: 100%;
-border: none;
-height: 30px;
-margin: 0px 0px 8px 0px;
-cursor:pointer;
-border-radius: 2px;
-color: white;
-font-weight: bold;
-font-size: 15px;
-box-shadow: 0 0 7px -3px rgba(0, 0, 0, 0.52);
-display: block;
+    width: 100%;
+    border: none;
+    height: 30px;
+    margin: 0px 0px 8px 0px;
+    cursor:pointer;
+    border-radius: 2px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0 0 7px -3px rgba(0, 0, 0, 0.52);
+    display: block;
 text-align: center;
 vertical-align: middle;
 font-size: 19px;
 padding-top: 4px;
 }
 
-.Serie_capitulos a 
-{
-     color: Gray;
-     text-decoration:none;
-}
-
 .anadir
 {
-background: rgb(30, 103, 196);
-border-bottom: solid 2px rgb(66, 66, 155);
+    background: rgb(30, 103, 196);
+    border-bottom: solid 2px rgb(66, 66, 155);
 }
 
 .reportar

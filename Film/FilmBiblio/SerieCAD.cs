@@ -284,7 +284,8 @@ namespace FilmBiblio
         {
             SqlConnection c = new SqlConnection(conexion);
             DataSet bdvirtual = new DataSet();
-            string select = "Select * top " + numero + " from serie order by puntuacion desc";
+            string select = "Select top " + numero + " film.* from film, serie ";
+            select += "where film.id=serie.id order by puntuacion desc";
 
             try
             {
@@ -302,7 +303,8 @@ namespace FilmBiblio
         {
             SqlConnection c = new SqlConnection(conexion);
             DataSet bdvirtual = new DataSet();
-            string select = "Select * top " + numero + " from serie order by id desc";
+            string select = "Select top " + numero + " film.* from film, serie ";
+            select += "where film.id=serie.id order by film.id desc";
 
             try
             {

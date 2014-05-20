@@ -187,7 +187,7 @@ namespace FilmBiblio
 
             try
             {
-                string select_comentarios = "select * top 5 from comentario where usuario="+id_usuario+" order by fecha desc";
+                string select_comentarios = "select top 5 * from comentario where usuario=" + id_usuario + " order by fecha desc";
                 SqlDataAdapter ejecuta = new SqlDataAdapter(select_comentarios, c);
                 ejecuta.Fill(bdvirtual, "comentarios");
             }

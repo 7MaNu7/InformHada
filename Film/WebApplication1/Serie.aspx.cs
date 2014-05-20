@@ -11,8 +11,12 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            String id = Request.QueryString["id"];
+            if (Session["usuario"] == null)
+            {
+                BotonEditar.Visible = false;
+            }
 
+            String id = Request.QueryString["id"];
             if (id == null)
             {
                 Response.Redirect("series.aspx");

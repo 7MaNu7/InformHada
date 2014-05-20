@@ -267,7 +267,7 @@ namespace FilmBiblio
             return usuario;
         }
 
-        //Devuelve un array con los amigos y su información
+        //Devuelve una bd con los amigos y su información
         public DataSet DameAmigos(int id)
         {
             SqlConnection c = new SqlConnection(conexion);
@@ -290,7 +290,7 @@ namespace FilmBiblio
         {
             SqlConnection c = new SqlConnection(conexion);
             DataSet bdvirtual = new DataSet();
-            string select_busqueda = "Select * from usuarios where usuario is like '%" + texto + "%'";
+            string select_busqueda = "Select * from usuario where usuario is like '%" + texto + "%'";
 
             try
             {
@@ -300,6 +300,38 @@ namespace FilmBiblio
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { c.Close(); }
 
+            return bdvirtual;
+        }
+
+        //Devuelve un amigo aleatorio
+        public int DameUsuarioAleatorio(int id)
+        {
+            int id_amigo=0;
+            SqlConnection c = new SqlConnection(conexion);
+            UsuarioEN usuario = new UsuarioEN();
+
+            try
+            {
+                c.Open();
+                SqlCommand select_usuario = new SqlCommand("Select id from usuario where id="+id+" order by rand() limit 1", c);
+                SqlDataReader read = select_usuario.ExecuteReader();
+                read.Read();
+                id_amigo = Convert.ToInt32(read["id"].ToString());
+                read.Close();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return id_amigo;        
+        }
+
+        //Devuelve la información de todas los usuarios que quizás conozca el usuario (amigos de amigos)
+        public DataSet DameUsuariosQuizasConozca(int id)
+        {
+            SqlConnection c = new SqlConnection(conexion);
+            DataSet bdvirtual = new DataSet();
+            int id_amigo=DameUsuarioAleatorio(id);
+            bdvirtual = DameAmigos(id_amigo);            
             return bdvirtual;
         }
     }   

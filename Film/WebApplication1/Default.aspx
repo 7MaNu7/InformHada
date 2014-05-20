@@ -63,7 +63,6 @@
             <asp:ListView ID="ListViewRecientes" runat="server">
             <ItemTemplate>
                 <td>
-                   
                         <a style="display: table-cell;float: left; text-decoration:none; color:Gray;"  href="Pelicula.aspx?id=<asp:Literal ID="Literal5" Text='<%# Eval("id")%>'  runat="server"></asp:Literal>">
                 
                         <div class="peliculacaratula">
@@ -148,5 +147,33 @@
         </table>
     </div>
   
+
+        <div class="cabecera_contenido">
+        <table>
+            <tr>
+            <asp:ListView ID="ListViewSPuntuadas" runat="server">
+            <ItemTemplate>
+                <td>
+                        <a style="display: table-cell;float: left; text-decoration:none; color:Gray;"  href="Pelicula.aspx?id=<asp:Literal ID="Literal5" Text='<%# Eval("id")%>'  runat="server"></asp:Literal>">
+                
+                        <div class="peliculacaratula">
+                            <asp:Image ID="Image1" CssClass="peliculacaratulaimg" runat="server" ImageUrl='<%# Eval("caratula")%>' />
+                            <p><asp:Literal ID="Literal1" Text='<%# Eval("titulo")%>' runat="server"></asp:Literal></p>
+                            <div class="infopelicula">
+                                <p>Año: <asp:Literal ID="Literal2" Text='<%# Eval("ano")%>' runat="server"></asp:Literal></p>
+                                <p> Puntuacion: <asp:Literal ID="Literal3" Text='<%# Eval("puntuacion")%>' runat="server"></asp:Literal></p>
+                                <p>Id: <asp:Literal ID="Literal4" Text='<%# Eval("id")%>' runat="server"></asp:Literal></p>
+                            </div>
+                        </div>
+                        </a>
+         
+                </td>
+            </ItemTemplate>
+            </asp:ListView>
+            </tr>
+        </table>
+    </div>
+
+
   </div>
 </asp:Content>
