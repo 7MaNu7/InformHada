@@ -112,6 +112,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Literal reparto;
         
         /// <summary>
+        /// trailer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal trailer;
+        
+        /// <summary>
         /// ToolkitScriptManager2 control.
         /// </summary>
         /// <remarks>
@@ -128,24 +137,6 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.Accordion Accordion1;
-        
-        /// <summary>
-        /// AccordionPane1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.AccordionPane AccordionPane1;
-        
-        /// <summary>
-        /// trailer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal trailer;
         
         /// <summary>
         /// ListViewComentarios control.

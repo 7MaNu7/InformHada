@@ -46,7 +46,9 @@
 
                <h2>Reparto</h2>
                <p><asp:Literal ID="reparto" runat="server"></asp:Literal></p>
-                
+                <h2>Trailer</h2>
+                <iframe width="761" height="415" src="//www.youtube.com/embed/<asp:Literal ID="trailer" runat="server"></asp:Literal>" frameborder="0" allowfullscreen></iframe>
+
                 <h2>Capitulos</h2>
                 <div class="acordeon">
                 <asp:ToolkitScriptManager ID="ToolkitScriptManager2" runat="server">
@@ -58,9 +60,7 @@
                     </asp:Accordion>
                 </div>
 
-                <h2>Trailer</h2>
-                <iframe width="761" height="415" src="//www.youtube.com/embed/<asp:Literal ID="trailer" runat="server"></asp:Literal>" frameborder="0" allowfullscreen></iframe>
-
+                
                 <h2>Comentarios</h2>
                 <div class="comentarios">
                     <asp:ListView ID="ListViewComentarios" runat="server">

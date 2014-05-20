@@ -76,9 +76,9 @@ namespace FilmBiblio
         }
 
         //Devuelve la información de todas los capítulos
-        public DataSet DameCapitulos()
+        public DataSet DameCapitulos(int id)
         {
-            bd = capituloCad.DameCapitulos();
+            bd = capituloCad.DameCapitulos(id);
             return bd;
         }
 

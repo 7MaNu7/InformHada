@@ -24,6 +24,23 @@ height: 300px;
     text-shadow: 0 0 2px black;
     
 }
+.capitulo_nombre
+{
+    text-decoration: none;
+display: block;
+color: rgb(107, 107, 107);
+margin-left: 10px;
+padding-left: 10px;
+border-left: solid 1px gray;
+
+}
+.acordeon #MainContent {
+padding-left: 20px;
+}
+.temporada_nombre
+{
+    cursor:pointer;
+}
 .info_cabecera {
     position: absolute;
     bottom: 57px;

@@ -133,14 +133,14 @@ namespace FilmBiblio
         }
         
         //Devuelve la información de todos los capítulos
-        public DataSet DameCapitulos()
+        public DataSet DameCapitulos(int id)
         {
             SqlConnection c = new SqlConnection(conexion);
             DataSet bdvirtual = new DataSet();
 
             try
             {
-                String select_capitulos = "Select * from film, serie where film.id=serie.id";
+                String select_capitulos = "Select * from capitulo where serie="+id;
                 SqlDataAdapter ejecuta = new SqlDataAdapter(select_capitulos, c);
                 ejecuta.Fill(bdvirtual, "series");
             }
