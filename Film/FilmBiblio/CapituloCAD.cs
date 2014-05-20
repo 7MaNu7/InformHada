@@ -23,6 +23,28 @@ namespace FilmBiblio
         // Funciones //
         ///////////////
 
+        //Devuelve cuantas temporadas hay
+        public int Temporadas(int id_serie)
+        {
+            string orden = "select max(temporada) from capitulo where serie="+id_serie;
+            int cuantas = 0;
+            SqlConnection c = new SqlConnection(conexion);
+
+            try
+            {
+                c.Open();
+                SqlCommand max_id = new SqlCommand(orden, c);
+                SqlDataReader read_id = max_id.ExecuteReader();
+                while (read_id.Read())
+                    cuantas = (int)read_id[0];
+                read_id.Close();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return cuantas;
+        }
+
         //Devuelve el máximo id de la base de datos
         public int MaximoId()
         {

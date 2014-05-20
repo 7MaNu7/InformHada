@@ -21,7 +21,6 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             int id = Convert.ToInt32(Request.QueryString["id"]);
 
             if (id != 0 && Session["usuario"] != null)
@@ -85,12 +84,13 @@ namespace WebApplication1
             {
                 BotonAmigo.Visible = false;
                 
-                    d = usuario.DameAmigos();
-                    ListViewAmigos.DataSource = d;
-                    ListViewAmigos.DataBind();
+                d = usuario.DameAmigos();
+                ListViewAmigos.DataSource = d;
+                ListViewAmigos.DataBind();
 
-
-                
+                d = usuario.DameUsuariosQuizasConozca();
+                ListViewQuizasConozcas.DataSource = d;
+                ListViewQuizasConozcas.DataBind();
             }
 
 
@@ -100,7 +100,9 @@ namespace WebApplication1
                 ListViewAmigos.DataSource = d;
                 ListViewAmigos.DataBind();
 
-                
+                d = amigo.DameUsuariosQuizasConozca();
+                ListViewQuizasConozcas.DataSource = d;
+                ListViewQuizasConozcas.DataBind();
             }
 
 

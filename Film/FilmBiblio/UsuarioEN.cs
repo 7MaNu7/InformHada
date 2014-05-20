@@ -140,6 +140,13 @@ namespace FilmBiblio
             return bd;
         }
 
+        //Devuelve la información de todas los usuarios que quizás conozca el usuario (amigos de amigos)
+        public DataSet DameUsuariosQuizasConozca()
+        {
+            bd = usuarioCad.DameUsuariosQuizasConozca(this.id);
+            return bd;
+        }
+
         /////////////////
         // Propiedades //
         /////////////////

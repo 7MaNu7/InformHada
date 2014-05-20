@@ -45,6 +45,18 @@ namespace FilmBiblio
             serie = pserie;
         }
 
+        //Devuelve cuantas temporadas hay
+        public int Temporadas(int id_serie)
+        {
+            return capituloCad.Temporadas(id_serie);
+        }
+
+        //Devuelve el máximo id de la base de datos
+        public int MaximoId()
+        {
+            return capituloCad.MaximoId();
+        }
+
         //Se inserta en la BD el nuevo capítulo cuyos datos están en esta instancia this de CapituloEN
         public void InsertarCapitulo()
         {

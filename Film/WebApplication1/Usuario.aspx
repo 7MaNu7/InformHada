@@ -46,6 +46,7 @@
                 </div>
                 <div class="infoamigos">
                     <h2>Quizás conozcas a...</h2>
+                    <!--<img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
                     <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
                     <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
                     <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
@@ -53,8 +54,16 @@
                     <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
                     <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
                     <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
-                    <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
-                    <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
+                    <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>-->
+
+                    <asp:ListView ID="ListViewQuizasConozcas" runat="server">
+                         <ItemTemplate>
+                             <a href="Usuario.aspx?id=<%# Eval("id2")%>">
+                                <img src="img/users/<%# Eval("id2")%>.jpg" />
+                             </a>
+                         </ItemTemplate>
+                    </asp:ListView>
+
                     <p>Ver más</p>
                 </div>
             </div>

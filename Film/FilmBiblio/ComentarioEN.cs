@@ -24,6 +24,7 @@ namespace FilmBiblio
         private int usuario;                 //identificador para el usuario
         private string fecha;                //fecha en que se realiza el comentario
         private int film;                    //identificador para la serie o pelicula
+        private int capitulo;
 
         ///////////////
         // Funciones //
@@ -33,13 +34,14 @@ namespace FilmBiblio
         public ComentarioEN() { }
 
         //Constructor con parámetros que son las propiedades de dicho comentario
-        public ComentarioEN(int pid, string ptexto, int pusuario, string pfecha, int pfilm)
+        public ComentarioEN(int pid, string ptexto, int pusuario, string pfecha, int pfilm, int pcapitulo)
         {
             id = pid;
             texto = ptexto;
             usuario = pusuario;
             fecha = pfecha;
             film = pfilm;
+            capitulo = pcapitulo;
         }
 
         //Se inserta en la BD el nuevo caomentario cuyos datos están en esta instancia this de ComentarioEN
@@ -145,6 +147,13 @@ namespace FilmBiblio
         {
             get { return film; }
             set { film = value; }
+        }
+
+        //Desde fuera de la clase se puede obtener el film y modificarlo
+        public int Capitulo
+        {
+            get { return capitulo; }
+            set { capitulo = value; }
         }
     }
 }

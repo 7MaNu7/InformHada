@@ -31,7 +31,8 @@ namespace FilmBiblio
             orden += "'" + comentario.Fecha + "', ";
             orden += "'" + comentario.Texto + "', ";
             orden += comentario.Usuario + ", ";
-            orden += comentario.Film + ")";
+            orden += comentario.Film + ", ";
+            orden += comentario.Capitulo + ")";
 
             SqlConnection c = new SqlConnection(conexion);
             try

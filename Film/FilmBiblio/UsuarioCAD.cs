@@ -309,14 +309,15 @@ namespace FilmBiblio
             int id_amigo=0;
             SqlConnection c = new SqlConnection(conexion);
             UsuarioEN usuario = new UsuarioEN();
+            string consulta="Select top 1 id2 from amigos where id1="+id+" order by newid()";
 
             try
             {
                 c.Open();
-                SqlCommand select_usuario = new SqlCommand("Select id from usuario where id="+id+" order by rand() limit 1", c);
+                SqlCommand select_usuario = new SqlCommand(consulta, c);
                 SqlDataReader read = select_usuario.ExecuteReader();
                 read.Read();
-                id_amigo = Convert.ToInt32(read["id"].ToString());
+                id_amigo = Convert.ToInt32(read[0].ToString());
                 read.Close();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
@@ -325,13 +326,32 @@ namespace FilmBiblio
             return id_amigo;        
         }
 
+        //Devuelve una bd con los amigos y su información
+        public DataSet DameAmigosDeAleatorio(int id_amigo, int id_usuario)
+        {
+            SqlConnection c = new SqlConnection(conexion);
+            DataSet bdvirtual = new DataSet();
+
+            try
+            {
+                String select_amigos = "Select id2 from amigos where id1=" + id_amigo;
+                select_amigos+=" and id2 not in (select id2 from amigos where id1="+id_usuario+")";
+                SqlDataAdapter ejecuta = new SqlDataAdapter(select_amigos, c);
+                ejecuta.Fill(bdvirtual, "series");
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return bdvirtual;
+        }
+
         //Devuelve la información de todas los usuarios que quizás conozca el usuario (amigos de amigos)
         public DataSet DameUsuariosQuizasConozca(int id)
         {
             SqlConnection c = new SqlConnection(conexion);
             DataSet bdvirtual = new DataSet();
             int id_amigo=DameUsuarioAleatorio(id);
-            bdvirtual = DameAmigos(id_amigo);            
+            bdvirtual = DameAmigosDeAleatorio(id_amigo, id);            
             return bdvirtual;
         }
     }   
