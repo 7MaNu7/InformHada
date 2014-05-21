@@ -14,24 +14,34 @@
             </div>
              <img class="caratula" src="http://pics.filmaffinity.com/Vikingos_Vikings_Serie_de_TV-616055151-large.jpg" alt="fotou_perfil"/>
              <div class="info_cabecera">
-                <h2> <asp:TextBox ID="TextBoxTitulo" runat="server"  Font-Size="1.5em"  style="width:616px">Título del capítulo</asp:TextBox> </h2>
-                <p>Director: Michael Hirst</p>
-                <p>Soundtrack: Hans Zimmer</p>
-                <p>Año: 2013</p>
+                <h2> <asp:TextBox ID="TextBoxTitulo" runat="server" TextMode="MultiLine"> </asp:TextBox> </h2>
+                <p>Serie: <asp:Literal ID="LiteralSerie" runat="server"> </asp:Literal> </p>
+                <p>Temporada: <asp:TextBox ID="TextBoxTemporada" runat="server" > </asp:TextBox> </p>
+                <p>Capítulo nº: <asp:TextBox ID="TextBoxNCapitulo" runat="server"> </asp:TextBox> </p>
              </div>
          </div>
         
 
         <div class="contenido_capitulo">
             <div class="contenido_capitulo_i">
-                
+                <asp:Button ID="BotonAddEdit" CssClass="anadir" runat="server" Text="Editar" OnClick="BotonAddEditOnClick" />
+              
             </div>
             <div class="contenido_capitulo_d">
-               <h2>Sinopsis</h2>
-               <p> <asp:TextBox ID="TextBox4" runat="server" TextAlign = HorizontalAlignment.Left style="height:131px; width:945px;">Escriba la sinopsis del capítulo de la serie aquí</asp:TextBox> </p>
+                <h2>Sinopsis - <!--<span style="
+                                background: rgba(195, 195, 199, 0.44);
+                                font-size: 15px;
+                                vertical-align: middle;
+                                cursor: pointer;
+                                padding: 4px 12px 4px 12px;
+                                border-radius: 4px;">EDITAR</span>-->
+                                <span> <asp:HyperLink ID="HyperLinkEditarCapitulo" runat="server" Text="Editar"> </asp:HyperLink> </span>
+               </h2>
+               
+               <p> <asp:TextBox ID="TextBoxSinopsis" runat="server" TextMode="MultiLine"> </asp:TextBox> </p>
 
                <div class="volver_serie" style="float:right;">
-                <p> <a id="A1" runat="server" href="~/Serie.aspx"> Volver a la serie </a> </p>
+                <p> <asp:HyperLink ID="HyperLinkVolverSerie" runat="server" Text="Volver a la serie"> </asp:HyperLink> </p>
                </div>
             </div>
 

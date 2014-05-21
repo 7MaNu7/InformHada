@@ -69,7 +69,7 @@ namespace WebApplication1
 
             HyperLinkAddPelicula.NavigateUrl="AddEditPelicula.aspx?par1=anadirPelicula";
             HyperLinkAddSerie.NavigateUrl="AddEditSerie.aspx?par1=anadirSerie";
-            HyperLinkEditUsuario.NavigateUrl="AddEditUsuario.aspx?par1=editarUsuario";
+            HyperLinkEditUsuario.NavigateUrl="EditUsuario.aspx?par1=editarUsuario";
             
             if (Session["usuario"]!=null)
             {
@@ -103,6 +103,9 @@ namespace WebApplication1
                 d = amigo.DameUsuariosQuizasConozca();
                 ListViewQuizasConozcas.DataSource = d;
                 ListViewQuizasConozcas.DataBind();
+
+                HyperLinkEditUsuario.Visible = false;
+                BotonEliminarUsuario.Visible = false;
             }
 
 
@@ -146,7 +149,7 @@ namespace WebApplication1
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
             if (usuario!=null)
             {
-                Response.Redirect("AddEditUsuario.aspx");
+                Response.Redirect("EditUsuario.aspx");
             }
         }
     }

@@ -49,7 +49,7 @@
                 <h2>Trailer</h2>
                 <iframe width="761" height="415" src="//www.youtube.com/embed/<asp:Literal ID="trailer" runat="server"></asp:Literal>" frameborder="0" allowfullscreen></iframe>
 
-                <h2>Capitulos</h2>
+                <h2>Capitulos <asp:HyperLink ID="HyperLinkAddCapitulo" runat="server" Text="AÑADIR"> </asp:HyperLink> </h2>
                 <div class="acordeon">
                 <asp:ToolkitScriptManager ID="ToolkitScriptManager2" runat="server">
                     </asp:ToolkitScriptManager>

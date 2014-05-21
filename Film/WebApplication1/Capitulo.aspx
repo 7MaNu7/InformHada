@@ -14,30 +14,34 @@
             </div>
              <img class="caratula" src="http://pics.filmaffinity.com/Vikingos_Vikings_Serie_de_TV-616055151-large.jpg" alt="fotou_perfil"/>
              <div class="info_cabecera">
-                <h2>Vikings - Capítulo 1 </h2>
-                <p>Director: Michael Hirst</p>
-                <p>Soundtrack: Hans Zimmer</p>
-                <p>Año: 2013</p>
+                <h2> <asp:Literal ID="LiteralTitulo" runat="server" TextMode="MultiLine"> </asp:Literal> </h2>
+                <p>Serie: <asp:Literal ID="LiteralSerie" runat="server"> </asp:Literal> </p>
+                <p>Temporada: <asp:Literal ID="LiteralTemporada" runat="server"> </asp:Literal> </p>
+                <p>Capítulo nº: <asp:Literal ID="LiteralNCapitulo" runat="server"> </asp:Literal> </p>
              </div>
          </div>
 
         <div class="contenido_capitulo">
             <div class="contenido_capitulo_i">
                 
+                <asp:HyperLink ID="BotonEditar" CssClass="anadir" runat="server" EnableViewState="false" Text="Editar" />
+                <asp:HyperLink ID="BotonReport" CssClass="reportar" runat="server" Text="Reportar error" /> 
+
             </div>
             <div class="contenido_capitulo_d">
-               <h2>Sinopsis - <span style="
+               <h2>Sinopsis - <!--<span style="
                                 background: rgba(195, 195, 199, 0.44);
                                 font-size: 15px;
                                 vertical-align: middle;
                                 cursor: pointer;
                                 padding: 4px 12px 4px 12px;
-                                border-radius: 4px;">EDITAR</span>
+                                border-radius: 4px;">EDITAR</span>-->
+                                <!--<span> <asp:HyperLink ID="HyperLinkEditarCapitulo" runat="server" Text="Editar"> </asp:HyperLink> </span>-->
                </h2>
-               <p>Serie de TV (2013-Actualidad). Sigue las aventuras de Ragnar Lothbrok, el héroe más grande de su época. La serie narra las sagas de la banda de hermanos vikingos de Ragnar y su familia, cuando él se levanta para convertirse en el rey de las tribus vikingas. Además de ser un guerrero valiente, Ragnar encarna las tradiciones nórdicas de la devoción a los dioses, la leyenda dice que él era un descendiente directo de Odín, el dios de la guerra y los guerreros.</p>
+               <p> <asp:Literal ID="LiteralSinopsis" runat="server"> </asp:Literal> </p>
 
                <div class="volver_serie" style="float:right;">
-                <p> <a id="A1" runat="server" href="~/Serie.aspx"> Volver a la serie </a> </p>
+                <p> <asp:HyperLink ID="HyperLinkVolverSerie" runat="server" Text="Volver a la serie"> </asp:HyperLink> </p>
                </div>
             </div>
 

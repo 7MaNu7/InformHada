@@ -31,11 +31,11 @@ namespace WebApplication1
             }
             else
             {
-                
                 serie.Id = Convert.ToInt32(id);
 
                 BotonEditar.NavigateUrl = "AddEditserie.aspx?id=" + id;
                 BotonReport.NavigateUrl = "Report.aspx";
+                HyperLinkAddCapitulo.NavigateUrl = "AddEditCapitulo.aspx?id1=" + serie.Id;
 
                 serie = serie.DameSerie();
                 titulo.Text = serie.Titulo;
@@ -47,7 +47,7 @@ namespace WebApplication1
                 ano.Text = serie.Ano.ToString();
                 caratula.ImageUrl = serie.Caratula.ToString();
                 fondo.ImageUrl = serie.Portada.ToString();
-            }
+            
               FilmBiblio.CapituloEN capitulo = new FilmBiblio.CapituloEN();
               Label lblTitle;
               Label lblContent;
@@ -68,7 +68,7 @@ namespace WebApplication1
                   foreach (DataRow dr in dt.Rows)
                   {
                       if (dr["temporada"].ToString() == i.ToString())
-                          contenido += "<a class='capitulo_nombre' href='Capitulo.aspx?id=" + dr["id"].ToString() + "'>" + dr["titulo"].ToString() + "</a>";
+                          contenido += "<a class='capitulo_nombre' href='Capitulo.aspx?id2=" + dr["id"].ToString() +"&id1="+serie.Id + "'>" + dr["titulo"].ToString() + "</a>";
                   }
                   
                   lblContent = new Label();
@@ -80,6 +80,7 @@ namespace WebApplication1
                   pn.ContentContainer.Controls.Add(lblContent);
                   Accordion1.Panes.Add(pn);
               }
+            }
         }
     }
 }

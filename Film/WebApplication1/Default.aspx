@@ -95,7 +95,7 @@
             <ItemTemplate>
                 <td>
                    
-                        <a style="display: table-cell;float: left; text-decoration:none; color:Gray;"  href="Pelicula.aspx?id=<asp:Literal ID="Literal5" Text='<%# Eval("id")%>'  runat="server"></asp:Literal>">
+                        <a style="display: table-cell;float: left; text-decoration:none; color:Gray;"  href="Serie.aspx?id=<asp:Literal ID="Literal5" Text='<%# Eval("id")%>'  runat="server"></asp:Literal>">
                 
                         <div class="peliculacaratula">
                             <asp:Image ID="Image1" CssClass="peliculacaratulaimg" runat="server" ImageUrl='<%# Eval("caratula")%>' />
@@ -154,7 +154,7 @@
             <asp:ListView ID="ListViewSPuntuadas" runat="server">
             <ItemTemplate>
                 <td>
-                        <a style="display: table-cell;float: left; text-decoration:none; color:Gray;"  href="Pelicula.aspx?id=<asp:Literal ID="Literal5" Text='<%# Eval("id")%>'  runat="server"></asp:Literal>">
+                        <a style="display: table-cell;float: left; text-decoration:none; color:Gray;"  href="Serie.aspx?id=<asp:Literal ID="Literal5" Text='<%# Eval("id")%>'  runat="server"></asp:Literal>">
                 
                         <div class="peliculacaratula">
                             <asp:Image ID="Image1" CssClass="peliculacaratulaimg" runat="server" ImageUrl='<%# Eval("caratula")%>' />
@@ -166,7 +166,6 @@
                             </div>
                         </div>
                         </a>
-         
                 </td>
             </ItemTemplate>
             </asp:ListView>

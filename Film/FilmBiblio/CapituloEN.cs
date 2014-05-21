@@ -25,7 +25,7 @@ namespace FilmBiblio
         private int temporada;          //La temporada a la que pertenece el capítulo
         private int nCapitulo;          //El número del capítulo en la serie
         private string sinopsis;        //La descripción del capítulo
-        private SerieEN serie;          //La serie a la que pertenece el capítulo
+        private int serie;          //La serie a la que pertenece el capítulo
 
         ///////////////
         // Funciones //
@@ -35,7 +35,7 @@ namespace FilmBiblio
         public CapituloEN() { }
 
         //Constructor con parámetros que son las propiedades de dicho capítulo
-        public CapituloEN(int pid, string ptitulo, int ptemporada, int pnCapitulo, string psinopsis, SerieEN pserie)
+        public CapituloEN(int pid, string ptitulo, int ptemporada, int pnCapitulo, string psinopsis, int pserie)
         {
             id = pid;
             titulo = ptitulo;
@@ -58,9 +58,9 @@ namespace FilmBiblio
         }
 
         //Se inserta en la BD el nuevo capítulo cuyos datos están en esta instancia this de CapituloEN
-        public void InsertarCapitulo()
+        public int InsertarCapitulo()
         {
-            capituloCad.InsertarCapitulo(this);
+            return capituloCad.InsertarCapitulo(this);
         }
 
         //Se modifica en la BD un capítulo cuyos datos están en esta instancia this de CapituloEN
@@ -137,20 +137,10 @@ namespace FilmBiblio
         }
 
         //Desde fuera de la clase se puede obtener la serie a la que pertenece y modificarla
-        public SerieEN Serie
+        public int Serie
         {
             get { return serie; }
-            set
-            {
-                serie.Id = value.Id;
-                serie.Titulo = value.Titulo;
-                serie.Director = value.Director;
-                serie.Ano = value.Ano;
-                sinopsis = value.Sinopsis;
-                serie.Reparto = value.Reparto;
-                serie.BandaSonora = value.BandaSonora;
-                serie.Puntuacion=value.Puntuacion;
-            }
+            set { serie = value; }
         }
     }
 }

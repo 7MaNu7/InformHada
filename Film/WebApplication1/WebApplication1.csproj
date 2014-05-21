@@ -68,7 +68,7 @@
     <Content Include="AddEditCapitulo.aspx" />
     <Content Include="AddEditPelicula.aspx" />
     <Content Include="AddEditSerie.aspx" />
-    <Content Include="AddEditUsuario.aspx" />
+    <Content Include="EditUsuario.aspx" />
     <Content Include="App_Data\Database1.mdf" />
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
@@ -166,12 +166,12 @@
     <Compile Include="AddEditSerie.aspx.designer.cs">
       <DependentUpon>AddEditSerie.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddEditUsuario.aspx.cs">
-      <DependentUpon>AddEditUsuario.aspx</DependentUpon>
+    <Compile Include="EditUsuario.aspx.cs">
+      <DependentUpon>EditUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddEditUsuario.aspx.designer.cs">
-      <DependentUpon>AddEditUsuario.aspx</DependentUpon>
+    <Compile Include="EditUsuario.aspx.designer.cs">
+      <DependentUpon>EditUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Capitulo.aspx.cs">
       <DependentUpon>Capitulo.aspx</DependentUpon>

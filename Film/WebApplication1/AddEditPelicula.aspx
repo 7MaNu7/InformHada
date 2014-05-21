@@ -15,10 +15,10 @@
              <img class="caratula" src="http://s3-eu-west-1.amazonaws.com/abandomedia/db/foto/db_18973_41.jpg" alt="fotou_perfil"/>
              <div class="info_cabecera">
                 <h2> <asp:Literal ID="LiteralTitulo" runat="server" > </asp:Literal> </h2>
-                <p> <asp:TextBox ID="TextBoxDirector" runat="server"> Director </asp:TextBox> </p>
-                <p> <asp:TextBox ID="TextBoxGenero" runat="server"> Genero </asp:TextBox> </p>
+                <p> <asp:TextBox ID="TextBoxDirector" runat="server" > Director </asp:TextBox> </p>
+                <p> <asp:TextBox ID="TextBoxGenero" runat="server" > Genero </asp:TextBox> </p>
                 <p> <asp:TextBox ID="TextBoxBandaSonora" runat="server">Banda sonora</asp:TextBox> </p>
-                <p> <asp:TextBox ID="TextBoxAno" runat="server">Año</asp:TextBox> </p>
+                <p> <asp:TextBox ID="TextBoxAno" runat="server" >Año</asp:TextBox> </p>
                
              </div>
          </div>
@@ -29,18 +29,13 @@
             </div>
             <div class="pelicula_contenido_d">
                <h2>Sinopsis</h2>
-               <p> <asp:TextBox ID="TextBoxSinopsis" runat="server"  style="height:131px; width:945px;">Escriba la sinopsis de la película aquí</asp:TextBox> </p>
+               <p> <asp:TextBox ID="TextBoxSinopsis" runat="server"  TextMode="MultiLine" style="height:131px; width:945px;">Escriba la sinopsis de la película aquí</asp:TextBox> </p>
 
                <h2>Reparto</h2>
-               <p> <asp:TextBox ID="TextBoxReparto" runat="server" style="height:50px; width:945px;">Escriba el reparto de actores que participan en la película</asp:TextBox> </p>
+               <p> <asp:TextBox ID="TextBoxReparto" runat="server" TextMode="MultiLine" style="height:50px; width:945px;">Escriba el reparto de actores que participan en la película</asp:TextBox> </p>
             
                 <h2>Trailer</h2>
-                <p> <asp:TextBox ID="TextBoxTrailer" runat="server" style="width:945px;">Indique el enlace o archivo del trailer de la película</asp:TextBox> </p>
-                
-                <p> <asp:TextBox ID="TextBoxCaratula" runat="server" style="width:945px;">Indique el enlace o archivo de la foto de la carátula de la película</asp:TextBox> </p>
-                <p> <asp:TextBox ID="TextBoxPortada" runat="server" style="width:945px;">Indique el enlace o archivo de la foto de la portada de la película</asp:TextBox> </p>
-                    
-                
+                <p> <asp:TextBox ID="TextBoxTrailer" runat="server" TextMode="MultiLine" style="width:945px;">Indique el enlace o archivo del trailer de la película</asp:TextBox> </p>
                 </div>
             </div>
         </div>

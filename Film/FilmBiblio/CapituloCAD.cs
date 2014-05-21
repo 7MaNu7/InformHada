@@ -69,7 +69,7 @@ namespace FilmBiblio
         }
 
         //Realiza una operación select en la BD para añadir un nuevo capítulo cuyos datos se pasan por parámetro en el objeto CaituloEN
-        public void InsertarCapitulo(CapituloEN capitulo) 
+        public int InsertarCapitulo(CapituloEN capitulo) 
         {
             int id = MaximoId();
             id++;
@@ -79,8 +79,8 @@ namespace FilmBiblio
             orden += "'" + capitulo.Titulo + "', ";
             orden += capitulo.Temporada + ", ";
             orden += capitulo.N_capitulo + ", ";
-            orden += "'" + capitulo.Sinopsis + "')";
-            orden += capitulo.Serie.Id + ")";
+            orden += "'" + capitulo.Sinopsis + "',";
+            orden += capitulo.Serie + ")";
 
             SqlConnection c = new SqlConnection(conexion);
             try
@@ -91,6 +91,8 @@ namespace FilmBiblio
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { c.Close(); }
+
+            return id;
         }
 
         //Modifica un capítulo en la BD cuyos datos se pasan por parámetro en el objeto CapituloEN
@@ -101,7 +103,7 @@ namespace FilmBiblio
             orden += "temporada = '" + capitulo.Temporada + "', ";
             orden += "nCapitulo = " + capitulo.N_capitulo + ", ";
             orden += "sinopsis = '" + capitulo.Sinopsis + "', ";
-            orden += "serie = '" + capitulo.Serie.Id + "' ";
+            orden += "serie = '" + capitulo.Serie + "' ";
             orden += "where id = " + capitulo.Id;
 
             SqlConnection c = new SqlConnection(conexion);
@@ -155,31 +157,10 @@ namespace FilmBiblio
         {
             SqlConnection c = new SqlConnection(conexion);
             CapituloEN capitulo = new CapituloEN();
-            SerieEN serie = new SerieEN();
 
             try
             {
                 c.Open();
-                
-                //Primero leemos la serie a la que pertenece el capítulo
-                SqlCommand buscar_serie = new SqlCommand("Select * from film where id=" + id, c);
-                SqlDataReader leer_s = buscar_serie.ExecuteReader();
-
-                leer_s.Read();
-                serie.Id = Convert.ToInt32(leer_s["id"].ToString());
-                serie.Titulo = leer_s["titulo"].ToString();
-                serie.Director = leer_s["diretor"].ToString();
-                serie.Ano =  Convert.ToInt32(leer_s["ano"].ToString());
-                serie.Sinopsis = leer_s["sinopsis"].ToString();
-                serie.Genero = leer_s["genero"].ToString();
-                serie.Reparto = leer_s["reparto"].ToString();
-                serie.BandaSonora = leer_s["bandaSonora"].ToString();
-                serie.Puntuacion =  Convert.ToInt32(leer_s["puntuacion"].ToString());
-                serie.Portada = leer_s["portada"].ToString();
-                serie.Caratula = leer_s["caratula"].ToString();
-                serie.Trailer = leer_s["trailer"].ToString();
-                leer_s.Close();
-
                 //Leemos el capítulo y asignamos la serie a la que pertenece
                 SqlCommand com = new SqlCommand("Select * from capitulo where id=" + id, c);
                 SqlDataReader read = com.ExecuteReader();
@@ -189,7 +170,7 @@ namespace FilmBiblio
                 capitulo.Temporada = Convert.ToInt32(read["temporada"].ToString());
                 capitulo.N_capitulo = Convert.ToInt32(read["nCapitulo"].ToString());
                 capitulo.Sinopsis = read["sinopsis"].ToString();
-                capitulo.Serie = serie;
+                capitulo.Serie = Convert.ToInt32(read["serie"].ToString());
                 read.Close();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }

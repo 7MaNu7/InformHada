@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Add Usuario" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeBehind="AddEditUsuario.aspx.cs" Inherits="WebApplication1.AddEditUsuario" %>
+    CodeBehind="EditUsuario.aspx.cs" Inherits="WebApplication1.AddEditUsuario" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <link href="/Styles/Usuario.css" rel="stylesheet" type="text/css" />
@@ -28,7 +28,7 @@
                 <p id="errorvalidacion" style="visibility:hidden;">Algún campo no se ha introducido correctamente</p>
                 <div class="informacionpersonal">
                     <h2>Información personal: </h2>
-                    <p><asp:TextBox ID="TextBoxUsuario" runat="server">Usuario</asp:TextBox></p>
+                    <p><asp:TextBox ID="TextBoxUsuario" runat="server" >Usuario</asp:TextBox></p>
                     <asp:RequiredFieldValidator ID="UserNameReq" runat="server" ControlToValidate="TextBoxUsuario" ErrorMessage="¡Introduce el usuario!"> </asp:RequiredFieldValidator>
                     <p><asp:TextBox ID="TextBoxFechaNacimiento" runat="server">Fecha nacimiento</asp:TextBox></p>
                     <p>Sexo:</p>
@@ -49,7 +49,7 @@
             <div class="usuarioinfcolder">
                 <div class="informacionpersonal" style="border-top: solid 4px rgb(51, 162, 197);margin-top:43px">
                    <h2>Información adicional: </h2>
-                    <p> <asp:TextBox ID="TextBoxInformacion" runat="server"  ></asp:TextBox> 
+                    <p> <asp:TextBox ID="TextBoxInformacion" runat="server" TextMode="MultiLine"></asp:TextBox> 
                     </p>                   
                 </div>
 
