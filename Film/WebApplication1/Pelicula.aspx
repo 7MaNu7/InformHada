@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="Divergente" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeBehind="Pelicula.aspx.cs" Inherits="WebApplication1.Pelicula" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+
+
+
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <link href="/Styles/Pelicula.css" rel="stylesheet" type="text/css" />
 </asp:Content>
@@ -28,17 +33,17 @@
             <div class="pelicula_contenido_i">
               <asp:HyperLink ID="BotonEditar" CssClass="anadir" runat="server" EnableViewState="false" Text="Editar" />
                 <asp:HyperLink ID="BotonReport" CssClass="reportar" runat="server" Text="Reportar error" />
-                        <!--aa sp:Rating ID="Rating1" runat="servr" 
-                    CurrentRating="2"
-                    MaxRating="5"
+                   
+                <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+                </asp:ToolkitScriptManager>
+                <asp:Rating ID="Rating1" runat="server"     MaxRating="5"
                     StarCssClass="ratingStar"
                    WaitingStarCssClass="waitingstar" FilledStarCssClass="shiningstar"
-            EmptyStarCssClass="blankstar"
-
-                     -->
-     
-
-
+                    EmptyStarCssClass="blankstar"
+                     OnChanged="OnRatingChanged"
+>
+                </asp:Rating>
+           
             </div>
             <div class="pelicula_contenido_d">
                <h2>Sinopsis</h2>

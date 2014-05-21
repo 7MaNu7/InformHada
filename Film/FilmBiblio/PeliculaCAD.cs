@@ -27,7 +27,7 @@ namespace FilmBiblio
         public bool HaVotado(int id_film, int id_usuario)
         {
             bool test = false;
-            string orden = "select usuario from votar where usuario=" + id_usuario+" and film="+id_film;
+            string orden = "select idUsuario from votar where idUsuario=" + id_usuario + " and idFilm=" + id_film;
             SqlConnection c = new SqlConnection(conexion);
 
             try
@@ -75,10 +75,18 @@ namespace FilmBiblio
         //Si un usuario vota una película, se registra lo que ha votado y se recalcula la puntuación de la pelicula
         public float AnyadirPuntuacionPelicula(int id_usuario, int id, float calificacion)
         {
+            string orden1;
             float puntos=0;
-            string orden1 = "insert into votar values (" + id_usuario + ", " + id + ", " + calificacion + ")";
-            string orden2 = "select avg(voto) from votar where film=" + id;
-            string orden3 = "update film set puntuacion=" + puntos + " where id=" + id;
+            if(!HaVotado(id,id_usuario))
+                orden1 = "insert into votar values (" + id_usuario + ", " + id + ", " + calificacion + ")";
+            else
+                orden1 = "update votar set voto=" + calificacion + " where idUsuario= " + id_usuario + " and idFilm= " + id ;
+
+
+            string orden2 = "select avg(voto) from votar where idFilm=" + id;
+
+
+            
             SqlConnection c = new SqlConnection(conexion);
 
             try
@@ -90,9 +98,9 @@ namespace FilmBiblio
                 sentencia = new SqlCommand(orden2, c);
                 SqlDataReader leer_media = sentencia.ExecuteReader();
                 leer_media.Read();
-                puntos = Convert.ToInt32(leer_media[0].ToString());
+                puntos = Convert.ToInt32(Math.Round( Convert.ToDecimal( leer_media[0].ToString())));
                 leer_media.Close();
-
+                string orden3 = "update film set puntuacion=" + puntos + " where id=" + id;
                 sentencia = new SqlCommand(orden3, c);
                 sentencia.ExecuteNonQuery();
             }

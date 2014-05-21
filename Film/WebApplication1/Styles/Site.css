@@ -382,21 +382,27 @@ padding-top: 4px;
 
   .blankstar
 {
-background-image: url(images/blank_star.png);
-width: 16px;
-height: 16px;
+background-image: url(/img/star.png);
+width: 29px;
+background-size: contain;
+height: 29px;
+opacity:0.2;
 }
 .waitingstar
 {
-background-image: url(images/half_star.png);
-width: 16px;
-height: 16px;
+background-image: url(/img/star.png);
+width: 29px;
+background-size: contain;
+height: 29px;
+opacity:0.5;
 }
 .shiningstar
 {
-background-image: url(images/shining_star.png);
-width: 16px;
-height: 16px;
+background-image: url(/img/star.png);
+width: 29px;
+background-size: contain;
+height: 29px;
+opacity:0.8;
 }
 
 .comentario
