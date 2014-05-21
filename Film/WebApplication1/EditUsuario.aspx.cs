@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace WebApplication1
 {
@@ -65,6 +66,32 @@ namespace WebApplication1
 
                 usuario.UpdateUsuario();
                 Response.Redirect("Usuario.aspx");
+                if (FileUpload1.HasFile)
+                {
+                    try
+                    {
+                        string filename = Path.GetFileName(FileUpload1.FileName);
+                        FileUpload1.SaveAs(Server.MapPath("~/img/user/portada/") + usuario.Id + ".jpg");
+                        //   StatusLabel.Text = "Upload status: File uploaded!";
+                    }
+                    catch (Exception ex)
+                    {
+                        //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                    }
+                }
+                if (FileUploadControl.HasFile)
+                {
+                    try
+                    {
+                        string filename = Path.GetFileName(FileUploadControl.FileName);
+                            FileUploadControl.SaveAs(Server.MapPath("~/img/user/caratula/") + usuario.Id + ".jpg");
+                        //   StatusLabel.Text = "Upload status: File uploaded!";
+                    }
+                    catch (Exception ex)
+                    {
+                        //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                    }
+                }
             }
 
         }

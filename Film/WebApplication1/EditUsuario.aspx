@@ -12,9 +12,19 @@
             <div class="portada_usuario">
                 <asp:FileUpload ID="FileUpload1" runat="server" />
                 <img class="fondoblurred" src="http://4.bp.blogspot.com/-8JGsKAeWkB8/T3yuvVFrc9I/AAAAAAAACPE/lLBQtC2F_hs/s1600/The_Grass_aint_Greener.jpg" alt="fotou_portada"/>
+                <div id="mybutton2">
+                    Cambiar Imagen
+                    <asp:FileUpload CssClass="upload"  id="FileUpload2" runat="server" /> 
+                </div>
             </div>
              <img class="fotoperfilusuario" src="http://sintoniageek.com/wp-content/uploads/2011/03/avatar-geek-mario1.jpg" alt="fotou_perfil"/>
-             <div class="infocabecera">=
+             <div id="mybutton3">
+                Cambiar Imagen
+                <asp:FileUpload CssClass="upload"  id="FileUploadControl" runat="server" /> 
+                
+            </div>
+             
+             <div class="infocabecera">
                 <h2>
                     <asp:Literal ID="LiteralNombre" runat="server" > </asp:Literal>
                 </h2>

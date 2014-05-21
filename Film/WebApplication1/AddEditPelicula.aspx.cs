@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace WebApplication1
 {
@@ -59,6 +60,7 @@ namespace WebApplication1
                 pelicula.Trailer = TextBoxTrailer.Text;
                 pelicula.UpdatePelicula();
                 Response.Redirect("Pelicula.aspx?id=" + id);
+
             }
             else
             {
@@ -71,6 +73,36 @@ namespace WebApplication1
                 pelicula.BandaSonora = TextBoxBandaSonora.Text;
                 pelicula.Trailer = TextBoxTrailer.Text;
                 pelicula.InsertarPelicula();
+            }
+            int max = pelicula.MaximoId();
+            if (FileUploadControl.HasFile)
+            {
+                try
+                {
+                    string filename = Path.GetFileName(FileUploadControl.FileName);
+                    if (id==0)
+                        FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + max+1 + ".jpg");
+                    else
+                        FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + pelicula.Id + ".jpg");
+                 //   StatusLabel.Text = "Upload status: File uploaded!";
+                }
+                catch (Exception ex)
+                {
+                  //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                }
+            }
+            if (FileUpload1.HasFile)
+            {
+                try
+                {
+                    string filename = Path.GetFileName(FileUpload1.FileName);
+                    FileUpload1.SaveAs(Server.MapPath("~/img/film/portada/") + pelicula.Id + ".jpg");
+                    //   StatusLabel.Text = "Upload status: File uploaded!";
+                }
+                catch (Exception ex)
+                {
+                    //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                }
             }
         }
 

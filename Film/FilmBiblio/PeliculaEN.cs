@@ -38,6 +38,11 @@ namespace FilmBiblio
 
         //Constructor por defecto
         public PeliculaEN() {}
+        
+        public int MaximoId()
+        {
+            return peliculaCad.MaximoId();
+        }
 
         //Constructor con parámetros que son las propiedades de dicha película
         public PeliculaEN(int pid, string ptitulo, string pdirector, int pano, string psinopsis, string pgenero, string preparto,

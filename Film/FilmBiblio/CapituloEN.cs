@@ -62,7 +62,7 @@ namespace FilmBiblio
         {
             return capituloCad.InsertarCapitulo(this);
         }
-
+      
         //Se modifica en la BD un capítulo cuyos datos están en esta instancia this de CapituloEN
         public void UpdateCapitulo()
         {
