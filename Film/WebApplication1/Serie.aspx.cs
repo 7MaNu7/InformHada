@@ -125,7 +125,7 @@ namespace WebApplication1
             serie.Id = id_serie;
             serie = serie.DameSerie();
             string texto = TextBoxComentario.Text;
-            DateTime tomorrow = DateTime.Today.AddDays(1);
+            DateTime tomorrow = DateTime.Today.AddDays(0);
 
             comentarioEn.Usuario = usuario.Id;
             comentarioEn.Film = serie.Id;

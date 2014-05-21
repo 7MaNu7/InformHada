@@ -86,7 +86,7 @@ namespace WebApplication1
             pelicula.Id = id_pelicula;
             pelicula = pelicula.DamePelicula();
             string texto = TextBoxComentario.Text;
-            DateTime tomorrow = DateTime.Today.AddDays(1);
+            DateTime tomorrow = DateTime.Today.AddDays(0);
 
             comentarioEn.Usuario = usuario.Id;
             comentarioEn.Film = pelicula.Id;

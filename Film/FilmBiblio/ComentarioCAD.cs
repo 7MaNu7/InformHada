@@ -201,7 +201,7 @@ namespace FilmBiblio
 
             try
             {
-                string select_comentarios = "select * from comentario where comentario.capitulo=id=" + id_capitulo;
+                string select_comentarios = "select * from Comentario where Comentario.capitulo=" + id_capitulo;
                 SqlDataAdapter ejecuta = new SqlDataAdapter(select_comentarios, c);
                 ejecuta.Fill(bdvirtual, "comentarios");
             }
