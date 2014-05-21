@@ -33,7 +33,7 @@
             <div class="pelicula_contenido_i">
               <asp:HyperLink ID="BotonEditar" CssClass="anadir" runat="server" EnableViewState="false" Text="Editar" />
                 <asp:HyperLink ID="BotonReport" CssClass="reportar" runat="server" Text="Reportar error" />
-                   
+                
                 <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
                 </asp:ToolkitScriptManager>
                 <asp:Rating ID="Rating1" runat="server"     MaxRating="5"

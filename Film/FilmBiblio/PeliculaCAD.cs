@@ -27,7 +27,7 @@ namespace FilmBiblio
         public bool HaVotado(int id_film, int id_usuario)
         {
             bool test = false;
-            string orden = "select idUsuario from votar where idUsuario=" + id_usuario + " and idFilm=" + id_film;
+            string orden = "select usuario from votar where usuario=" + id_usuario + " and film=" + id_film;
             SqlConnection c = new SqlConnection(conexion);
 
             try
@@ -80,10 +80,10 @@ namespace FilmBiblio
             if(!HaVotado(id,id_usuario))
                 orden1 = "insert into votar values (" + id_usuario + ", " + id + ", " + calificacion + ")";
             else
-                orden1 = "update votar set voto=" + calificacion + " where idUsuario= " + id_usuario + " and idFilm= " + id ;
+                orden1 = "update votar set voto=" + calificacion + " where usuario= " + id_usuario + " and film= " + id ;
 
 
-            string orden2 = "select avg(voto) from votar where idFilm=" + id;
+            string orden2 = "select avg(voto) from votar where film=" + id;
 
 
             

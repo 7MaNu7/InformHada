@@ -24,6 +24,7 @@ namespace FilmBiblio
         ///////////////
 
         //True si ha votado este film
+        //True si ha votado este film
         public bool HaVotado(int id_film, int id_usuario)
         {
             bool test = false;
@@ -76,10 +77,18 @@ namespace FilmBiblio
         //Si un usuario vota una serie, se registra lo que ha votado y se recalcula la puntuación de la serie
         public float AnyadirPuntuacionSerie(int id_usuario, int id, float calificacion)
         {
+            string orden1;
             float puntos = 0;
-            string orden1 = "insert into votar values (" + id_usuario + ", " + id + ", " + calificacion + ")";
+            if (!HaVotado(id, id_usuario))
+                orden1 = "insert into votar values (" + id_usuario + ", " + id + ", " + calificacion + ")";
+            else
+                orden1 = "update votar set voto=" + calificacion + " where usuario= " + id_usuario + " and film= " + id;
+
+
             string orden2 = "select avg(voto) from votar where film=" + id;
-            string orden3 = "update film set puntuacion=" + puntos + " where id=" + id;
+
+
+
             SqlConnection c = new SqlConnection(conexion);
 
             try
@@ -91,9 +100,9 @@ namespace FilmBiblio
                 sentencia = new SqlCommand(orden2, c);
                 SqlDataReader leer_media = sentencia.ExecuteReader();
                 leer_media.Read();
-                puntos = Convert.ToInt32(leer_media[0].ToString());
+                puntos = Convert.ToInt32(Math.Round(Convert.ToDecimal(leer_media[0].ToString())));
                 leer_media.Close();
-
+                string orden3 = "update film set puntuacion=" + puntos + " where id=" + id;
                 sentencia = new SqlCommand(orden3, c);
                 sentencia.ExecuteNonQuery();
             }
@@ -102,6 +111,7 @@ namespace FilmBiblio
 
             return puntos;
         }
+
 
         //Realiza una operación select en la BD para añadir una nueva serie cuyos datos se pasan por parámetro en el objeto SerieEN
         public void InsertarSerie(SerieEN serie) 

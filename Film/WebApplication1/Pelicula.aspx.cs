@@ -63,7 +63,7 @@ namespace WebApplication1
             if (!Page.IsPostBack)
             {
                 comentario.Film = Convert.ToInt32( id);
-                d = comentario.DameComentarios();
+                d = comentario.DameComentariosFilm(pelicula.Id);
                 ListViewComentarios.DataSource = d;
                 ListViewComentarios.DataBind();
             }
@@ -77,7 +77,7 @@ namespace WebApplication1
                 pelicula.AnyadirPuntuacionPelicula(usuario.Id, Convert.ToSingle(e.Value.ToString()) * 2);
                 pelicula.DamePelicula();
                 puntuacion.Text = pelicula.Puntuacion.ToString();
-                Page.Response.Redirect(Page.Request.Url.ToString(), true);
+              //  Page.Response.Redirect(Page.Request.Url.ToString(), true);
             }
               //  
 

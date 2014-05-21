@@ -30,14 +30,15 @@
             <div class="serie_contenido_i">
               <asp:HyperLink ID="BotonEditar" CssClass="anadir" runat="server" EnableViewState="false" Text="Editar" />
                 <asp:HyperLink ID="BotonReport" CssClass="reportar" runat="server" Text="Reportar error" />
-                        <!--aa sp:Rating ID="Rating1" runat="servr" 
-                    CurrentRating="2"
-                    MaxRating="5"
+                <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+                </asp:ToolkitScriptManager>
+                <asp:Rating ID="Rating1" runat="server"     MaxRating="5"
                     StarCssClass="ratingStar"
                    WaitingStarCssClass="waitingstar" FilledStarCssClass="shiningstar"
-            EmptyStarCssClass="blankstar"
-
-                     -->
+                    EmptyStarCssClass="blankstar"
+                     OnChanged="OnRatingChanged"
+>
+                </asp:Rating>
 
             </div>
             <div class="serie_contenido_d">
@@ -51,8 +52,7 @@
 
                 <h2>Capitulos <asp:HyperLink ID="HyperLinkAddCapitulo" runat="server" Text="AÑADIR"> </asp:HyperLink> </h2>
                 <div class="acordeon">
-                <asp:ToolkitScriptManager ID="ToolkitScriptManager2" runat="server">
-                    </asp:ToolkitScriptManager>
+               
                     <asp:Accordion ID="Accordion1" runat="server">
                         <Panes>
                              
