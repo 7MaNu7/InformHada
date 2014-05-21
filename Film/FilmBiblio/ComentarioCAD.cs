@@ -54,7 +54,7 @@ namespace FilmBiblio
 
             String orden = "insert into comentario values ";
             orden += "( " + id + ", ";
-            orden += "'" + "12/05/1994" + "', ";
+            orden += "'" + comentario.Fecha + "', ";
             orden += "'" + comentario.Texto + "', ";
             orden += comentario.Usuario + ", ";
             if (comentario.Capitulo == 0)
