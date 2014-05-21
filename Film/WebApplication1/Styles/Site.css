@@ -348,7 +348,10 @@ width: 100%;
     text-decoration:none;    
 }
 
-
+.cabecerasAddEdita
+{
+    Width:160px;
+}
 .cabecerasAddEdit 
 {
     Font-Italic:true;
@@ -358,7 +361,10 @@ width: 100%;
     BorderStyle:Solid;
     BorderColor:White;       
 }
-
+textarea{
+width: 97%;
+min-height: 147px;
+}
 .botonanadireditarusr{
     width: 100%;
     border: none;

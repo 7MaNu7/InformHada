@@ -2,7 +2,7 @@
     CodeBehind="AddEditSerie.aspx.cs" Inherits="WebApplication1.AddEditSerie" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
-    <link href="/Styles/Serie.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/Pelicula.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
    <div class="contenido">

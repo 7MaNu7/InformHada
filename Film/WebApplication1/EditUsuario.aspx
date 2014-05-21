@@ -18,7 +18,7 @@
                 <h2>
                     <asp:Literal ID="LiteralNombre" runat="server" > </asp:Literal>
                 </h2>
-                    <p><asp:TextBox CssClass="cabecerasAddEdit" ID="TextBoxEmail" runat="server">e-mail</asp:TextBox></p>
+                    <p><asp:TextBox CssClass="cabecerasAddEdita" ID="TextBoxEmail" runat="server">e-mail</asp:TextBox></p>
              </div>
          </div>
 
