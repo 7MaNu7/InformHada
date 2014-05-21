@@ -18,16 +18,22 @@ namespace WebApplication1
         private  FilmBiblio.PeliculaEN pelicula = new FilmBiblio.PeliculaEN();
         private DataSet d = new DataSet();
         private FilmBiblio.ComentarioEN comentario = new FilmBiblio.ComentarioEN();
-        private FilmBiblio.UsuarioEN usuario;
+        private FilmBiblio.UsuarioEN usuario = new FilmBiblio.UsuarioEN();
+        private FilmBiblio.ComentarioEN comentarioEn = new FilmBiblio.ComentarioEN();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["usuario"] == null)
             {
                 BotonEditar.Visible = false;
+                LiteralComentar.Visible = false;
+                BotonComentar.Visible = false;
+                TextBoxComentario.Visible = false;
+                Rating1.Visible = false;
             }
             else
             {
-                
+                LiteralComentar.Text = "Deja tu comentario";
                 usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
             }
             
@@ -57,9 +63,13 @@ namespace WebApplication1
                 
             }
             if (usuario != null)
-                Rating1.CurrentRating = Convert.ToInt32(Math.Round( Convert.ToDecimal( pelicula.Puntuacion)/2));
+            {
+                Rating1.CurrentRating = Convert.ToInt32(Math.Round(Convert.ToDecimal(pelicula.Puntuacion) / 2));
+            }
             else
+            {
                 Rating1.Visible = false;
+            }
             if (!Page.IsPostBack)
             {
                 comentario.Film = Convert.ToInt32( id);
@@ -68,6 +78,24 @@ namespace WebApplication1
                 ListViewComentarios.DataBind();
             }
         }
+
+        protected void ComentarOnClick(object sender, EventArgs e)
+        {
+            usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
+            int id_pelicula = Convert.ToInt32(Request.QueryString["id"]);
+            pelicula.Id = id_pelicula;
+            pelicula = pelicula.DamePelicula();
+            string texto = TextBoxComentario.Text;
+            DateTime tomorrow = DateTime.Today.AddDays(1);
+
+            comentarioEn.Usuario = usuario.Id;
+            comentarioEn.Film = pelicula.Id;
+            comentarioEn.Texto = texto;
+            comentarioEn.Fecha = tomorrow.ToString();
+            comentario.InsertarComentario();
+            Response.Redirect("Pelicula.aspx?id=" + pelicula.Id);
+        }
+
         protected void OnRatingChanged(object sender, RatingEventArgs e)
         {
          //   pelicula.Puntuacion = Convert.ToSingle( e.Value.ToString());
@@ -83,5 +111,6 @@ namespace WebApplication1
 
             //   e.Value;
         }
+
     }
 }

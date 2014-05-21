@@ -23,11 +23,37 @@ namespace FilmBiblio
         // Funciones //
         ///////////////
 
+        //Devuelve el máximo id de la base de datos
+        public int MaximoId()
+        {
+            string orden = "select * from comentario where id=(select max(id) from comentario)";
+            int id = 0;
+            SqlConnection c = new SqlConnection(conexion);
+            SqlDataReader read_id = null;
+
+            try
+            {
+                c.Open();
+                SqlCommand max_id = new SqlCommand(orden, c);
+                read_id = max_id.ExecuteReader();
+                read_id.Read();
+                id = (int)read_id["id"];
+                read_id.Close();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { read_id.Close(); c.Close(); }
+
+            id++;
+            return id;
+        }
+
         //Inserta un comentario en la BD
         public void InsertarComentario(ComentarioEN comentario)
         {
+            int id = MaximoId();
+
             String orden = "insert into comentario values ";
-            orden += "( " + comentario.Id + ", ";
+            orden += "( " + id + ", ";
             orden += "'" + comentario.Fecha + "', ";
             orden += "'" + comentario.Texto + "', ";
             orden += comentario.Usuario + ", ";

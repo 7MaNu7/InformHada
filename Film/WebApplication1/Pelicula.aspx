@@ -55,6 +55,12 @@
                 <h2>Trailer</h2>
                 <iframe width="761" height="415" src="//www.youtube.com/embed/<asp:Literal ID="trailer" runat="server"></asp:Literal>" frameborder="0" allowfullscreen></iframe>
 
+                <h2> 
+                    <asp:Literal ID="LiteralComentar" runat="server" > </asp:Literal> 
+                    <asp:Button ID="BotonComentar" runat="server" OnClick="ComentarOnClick" Text="Comentar" /> 
+                </h2>
+                <p> <asp:TextBox ID="TextBoxComentario" placeholder="Danos tu opinión." TextMode="MultiLine" runat="server" style="height:200px; width:500px; " > </asp:TextBox> </p>
+
                 <h2>Comentarios</h2>
                 <div class="comentarios">
                     <asp:ListView ID="ListViewComentarios" runat="server">
