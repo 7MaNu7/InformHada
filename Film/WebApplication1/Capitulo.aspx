@@ -14,7 +14,7 @@
             </div>
              <img class="caratula" src="http://pics.filmaffinity.com/Vikingos_Vikings_Serie_de_TV-616055151-large.jpg" alt="fotou_perfil"/>
              <div class="info_cabecera">
-                <h2> <asp:Literal ID="LiteralTitulo" runat="server" TextMode="MultiLine"> </asp:Literal> </h2>
+                <h2> <asp:Literal ID="LiteralTitulo" runat="server"> </asp:Literal> </h2>
                 <p>Serie: <asp:Literal ID="LiteralSerie" runat="server"> </asp:Literal> </p>
                 <p>Temporada: <asp:Literal ID="LiteralTemporada" runat="server"> </asp:Literal> </p>
                 <p>Capítulo nº: <asp:Literal ID="LiteralNCapitulo" runat="server"> </asp:Literal> </p>

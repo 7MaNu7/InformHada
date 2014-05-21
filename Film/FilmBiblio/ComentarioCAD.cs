@@ -47,18 +47,22 @@ namespace FilmBiblio
             return id;
         }
 
-        //Inserta un comentario en la BD
         public void InsertarComentario(ComentarioEN comentario)
         {
             int id = MaximoId();
 
+
             String orden = "insert into comentario values ";
             orden += "( " + id + ", ";
-            orden += "'" + comentario.Fecha + "', ";
+            orden += "'" + "12/05/1994" + "', ";
             orden += "'" + comentario.Texto + "', ";
             orden += comentario.Usuario + ", ";
-            orden += comentario.Film + ", ";
-            orden += comentario.Capitulo + ")";
+            if (comentario.Capitulo == 0)
+                orden += comentario.Film + ", NULL )";
+            else
+                orden += comentario.Film + ", " + comentario.Capitulo + ")";
+
+
 
             SqlConnection c = new SqlConnection(conexion);
             try
@@ -70,6 +74,7 @@ namespace FilmBiblio
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             finally { c.Close(); }
         }
+
 
         //No se cambian ni la película a la que refiere ni el autor (usuario)
         public void UpdateComentario(ComentarioEN comentario)

@@ -92,24 +92,18 @@ namespace WebApplication1
             comentarioEn.Film = pelicula.Id;
             comentarioEn.Texto = texto;
             comentarioEn.Fecha = tomorrow.ToString();
-            comentario.InsertarComentario();
+            comentarioEn.InsertarComentario();
             Response.Redirect("Pelicula.aspx?id=" + pelicula.Id);
         }
 
         protected void OnRatingChanged(object sender, RatingEventArgs e)
         {
-         //   pelicula.Puntuacion = Convert.ToSingle( e.Value.ToString());
-            //titulo.Text = "Holaaaaaaaaaaaaaa";
             if (usuario != null)
             {
                 pelicula.AnyadirPuntuacionPelicula(usuario.Id, Convert.ToSingle(e.Value.ToString()) * 2);
                 pelicula.DamePelicula();
                 puntuacion.Text = pelicula.Puntuacion.ToString();
-              //  Page.Response.Redirect(Page.Request.Url.ToString(), true);
             }
-              //  
-
-            //   e.Value;
         }
 
     }

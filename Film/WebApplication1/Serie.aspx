@@ -60,6 +60,12 @@
                     </asp:Accordion>
                 </div>
 
+                <h2> 
+                    <asp:Literal ID="LiteralComentar" runat="server" > </asp:Literal> 
+                    <asp:Button ID="BotonComentar" runat="server" OnClick="ComentarOnClick" Text="Comentar" /> 
+                </h2>
+                <p> <asp:TextBox ID="TextBoxComentario" placeholder="Danos tu opinión." TextMode="MultiLine" runat="server" style="height:200px; width:500px; " > </asp:TextBox> </p>
+
                 
                 <h2>Comentarios</h2>
                 <div class="comentarios">

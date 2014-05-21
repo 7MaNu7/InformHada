@@ -19,7 +19,9 @@ namespace WebApplication1
         private FilmBiblio.SerieEN serie;
         private DataSet d = new DataSet();
         private FilmBiblio.ComentarioEN comentario = new FilmBiblio.ComentarioEN();
-        private FilmBiblio.UsuarioEN usuario;
+        private FilmBiblio.UsuarioEN usuario = new FilmBiblio.UsuarioEN();
+        private FilmBiblio.ComentarioEN comentarioEn = new FilmBiblio.ComentarioEN();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -27,8 +29,18 @@ namespace WebApplication1
             if (Session["usuario"] == null)
             {
                 BotonEditar.Visible = false;
-            }else
+                LiteralComentar.Visible = false;
+                BotonComentar.Visible = false;
+                TextBoxComentario.Visible = false;
+                Rating1.Visible = false;
+                BotonEditar.Visible = false;
+                HyperLinkAddCapitulo.Visible = false;
+            }
+            else
+            {
+                LiteralComentar.Text = "Deja tu comentario";
                 usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
+            }
 
             String id = Request.QueryString["id"];
             if (id == null)
@@ -106,20 +118,31 @@ namespace WebApplication1
 
         }
 
+        protected void ComentarOnClick(object sender, EventArgs e)
+        {
+            usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
+            int id_serie = Convert.ToInt32(Request.QueryString["id"]);
+            serie.Id = id_serie;
+            serie = serie.DameSerie();
+            string texto = TextBoxComentario.Text;
+            DateTime tomorrow = DateTime.Today.AddDays(1);
+
+            comentarioEn.Usuario = usuario.Id;
+            comentarioEn.Film = serie.Id;
+            comentarioEn.Texto = texto;
+            comentarioEn.Fecha = tomorrow.ToString();
+            comentarioEn.InsertarComentario();
+            Response.Redirect("serie.aspx?id=" + serie.Id);
+        }
+
         protected void OnRatingChanged(object sender, RatingEventArgs e)
         {
-            //   pelicula.Puntuacion = Convert.ToSingle( e.Value.ToString());
-            //titulo.Text = "Holaaaaaaaaaaaaaa";
             if (usuario != null)
             {
                 serie.AnyadirPuntuacionSerie(usuario.Id, Convert.ToSingle(e.Value.ToString()) * 2);
                 serie.DameSerie();
                 puntuacion.Text = serie.Puntuacion.ToString();
-                //  Page.Response.Redirect(Page.Request.Url.ToString(), true);
             }
-            //  
-
-            //   e.Value;
         }
     }
 }
