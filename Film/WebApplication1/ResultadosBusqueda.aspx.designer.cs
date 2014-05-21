@@ -10,7 +10,7 @@
 namespace WebApplication1 {
     
     
-    public partial class _Default {
+    public partial class ResultadosBusqueda {
         
         /// <summary>
         /// Control TextBox1.
@@ -20,15 +20,6 @@ namespace WebApplication1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
-        
-        /// <summary>
-        /// Control BotonBuscar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BotonBuscar;
         
         /// <summary>
         /// Control HyperLinkPeliculas.
@@ -103,39 +94,39 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.HyperLink HyperLinkAnadirSerie;
         
         /// <summary>
-        /// Control ListViewRecientes.
+        /// Control ListViewPeliculas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewRecientes;
+        protected global::System.Web.UI.WebControls.ListView ListViewPeliculas;
         
         /// <summary>
-        /// Control ListViewSrecientes.
+        /// Control ListViewSeries.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewSrecientes;
+        protected global::System.Web.UI.WebControls.ListView ListViewSeries;
         
         /// <summary>
-        /// Control ListViewPuntuadas.
+        /// Control ListViewCapitulos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewPuntuadas;
+        protected global::System.Web.UI.WebControls.ListView ListViewCapitulos;
         
         /// <summary>
-        /// Control ListViewSPuntuadas.
+        /// Control ListViewUsuarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewSPuntuadas;
+        protected global::System.Web.UI.WebControls.ListView ListViewUsuarios;
     }
 }

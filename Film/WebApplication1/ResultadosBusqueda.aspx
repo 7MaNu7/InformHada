@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Página principal" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeBehind="Default.aspx.cs" Inherits="WebApplication1._Default" %>
+    CodeBehind="ResultadosBusqueda.aspx.cs" Inherits="WebApplication1.ResultadosBusqueda" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <link href="/Styles/Default.css" rel="stylesheet" type="text/css" />
@@ -31,7 +31,6 @@
             <p>La mejor información de tus peliculas y series preferidas.</p>
             <div style="position:relative;">
                 <asp:TextBox ID="TextBox1" runat="server">Buscar Peliculas y Series</asp:TextBox>
-                <asp:Button ID="BotonBuscar" runat="server" OnClick="BotonBuscarOnClick" Text="Buscar" /> 
                 <i style="color: rgba(0, 0, 0, 0.54);
                             font-size: 14px;
                             top: 25px;
@@ -57,11 +56,11 @@
 
     <div class="cabecera_contenido">
         <h2>
-        Peliculas añadidas recientemente
+        Peliculas 
         </h2>
         <table>
             <tr>
-            <asp:ListView ID="ListViewRecientes" runat="server">
+            <asp:ListView ID="ListViewPeliculas" runat="server">
             <ItemTemplate>
                 <td>
                         <a style="display: table-cell;float: left; text-decoration:none; color:Gray;"  href="Pelicula.aspx?id=<asp:Literal ID="Literal5" Text='<%# Eval("id")%>'  runat="server"></asp:Literal>">
@@ -88,11 +87,11 @@
 
     <div class="cabecera_contenido">
         <h2>
-        Series añadidas recientemente
+        Series
         </h2>
         <table>
             <tr>
-            <asp:ListView ID="ListViewSrecientes" runat="server">
+            <asp:ListView ID="ListViewSeries" runat="server">
             <ItemTemplate>
                 <td>
                    
@@ -120,11 +119,11 @@
 
     <div class="cabecera_contenido">
         <h2>
-        Peliculas y series más puntuadas
+        Capitulos
         </h2>
-        <table>
+        <!--<table>
             <tr>
-            <asp:ListView ID="ListViewPuntuadas" runat="server">
+            <asp:ListView ID="ListViewCapitulos" runat="server">
             <ItemTemplate>
                 <td>
                    
@@ -145,14 +144,17 @@
             </ItemTemplate>
             </asp:ListView>
             </tr>
-        </table>
+        </table>-->
     </div>
   
 
         <div class="cabecera_contenido">
-        <table>
+        <h2>
+            Usuarios
+        </h2>
+        <!--<table>
             <tr>
-            <asp:ListView ID="ListViewSPuntuadas" runat="server">
+            <asp:ListView ID="ListViewUsuarios" runat="server">
             <ItemTemplate>
                 <td>
                         <a style="display: table-cell;float: left; text-decoration:none; color:Gray;"  href="Serie.aspx?id=<asp:Literal ID="Literal5" Text='<%# Eval("id")%>'  runat="server"></asp:Literal>">
@@ -171,7 +173,7 @@
             </ItemTemplate>
             </asp:ListView>
             </tr>
-        </table>
+        </table>-->
     </div>
 
 

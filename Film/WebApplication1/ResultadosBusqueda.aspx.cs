@@ -10,10 +10,9 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Configuration;
 
-
 namespace WebApplication1
 {
-    public partial class _Default : System.Web.UI.Page
+    public partial class ResultadosBusqueda : System.Web.UI.Page
     {
         public FilmBiblio.UsuarioEN usuarioLogeado = new FilmBiblio.UsuarioEN();
         private DataSet d = new DataSet();
@@ -48,28 +47,21 @@ namespace WebApplication1
             if (!Page.IsPostBack)
             {
                 d = pelicula.DamePeliculasRecientes(numero);
-                ListViewRecientes.DataSource = d;
-               
-                ListViewRecientes.DataBind();
+                ListViewPeliculas.DataSource = d;
+                ListViewPeliculas.DataBind();
 
                 d = serie.DameSeriesRecientes(numero);
-                ListViewSrecientes.DataSource = d;
-                ListViewSrecientes.DataBind();
+                ListViewSeries.DataSource = d;
+                ListViewSeries.DataBind();
 
-                d = pelicula.DamePeliculasMejorPuntuadas(numero);
-                ListViewPuntuadas.DataSource = d;
-                ListViewPuntuadas.DataBind();
+                /*d = pelicula.DamePeliculasMejorPuntuadas(numero);
+                ListViewCapitulos.DataSource = d;
+                ListViewCapitulos.DataBind();
 
                 d = serie.DameSeriesMejorPuntuadas(numero);
-                ListViewSPuntuadas.DataSource = d;
-                ListViewSPuntuadas.DataBind();
+                ListViewUsuarios.DataSource = d;
+                ListViewUsuarios.DataBind();*/
             }
-        }
-
-        protected void BotonBuscarOnClick(object sender, EventArgs e)
-        {
-            string texto = BotonBuscar.Text;
-            Response.Redirect("ResultadosBusqueda.aspx?texto="+texto);
         }
     }
 }
