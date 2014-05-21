@@ -115,7 +115,7 @@ namespace FilmBiblio
         }
 
         //Devuelve la información de todas las películas que tengan un título que contenga el texto
-        public DataSet DameSeriesBusqueda(string texto)
+        public DataSet DamePeliculasBusqueda(string texto)
         {
             bd = peliculaCad.DamePeliculasBusqueda(texto);
             return bd;

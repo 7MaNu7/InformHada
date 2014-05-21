@@ -13,13 +13,13 @@ namespace WebApplication1 {
     public partial class _Default {
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control TextBoxBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxBuscar;
         
         /// <summary>
         /// Control BotonBuscar.

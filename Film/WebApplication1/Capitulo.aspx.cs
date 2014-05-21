@@ -24,7 +24,7 @@ namespace WebApplication1
 
             if (id_capitulo == null || id_serie==null)
             {
-                Response.Redirect("series.aspx");
+                Response.Redirect("Series.aspx");
             }
             else
             {

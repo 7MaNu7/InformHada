@@ -275,8 +275,8 @@ namespace FilmBiblio
         {
             SqlConnection c = new SqlConnection(conexion);
             DataSet bdvirtual = new DataSet();
-            string select_busqueda = "Select * from film where titulo is like '%" + texto + "%'";
-            select_busqueda+="and id exists in (select id from serie)";
+            string select_busqueda = "Select * from film where titulo like '%" + texto + "%'";
+            select_busqueda+="and id in (select id from serie)";
 
             try
             {

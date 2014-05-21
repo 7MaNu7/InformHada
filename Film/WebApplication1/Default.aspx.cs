@@ -43,7 +43,7 @@ namespace WebApplication1
             HyperLinkAbout.NavigateUrl = "About.aspx";
             HyperLinkReport.NavigateUrl = "Report.aspx";
 
-            int numero = 5;
+            int numero = 10;
 
             if (!Page.IsPostBack)
             {
@@ -68,7 +68,7 @@ namespace WebApplication1
 
         protected void BotonBuscarOnClick(object sender, EventArgs e)
         {
-            string texto = BotonBuscar.Text;
+            string texto = TextBoxBuscar.Text;
             Response.Redirect("ResultadosBusqueda.aspx?texto="+texto);
         }
     }

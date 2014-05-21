@@ -18,6 +18,7 @@ namespace WebApplication1
         private DataSet d = new DataSet();
         private FilmBiblio.PeliculaEN pelicula = new FilmBiblio.PeliculaEN();
         private FilmBiblio.SerieEN serie = new FilmBiblio.SerieEN();
+        private FilmBiblio.UsuarioEN usuario = new FilmBiblio.UsuarioEN();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -42,26 +43,51 @@ namespace WebApplication1
             HyperLinkAbout.NavigateUrl = "About.aspx";
             HyperLinkReport.NavigateUrl = "Report.aspx";
 
-            int numero = 5;
+            String texto = Request.QueryString["texto"];
 
             if (!Page.IsPostBack)
             {
-                d = pelicula.DamePeliculasRecientes(numero);
-                ListViewPeliculas.DataSource = d;
-                ListViewPeliculas.DataBind();
 
-                d = serie.DameSeriesRecientes(numero);
-                ListViewSeries.DataSource = d;
-                ListViewSeries.DataBind();
+                if (texto != null && texto != "")
+                {
+                    d = pelicula.DamePeliculasBusqueda(texto);
+                    ListViewPeliculas.DataSource = d;
+                    if (d != null)
+                        ListViewPeliculas.DataBind();
+                    if (d.Tables[0].Rows.Count == 0)
+                        LiteralPeliculas.Text = "No se han encontrado resultados de películas";
 
-                /*d = pelicula.DamePeliculasMejorPuntuadas(numero);
-                ListViewCapitulos.DataSource = d;
-                ListViewCapitulos.DataBind();
+                    d = serie.DameSeriesBusqueda(texto);
+                    ListViewSeries.DataSource = d;
+                    if (d != null)
+                        ListViewSeries.DataBind();
+                    if (d.Tables[0].Rows.Count == 0)
+                        LiteralSeries.Text = "No se han encontrado resultados de películas";
 
-                d = serie.DameSeriesMejorPuntuadas(numero);
-                ListViewUsuarios.DataSource = d;
-                ListViewUsuarios.DataBind();*/
+                    /*d = pelicula.DamePeliculasMejorPuntuadas(numero);
+                    ListViewCapitulos.DataSource = d;
+                    ListViewCapitulos.DataBind();*/
+
+                    d = usuario.DameUsuariosBusqueda(texto);
+                    ListViewUsuarios.DataSource = d;
+                    ListViewUsuarios.DataBind();
+
+                    if (d != null)
+                        ListViewSeries.DataBind();
+                    if (d.Tables[0].Rows.Count == 0)
+                        LiteralUsuarios.Text = "No se han encontrado resultados de películas";
+
+                }
+                else
+                    Response.Redirect("Default.aspx");
+
             }
+        }
+
+        protected void BotonBuscarOnClick(object sender, EventArgs e)
+        {
+            string texto = TextBoxBuscar.Text;
+            Response.Redirect("ResultadosBusqueda.aspx?texto=" + texto);
         }
     }
 }

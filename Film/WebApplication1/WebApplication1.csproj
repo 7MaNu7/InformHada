@@ -77,6 +77,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Pelicula.aspx" />
     <Content Include="Report.aspx" />
+    <Content Include="ResultadosBusqueda.aspx" />
     <Content Include="Scripts\JScript1.js" />
     <Content Include="Serie.aspx" />
     <Content Include="Series.aspx" />
@@ -211,6 +212,13 @@
     </Compile>
     <Compile Include="Report.aspx.designer.cs">
       <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResultadosBusqueda.aspx.cs">
+      <DependentUpon>ResultadosBusqueda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResultadosBusqueda.aspx.designer.cs">
+      <DependentUpon>ResultadosBusqueda.aspx</DependentUpon>
     </Compile>
     <Compile Include="Serie.aspx.cs">
       <DependentUpon>Serie.aspx</DependentUpon>

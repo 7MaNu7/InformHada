@@ -30,14 +30,14 @@
             <h2>InformaTV</h2>
             <p>La mejor información de tus peliculas y series preferidas.</p>
             <div style="position:relative;">
-                <asp:TextBox ID="TextBox1" runat="server">Buscar Peliculas y Series</asp:TextBox>
-                <asp:Button ID="BotonBuscar" runat="server" OnClick="BotonBuscarOnClick" Text="Buscar" /> 
+                <asp:TextBox ID="TextBoxBuscar" runat="server" placeholder="Buscar Peliculas y Series"></asp:TextBox>
                 <i style="color: rgba(0, 0, 0, 0.54);
                             font-size: 14px;
                             top: 25px;
                             position: absolute;
                             left: calc(50% - 230px);" class="fa fa-search">
                 </i>
+                <asp:Button ID="BotonBuscar" runat="server" OnClick="BotonBuscarOnClick" Text="Buscar" /> 
            </div>
         </div>
    </div>

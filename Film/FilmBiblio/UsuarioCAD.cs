@@ -290,7 +290,7 @@ namespace FilmBiblio
         {
             SqlConnection c = new SqlConnection(conexion);
             DataSet bdvirtual = new DataSet();
-            string select_busqueda = "Select * from usuario where usuario is like '%" + texto + "%'";
+            string select_busqueda = "Select * from usuario where usuario like '%" + texto + "%'";
 
             try
             {

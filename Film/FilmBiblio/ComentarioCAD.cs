@@ -130,7 +130,7 @@ namespace FilmBiblio
         {
             SqlConnection c = new SqlConnection(conexion);
             DataSet bdvirtual = new DataSet();
-            string select_busqueda = "Select * from comentarios where texto is like '%" + texto + "%'";
+            string select_busqueda = "Select * from comentarios where texto like '%" + texto + "%'";
 
             try
             {
