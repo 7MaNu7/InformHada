@@ -88,6 +88,7 @@ namespace WebApplication1
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex.Message);
                   //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                 }
             }
@@ -101,6 +102,7 @@ namespace WebApplication1
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex.Message);
                     //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                 }
             }

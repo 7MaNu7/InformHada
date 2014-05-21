@@ -25,9 +25,20 @@ namespace WebApplication1
 
             if (id != 0 && Session["usuario"] != null)
             {
+
+                usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
+
+                string id_usuario = Request.QueryString["id"];
                 usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
                 amigo.Id = id;
                 amigo = amigo.DameUsuario();
+
+                if (Convert.ToInt32(id_usuario) != usuario.Id)
+                {
+                    BotonEditar.Visible = false;
+                    LiteralQuizasConozcas.Visible = false;
+                    ListViewQuizasConozcas.Visible = false;
+                }
 
                 LiteralNombre1.Text = amigo.Usuario;
                 LiteralNombre.Text = amigo.Usuario;
@@ -69,7 +80,6 @@ namespace WebApplication1
 
             HyperLinkAddPelicula.NavigateUrl="AddEditPelicula.aspx?par1=anadirPelicula";
             HyperLinkAddSerie.NavigateUrl="AddEditSerie.aspx?par1=anadirSerie";
-            HyperLinkEditUsuario.NavigateUrl="EditUsuario.aspx?par1=editarUsuario";
             
             if (Session["usuario"]!=null)
             {
@@ -104,7 +114,7 @@ namespace WebApplication1
                 ListViewQuizasConozcas.DataSource = d;
                 ListViewQuizasConozcas.DataBind();
 
-                HyperLinkEditUsuario.Visible = false;
+                BotonEditar.Visible = false;
                 BotonEliminarUsuario.Visible = false;
             }
 

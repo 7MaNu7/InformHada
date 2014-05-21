@@ -51,8 +51,8 @@
                 </div>
                 <div class="infoamigos">
                     <h2>Nueva contraseña</h2>
-                    <p><asp:TextBox ID="TextBoxPsswd" runat="server"></asp:TextBox></p>
-                    <p><asp:TextBox ID="TextBoxPsswd2" runat="server"></asp:TextBox></p>
+                    <p><asp:TextBox ID="TextBoxPsswd" runat="server" TextMode="Password"></asp:TextBox></p>
+                    <p><asp:TextBox ID="TextBoxPsswd2" runat="server" TextMode="Password"></asp:TextBox></p>
                 </div>
                 
             </div>

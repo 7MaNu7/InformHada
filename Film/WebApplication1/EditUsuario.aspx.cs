@@ -22,11 +22,6 @@ namespace WebApplication1
                 {
                     LiteralNombre.Text = usuario.Usuario;
                     TextBoxUsuario.Text = usuario.Usuario;
-                    TextBoxPsswd.Text = usuario.Psswd;
-                    TextBoxPsswd2.Text = usuario.Psswd;
-
-                    //if(TextBoxPsswd.ToString()=="")
-
                     TextBoxPais.Text = usuario.Pais;
                     if (usuario.Sexo == "Varón")
                         SexoHombre.Selected = true;
@@ -56,7 +51,8 @@ namespace WebApplication1
             {
                 //Guardar datos y update
                 usuario.Usuario = TextBoxUsuario.Text;
-                usuario.Psswd = TextBoxPsswd.Text;
+                if(TextBoxPsswd.Text!="")
+                    usuario.Psswd = TextBoxPsswd.Text;
                 usuario.Pais = TextBoxPais.Text;
                 usuario.Provincia = TextBoxProvincia.Text;
                 usuario.FechaNacimiento = TextBoxFechaNacimiento.Text;
@@ -76,6 +72,7 @@ namespace WebApplication1
                     }
                     catch (Exception ex)
                     {
+                        Console.WriteLine(ex.Message);
                         //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                     }
                 }
@@ -89,6 +86,7 @@ namespace WebApplication1
                     }
                     catch (Exception ex)
                     {
+                        Console.WriteLine(ex.Message);
                         //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                     }
                 }

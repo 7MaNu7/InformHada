@@ -45,7 +45,9 @@
                     <p>Ver más</p>
                 </div>
                 <div class="infoamigos">
-                    <h2>Quizás conozcas a...</h2>
+                    <h2>
+                        <h2> <asp:Literal ID="LiteralQuizasConozcas" runat="server" Text="Quizás conozcas a..." ></asp:Literal></h2>
+                    </h2>
                     <!--<img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
                     <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
                     <img src="http://us.cdn1.123rf.com/168nwm/tuulijumala/tuulijumala1304/tuulijumala130400006/18849611-por-defecto-avatar-internet-en-estilo-antiguo-marco-de-fotos.jpg" alt="amigo1"/>
@@ -77,7 +79,6 @@
                     <h2>Herramientas</h2>
                     <p> <asp:HyperLink ID="HyperLinkAddPelicula" runat="server" EnableViewState="false" PostBackUrl="String"> Añadir película </asp:HyperLink> </p>
                     <p> <asp:HyperLink ID="HyperLinkAddSerie" runat="server" EnableViewState="false" PostBackUrl="String"> Añadir serie </asp:HyperLink> </p>
-                    <p> <asp:HyperLink ID="HyperLinkEditUsuario" runat="server" EnableViewState="false" PostBackUrl="String"> Editar mi usuario </asp:HyperLink> </p>
                     <p> <asp:Button ID="BotonEliminarUsuario" runat="server" OnClick="BotonEliminarUsuarioOnClick" Text="Eliminar mi cuenta" BorderStyle="none" BorderWidth="0" Width="0" /> </p>
                 </div>
                 <asp:Button ID="BotonEditar" CssClass="botonanadireditarusr" runat="server" OnClick="BotonEditarOnClick" Text="Editar" />
