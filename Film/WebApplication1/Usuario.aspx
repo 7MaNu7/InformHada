@@ -78,7 +78,7 @@
                     <p> <asp:HyperLink ID="HyperLinkAddPelicula" runat="server" EnableViewState="false" PostBackUrl="String"> Añadir película </asp:HyperLink> </p>
                     <p> <asp:HyperLink ID="HyperLinkAddSerie" runat="server" EnableViewState="false" PostBackUrl="String"> Añadir serie </asp:HyperLink> </p>
                     <p> <asp:HyperLink ID="HyperLinkEditUsuario" runat="server" EnableViewState="false" PostBackUrl="String"> Editar mi usuario </asp:HyperLink> </p>
-                    <p> <asp:Button ID="ButtonEliminarUsuario" runat="server" OnClick="BotonEliminarUsuario" Text="Eliminar mi cuenta" /> </p>
+                    <p> <asp:Button ID="BotonEliminarUsuario" runat="server" OnClick="BotonEliminarUsuarioOnClick" Text="Eliminar mi cuenta" /> </p>
                 </div>
                 <asp:Button ID="BotonEditar" CssClass="botonanadireditarusr" runat="server" OnClick="BotonEditarOnClick" Text="Editar" />
             </div>

@@ -17,13 +17,14 @@ namespace WebApplication1
         private DataSet d = new DataSet();
         private FilmBiblio.SerieEN serie = new FilmBiblio.SerieEN();
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            HyperLinkAddSerie.NavigateUrl = "AddEditPelicula.aspx?par1=anadirPelicula";
+
             if (Session["usuario"] == null)
                 HyperLinkAddSerie.Visible = false;
 
-            HyperLinkAddSerie.NavigateUrl = "AddEditSerie.aspx?par1=anadirSerie";
             if (!Page.IsPostBack)
             {
                 d = serie.DameSeries();

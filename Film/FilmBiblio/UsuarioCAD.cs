@@ -162,11 +162,11 @@ namespace FilmBiblio
         public void BorrarUsuario(int id)
         {
             //Por claves ajenas y claves primarias es necesario eliminar en este orden
-            String orden1 = "delete from votar where usuario=" + id;
-            String orden2 = "delete from comentario where usuario=" + id;
-            String orden3 = "delete from amigos where id2= " + id;
-            String orden4 = "delete from amigos where id1= " + id;
-            String orden5 = "delete from usuario where id= " + id;
+            String orden1 = "delete from Votar where usuario=" + id;
+            String orden2 = "delete from Comentario where usuario=" + id;
+            String orden3 = "delete from Amigos where id2= " + id;
+            String orden4 = "delete from Amigos where id1= " + id;
+            String orden5 = "delete from Usuario where id= " + id;
 
             SqlConnection c = new SqlConnection(conexion);
             try

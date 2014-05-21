@@ -31,6 +31,7 @@ namespace WebApplication1.Account
                 usuario.Email = TextBoxEmail.Text;
 
                 usuario.InsertarUsuario();
+                Response.Redirect("Default.aspx");
             }
         }
 

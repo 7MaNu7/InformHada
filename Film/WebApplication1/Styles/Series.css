@@ -1,27 +1,74 @@
 ﻿.cabecera_contenido, .cabecera_contenido2 {
 padding: 25px 25px 1.5px 25px;
-overflow: hidden;
+oveerflow: hidden;
 clear: both;
 }
 
-.pelicula_caratula {
+
+
+
+.peliculacaratula {
 float: left;
 margin: 13px;
 width: 100px;
 height: 165px;
-overflow: hidden;
+cursor: pointer;
+position: relative;
 }
-
-.pelicula_caratula p {
-margin: 0;
+.caratula {
+position: absolute;
+bottom: -46px;
+left: 89px;
+height: 300px;
 }
+.peliculacaratula:hover .peliculacaratulaimg {
+top: -35px;
+width: 78px;
+height: 115px;
+left: 11px;
+box-shadow: 0 0 4px;
 
-.pelicula_caratula img {
+}
+.peliculacaratula img {
 width: 100px;
-height:144px;
+height: 143px;
+position: absolute;
+transition: all 0.3s;
+
+top: 0;
+left: 0;
+z-index: 555;
 }
 
-.peliculas_contenido
-{
-    overflow: hidden;
+.peliculacaratula > p {
+margin: 0;
+position: absolute;
+bottom: 0;
+}
+.peliculacaratula p {
+margin: 0;
+
+}
+
+
+.infopelicula {
+position: absolute;
+top: 0;
+z-index: 0;
+left: 0;
+width: 100px;
+height: 143px;
+background: rgb(247, 247, 247);
+color: rgba(0, 0, 0, 0.54);
+text-align: center;
+vertical-align: bottom;
+padding-top: 82px;
+box-sizing: border-box;
+}
+
+.datapager {
+clear: both;
+width: 100%;
+text-align: center;
+margin-top: 29px;
 }
