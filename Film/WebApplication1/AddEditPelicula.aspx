@@ -25,7 +25,8 @@
             </div>
               
              <div class="info_cabecera">
-                <h2> <asp:Literal ID="LiteralTitulo" runat="server" > </asp:Literal> </h2>
+                 <h2> <asp:TextBox ID="TextBoxTitulo" runat="server" > </asp:TextBox> 
+                <asp:Literal ID="LiteralTitulo" runat="server" > </asp:Literal> </h2>
                 <p> <asp:TextBox ID="TextBoxDirector" runat="server" > Director </asp:TextBox> </p>
                 <p> <asp:TextBox ID="TextBoxGenero" runat="server" > Genero </asp:TextBox> </p>
                 <p> <asp:TextBox ID="TextBoxBandaSonora" runat="server">Banda sonora</asp:TextBox> </p>

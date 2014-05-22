@@ -61,7 +61,7 @@ namespace WebApplication1
                 usuario.Informacion = TextBoxInformacion.Text;
 
                 usuario.UpdateUsuario();
-                Response.Redirect("Usuario.aspx");
+                
                 if (FileUpload1.HasFile)
                 {
                     try
@@ -81,7 +81,7 @@ namespace WebApplication1
                     try
                     {
                         string filename = Path.GetFileName(FileUploadControl.FileName);
-                            FileUploadControl.SaveAs(Server.MapPath("~/img/user/caratula/") + usuario.Id + ".jpg");
+                            FileUploadControl.SaveAs(Server.MapPath("~/img/users/") + usuario.Id + ".jpg");
                         //   StatusLabel.Text = "Upload status: File uploaded!";
                     }
                     catch (Exception ex)
@@ -90,6 +90,7 @@ namespace WebApplication1
                         //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                     }
                 }
+                Response.Redirect("Usuario.aspx");
             }
 
         }

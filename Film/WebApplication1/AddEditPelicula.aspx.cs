@@ -60,11 +60,13 @@ namespace WebApplication1
                 pelicula.Trailer = TextBoxTrailer.Text;
                 pelicula.UpdatePelicula();
                 Response.Redirect("Pelicula.aspx?id=" + id);
-
+                TextBoxTitulo.Visible = false;
             }
             else
             {
                 //Guardar datos y insert
+
+                pelicula.Titulo = TextBoxTitulo.Text;
                 pelicula.Director = TextBoxDirector.Text;
                 pelicula.Ano = int.Parse(TextBoxAno.Text);
                 pelicula.Sinopsis = TextBoxSinopsis.Text;
