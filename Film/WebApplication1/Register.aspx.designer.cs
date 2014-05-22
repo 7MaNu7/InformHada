@@ -157,6 +157,15 @@ namespace WebApplication1.Account {
         protected global::System.Web.UI.WebControls.CustomValidator ValidarEmailYaExiste;
         
         /// <summary>
+        /// Control RegularExpressionEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionEmail;
+        
+        /// <summary>
         /// Control LabelPsswd.
         /// </summary>
         /// <remarks>
@@ -191,6 +200,15 @@ namespace WebApplication1.Account {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RangeValidator ValidarLongitudPsswd2;
+        
+        /// <summary>
+        /// Control RegularExpressionContraseña.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionContraseña;
         
         /// <summary>
         /// Control LabelPasswd2.

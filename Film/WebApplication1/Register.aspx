@@ -57,6 +57,11 @@
                 <asp:CustomValidator ID="ValidarEmailYaExiste" runat="server" ControlToValidate="TextBoxEmail" 
                         OnServerValidate="EmailYaExiste" ErrorMessage="Ya hay una cuenta con este email" ForeColor="Red"> 
                 </asp:CustomValidator>
+                <p><asp:RegularExpressionValidator 
+                    ID="RegularExpressionEmail" runat="server" 
+                    ErrorMessage="Escriba un email válido como: ejemplo@dominio.extension" ForeColor="Red"
+                    ControlToValidate="TextBoxEmail" ValidationExpression="\S+@\S+\.\S+">                    
+                </asp:RegularExpressionValidator></p>
 
             </p>
             <p>
@@ -67,11 +72,16 @@
                 <asp:RequiredFieldValidator ID="ValidarPsswdRelleno" runat="server" 
                     ControlToValidate="TextBoxPsswd" Text="¡Escribe tu contraseña!" ForeColor="Red">                            
                 </asp:RequiredFieldValidator>
-                <asp:RangeValidator runat="server" ID="ValidarLongitudPsswd2" 
+                <!--<asp:RangeValidator runat="server" ID="ValidarLongitudPsswd2" 
                      MinimumValue="6" MaximumValue="20" Type="Integer"
                       Text="La contraseña debe tener de 6 a 20 caracteres" 
                       EnableClientScript="false" ControlToValidate="TextBoxPsswd" > 
-                </asp:RangeValidator>
+                </asp:RangeValidator>-->
+                <p><asp:RegularExpressionValidator 
+                    ID="RegularExpressionContraseña" runat="server" 
+                    ErrorMessage="La contraseña debe tener de 6 a 20 caracteres" ForeColor="Red"
+                    ControlToValidate="TextBoxPsswd" ValidationExpression="\S{5,20}">                    
+                </asp:RegularExpressionValidator></p>
 
             </p>
             <p>

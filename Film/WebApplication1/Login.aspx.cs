@@ -27,6 +27,11 @@ namespace WebApplication1
                 Session.Timeout = 30;
                 Response.Redirect("Default.aspx");
             }
+            else
+            {
+                
+            }
+
         }
 
         protected void ComprobarCuenta(object sender, ServerValidateEventArgs e)

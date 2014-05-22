@@ -37,7 +37,6 @@ namespace WebApplication1
                 {
                     BotonEditar.Visible = false;
                     Panel1.Visible = false;
-                  
                 }
 
                 LiteralNombre1.Text = amigo.Usuario;
@@ -49,9 +48,9 @@ namespace WebApplication1
                 LiteralEmail1.Text = amigo.Email;
                 LiteralEmail.Text = amigo.Email;
                 LiteralInformacion.Text = amigo.Informacion;
+
                 imgperfil.ImageUrl = "~/img/users/" + amigo.Id.ToString() + ".jpg";
-               
-               
+
                 if (usuario.sonAmigos(id))
                 {
                     BotonAmigo.Text = "Eliminar amigo";
@@ -73,8 +72,8 @@ namespace WebApplication1
                 LiteralEmail1.Text = usuario.Email;
                 LiteralEmail.Text = usuario.Email;
                 LiteralInformacion.Text = usuario.Informacion;
+
                 imgperfil.ImageUrl = "~/img/users/" + usuario.Id.ToString() + ".jpg";
-                
             }
             else
             {

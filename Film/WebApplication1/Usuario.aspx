@@ -12,7 +12,7 @@
             <div class="portada_usuario">
                 <img class="fondoblurred" src="http://t1.gstatic.com/images?q=tbn:ANd9GcT3HhDuErxy_xMEFj9ie_T5q2sxgM5mB9Kp5CRGrC1BO1zqQ9Cl" alt="fotou_portada"/>
             </div>
-            <asp:Image class="fotoperfilusuario" ID="imgperfil" runat="server" />
+             <asp:Image class="fotoperfilusuario" ID="imgperfil" runat="server" />
              <div class="infocabecera">
                 <h2> <asp:Literal ID="LiteralNombre1" runat="server"> </asp:Literal>    
                <asp:Button ID="BotonAmigo" CssClass="botonamigo" runat="server" OnClick="BotonAmigoOnClick" /> 
@@ -43,9 +43,10 @@
                          </ItemTemplate>
                     </asp:ListView>
                     <p>Ver más</p>
+
+                    <asp:Panel ID="Panel1" runat="server">
+
                 </div>
-                <asp:Panel ID="Panel1" runat="server">
-                
                 <div class="infoamigos">
                     <h2>
                         <h2> <asp:Literal ID="LiteralQuizasConozcas" runat="server" Text="Quizás conozcas a..." ></asp:Literal></h2>
@@ -69,8 +70,10 @@
                     </asp:ListView>
 
                     <p>Ver más</p>
+
+                    </asp:Panel>
+
                 </div>
-                </asp:Panel>
             </div>
             <div class="usuarioinfcolder">
                 <div class="informacionpersonal" style="border-top: solid 4px rgb(51, 162, 197)">

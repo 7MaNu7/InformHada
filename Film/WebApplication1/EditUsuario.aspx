@@ -28,6 +28,13 @@
                 <h2>
                     <asp:Literal ID="LiteralNombre" runat="server" > </asp:Literal>
                 </h2>
+                    
+                    <asp:RegularExpressionValidator 
+                    ID="RegularExpressionEmail" runat="server" 
+                    ErrorMessage="Escriba un email válido como: ejemplo@dominio.extension" ForeColor="Red"
+                    ControlToValidate="TextBoxEmail" ValidationExpression="\S+@\S+\.\S+">                    
+                    </asp:RegularExpressionValidator>
+                    
                     <p><asp:TextBox CssClass="cabecerasAddEdita" ID="TextBoxEmail" runat="server">e-mail</asp:TextBox></p>
              </div>
          </div>
@@ -52,7 +59,20 @@
                 <div class="infoamigos">
                     <h2>Nueva contraseña</h2>
                     <p><asp:TextBox ID="TextBoxPsswd" runat="server" TextMode="Password"></asp:TextBox></p>
+                    
+                    <asp:RegularExpressionValidator 
+                        ID="RegularExpressionContraseña" runat="server" 
+                        ErrorMessage="La contraseña debe tener de 6 a 20 caracteres" ForeColor="Red"
+                        ControlToValidate="TextBoxPsswd" ValidationExpression="\S{5,20}">                    
+                    </asp:RegularExpressionValidator>
+
                     <p><asp:TextBox ID="TextBoxPsswd2" runat="server" TextMode="Password"></asp:TextBox></p>
+                
+                    <asp:CustomValidator ID="ValidarPsswdIguales" runat="server" ControlToValidate="TextBoxPsswd" 
+                        OnServerValidate="ComprobarPsswd" ForeColor="Red"
+                        ErrorMessage="¡Las contraseñas deben ser iguales!"> 
+                    </asp:CustomValidator>
+                
                 </div>
                 
             </div>

@@ -63,26 +63,25 @@
 
                 <h2>Comentarios</h2>
                 <div class="comentarios">
-                    <asp:Panel ID="Panel1" runat="server">
-                    
-                        <asp:ListView ID="ListViewComentarios" runat="server">
-                            <ItemTemplate>
-                                <div class="comentario">
-                                    <div class="comentario_img">
-                                         <img src="img/users/<%# Eval("usuario")%>.jpg" />
-                                    </div>
-                                    <div class="comentario_txt">     
-                                        <span class="comentario_p" ><%# Eval("texto")%></span>
-                                        <span class="comentario_f"><%# Eval("fecha")%></span>
-                                       
-                                          
-                                        <asp:Button ID="Eliminar" CssClass="Eliminar_comentario"  runat="server" ToolTip=<%# Eval("usuario")%> Text="Eliminar" OnClick="Eliminarcomentario" OnLoad="mostrar"  CommandArgument=<%# Eval("id")%> />
-                                    
-                                    </div>
+                    <asp:ListView ID="ListViewComentarios" runat="server">
+                        <ItemTemplate>
+                            <div class="comentario">
+                                <div class="comentario_img">
+                                     <img src="img/users/<%# Eval("usuario")%>.jpg" />
                                 </div>
-                            </ItemTemplate>
-                        </asp:ListView>
-                    </asp:Panel>
+                                <div class="comentario_txt">     
+                                    <span class="comentario_p" ><%# Eval("texto")%></span>
+                                    <span class="comentario_f"><%# Eval("fecha")%></span>
+
+                                    <asp:Button ID="Eliminar" CssClass="Eliminar_comentario"  
+                                    runat="server" ToolTip=<%# Eval("usuario")%> Text="Eliminar" 
+                                    OnClick="Eliminarcomentario" OnLoad="mostrar"  
+                                    CommandArgument=<%# Eval("id")%> />
+
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                    </asp:ListView>
                 </div>
             </div>
         </div>

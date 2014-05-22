@@ -22,6 +22,7 @@ namespace WebApplication1
                 int id = Convert.ToInt32(Request.QueryString["id"]);
                 if (id != 0)
                 {
+                    TextBoxTitulo.Visible = false;
                     pelicula.Id = id;
                     pelicula = pelicula.DamePelicula();
                     LiteralTitulo.Text = pelicula.Titulo;
@@ -36,6 +37,7 @@ namespace WebApplication1
                 }
                 else
                 {
+                    LiteralTitulo.Visible = false;
                     BotonAddEdit.Text = "Añadir película";
                 }
             }
@@ -60,13 +62,12 @@ namespace WebApplication1
                 pelicula.Trailer = TextBoxTrailer.Text;
                 pelicula.UpdatePelicula();
                 Response.Redirect("Pelicula.aspx?id=" + id);
-                TextBoxTitulo.Visible = false;
-            }
+}
             else
             {
                 //Guardar datos y insert
-
                 pelicula.Titulo = TextBoxTitulo.Text;
+
                 pelicula.Director = TextBoxDirector.Text;
                 pelicula.Ano = int.Parse(TextBoxAno.Text);
                 pelicula.Sinopsis = TextBoxSinopsis.Text;

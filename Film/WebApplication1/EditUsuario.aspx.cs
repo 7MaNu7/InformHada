@@ -10,7 +10,7 @@ namespace WebApplication1
 {
     public partial class AddEditUsuario : System.Web.UI.Page
     {
-        private FilmBiblio.UsuarioEN usuario=new FilmBiblio.UsuarioEN();
+        private FilmBiblio.UsuarioEN usuario = new FilmBiblio.UsuarioEN();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,7 +36,7 @@ namespace WebApplication1
                     BotonEditar.Text = "Guardar cambios";
                 }
             }
-            if(Session["usuario"]==null)
+            if (Session["usuario"] == null)
             {
                 Response.Redirect("Default.aspx");
                 //BotonEditar.Text = "Completar registro";
@@ -49,50 +49,82 @@ namespace WebApplication1
 
             if (usuario != null)
             {
-                //Guardar datos y update
-                usuario.Usuario = TextBoxUsuario.Text;
-                if(TextBoxPsswd.Text!="")
-                    usuario.Psswd = TextBoxPsswd.Text;
-                usuario.Pais = TextBoxPais.Text;
-                usuario.Provincia = TextBoxProvincia.Text;
-                usuario.FechaNacimiento = TextBoxFechaNacimiento.Text;
-                usuario.Sexo = Sexo.Text;
-                usuario.Email = TextBoxEmail.Text;
-                usuario.Informacion = TextBoxInformacion.Text;
+                string psswd1 = TextBoxPsswd.Text;
+                string psswd2 = TextBoxPsswd2.Text;
+                if (psswd1 != psswd2)
+                {
+                    ValidarPsswdIguales.IsValid = false;
+                }
+                else
+                {
+                    //Guardar datos y update
+                    usuario.Usuario = TextBoxUsuario.Text;
+                    if (TextBoxPsswd.Text != "")
+                        usuario.Psswd = TextBoxPsswd.Text;
+                    usuario.Pais = TextBoxPais.Text;
+                    usuario.Provincia = TextBoxProvincia.Text;
+                    usuario.FechaNacimiento = TextBoxFechaNacimiento.Text;
+                    usuario.Sexo = Sexo.Text;
+                    usuario.Email = TextBoxEmail.Text;
+                    usuario.Informacion = TextBoxInformacion.Text;
 
-                usuario.UpdateUsuario();
-                
-                if (FileUpload1.HasFile)
-                {
-                    try
+                    usuario.UpdateUsuario();
+
+                    if (FileUpload1.HasFile)
                     {
-                        string filename = Path.GetFileName(FileUpload1.FileName);
-                        FileUpload1.SaveAs(Server.MapPath("~/img/user/portada/") + usuario.Id + ".jpg");
-                        //   StatusLabel.Text = "Upload status: File uploaded!";
+                        try
+                        {
+                            string filename = Path.GetFileName(FileUpload1.FileName);
+                            FileUpload1.SaveAs(Server.MapPath("~/img/user/portada/") + usuario.Id + ".jpg");
+                            //   StatusLabel.Text = "Upload status: File uploaded!";
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                            //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                        }
                     }
-                    catch (Exception ex)
+                    if (FileUploadControl.HasFile)
                     {
-                        Console.WriteLine(ex.Message);
-                        //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
-                    }
-                }
-                if (FileUploadControl.HasFile)
-                {
-                    try
-                    {
-                        string filename = Path.GetFileName(FileUploadControl.FileName);
+                        try
+                        {
+                            string filename = Path.GetFileName(FileUploadControl.FileName);
                             FileUploadControl.SaveAs(Server.MapPath("~/img/users/") + usuario.Id + ".jpg");
-                        //   StatusLabel.Text = "Upload status: File uploaded!";
+                            //   StatusLabel.Text = "Upload status: File uploaded!";
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                            //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                        }
                     }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                        //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
-                    }
+                    Response.Redirect("Usuario.aspx");
                 }
-                Response.Redirect("Usuario.aspx");
             }
 
+        }
+
+        //Validaciones
+
+        protected void EmailYaExiste(object sender, ServerValidateEventArgs e)
+        {
+            string email = TextBoxEmail.Text;
+            usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
+
+            if (usuario.ExisteEmail(email) && usuario.Email != email)
+            {
+                e.IsValid = false;
+            }
+        }
+
+        protected void ComprobarPsswd(object sender, ServerValidateEventArgs e)
+        {
+            string psswd1 = TextBoxPsswd.Text;
+            string psswd2 = TextBoxPsswd2.Text;
+            if (psswd1 != psswd2)
+            {
+                ValidarPsswdIguales.IsValid = false;
+            }
         }
     }
 }
