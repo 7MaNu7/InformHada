@@ -36,7 +36,7 @@ namespace WebApplication1
                 LiteralComentar.Text = "Deja tu comentario";
                 usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
             }
-            
+
             String id = Request.QueryString["id"];
             if (id == null)
             {
@@ -44,10 +44,10 @@ namespace WebApplication1
             }
             else
             {
-               
+
                 pelicula.Id = Convert.ToInt32(id);
 
-                BotonEditar.NavigateUrl = "AddEditPelicula.aspx?id="+id;
+                BotonEditar.NavigateUrl = "AddEditPelicula.aspx?id=" + id;
                 BotonReport.NavigateUrl = "Report.aspx";
 
                 pelicula = pelicula.DamePelicula();
@@ -60,7 +60,7 @@ namespace WebApplication1
                 puntuacion.Text = pelicula.Puntuacion.ToString();
                 reparto.Text = pelicula.Reparto.ToString();
                 ano.Text = pelicula.Ano.ToString();
-                
+
             }
             if (usuario != null)
             {
@@ -72,13 +72,23 @@ namespace WebApplication1
             }
             if (!Page.IsPostBack)
             {
-                comentario.Film = Convert.ToInt32( id);
+                comentario.Film = Convert.ToInt32(id);
                 d = comentario.DameComentariosFilm(pelicula.Id);
                 ListViewComentarios.DataSource = d;
                 ListViewComentarios.DataBind();
             }
         }
 
+
+
+        protected void mostrar(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            int id_comentario = Convert.ToInt32(btn.ToolTip);
+            if (usuario.Id != id_comentario)
+                btn.Visible = false;
+        }
         protected void ComentarOnClick(object sender, EventArgs e)
         {
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
@@ -87,7 +97,7 @@ namespace WebApplication1
             pelicula = pelicula.DamePelicula();
             string texto = TextBoxComentario.Text;
             DateTime tomorrow = DateTime.Today.AddDays(0);
-
+            
             comentarioEn.Usuario = usuario.Id;
             comentarioEn.Film = pelicula.Id;
             comentarioEn.Texto = texto;
@@ -95,6 +105,15 @@ namespace WebApplication1
             comentarioEn.InsertarComentario();
             Response.Redirect("Pelicula.aspx?id=" + pelicula.Id);
         }
+        protected void Eliminarcomentario(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int id_comentario = Convert.ToInt32(btn.CommandArgument.ToString());
+            comentario.BorrarComentario(id_comentario);
+        }
+
+        
+            
 
         protected void OnRatingChanged(object sender, RatingEventArgs e)
         {

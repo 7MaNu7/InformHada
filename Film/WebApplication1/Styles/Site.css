@@ -413,6 +413,7 @@ opacity:0.8;
 
 .comentario
 {
+    position:relative;
     margin-top:10px;
     margin-bottom:10px;
 }
@@ -549,4 +550,16 @@ input#MainContent_FileUploadControl, input#MainContent_FileUpload1, input[type="
   -ms-filter: "alpha(opacity=0)"; /* IE 8 */
   -khtml-opacity: 0.0; /* Safari 1.x */
   -moz-opacity: 0.0; /* FF lt 1.5, Netscape */
+}
+.Eliminar_comentario {
+background: rgba(201, 5, 44, 0.68);
+border: none;
+border-radius: 4px;
+box-shadow: 0 0 5px rgba(87, 87, 87, 0);
+color: white;
+cursor: pointer;
+position: absolute;
+top: 6px;
+left: -68px;
+height: 21px;
 }
