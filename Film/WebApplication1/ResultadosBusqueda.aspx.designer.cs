@@ -103,6 +103,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.HyperLink HyperLinkAnadirSerie;
         
         /// <summary>
+        /// Control LiteralTextoBusqueda.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LiteralTextoBusqueda;
+        
+        /// <summary>
         /// Control LiteralPeliculas.
         /// </summary>
         /// <remarks>
@@ -137,24 +146,6 @@ namespace WebApplication1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView ListViewSeries;
-        
-        /// <summary>
-        /// Control LiteralCapitulos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LiteralCapitulos;
-        
-        /// <summary>
-        /// Control ListViewCapitulos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewCapitulos;
         
         /// <summary>
         /// Control LiteralUsuarios.

@@ -56,6 +56,11 @@
     </div>
 
     <div class="cabecera_contenido">
+        
+        <h2>
+         Resultados de " <asp:Literal runat="server" ID="LiteralTextoBusqueda"> </asp:Literal> "
+        </h2>
+
         <h2>
         Peliculas 
         </h2>

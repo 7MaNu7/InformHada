@@ -44,7 +44,7 @@
                     </asp:ListView>
                     <p>Ver más</p>
 
-                    <asp:Panel ID="Panel1" runat="server">
+                   <!-- <asp:Panel ID="Panel1" runat="server">-->
 
                 </div>
                 <div class="infoamigos">
@@ -71,7 +71,7 @@
 
                     <p>Ver más</p>
 
-                    </asp:Panel>
+                    <!--</asp:Panel>-->
 
                 </div>
             </div>

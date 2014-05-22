@@ -26,7 +26,7 @@
                 </h2>
                 <p> Escribe el motivo de tu queja y tomaremos en cuenta tu opinión, consulta o aviso </p>
                 <p> <asp:TextBox ID="TextBoxInformacionAdicional" TextMode="MultiLine" runat="server" style="height:200px; width:500px; " > </asp:TextBox> </p>
-
+                <asp:Button ID="BotonEnviarError" runat="server" Text="Enviar"  />
 
             </div>
         </div>

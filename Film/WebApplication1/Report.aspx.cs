@@ -13,5 +13,12 @@ namespace WebApplication1
         {
 
         }
+
+        protected void EnviarError(object sender, EventArgs e)
+        {
+            //SmtpClient smptClient = new 
+
+
+        }
     }
 }

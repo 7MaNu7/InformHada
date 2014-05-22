@@ -33,6 +33,10 @@ namespace WebApplication1
                     capitulo.Id = Convert.ToInt32(id_capitulo);
                     capitulo = capitulo.DameCapitulo();
                 }
+                else
+                {
+                
+                }
 
                 serie.Id = Convert.ToInt32(id_serie);
                 serie = serie.DameSerie();
@@ -55,7 +59,7 @@ namespace WebApplication1
                     else
                     {
                         //Editar capítulo
-                        BotonAddEdit.Text = "Guadar cambios";
+                        BotonAddEdit.Text = "Guardar cambios";
                         TextBoxTitulo.Text = capitulo.Titulo.ToString();
                         LiteralSerie.Text = serie.Titulo.ToString();
                         TextBoxTemporada.Text = capitulo.Temporada.ToString();
@@ -81,7 +85,7 @@ namespace WebApplication1
             {
                 capitulo.Id = Convert.ToInt32(id_capitulo);
                 capitulo = capitulo.DameCapitulo();
-                BotonAddEdit.Text = "Guadar cambios";
+                BotonAddEdit.Text = "Guardar cambios";
             }
 
             serie.Id = Convert.ToInt32(id_serie);

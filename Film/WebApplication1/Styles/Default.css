@@ -180,3 +180,23 @@ width: 240px;
 /* background: rgb(253, 160, 242); */
 /* box-shadow: 0 0 1px; */
 }
+
+input#MainContent_TextBoxBuscar {
+    width: 360px;
+    margin-top: 7px;
+    padding: 0px 25px;
+    border: none;
+    height: 20px;
+    border-radius: 3px;
+    box-shadow: inset 0 0 2px;
+}
+
+input#MainContent_BotonBuscar {
+    background: white;
+    border: none;
+    height: 27px;
+    position: absolute;
+    opacity: 0;
+    border-radius: 3px;
+    color: rgb(95, 95, 95);
+}

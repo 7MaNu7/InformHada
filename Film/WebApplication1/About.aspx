@@ -28,6 +28,17 @@
                     películas, series y los capítulos de las distintas. </p>
                 <p> Además, si se es usuario, la persona puede añadir nuevas películas, series o editar su información.  </p>
                 <p> Contará con un un perfil propio, tendrá su lista de amigos, etc. </p>
+                
+                <h2>
+                    Fundadores
+                </h2>
+                <p> Daniel Moreno Gonzalez - @DanyMorenoG94 </p> 
+                <p> Encarna Amorós Beneite - @EncarnaAmoros </p>
+                <p> Jorge Vicente Azorín Martí - @JorgeAzorin </p>
+                <p> Hector Compañ Gabucio - @Dorito4 </p>
+                <p> Manuel José Verdú Ramón - @ManuVerdu7 </p>
+                <p> Vicente Martín Rueda - @santofrost </p>
+
                 <h2>
                     Contacto
                 </h2>

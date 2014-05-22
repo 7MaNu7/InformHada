@@ -32,10 +32,10 @@
             <div style="position:relative;">
                 <asp:TextBox ID="TextBoxBuscar" runat="server" placeholder="Buscar Peliculas y Series"></asp:TextBox>
                 <i style="color: rgba(0, 0, 0, 0.54);
-                            font-size: 14px;
-                            top: 25px;
+                           font-size: 14px;
+                            top: 10px;
                             position: absolute;
-                            left: calc(50% - 230px);" class="fa fa-search">
+                            left: calc(50% - 200px);" class="fa fa-search">
                 </i>
                 <asp:Button ID="BotonBuscar" runat="server" OnClick="BotonBuscarOnClick" Text="Buscar" /> 
            </div>
