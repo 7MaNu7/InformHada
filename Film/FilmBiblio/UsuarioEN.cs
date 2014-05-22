@@ -59,11 +59,25 @@ namespace FilmBiblio
             fotoPortada = imagen2;
         }
 
+        //True si este emil con esta contraseña están en la BD
+        public bool ExisteCuenta(string email, string psswd)
+        {
+            return usuarioCad.ExisteCuenta(email, psswd);
+        }
+
+        //True si el usuario con ese nombre existe
+        public bool ExisteEmail(string email)
+        {
+            return usuarioCad.ExisteEmail(email);
+        }
+
+        //True si este usuario es amigo del usuario con id pasado por parámetro
         public bool sonAmigos(int id2)
         {
             return usuarioCad.SonAmigos(this.id, id2);
         }
 
+        //Devuelve el Id máximo +1
         public int MaximoId()
         {
             int id = 0;

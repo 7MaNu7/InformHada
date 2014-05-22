@@ -51,7 +51,6 @@ namespace FilmBiblio
         {
             int id = MaximoId();
 
-
             String orden = "insert into comentario values ";
             orden += "( " + id + ", ";
             orden += "'" + comentario.Fecha + "', ";
@@ -61,8 +60,6 @@ namespace FilmBiblio
                 orden += comentario.Film + ", NULL )";
             else
                 orden += comentario.Film + ", " + comentario.Capitulo + ")";
-
-
 
             SqlConnection c = new SqlConnection(conexion);
             try

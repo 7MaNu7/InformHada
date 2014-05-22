@@ -10,8 +10,20 @@
 
      <div class="Login">
          <div style="margin-bottom: 24px;"><h2>Iniciar sesión</h2></div>
-         <asp:TextBox ID="TextBoxEmail" runat="server" Text="@ Email"></asp:TextBox>
+         <asp:TextBox ID="TextBoxEmail" runat="server" placeholder="@ Email"></asp:TextBox>
+         <asp:RequiredFieldValidator ID="ValidarEmailRelleno" runat="server" 
+                ControlToValidate="TextBoxEmail" Text="¡Introduce tu email!" ForeColor="White">                            
+         </asp:RequiredFieldValidator>
+         <asp:CustomValidator ID="ValidarCuenta" runat="server" ControlToValidate="TextBoxEmail" 
+                    OnServerValidate="ComprobarCuenta" ForeColor="White" ErrorMessage="No hay una cuenta con estos datos"> 
+         </asp:CustomValidator>
+
+
          <asp:TextBox ID="TextBoxPsswd" runat="server" TextMode="Password" Text="Contraseña">PASSWORD</asp:TextBox>
+         <asp:RequiredFieldValidator ID="ValidarPsswdRelleno" runat="server" 
+                ControlToValidate="TextBoxPsswd" Text="¡Introduce tu contraseña!" ForeColor="White">                            
+         </asp:RequiredFieldValidator>
+         
          <asp:Button ID="ButtonIniciarSesion" CssClass="botton" runat="server" Text="Iniciar sesión" OnClick="IniciarSesionOnClick" />
          <div>
             <a href="Register.aspx">Registrarse</a>

@@ -23,6 +23,57 @@ namespace FilmBiblio
         // Funciones //
         ///////////////
 
+        //True si este emil con esta contraseña están en la BD
+        public bool ExisteCuenta(string email, string psswd)
+        {
+            bool test = false;
+            string orden = "select * from Usuario where email='" + email + "' and psswd='"+psswd+"'";
+            SqlConnection c = new SqlConnection(conexion);
+
+            try
+            {
+                c.Open();
+                SqlCommand select = new SqlCommand(orden, c);
+                SqlDataReader read = select.ExecuteReader();
+                while (read.HasRows)
+                {
+                    test = true;
+                    break;
+                }
+                read.Close();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return test;
+        }
+
+        //True si el usuario con ese nombre existe
+        public bool ExisteEmail(string email)
+        {
+            bool test = false;
+            string orden = "select id from Usuario where email='"+email+"'";
+            SqlConnection c = new SqlConnection(conexion);
+
+            try
+            {
+                c.Open();
+                SqlCommand select = new SqlCommand(orden, c);
+                SqlDataReader read = select.ExecuteReader();
+                while (read.HasRows)
+                {
+                    test = true;
+                    break;
+                }
+                read.Close();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return test;
+        }
+
+        //Informa si dos usuarios son amigos
         public bool SonAmigos(int id1, int id2)
         {
             bool amigos = false;

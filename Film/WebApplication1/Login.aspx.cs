@@ -21,24 +21,27 @@ namespace WebApplication1
             string email = TextBoxEmail.Text;
             usuario = usuario.DameUsuarioPorEmail(email);
 
-            if (usuario == null)
-                Response.Write(@"<script language='javascript'>alert('No hay un usuario con este email');</script>");
+            if (Page.IsValid)
+            {
+                Session["usuario"] = usuario;
+                Session.Timeout = 30;
+                Response.Redirect("Default.aspx");
+            }
             else
             {
-                if (usuario.Psswd != TextBoxPsswd.Text)
-                {
-                    Response.Write(@"<script language='javascript'>alert('No es una contraseña correcta');</script>");
-                    usuario = null;
-                }
-                else
-                {
-                    Response.Write(@"<script language='javascript'>alert('Iniciando Sesión...');</script>");
-                    Session["usuario"] = usuario;
-                    Session.Timeout = 30;
-                    Response.Redirect("Default.aspx");
-                }
+                
             }
-            
+
+        }
+
+        protected void ComprobarCuenta(object sender, ServerValidateEventArgs e)
+        {
+            string email = TextBoxEmail.Text;
+            string psswd = TextBoxPsswd.Text;
+            if (!usuario.ExisteCuenta(email, psswd))
+            {
+                e.IsValid = false;
+            }
         }
     }
 }
