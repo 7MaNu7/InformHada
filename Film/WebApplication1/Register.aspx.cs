@@ -14,7 +14,7 @@ namespace WebApplication1.Account
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void BotonRegistroOnClick(object sender, EventArgs e)
@@ -23,26 +23,31 @@ namespace WebApplication1.Account
             {
                 if (Page.IsValid)
                 {
-                    //Guardar datos y insert
-                    usuario.Usuario = TextBoxUsuario.Text;
-                    usuario.Psswd = TextBoxPsswd.Text;
-                    usuario.Pais = TextBoxPais.Text;
-                    usuario.Provincia = TextBoxProvincia.Text;
-                    usuario.FechaNacimiento = calendario.Text;
-                    usuario.Sexo = Sexo.Text;
-                    usuario.Email = TextBoxEmail.Text;
+                    /*string psswd1 = TextBoxPsswd.Text;
+                    if (psswd1.Length <= 6 || psswd1.Length >= 20)
+                    {
+                        ValidarLongitudPsswd2.Enabled = true;
+                        ValidarLongitudPsswd2.Visible = true;
+                        ValidarLongitudPsswd2.ErrorMessage = "La contraseña debe tener de 6 a 20 caracteres";
+                        
+                    }
+                    else
+                    {*/
+                        //Guardar datos y insert
+                        usuario.Usuario = TextBoxUsuario.Text;
+                        usuario.Psswd = TextBoxPsswd.Text;
+                        usuario.Pais = TextBoxPais.Text;
+                        usuario.Provincia = TextBoxProvincia.Text;
+                        usuario.FechaNacimiento = calendario.Text;
+                        usuario.Sexo = Sexo.Text;
+                        usuario.Email = TextBoxEmail.Text;
 
-                    usuario.InsertarUsuario();
-                    Response.Redirect("Default.aspx");
+                        usuario.InsertarUsuario();
+                        Response.Redirect("Default.aspx");
+                    //}
                 }
                 else
                 {
-                    /*ValidarUsuarioRelleno.Visible = false;
-                    ValidarEmailRelleno.Visible = false;
-                    ValidarEmailYaExiste.Visible = false;
-                    ValidarPsswdIguales.Visible = false;
-                    ValidarPsswdRelleno.Visible = false;
-                    ValidarPsswdRelleno2.Visible = false;*/
                     ValidarEmailYaExiste.Visible = false;
                     ValidarPsswdIguales.Visible = false;
                     CuadroValidacion.ShowMessageBox = true;

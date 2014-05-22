@@ -184,6 +184,15 @@ namespace WebApplication1.Account {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidarPsswdRelleno;
         
         /// <summary>
+        /// Control ValidarLongitudPsswd2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator ValidarLongitudPsswd2;
+        
+        /// <summary>
         /// Control LabelPasswd2.
         /// </summary>
         /// <remarks>

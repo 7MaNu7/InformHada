@@ -67,8 +67,10 @@
                 <asp:RequiredFieldValidator ID="ValidarPsswdRelleno" runat="server" 
                     ControlToValidate="TextBoxPsswd" Text="¡Escribe tu contraseña!" ForeColor="Red">                            
                 </asp:RequiredFieldValidator>
-                <asp:RangeValidator runat="server" ControlToValidate="TextBoxPsswd" 
-                    MinimumValue="20" MaximumValue="6" ForeColor="Red">
+                <asp:RangeValidator runat="server" ID="ValidarLongitudPsswd2" 
+                     MinimumValue="6" MaximumValue="20" Type="Integer"
+                      Text="La contraseña debe tener de 6 a 20 caracteres" 
+                      EnableClientScript="false" ControlToValidate="TextBoxPsswd" > 
                 </asp:RangeValidator>
 
             </p>
