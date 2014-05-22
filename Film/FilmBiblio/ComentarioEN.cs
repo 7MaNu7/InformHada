@@ -57,9 +57,9 @@ namespace FilmBiblio
         }
 
         //Se borra en la BD un comentario diferenciado de los demás por su id
-        public void BorrarComentario()
+        public void BorrarComentario(int id)
         {
-            comentarioCad.BorrarComentario(this.id);
+            comentarioCad.BorrarComentario(id);
         }
 
         //Devuelve la información de todos las comentarios
