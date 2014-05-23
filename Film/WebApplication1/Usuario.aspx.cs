@@ -50,7 +50,7 @@ namespace WebApplication1
                 LiteralInformacion.Text = amigo.Informacion;
 
                 imgperfil.ImageUrl = "~/img/users/" + amigo.Id.ToString() + ".jpg";
-
+                portada.ImageUrl = "~/img/users/portada/" + amigo.Id.ToString() + ".jpg";
                 if (usuario.sonAmigos(id))
                 {
                     BotonAmigo.Text = "Eliminar amigo";
@@ -74,6 +74,8 @@ namespace WebApplication1
                 LiteralInformacion.Text = usuario.Informacion;
 
                 imgperfil.ImageUrl = "~/img/users/" + usuario.Id.ToString() + ".jpg";
+                portada.ImageUrl = "~/img/users/portada/" + usuario.Id.ToString() + ".jpg";
+
             }
             else
             {

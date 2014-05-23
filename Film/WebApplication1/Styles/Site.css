@@ -576,3 +576,14 @@ cursor: pointer;
 a[href="#NavigationMenu_SkipLink"] {
 display: none;
 }
+
+.portada_usuario, .portada_serie, .portada_capitulo
+{
+    background: url('/img/users/portada/0.jpg');
+}
+
+.fotoperfilusuario
+{
+    background: url('/img/users/0.jpg');
+    background-size: cover;
+}

@@ -75,7 +75,7 @@ namespace WebApplication1
                         try
                         {
                             string filename = Path.GetFileName(FileUpload1.FileName);
-                            FileUpload1.SaveAs(Server.MapPath("~/img/user/portada/") + usuario.Id + ".jpg");
+                            FileUpload1.SaveAs(Server.MapPath("~/img/users/portada/") + usuario.Id + ".jpg");
                             //   StatusLabel.Text = "Upload status: File uploaded!";
                         }
                         catch (Exception ex)
