@@ -73,7 +73,7 @@ namespace WebApplication1
                 LiteralEmail.Text = usuario.Email;
                 LiteralInformacion.Text = usuario.Informacion;
 
-                imgperfil.ImageUrl = "~/img/users/"+usuario.Id+".jpg";
+                imgperfil.ImageUrl = "~/img/users/" + usuario.Id.ToString() + ".jpg";
             }
             else
             {

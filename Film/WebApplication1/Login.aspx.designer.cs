@@ -31,13 +31,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox TextBoxEmail;
         
         /// <summary>
-        /// Control ValidarEmailRelleno.
+        /// Control ValidarCuenta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidarEmailRelleno;
+        protected global::System.Web.UI.WebControls.CustomValidator ValidarCuenta;
         
         /// <summary>
         /// Control TextBoxPsswd.

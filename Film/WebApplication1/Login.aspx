@@ -16,9 +16,12 @@
          </asp:CustomValidator>
 
          <asp:TextBox ID="TextBoxEmail" runat="server" placeholder="@ Email"></asp:TextBox>
-         <asp:RequiredFieldValidator ID="ValidarEmailRelleno" runat="server" 
-                ControlToValidate="TextBoxPsswd" Text="¡Introduce tu e-mail!" ForeColor="White">                            
-         </asp:RequiredFieldValidator>
+         
+
+         <asp:CustomValidator ID="ValidarCuenta" runat="server" ControlToValidate="TextBoxEmail" 
+                    OnServerValidate="ComprobarCuenta" ForeColor="White" ErrorMessage="No hay una cuenta con estos datos"> 
+         </asp:CustomValidator>
+
 
          <asp:TextBox ID="TextBoxPsswd" runat="server" TextMode="Password" Text="Contraseña">PASSWORD</asp:TextBox>
          <asp:RequiredFieldValidator ID="ValidarPsswdRelleno" runat="server" 

@@ -83,7 +83,7 @@ first child of the left and right table columns */
 }
 
 .header {
-position: fixed;
+position: absolute;
 z-index: 999;
 margin: 0px;
 padding: 0px;
@@ -134,7 +134,7 @@ height: 33px;
 
 div.hideSkiplink
 {
-    background-color:rgba(58, 79, 99, 0.89);
+   
     width:100%;
 }
 
@@ -151,29 +151,16 @@ div.menu ul
     width: auto;
 }
 
-div.menu ul li a, div.menu ul li a:visited
-{
-    color: #dde4ec;
-    display: block;
-    line-height: 1.35em;
-    padding: 4px 20px;
-    text-decoration: none;
-    white-space: nowrap;
+div.menu ul li a, div.menu ul li a:visited {
+color: #FFFFFF;
+display: block;
+text-shadow: 0 0 9px rgba(0, 0, 0, 0.65);
+line-height: 1.35em;
+padding: 4px 20px;
+text-decoration: none;
+white-space: nowrap;
 }
 
-div.menu ul li a:hover
-{
-    background-color: #bfcbd6;
-    color: #465c71;
-    text-decoration: none;
-}
-
-div.menu ul li a:active
-{
-    background-color: #465c71;
-    color: #cfdbe6;
-    text-decoration: none;
-}
 
 /* FORM ELEMENTS   
 ----------------------------------------------------------*/
@@ -305,6 +292,7 @@ color: #dde4ec;
 
 #ImageSearchButton {
 vertical-align: middle;
+display: none;
 }
 
 .menuizq 
@@ -462,7 +450,9 @@ text-decoration: underline;
 #userTextBox {
 border-radius: 2px;
 border: none;
-box-shadow: inset 0 0 2px black;
+padding-left: 10px;
+color: rgb(111, 111, 111);
+box-shadow: 0 0 2px rgba(75, 75, 75, 0.63);
 }
 
 
@@ -563,4 +553,26 @@ input#MainContent_FileUploadControl, input#MainContent_FileUpload1, input[type="
     top: 6px;
     left: -68px;
     height: 21px;
+}
+                       .imagencomentar {
+width: 58px !important;
+padding-top: 3px;
+padding-left: 0 !important;
+margin-left: -27px;
+}
+                    
+                    .btncomentar{
+                position: absolute;
+bottom: 5px;
+right: 356px;
+background: rgba(17, 53, 82, 0.55);
+border: none;
+color: white;
+border-radius: 3px;
+padding: 3px 10px 3px 10px;
+cursor: pointer;
+
+}
+a[href="#NavigationMenu_SkipLink"] {
+display: none;
 }

@@ -17,12 +17,6 @@
     <form id="Form1" runat="server">
     <div class="page">
         <div class="header">
-            <!--<div class="title">
-                <h1>
-                    Mi aplicación ASP.NET - > FILM
-                </h1>
-            </div>-->
-            
             <div class="clear hideSkiplink" style="overflow:hidden">
                 <div style="float:left">
                     <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
@@ -36,19 +30,11 @@
                     </asp:Menu>
                 </div>
                 <div class="loginDisplay">
-                <!--<asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
-                    <AnonymousTemplate>
-                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Iniciar sesión</a> ]
-                    </AnonymousTemplate>
-                    <LoggedInTemplate>
-                        <span><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
-                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión" LogoutPageUrl="~/"/> ]
-                    </LoggedInTemplate>
-                </asp:LoginView>-->
+               
                 <asp:Button ID="BotonIniciarSesion" runat="server"  Onclick="BotonLoginOnClick" Text="Iniciar sesión"  />
             </div>
                 <div class="menu_buscar">
-                   <asp:TextBox id="userTextBox" TextMode="SingleLine" Columns="30" runat="server" />
+                   <asp:TextBox id="userTextBox" placeholder="  Buscar" TextMode="SingleLine" Columns="22" runat="server" />
                    <asp:ImageButton ID="ImageSearchButton" runat="server" ImageUrl="http://i.imgur.com/UPiCX89.png"/>
                 </div>
 

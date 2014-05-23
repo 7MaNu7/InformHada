@@ -34,6 +34,12 @@ namespace WebApplication1
                 BotonComentar.Visible = false;
                 TextBoxComentario.Visible = false;
                 BotonEditar.Visible = false;
+                Panelcomentar.Visible = false;
+            }
+            else
+            {
+                usuario = (FilmBiblio.UsuarioEN) Session["usuario"];
+                imagen_user.ImageUrl = "/img/users/" + usuario.Id + ".jpg";
             }
 
             if (id_capitulo == null || id_serie==null)
@@ -90,6 +96,23 @@ namespace WebApplication1
             comentarioEn.InsertarComentario();
             Response.Redirect("Capitulo.aspx?id1=" + id_serie+"&id2="+id_capitulo);
         }
+
+        protected void mostrar(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            int id_comentario = Convert.ToInt32(btn.ToolTip);
+            if (usuario.Id != id_comentario)
+                btn.Visible = false;
+        }
+
+        protected void Eliminarcomentario(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int id_comentario = Convert.ToInt32(btn.CommandArgument.ToString());
+            comentario.BorrarComentario(id_comentario);
+        }
+
 
     }
 }

@@ -45,16 +45,16 @@
                 <p id="errorvalidacion" style="visibility:hidden;">Algún campo no se ha introducido correctamente</p>
                 <div class="informacionpersonal">
                     <h2>Información personal: </h2>
-                    <p><asp:TextBox ID="TextBoxUsuario" runat="server" >Usuario</asp:TextBox></p>
+                    <p><asp:TextBox ID="TextBoxUsuario" runat="server" PlaceHolder="Usuario" ></asp:TextBox></p>
                     <asp:RequiredFieldValidator ID="UserNameReq" runat="server" ControlToValidate="TextBoxUsuario" ErrorMessage="¡Introduce el usuario!"> </asp:RequiredFieldValidator>
-                    <p><asp:TextBox ID="TextBoxFechaNacimiento" runat="server">Fecha nacimiento</asp:TextBox></p>
+                    <p><asp:TextBox ID="TextBoxFechaNacimiento" PlaceHolder="Fecha de nacimiento" runat="server"></asp:TextBox></p>
                     <p>Sexo:</p>
                     <asp:RadioButtonList ID="Sexo" runat="server" CellPadding="8" TextAlign="Left" RepeatDirection="Horizontal">
                          <asp:ListItem ID="SexoHombre" runat="server" value="Varón" />
                          <asp:ListItem ID="SexoMujer" runat="server" value="Mujer" />
                     </asp:RadioButtonList>
-                    <p><asp:TextBox ID="TextBoxPais" runat="server">País</asp:TextBox></p>
-                    <p><asp:TextBox ID="TextBoxProvincia" runat="server">Provincia</asp:TextBox></p>
+                    <p><asp:TextBox ID="TextBoxPais" PlaceHolder="Pais" runat="server"></asp:TextBox></p>
+                    <p><asp:TextBox ID="TextBoxProvincia" PlaceHolder="Provincia" runat="server"></asp:TextBox></p>
                 </div>
                 <div class="infoamigos">
                     <h2>Nueva contraseña</h2>

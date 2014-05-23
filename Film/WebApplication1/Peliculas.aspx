@@ -20,7 +20,7 @@
             <a style="display: table-cell;float: left; text-decoration:none; color:Gray;"  href="Pelicula.aspx?id=<asp:Literal ID="Literal5" Text='<%# Eval("id")%>'  runat="server"></asp:Literal>">
                 
             <div class="peliculacaratula">
-                <asp:Image ID="Image1" CssClass="peliculacaratulaimg" runat="server" ImageUrl='<%# Eval("caratula")%>' />
+                <asp:Image ID="Image1" CssClass="peliculacaratulaimg" runat="server" ImageUrl='<%# "/img/film/caratula/"+ Eval("id")+".jpg"%>'  />
                 <p><asp:Literal ID="Literal1" Text='<%# Eval("titulo")%>' runat="server"></asp:Literal></p>
                 <div class="infopelicula">
                     <p>Año: <asp:Literal ID="Literal2" Text='<%# Eval("ano")%>' runat="server"></asp:Literal></p>

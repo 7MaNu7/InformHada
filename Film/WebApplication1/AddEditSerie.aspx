@@ -24,11 +24,11 @@
                 
             </div>
             <div class="info_cabecera">
-                <h2> <asp:Literal ID="LiteralTitulo" runat="server" > </asp:Literal> </h2>
-                <p> <asp:TextBox ID="TextBoxDirector" runat="server" > Director </asp:TextBox> </p>
-                <p> <asp:TextBox ID="TextBoxGenero" runat="server" > Genero </asp:TextBox> </p>
-                <p> <asp:TextBox ID="TextBoxBandaSonora" runat="server">Banda sonora</asp:TextBox> </p>
-                <p> <asp:TextBox ID="TextBoxAno" runat="server" >Año</asp:TextBox> </p>
+                <h2> <asp:Literal ID="LiteralTitulo" runat="server"  > </asp:Literal> </h2>
+                <p> <asp:TextBox ID="TextBoxDirector" runat="server" PlaceHolder="Director" >  </asp:TextBox> </p>
+                <p> <asp:TextBox ID="TextBoxGenero" runat="server" PlaceHolder="Genero" >  </asp:TextBox> </p>
+                <p> <asp:TextBox ID="TextBoxBandaSonora" PlaceHolder="Banda Sonora" runat="server"></asp:TextBox> </p>
+                <p> <asp:TextBox ID="TextBoxAno" PlaceHolder="Año" runat="server" ></asp:TextBox> </p>
                
              </div>
          </div>

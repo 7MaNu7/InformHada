@@ -9,9 +9,9 @@
 
 .caratula {
 position: absolute;
-bottom: -46px;
+bottom: -29px;
 left: 89px;
-height: 300px;
+width:200px;
 }
 
 .puntuacion 
@@ -63,6 +63,7 @@ padding-left: 20px;
     -o-filter: blur(10px);
     -ms-filter: blur(10px);
     filter: blur(10px);
+    position: fixed;
 }
 
 .serie_contenido_d {
@@ -79,7 +80,10 @@ padding-left: 20px;
 }
 
 .serie_contenido {
-    position: relative;
+position: relative;
+background: white;
+padding-top: 15px;
+padding-bottom: 78px;
 }
 
 .anadir, .reportar{

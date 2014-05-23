@@ -30,11 +30,13 @@ namespace WebApplication1
                 BotonComentar.Visible = false;
                 TextBoxComentario.Visible = false;
                 Rating1.Visible = false;
+                Panelcomentar.Visible = false;
             }
             else
             {
                 LiteralComentar.Text = "Deja tu comentario";
                 usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
+               
             }
             
             String id = Request.QueryString["id"];
@@ -51,11 +53,12 @@ namespace WebApplication1
                 BotonReport.NavigateUrl = "Report.aspx";
 
                 pelicula = pelicula.DamePelicula();
-                caratula.ImageUrl = pelicula.Caratula;
-                fondo.ImageUrl = pelicula.Portada;
+                caratula.ImageUrl = "/img/film/caratula/"+pelicula.Id+".jpg";
+                fondo.ImageUrl = "/img/film/portada/" + pelicula.Id + ".jpg";
                 titulo.Text = pelicula.Titulo;
                 musica.Text = pelicula.BandaSonora;
                 sinopsis.Text = pelicula.Sinopsis;
+                director.Text = pelicula.Director;
                 trailer.Text = pelicula.Trailer;
                 puntuacion.Text = pelicula.Puntuacion.ToString();
                 reparto.Text = pelicula.Reparto.ToString();
@@ -64,11 +67,14 @@ namespace WebApplication1
             }
             if (usuario != null)
             {
+                imagen_user.ImageUrl = "/img/users/" + usuario.Id + ".jpg";
                 Rating1.CurrentRating = Convert.ToInt32(Math.Round(Convert.ToDecimal(pelicula.Puntuacion) / 2));
             }
             else
             {
                 Rating1.Visible = false;
+                Panelcomentar.Attributes.Add("CssClass","display:none;");
+                Panelcomentar.CssClass = "comentar_oculto";
             }
             if (!Page.IsPostBack)
             {

@@ -61,7 +61,7 @@ namespace WebApplication1
                 pelicula.BandaSonora = TextBoxBandaSonora.Text;
                 pelicula.Trailer = TextBoxTrailer.Text;
                 pelicula.UpdatePelicula();
-                Response.Redirect("Pelicula.aspx?id=" + id);
+                
 }
             else
             {
@@ -109,6 +109,7 @@ namespace WebApplication1
                     //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                 }
             }
+            Response.Redirect("Pelicula.aspx?id=" + id);
         }
 
        

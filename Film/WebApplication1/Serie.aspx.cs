@@ -35,11 +35,13 @@ namespace WebApplication1
                 Rating1.Visible = false;
                 BotonEditar.Visible = false;
                 HyperLinkAddCapitulo.Visible = false;
+                Panelcomentar.Visible = false;
             }
             else
             {
                 LiteralComentar.Text = "Deja tu comentario";
                 usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
+                imagen_user.ImageUrl = "/img/users/" + usuario.Id + ".jpg";
             }
 
             String id = Request.QueryString["id"];
@@ -63,8 +65,8 @@ namespace WebApplication1
                 puntuacion.Text = serie.Puntuacion.ToString();
                 reparto.Text = serie.Reparto.ToString();
                 ano.Text = serie.Ano.ToString();
-                caratula.ImageUrl = serie.Caratula.ToString();
-                fondo.ImageUrl = serie.Portada.ToString();
+                caratula.ImageUrl = "/img/film/caratula/" + serie.Id + ".jpg";
+                fondo.ImageUrl = "/img/film/portada/" + serie.Id + ".jpg";
             
               FilmBiblio.CapituloEN capitulo = new FilmBiblio.CapituloEN();
               Label lblTitle;
@@ -144,5 +146,22 @@ namespace WebApplication1
                 puntuacion.Text = serie.Puntuacion.ToString();
             }
         }
+
+        protected void mostrar(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            int id_comentario = Convert.ToInt32(btn.ToolTip);
+            if (usuario.Id != id_comentario)
+                btn.Visible = false;
+        }
+
+        protected void Eliminarcomentario(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int id_comentario = Convert.ToInt32(btn.CommandArgument.ToString());
+            comentario.BorrarComentario(id_comentario);
+        }
+
     }
 }

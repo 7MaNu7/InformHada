@@ -59,7 +59,7 @@ namespace WebApplication1
                 serie.BandaSonora = TextBoxBandaSonora.Text;
                 serie.Trailer = TextBoxTrailer.Text;
                 serie.UpdateSerie();
-                Response.Redirect("serie.aspx?id=" + id);
+            //    
             }
             else
             {
@@ -105,6 +105,7 @@ namespace WebApplication1
                     //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                 }
             }
+            Response.Redirect("serie.aspx?id=" + id);
         }
         
     }

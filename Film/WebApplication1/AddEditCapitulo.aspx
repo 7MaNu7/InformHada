@@ -14,34 +14,10 @@
             </div>
              <img class="caratula" src="http://pics.filmaffinity.com/Vikingos_Vikings_Serie_de_TV-616055151-large.jpg" alt="fotou_perfil"/>
              <div class="info_cabecera">
-               
-               <h2> <asp:TextBox ID="TextBoxTitulo" runat="server" > </asp:TextBox> 
-                
-                <asp:RequiredFieldValidator CssClass="ValidarTitulo" ID="ValidarTituloRelleno" runat="server" 
-                    Text="¡Escribe un nombre para tu usuario!" ForeColor="White" 
-                    ControlToValidate="TextBoxTitulo"> 
-                </asp:RequiredFieldValidator></h2>
-                
-                </h2>
-                <p>Serie: <asp:Literal ID="LiteralSerie" runat="server"> </asp:Literal> </p>
-
-                <p>Temporada: <asp:TextBox ID="TextBoxTemporada" runat="server" > </asp:TextBox> 
-                <asp:RequiredFieldValidator CssClass="ValidarTitulo" ID="RequiredFieldValidator1" runat="server" 
-                    Text="Escribe la temporada" ForeColor="White" 
-                    ControlToValidate="TextBoxTitulo"> 
-                </asp:RequiredFieldValidator>
-                </p>
-                
-                
-                <p>Capítulo nº: <asp:TextBox ID="TextBoxNCapitulo" runat="server"> </asp:TextBox>
-                
-                <asp:RequiredFieldValidator CssClass="ValidarTitulo" ID="RequiredFieldValidator2" runat="server" 
-                    Text="Escribe el número del capítulo" ForeColor="White" 
-                    ControlToValidate="TextBoxTitulo"> 
-                </asp:RequiredFieldValidator>
-
-                </p>
-
+                <h2> <asp:TextBox ID="TextBoxTitulo" runat="server" PlaceHolder="Titulo" TextMode="MultiLine"> </asp:TextBox> </h2>
+                <p>Serie: <asp:Literal ID="LiteralSerie"  runat="server"> </asp:Literal> </p>
+                <p>Temporada: <asp:TextBox ID="TextBoxTemporada" PlaceHolder="Nº Temporada" runat="server" > </asp:TextBox> </p>
+                <p>Capítulo nº: <asp:TextBox ID="TextBoxNCapitulo" PlaceHolder="Nº Capitulo" runat="server"> </asp:TextBox> </p>
              </div>
          </div>
         

@@ -45,8 +45,6 @@ namespace WebApplication1
 
             String texto = Request.QueryString["texto"];
 
-            LiteralTextoBusqueda.Text = texto;
-
             if (!Page.IsPostBack)
             {
 

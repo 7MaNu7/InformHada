@@ -7,13 +7,13 @@
 
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
-    <link href="/Styles/Pelicula.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/Serie.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
    <div class="contenido">
 
        <!-- CABECERA DE LA PELICULA  -->
-        <div class="cabecera_pelicula">
+        <div class="cabecera_serie">
             <div class="portada_serie" style="background-image:url('');">
                 <asp:Image ID="fondo" CssClass="fondoblurred" runat="server" />           
             </div>
@@ -29,8 +29,8 @@
              </div>
          </div>
 
-        <div class="pelicula_contenido">
-            <div class="pelicula_contenido_i">
+        <div class="serie_contenido">
+            <div class="serie_contenido_i">
               <asp:HyperLink ID="BotonEditar" CssClass="anadir" runat="server" EnableViewState="false" Text="Editar" />
                 <asp:HyperLink ID="BotonReport" CssClass="reportar" runat="server" Text="Reportar error" />
                 
@@ -45,7 +45,7 @@
                 </asp:Rating>
            
             </div>
-            <div class="pelicula_contenido_d">
+            <div class="serie_contenido_d">
                <h2>Sinopsis</h2>
                <p><asp:Literal ID="sinopsis" runat="server"></asp:Literal></p>
 
@@ -54,12 +54,32 @@
             
                 <h2>Trailer</h2>
                 <iframe width="761" height="415" src="//www.youtube.com/embed/<asp:Literal ID="trailer" runat="server"></asp:Literal>" frameborder="0" allowfullscreen></iframe>
+                <asp:Panel ID="Panelcomentar" runat="server">
+                <br />
 
+                <br />
                 <h2> 
                     <asp:Literal ID="LiteralComentar" runat="server" > </asp:Literal> 
-                    <asp:Button ID="BotonComentar" runat="server" OnClick="ComentarOnClick" Text="Comentar" /> 
+                
                 </h2>
-                <p> <asp:TextBox ID="TextBoxComentario" placeholder="Danos tu opinión." TextMode="MultiLine" runat="server" style="height:200px; width:500px; " > </asp:TextBox> </p>
+                <div class="comentario">
+                                <div class="comentario_img">
+                                    <asp:Image ID="imagen_user" runat="server" CssClass="imagencomentar" />
+                                </div>
+                                <div class="comentario_txt">     
+                                    <span class="comentario_p" > <asp:TextBox ID="TextBoxComentario" placeholder="Danos tu opinión." TextMode="MultiLine" runat="server" style="height: 61px;
+                                    min-height: 20px;
+                                    width: 497px;
+                                    margin: 0px;
+                                    border: none; " > </asp:TextBox> </span>
+
+                                </div>
+                                  <asp:Button ID="BotonComentar"  runat="server" OnClick="ComentarOnClick" Text="Comentar" CssClass="btncomentar" />
+                            </div>
+                
+              
+                </asp:Panel>
+
 
                 <h2>Comentarios</h2>
                 <div class="comentarios">
@@ -86,4 +106,5 @@
             </div>
         </div>
     </div>
+    <br /><br /><br /><br /><br />
 </asp:Content>

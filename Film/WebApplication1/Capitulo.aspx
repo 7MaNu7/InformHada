@@ -45,11 +45,35 @@
                </div>
 
 
+
+
+                <br />
+
+                <br />
+                <asp:Panel ID="Panelcomentar" runat="server">
                 <h2> 
                     <asp:Literal ID="LiteralComentar" runat="server" > </asp:Literal> 
-                    <asp:Button ID="BotonComentar" runat="server" OnClick="ComentarOnClick" Text="Comentar" /> 
+                
                 </h2>
-                <p> <asp:TextBox ID="TextBoxComentario" placeholder="Danos tu opinión." TextMode="MultiLine" runat="server" style="height:200px; width:500px; " > </asp:TextBox> </p>
+                <div class="comentario">
+                                <div class="comentario_img">
+                                    <asp:Image ID="imagen_user" runat="server" CssClass="imagencomentar" />
+                                </div>
+                                <div class="comentario_txt">     
+                                    <span class="comentario_p" > <asp:TextBox ID="TextBoxComentario" placeholder="Danos tu opinión." TextMode="MultiLine" runat="server" style="height: 61px;
+                                    min-height: 20px;
+                                    width: 497px;
+                                    margin: 0px;
+                                    border: none; " > </asp:TextBox> </span>
+
+                                </div>
+                                  <asp:Button ID="BotonComentar"  runat="server" OnClick="ComentarOnClick" Text="Comentar" CssClass="btncomentar" />
+                            </div>
+                
+              
+                </asp:Panel>
+
+
 
                 <h2>Comentarios</h2>
                 <div class="comentarios">
@@ -62,15 +86,20 @@
                                 <div class="comentario_txt">     
                                     <span class="comentario_p" ><%# Eval("texto")%></span>
                                     <span class="comentario_f"><%# Eval("fecha")%></span>
+
+                                    <asp:Button ID="Eliminar" CssClass="Eliminar_comentario"  
+                                    runat="server" ToolTip=<%# Eval("usuario")%> Text="Eliminar" 
+                                    OnClick="Eliminarcomentario" OnLoad="mostrar"  
+                                    CommandArgument=<%# Eval("id")%> />
+
                                 </div>
                             </div>
                         </ItemTemplate>
                     </asp:ListView>
                 </div>
 
-
             </div>
 
-
+            <br /><br /><br /><br /><br />
     </div>
 </asp:Content>

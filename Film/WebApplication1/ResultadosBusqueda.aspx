@@ -34,9 +34,9 @@
                 <asp:Button ID="BotonBuscar" runat="server" OnClick="BotonBuscarOnClick" Text="Buscar" /> 
                 <i style="color: rgba(0, 0, 0, 0.54);
                             font-size: 14px;
-                            top: 25px;
+                            top: 10px;
                             position: absolute;
-                            left: calc(50% - 230px);" class="fa fa-search">
+                            left: calc(50% - 199px);" class="fa fa-search">
                 </i>
            </div>
         </div>
@@ -56,11 +56,6 @@
     </div>
 
     <div class="cabecera_contenido">
-        
-        <h2>
-         Resultados de " <asp:Literal runat="server" ID="LiteralTextoBusqueda"> </asp:Literal> "
-        </h2>
-
         <h2>
         Peliculas 
         </h2>
@@ -73,7 +68,7 @@
                         <a style="display: table-cell;float: left; text-decoration:none; color:Gray;"  href="Pelicula.aspx?id=<asp:Literal ID="Literal5" Text='<%# Eval("id")%>'  runat="server"></asp:Literal>">
                 
                         <div class="peliculacaratula">
-                            <asp:Image ID="Image1" CssClass="peliculacaratulaimg" runat="server" ImageUrl='<%# Eval("caratula")%>' />
+                            <asp:Image ID="Image1" CssClass="peliculacaratulaimg" runat="server"  ImageUrl='<%# "/img/film/caratula/"+ Eval("id")+".jpg"%>' />
                             <p><asp:Literal ID="Literal1" Text='<%# Eval("titulo")%>' runat="server"></asp:Literal></p>
                             <div class="infopelicula">
                                 <p>Año: <asp:Literal ID="Literal2" Text='<%# Eval("ano")%>' runat="server"></asp:Literal></p>
@@ -106,7 +101,7 @@
                         <a style="display: table-cell;float: left; text-decoration:none; color:Gray;"  href="Serie.aspx?id=<asp:Literal ID="Literal5" Text='<%# Eval("id")%>'  runat="server"></asp:Literal>">
                 
                         <div class="peliculacaratula">
-                            <asp:Image ID="Image1" CssClass="peliculacaratulaimg" runat="server" ImageUrl='<%# Eval("caratula")%>' />
+                            <asp:Image ID="Image1" CssClass="peliculacaratulaimg" runat="server"  ImageUrl='<%# "/img/film/caratula/"+ Eval("id")+".jpg"%>'/>
                             <p><asp:Literal ID="Literal1" Text='<%# Eval("titulo")%>' runat="server"></asp:Literal></p>
                             <div class="infopelicula">
                                 <p>Año: <asp:Literal ID="Literal2" Text='<%# Eval("ano")%>' runat="server"></asp:Literal></p>
@@ -136,7 +131,7 @@
                         <a style="display: table-cell;float: left; text-decoration:none; color:Gray;"  href="Usuario.aspx?id=<asp:Literal ID="Literal5" Text='<%# Eval("id")%>'  runat="server"></asp:Literal>">
                 
                         <div class="peliculacaratula">
-                            <asp:Image ID="Image1" CssClass="peliculacaratulaimg" runat="server" ImageUrl='<%# Eval("fotoPerfil")%>' />
+                            <asp:Image ID="Image1" CssClass="peliculacaratulaimg" runat="server"  ImageUrl='<%# "/img/users/"+ Eval("id")+".jpg"%>' />
                             <p><asp:Literal ID="Literal1" Text='<%# Eval("usuario")%>' runat="server"></asp:Literal></p>
                             <div class="infopelicula">
                                 <p>Usuario: <asp:Literal ID="Literal2" Text='<%# Eval("usuario")%>' runat="server"></asp:Literal></p>

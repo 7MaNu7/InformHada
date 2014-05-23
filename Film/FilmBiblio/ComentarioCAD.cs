@@ -50,10 +50,12 @@ namespace FilmBiblio
         public void InsertarComentario(ComentarioEN comentario)
         {
             int id = MaximoId();
-
+            DateTime dt;
+            dt = DateTime.Now;
+            
             String orden = "insert into comentario values ";
             orden += "( " + id + ", ";
-            orden += "'" + comentario.Fecha + "', ";
+            orden += "'"+dt.ToString()+"', ";
             orden += "'" + comentario.Texto + "', ";
             orden += comentario.Usuario + ", ";
             if (comentario.Capitulo == 0)
