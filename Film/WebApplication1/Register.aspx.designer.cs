@@ -22,13 +22,13 @@ namespace WebApplication1.Account {
         protected global::System.Web.UI.WebControls.Label LabelUsuario;
         
         /// <summary>
-        /// Control TextBoxUsuario.
+        /// Control LabelCampoObligatorio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxUsuario;
+        protected global::System.Web.UI.WebControls.Label LabelCampoObligatorio;
         
         /// <summary>
         /// Control ValidarUsuarioRelleno.
@@ -38,6 +38,15 @@ namespace WebApplication1.Account {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidarUsuarioRelleno;
+        
+        /// <summary>
+        /// Control TextBoxUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxUsuario;
         
         /// <summary>
         /// Control LabelPais.
@@ -130,13 +139,13 @@ namespace WebApplication1.Account {
         protected global::System.Web.UI.WebControls.Label LabelEmail;
         
         /// <summary>
-        /// Control TextBoxEmail.
+        /// Control LabelCampobligatorio2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxEmail;
+        protected global::System.Web.UI.WebControls.Label LabelCampobligatorio2;
         
         /// <summary>
         /// Control ValidarEmailRelleno.
@@ -148,22 +157,13 @@ namespace WebApplication1.Account {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidarEmailRelleno;
         
         /// <summary>
-        /// Control ValidarEmailYaExiste.
+        /// Control TextBoxEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator ValidarEmailYaExiste;
-        
-        /// <summary>
-        /// Control RegularExpressionEmail.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionEmail;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxEmail;
         
         /// <summary>
         /// Control LabelPsswd.
@@ -175,13 +175,13 @@ namespace WebApplication1.Account {
         protected global::System.Web.UI.WebControls.Label LabelPsswd;
         
         /// <summary>
-        /// Control TextBoxPsswd.
+        /// Control LabelCampoObligatorio3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPsswd;
+        protected global::System.Web.UI.WebControls.Label LabelCampoObligatorio3;
         
         /// <summary>
         /// Control ValidarPsswdRelleno.
@@ -193,13 +193,13 @@ namespace WebApplication1.Account {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidarPsswdRelleno;
         
         /// <summary>
-        /// Control ValidarLongitudPsswd2.
+        /// Control TextBoxPsswd.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator ValidarLongitudPsswd2;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPsswd;
         
         /// <summary>
         /// Control RegularExpressionContraseña.
@@ -220,13 +220,13 @@ namespace WebApplication1.Account {
         protected global::System.Web.UI.WebControls.Label LabelPasswd2;
         
         /// <summary>
-        /// Control TextBoxPsswd2.
+        /// Control LabelCampoObligatorio4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPsswd2;
+        protected global::System.Web.UI.WebControls.Label LabelCampoObligatorio4;
         
         /// <summary>
         /// Control ValidarPsswdRelleno2.
@@ -238,22 +238,40 @@ namespace WebApplication1.Account {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidarPsswdRelleno2;
         
         /// <summary>
-        /// Control ValidarPsswdIguales.
+        /// Control TextBoxPsswd2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator ValidarPsswdIguales;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPsswd2;
         
         /// <summary>
-        /// Control CuadroValidacion.
+        /// Control CompareValidator1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary CuadroValidacion;
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
+        
+        /// <summary>
+        /// Control RegularExpressionEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionEmail;
+        
+        /// <summary>
+        /// Control ValidarEmailYaExiste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator ValidarEmailYaExiste;
         
         /// <summary>
         /// Control BotonRegistro.

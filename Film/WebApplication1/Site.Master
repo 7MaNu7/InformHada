@@ -34,7 +34,8 @@
                 <asp:Button ID="BotonIniciarSesion" runat="server"  Onclick="BotonLoginOnClick" Text="Iniciar sesión"  />
             </div>
                 <div class="menu_buscar">
-                   <asp:TextBox id="userTextBox" placeholder="  Buscar" TextMode="SingleLine" Columns="22" runat="server" />
+                    <asp:Button ID="BotonBuscar" Text="Click" runat="server" OnClick="BotonBuscarOnClick" />
+                   <asp:TextBox id="TextBoxBuscar" placeholder="  Buscar" TextMode="SingleLine" Columns="22" runat="server" />
                    <asp:ImageButton ID="ImageSearchButton" runat="server" ImageUrl="http://i.imgur.com/UPiCX89.png"/>
                 </div>
 

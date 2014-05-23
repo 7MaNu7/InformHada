@@ -11,24 +11,21 @@
      <div class="Login">
          <div style="margin-bottom: 24px;"><h2>Iniciar sesión</h2></div>
          
-         <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="TextBoxEmail" 
+         <asp:CustomValidator ID="CustomValidatorCuenta" runat="server" ValidationGroup="1" ControlToValidate="TextBoxEmail" 
               OnServerValidate="ComprobarCuenta" ForeColor="White" ErrorMessage="E-mail o contraseña incorrectos"> 
          </asp:CustomValidator>
 
          <asp:TextBox ID="TextBoxEmail" runat="server" placeholder="@ Email"></asp:TextBox>
-         
-
-         <asp:CustomValidator ID="ValidarCuenta" runat="server" ControlToValidate="TextBoxEmail" 
-                    OnServerValidate="ComprobarCuenta" ForeColor="White" ErrorMessage="No hay una cuenta con estos datos"> 
-         </asp:CustomValidator>
-
+         <asp:RequiredFieldValidator ID="ValidarEmailRelleno" runat="server" ValidationGroup="1"
+                ControlToValidate="TextBoxEmail" Text="¡Introduce tu e-mail!" ForeColor="White">                            
+         </asp:RequiredFieldValidator>
 
          <asp:TextBox ID="TextBoxPsswd" runat="server" TextMode="Password" Text="Contraseña">PASSWORD</asp:TextBox>
-         <asp:RequiredFieldValidator ID="ValidarPsswdRelleno" runat="server" 
+         <asp:RequiredFieldValidator ID="ValidarPsswdRelleno" runat="server" ValidationGroup="1"
                 ControlToValidate="TextBoxPsswd" Text="¡Introduce tu contraseña!" ForeColor="White">                            
          </asp:RequiredFieldValidator>
          
-         <asp:Button ID="ButtonIniciarSesion" CssClass="botton" runat="server" Text="Iniciar sesión" OnClick="IniciarSesionOnClick" />
+         <asp:Button ID="ButtonIniciarSesion" CssClass="bottonB" runat="server" Text="Iniciar sesión" OnClick="IniciarSesionOnClick" />
          <div>
             <a href="Register.aspx">Registrarse</a>
          </div>

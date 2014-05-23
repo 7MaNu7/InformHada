@@ -36,13 +36,6 @@ namespace WebApplication1.Account
                     Response.Redirect("Default.aspx");
 
                 }
-                else
-                {
-                    ValidarEmailYaExiste.Visible = false;
-                    ValidarPsswdIguales.Visible = false;
-                    CuadroValidacion.ShowMessageBox = true;
-                    CuadroValidacion.ShowSummary = true;
-                }
             }
         }
 
@@ -53,19 +46,8 @@ namespace WebApplication1.Account
             string email = TextBoxEmail.Text;
             if (usuario.ExisteEmail(email))
             {
+                ValidarEmailYaExiste.Visible = true;
                 e.IsValid = false;
-            }
-        }
-
-        protected void ComprobarPsswd(object sender, ServerValidateEventArgs e)
-        {
-            string psswd1 = TextBoxPsswd.Text;
-            string psswd2 = TextBoxPsswd2.Text;
-            if (psswd1 != psswd2)
-            {
-                e.IsValid = false;
-                ValidarPsswdRelleno2.IsValid = false;
-                ValidarPsswdRelleno.IsValid = false;
             }
         }
 

@@ -25,9 +25,10 @@
                     Infórmanos
                 </h2>
                 <p> Escribe el motivo de tu queja y tomaremos en cuenta tu opinión, consulta o aviso </p>
-                <p> <asp:TextBox ID="TextBoxInformacionAdicional" TextMode="MultiLine" runat="server" style="height:200px; width:500px; " > </asp:TextBox> </p>
+                <p> <asp:TextBox ID="TextBoxReport" TextMode="MultiLine" runat="server" style="height:200px; width:500px; " > </asp:TextBox> </p>
 
-
+                <asp:Button runat="server" ID="BotonEnviar" Text="Enviar" OnClick="EnviarEmail" />
+                <asp:Label ID="LabelConfirmacion" runat="server" ></asp:Label>
             </div>
         </div>
     </div>

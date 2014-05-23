@@ -35,5 +35,11 @@ namespace WebApplication1
                 Response.Redirect("Default.aspx");
             }
         }
+
+        protected void BotonBuscarOnClick(object sender, EventArgs e)
+        {
+            string texto = TextBoxBuscar.Text;
+            Response.Redirect("ResultadosBusqueda.aspx?texto=" + texto);
+        }
     }
 }

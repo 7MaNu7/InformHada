@@ -13,13 +13,13 @@ namespace WebApplication1 {
     public partial class Login {
         
         /// <summary>
-        /// Control CustomValidator1.
+        /// Control CustomValidatorCuenta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidatorCuenta;
         
         /// <summary>
         /// Control TextBoxEmail.
@@ -31,13 +31,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox TextBoxEmail;
         
         /// <summary>
-        /// Control ValidarCuenta.
+        /// Control ValidarEmailRelleno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator ValidarCuenta;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidarEmailRelleno;
         
         /// <summary>
         /// Control TextBoxPsswd.
