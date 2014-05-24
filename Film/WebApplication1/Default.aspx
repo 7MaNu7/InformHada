@@ -49,10 +49,11 @@ left: calc(50% - 199px);" class="fa fa-search">
          <asp:HyperLink ID="HyperLinkSeries" runat="server" EnableViewState="false" PostBackUrl="String"> Ver series </asp:HyperLink> 
          <asp:HyperLink ID="HyperLinkAbout" runat="server" EnableViewState="false" PostBackUrl="String"> Quienes somos </asp:HyperLink> 
          <asp:HyperLink ID="HyperLinkReport" runat="server" EnableViewState="false" PostBackUrl="String"> Reportar error </asp:HyperLink> 
-         <asp:HyperLink ID="HyperRegistro" runat="server" PostBackUrl="String" > Entrar / Registrarse</asp:HyperLink>
+         <asp:HyperLink ID="HyperRegistro" runat="server" PostBackUrl="String"> Entrar / Registrarse</asp:HyperLink>
          <asp:HyperLink ID="HyperLinkUsuario" runat="server" EnableViewState="false" PostBackUrl="String"> Ver mi usuario </asp:HyperLink> 
          <asp:HyperLink ID="HyperLinkAnadirPelicula" runat="server" EnableViewState="false" PostBackUrl="String"> Añadir pelicula </asp:HyperLink> 
          <asp:HyperLink ID="HyperLinkAnadirSerie" runat="server" EnableViewState="false" PostBackUrl="String"> Añadir serie </asp:HyperLink>  
+         <asp:Button ID="BotonCerrar" runat="server" OnClick="CerrarOnClick" Text="Cerrar sesion" CssClass="cerrarsesion"></asp:Button>
     </div>
 
     <div class="cabecera_contenido">

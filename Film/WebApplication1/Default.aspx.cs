@@ -29,6 +29,7 @@ namespace WebApplication1
                 HyperLinkAnadirPelicula.Visible = false;
                 HyperLinkAnadirSerie.Visible = false;
                 HyperLinkUsuario.Visible = false;
+                BotonCerrar.Visible = false;
             }
             else
             {
@@ -70,6 +71,12 @@ namespace WebApplication1
         {
             string texto = TextBoxBuscar.Text;
             Response.Redirect("ResultadosBusqueda.aspx?texto="+texto);
+        }
+
+        protected void CerrarOnClick(object sender, EventArgs e)
+        {
+            Session["usuario"] = null;
+            Response.Redirect("Default.aspx");
         }
     }
 }
