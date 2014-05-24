@@ -105,7 +105,7 @@
                    OnServerValidate="EmailYaExiste" ErrorMessage="Ya hay una cuenta con este email" ForeColor="Red"> 
                 </asp:CustomValidator></p>
 
-            <asp:Button ID="BotonRegistro" CssClass="completar" runat="server" 
+            <asp:Button ID="BotonRegistro" ValidationGroup="1" CssClass="completar" runat="server" 
                 OnClick="BotonRegistroOnClick" Text="Completar registro" />                   
         </div>
         </div>   

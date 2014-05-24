@@ -25,7 +25,8 @@
                 ControlToValidate="TextBoxPsswd" Text="¡Introduce tu contraseña!" ForeColor="White">                            
          </asp:RequiredFieldValidator>
          
-         <asp:Button ID="ButtonIniciarSesion" CssClass="bottonB" runat="server" Text="Iniciar sesión" OnClick="IniciarSesionOnClick" />
+         <asp:Button ID="ButtonIniciarSesion" ValidationGroup="1" CssClass="bottonB" 
+            runat="server" Text="Iniciar sesión" OnClick="IniciarSesionOnClick" />
          <div>
             <a href="Register.aspx">Registrarse</a>
          </div>

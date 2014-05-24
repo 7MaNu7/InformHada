@@ -23,6 +23,31 @@ namespace FilmBiblio
         // Funciones //
         ///////////////
 
+        //True si la temporada ya contiene ese número del capítulo para una serie
+        public bool TemporadaCapituloRepetido(int id_serie, int temporada, int ncapitulo)
+        {
+            bool test = false;
+            string orden = "select * from capitulo where serie="+id_serie +" and temporada="+temporada+" and nCapitulo="+ ncapitulo;
+            SqlConnection c = new SqlConnection(conexion);
+
+            try
+            {
+                c.Open();
+                SqlCommand select = new SqlCommand(orden, c);
+                SqlDataReader read = select.ExecuteReader();
+                while (read.HasRows)
+                {
+                    test = true;
+                    break;
+                }
+                read.Close();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return test;
+        }
+
         //Devuelve cuantas temporadas hay
         public int Temporadas(int id_serie)
         {

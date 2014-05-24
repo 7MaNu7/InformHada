@@ -45,6 +45,12 @@ namespace FilmBiblio
             serie = pserie;
         }
 
+        //True si la temporada ya contiene ese número del capítulo para una serie
+        public bool TemporadaCapituloRepetido(int id_serie, int temporada, int ncapitulo)
+        {
+            return capituloCad.TemporadaCapituloRepetido(id_serie, temporada, ncapitulo);
+        }
+
         //Devuelve cuantas temporadas hay
         public int Temporadas(int id_serie)
         {

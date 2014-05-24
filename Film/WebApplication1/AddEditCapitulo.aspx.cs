@@ -68,7 +68,6 @@ namespace WebApplication1
                 
                 }
 
-                
             }
         }
 
@@ -77,29 +76,57 @@ namespace WebApplication1
             string id_capitulo = Request.QueryString["id2"];
             string id_serie = Request.QueryString["id1"];
 
-            if (id_capitulo != null)
+            if (Page.IsValid)
             {
-                capitulo.Id = Convert.ToInt32(id_capitulo);
-                capitulo = capitulo.DameCapitulo();
-                BotonAddEdit.Text = "Guadar cambios";
+                if (id_capitulo != null)
+                {
+                    capitulo.Id = Convert.ToInt32(id_capitulo);
+                    capitulo = capitulo.DameCapitulo();
+                    BotonAddEdit.Text = "Guadar cambios";
+                }
+
+                serie.Id = Convert.ToInt32(id_serie);
+                serie = serie.DameSerie();
+
+                //Editar o Añadir capitulo
+                capitulo.Titulo = TextBoxTitulo.Text;
+                capitulo.Temporada = Convert.ToInt32(TextBoxTemporada.Text);
+                capitulo.N_capitulo = Convert.ToInt32(TextBoxNCapitulo.Text);
+                capitulo.Sinopsis = TextBoxSinopsis.Text;
+                capitulo.Serie = Convert.ToInt32(id_serie);
+
+                if (id_capitulo == null)
+                    capitulo.Id = capitulo.InsertarCapitulo();
+                else
+                    capitulo.UpdateCapitulo();
+
+                Response.Redirect("Capitulo.aspx?id1=" + id_serie + "&id2=" + capitulo.Id);
             }
 
-            serie.Id = Convert.ToInt32(id_serie);
-            serie = serie.DameSerie();
-
-            //Editar o Añadir capitulo
-            capitulo.Titulo = TextBoxTitulo.Text;
-            capitulo.Temporada = Convert.ToInt32(TextBoxTemporada.Text);
-            capitulo.N_capitulo = Convert.ToInt32(TextBoxNCapitulo.Text);
-            capitulo.Sinopsis = TextBoxSinopsis.Text;
-            capitulo.Serie = Convert.ToInt32(id_serie);
-
-            if (id_capitulo == null)
-                capitulo.Id = capitulo.InsertarCapitulo();
-            else
-                capitulo.UpdateCapitulo();
             
-            Response.Redirect("Capitulo.aspx?id1=" + id_serie+"&id2="+capitulo.Id);
         }
-    }
+
+        protected void ValidandoTemporadaNCapitulo(object sender, ServerValidateEventArgs e)
+        {
+            int id_serie = Convert.ToInt32(Request.QueryString["id1"].ToString());
+
+            if (TextBoxTemporada.Text.ToString() == "")
+                ValidarTemporadaRellena.IsValid = false;
+            else if (TextBoxNCapitulo.Text.ToString() == "")
+                ValidarCapituloRelleno.IsValid = false;
+            else
+            {
+                int temporada =  Convert.ToInt32(TextBoxTemporada.Text.ToString());
+                int id_capitulo =  Convert.ToInt32(TextBoxNCapitulo.Text.ToString());
+                if (capitulo.TemporadaCapituloRepetido(id_serie, temporada, id_capitulo))
+                {
+                    ValidarTemporadaNCapitulo.Visible = true;
+                    e.IsValid = false;
+                    
+            }
+            
+        }
+     }
+
+}
 }

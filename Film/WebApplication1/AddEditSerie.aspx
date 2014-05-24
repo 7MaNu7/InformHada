@@ -24,7 +24,16 @@
                 
             </div>
             <div class="info_cabecera">
-                <h2> <asp:Literal ID="LiteralTitulo" runat="server"  > </asp:Literal> </h2>
+                
+                <h2> 
+                    <asp:TextBox ID="TextBoxTitulo" PlaceHolder="Titulo" runat="server" > </asp:TextBox> 
+                    <asp:Literal ID="LiteralTitulo" runat="server" > </asp:Literal>   
+                    <asp:RequiredFieldValidator CssClass="ValidarTitulo" ID="ValidarTituloRelleno" runat="server" 
+                        Text="¡Escribe un título!" ForeColor="White" 
+                        ControlToValidate="TextBoxTitulo" ValidationGroup="1" > 
+                    </asp:RequiredFieldValidator>
+                </h2>
+
                 <p> <asp:TextBox ID="TextBoxDirector" runat="server" PlaceHolder="Director" >  </asp:TextBox> </p>
                 <p> <asp:TextBox ID="TextBoxGenero" runat="server" PlaceHolder="Genero" >  </asp:TextBox> </p>
                 <p> <asp:TextBox ID="TextBoxBandaSonora" PlaceHolder="Banda Sonora" runat="server"></asp:TextBox> </p>
