@@ -83,8 +83,7 @@ namespace WebApplication1
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
             int id_capitulo = Convert.ToInt32(Request.QueryString["id2"]);
             int id_serie = Convert.ToInt32(Request.QueryString["id1"]);
-            /*serie.Id = id_serie;
-            serie = serie.DameSerie();*/
+            
             string texto = TextBoxComentario.Text;
             DateTime tomorrow = DateTime.Today.AddDays(0);
 
@@ -109,8 +108,12 @@ namespace WebApplication1
         protected void Eliminarcomentario(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
+            int id_capitulo = Convert.ToInt32(Request.QueryString["id2"]);
+            int id_serie = Convert.ToInt32(Request.QueryString["id1"]);
+
             int id_comentario = Convert.ToInt32(btn.CommandArgument.ToString());
             comentario.BorrarComentario(id_comentario);
+            Response.Redirect("Capitulo.aspx?id1=" + id_serie + "&id2=" + id_capitulo);
         }
 
 

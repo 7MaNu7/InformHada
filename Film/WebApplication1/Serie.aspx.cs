@@ -24,9 +24,9 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
             serie = new FilmBiblio.SerieEN();
-            if (Session["usuario"] == null)
+
+            if (Session["usuario"] == null)                 //Parte pública (ve comentarios, reportar error)
             {
                 BotonEditar.Visible = false;
                 LiteralComentar.Visible = false;
@@ -36,14 +36,19 @@ namespace WebApplication1
                 BotonEditar.Visible = false;
                 HyperLinkAddCapitulo.Visible = false;
                 Panelcomentar.Visible = false;
+
+                Rating1.Visible = false;
             }
-            else
+            else                                            //Parte privada (puede comentar, editar)
             {
                 LiteralComentar.Text = "Deja tu comentario";
                 usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
                 imagen_user.ImageUrl = "/img/users/" + usuario.Id + ".jpg";
+
+                Rating1.CurrentRating = Convert.ToInt32(Math.Round(Convert.ToDecimal(serie.Puntuacion) / 2));
             }
 
+            //Si no hay id del film redirige a Series
             String id = Request.QueryString["id"];
             if (id == null)
             {
@@ -53,61 +58,62 @@ namespace WebApplication1
             {
                 serie.Id = Convert.ToInt32(id);
 
-                BotonEditar.NavigateUrl = "AddEditserie.aspx?id=" + id;
-                BotonReport.NavigateUrl = "Report.aspx";
-                HyperLinkAddCapitulo.NavigateUrl = "AddEditCapitulo.aspx?id1=" + serie.Id;
+                //Si el id es una serie, si no redirige a Series
+                if (serie.EsSerie(serie.Id))
+                {
+                    BotonEditar.NavigateUrl = "AddEditserie.aspx?id=" + id;
+                    BotonReport.NavigateUrl = "Report.aspx";
+                    HyperLinkAddCapitulo.NavigateUrl = "AddEditCapitulo.aspx?id1=" + serie.Id;
 
-                serie = serie.DameSerie();
-                titulo.Text = serie.Titulo;
-                musica.Text = serie.BandaSonora;
-                sinopsis.Text = serie.Sinopsis;
-                trailer.Text = serie.Trailer;
-                puntuacion.Text = serie.Puntuacion.ToString();
-                reparto.Text = serie.Reparto.ToString();
-                ano.Text = serie.Ano.ToString();
-                caratula.ImageUrl = "/img/film/caratula/" + serie.Id + ".jpg";
-                fondo.ImageUrl = "/img/film/portada/" + serie.Id + ".jpg";
-            
-              FilmBiblio.CapituloEN capitulo = new FilmBiblio.CapituloEN();
-              Label lblTitle;
-              Label lblContent;
-              DataTable dt = new DataTable();
-              AjaxControlToolkit.AccordionPane pn;
-                DataSet d=new DataSet();
-                d = capitulo.DameCapitulos(serie.Id);
-              for (int i = 1; i <=  capitulo.Temporadas(serie.Id); i++)
-              {
-                  dt = d.Tables[0];
-                 //dt.DefaultView.RowFilter = "temporada = " + i.ToString();
-                  pn = new AjaxControlToolkit.AccordionPane();
-                  pn.ID = "Pane" + i;
-                  lblTitle = new Label();
-                  lblContent = new Label();
-                  lblTitle.Text = "<h3 class='temporada_nombre'>Temporada " + i.ToString() + "</h3>";
-                  string contenido="";
-                  foreach (DataRow dr in dt.Rows)
-                  {
-                      if (dr["temporada"].ToString() == i.ToString())
-                          contenido += "<a class='capitulo_nombre' href='Capitulo.aspx?id2=" + dr["id"].ToString() +"&id1="+serie.Id + "'>" + dr["titulo"].ToString() + "</a>";
-                  }
-                  
-                  lblContent = new Label();
+                    serie = serie.DameSerie();
+                    titulo.Text = serie.Titulo;
+                    musica.Text = serie.BandaSonora;
+                    sinopsis.Text = serie.Sinopsis;
+                    trailer.Text = serie.Trailer;
+                    puntuacion.Text = serie.Puntuacion.ToString();
+                    reparto.Text = serie.Reparto.ToString();
+                    ano.Text = serie.Ano.ToString();
+                    caratula.ImageUrl = "/img/film/caratula/" + serie.Id + ".jpg";
+                    fondo.ImageUrl = "/img/film/portada/" + serie.Id + ".jpg";
 
+                    //Acordeon para los capítulos
+                    FilmBiblio.CapituloEN capitulo = new FilmBiblio.CapituloEN();
+                    Label lblTitle;
+                    Label lblContent;
+                    DataTable dt = new DataTable();
+                    AjaxControlToolkit.AccordionPane pn;
+                    DataSet d = new DataSet();
+                    d = capitulo.DameCapitulos(serie.Id);
+                    for (int i = 1; i <= capitulo.Temporadas(serie.Id); i++)
+                    {
+                        dt = d.Tables[0];
+                        pn = new AjaxControlToolkit.AccordionPane();
+                        pn.ID = "Pane" + i;
+                        lblTitle = new Label();
+                        lblContent = new Label();
+                        lblTitle.Text = "<h3 class='temporada_nombre'>Temporada " + i.ToString() + "</h3>";
+                        string contenido = "";
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            if (dr["temporada"].ToString() == i.ToString())
+                                contenido += "<a class='capitulo_nombre' href='Capitulo.aspx?id2=" + dr["id"].ToString() + "&id1=" + serie.Id + "'>" + dr["titulo"].ToString() + "</a>";
+                        }
 
-                  lblContent.Text = contenido;
-                  pn.ContentContainer.Controls.Add(lblContent);
-                  pn.HeaderContainer.Controls.Add(lblTitle);
-                  pn.ContentContainer.Controls.Add(lblContent);
-                  Accordion1.Panes.Add(pn);
-              }
+                        lblContent = new Label();
+                        lblContent.Text = contenido;
+                        pn.ContentContainer.Controls.Add(lblContent);
+                        pn.HeaderContainer.Controls.Add(lblTitle);
+                        pn.ContentContainer.Controls.Add(lblContent);
+                        Accordion1.Panes.Add(pn);
+                    }
+                }
+                else
+                {
+                    Response.Redirect("Series.aspx");
+                }
             }
-
-
-
-            if (usuario != null)
-                Rating1.CurrentRating = Convert.ToInt32(Math.Round(Convert.ToDecimal(serie.Puntuacion) / 2));
-            else
-                Rating1.Visible = false;
+            
+            //Carga los comentarios de la serie
             if (!Page.IsPostBack)
             {
                 comentario.Film = Convert.ToInt32(id);
@@ -117,9 +123,17 @@ namespace WebApplication1
             }
 
 
+            /*if (usuario != null)
+                Rating1.CurrentRating = Convert.ToInt32(Math.Round(Convert.ToDecimal(serie.Puntuacion) / 2));
+            else
+                Rating1.Visible = false;*/
+            
+
+
 
         }
 
+        //Al darle al botón comentar se inserta el comentario
         protected void ComentarOnClick(object sender, EventArgs e)
         {
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
@@ -137,6 +151,7 @@ namespace WebApplication1
             Response.Redirect("serie.aspx?id=" + serie.Id);
         }
 
+        //Para puntuar la serie con el control rating de AJAX
         protected void OnRatingChanged(object sender, RatingEventArgs e)
         {
             if (usuario != null)
@@ -147,6 +162,7 @@ namespace WebApplication1
             }
         }
 
+        //Se encarga de mostrar el botón de eliminar comentario si el comentario es de ese usuario
         protected void mostrar(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -156,11 +172,15 @@ namespace WebApplication1
                 btn.Visible = false;
         }
 
+        //Para eliminar el comentario de la base de datos
         protected void Eliminarcomentario(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
+            int id_serie = Convert.ToInt32(Request.QueryString["id"]);
+
             int id_comentario = Convert.ToInt32(btn.CommandArgument.ToString());
             comentario.BorrarComentario(id_comentario);
+            Response.Redirect("Serie.aspx?id=" + id_serie);
         }
 
     }

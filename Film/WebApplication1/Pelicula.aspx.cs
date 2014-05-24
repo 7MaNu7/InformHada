@@ -124,8 +124,11 @@ namespace WebApplication1
         protected void Eliminarcomentario(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
+            int id_pelicula = Convert.ToInt32(Request.QueryString["id"]);
+
             int id_comentario = Convert.ToInt32(btn.CommandArgument.ToString());
             comentario.BorrarComentario(id_comentario);
+            Response.Redirect("Pelicula.aspx?id=" + id_pelicula);
         }
 
 
