@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="Registrarse" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeBehind="Register.aspx.cs" Inherits="WebApplication1.Account.Register" %>
+    CodeBehind="Register.aspx.cs" Inherits="WebApplication1.Account.Register" 
+        Culture="Auto" UICulture="Auto" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
@@ -38,7 +39,21 @@
             </p>
 
             <asp:Label ID="Label1" runat="server" >Fecha nacimiento:</asp:Label>
-            <asp:TextBox ID="TextBoxFecha" runat="server"></asp:TextBox>
+            <asp:CustomValidator runat="server" ID="ValidandoFecha" ErrorMessage="Debe ser una fecha comprendida entre los años 1904 y 2010"
+                 ForeColor="Red" ControlToValidate="TextBoxFecha" ValidationGroup="1">
+            </asp:CustomValidator>
+
+            <span><asp:TextBox ID="TextBoxFecha" runat="server"></asp:TextBox>
+            <asp:ImageButton runat="server" ID="ImagenCalendario" border-width="0" border-bottom="none" width="21px"
+                height="21px"  BorderStyle="none" border-bottom-style="none"  ImageUrl="/img/calendario_icono.jpg" /></span>
+
+            <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="Server" 
+             EnableScriptGlobalization="true" EnableScriptLocalization="true"/>
+            </asp:ToolkitScriptManager>
+
+            <asp:CalendarExtender ID="CalendarioAJAX" TargetControlID="TextBoxFecha" 
+             PopupButtonID="ImagenCalendario" runat="server"  DefaultView="Years">
+            </asp:CalendarExtender> 
 
             <p style="vertical-align:top;">Sexo:</p>
             <div style="display:inline;">

@@ -23,18 +23,27 @@ namespace WebApplication1.Account
             {
                 if (Page.IsValid)
                 {
-                    //Guardar datos y insert
-                    usuario.Usuario = TextBoxUsuario.Text;
-                    usuario.Psswd = TextBoxPsswd.Text;
-                    usuario.Pais = TextBoxPais.Text;
-                    usuario.Provincia = TextBoxProvincia.Text;
-                    usuario.FechaNacimiento = calendario.Text;
-                    usuario.Sexo = Sexo.Text;
-                    usuario.Email = TextBoxEmail.Text;
+                    DateTime fec = Convert.ToDateTime(TextBoxFecha.Text.ToString());
 
-                    usuario.InsertarUsuario();
-                    Response.Redirect("Default.aspx");
+                    if (fec.Year < 1940 || fec.Year > 2010)
+                    {
+                        ValidandoFecha.IsValid = false;
+                        ValidandoFecha.Visible = true;
+                    }
+                    else
+                    {
+                        //Guardar datos y insert
+                        usuario.Usuario = TextBoxUsuario.Text;
+                        usuario.Psswd = TextBoxPsswd.Text;
+                        usuario.Pais = TextBoxPais.Text;
+                        usuario.Provincia = TextBoxProvincia.Text;
+                        usuario.FechaNacimiento = TextBoxFecha.Text;
+                        usuario.Sexo = Sexo.Text;
+                        usuario.Email = TextBoxEmail.Text;
 
+                        usuario.InsertarUsuario();
+                        Response.Redirect("Default.aspx");                    
+                    }
                 }
             }
         }
