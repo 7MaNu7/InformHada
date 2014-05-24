@@ -64,12 +64,12 @@ namespace WebApplication1
 
                     usuario.UpdateUsuario();
 
-                    if (FileUpload1.HasFile)
+                    if (FileUpload2.HasFile)
                     {
                         try
                         {
                             string filename = Path.GetFileName(FileUpload1.FileName);
-                            FileUpload1.SaveAs(Server.MapPath("~/img/users/portada/") + usuario.Id + ".jpg");
+                            FileUpload2.SaveAs(Server.MapPath("~/img/users/portada/") + usuario.Id + ".jpg");
                             //   StatusLabel.Text = "Upload status: File uploaded!";
                         }
                         catch (Exception ex)
