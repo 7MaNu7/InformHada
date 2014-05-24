@@ -68,6 +68,9 @@
 
     <div class="cabecera_contenido">
         <h2>
+        <asp:Literal ID="LiteralResultado" runat="server"></asp:Literal>
+        </h2>
+        <h2>
         Peliculas 
         </h2>
         <p> <asp:Literal ID="LiteralPeliculas" runat="server"></asp:Literal> </p>

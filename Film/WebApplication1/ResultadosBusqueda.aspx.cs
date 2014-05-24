@@ -50,6 +50,8 @@ namespace WebApplication1
 
                 if (texto != null && texto != "")
                 {
+                    int cant = 0;
+                   
                     d = pelicula.DamePeliculasBusqueda(texto);
                     ListViewPeliculas.DataSource = d;
                     if (d != null)
@@ -57,12 +59,16 @@ namespace WebApplication1
                     if (d.Tables[0].Rows.Count == 0)
                         LiteralPeliculas.Text = "No se han encontrado resultados de películas";
 
+                    cant += d.Tables[0].Rows.Count;
+
                     d = serie.DameSeriesBusqueda(texto);
                     ListViewSeries.DataSource = d;
                     if (d != null)
                         ListViewSeries.DataBind();
                     if (d.Tables[0].Rows.Count == 0)
                         LiteralSeries.Text = "No se han encontrado resultados de películas";
+
+                    cant += d.Tables[0].Rows.Count;
 
                     /*d = pelicula.DamePeliculasMejorPuntuadas(numero);
                     ListViewCapitulos.DataSource = d;
@@ -77,6 +83,9 @@ namespace WebApplication1
                     if (d.Tables[0].Rows.Count == 0)
                         LiteralUsuarios.Text = "No se han encontrado resultados de películas";
 
+                    cant += d.Tables[0].Rows.Count;
+
+                    LiteralResultado.Text = cant.ToString() + " resultados de buscar " + "\"" + texto.ToUpper() + "\"";
                 }
                 else
                     Response.Redirect("Default.aspx");

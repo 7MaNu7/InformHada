@@ -121,6 +121,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.HyperLink HyperLinkAnadirSerie;
         
         /// <summary>
+        /// LiteralResultado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LiteralResultado;
+        
+        /// <summary>
         /// LiteralPeliculas control.
         /// </summary>
         /// <remarks>
