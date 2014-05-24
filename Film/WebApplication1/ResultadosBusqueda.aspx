@@ -1,11 +1,22 @@
-﻿<%@ Page Title="Página principal" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="Página principal" Language="C#" AutoEventWireup="true"
     CodeBehind="ResultadosBusqueda.aspx.cs" Inherits="WebApplication1.ResultadosBusqueda" %>
 
-<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
-    <link href="/Styles/Default.css" rel="stylesheet" type="text/css" />
-</asp:Content>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="http://demos.myjqueryplugins.com/jrating/jquery/jRating.jquery.css" type="text/css">
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
-<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title> </title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/Default.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <form id="Form2" runat="server">
+
      <script>
          $(document).ready(function () {
              $(window).bind('scroll', function () {
@@ -147,4 +158,6 @@
 
 
   </div>
-</asp:Content>
+
+
+</form></body>    

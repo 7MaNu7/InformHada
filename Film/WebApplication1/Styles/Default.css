@@ -23,7 +23,7 @@ background: black;
 opacity: 0.6;
 }
 
-#MainContent_TextBox1 {
+#TextBox1 {
 text-align: left;
 padding-left: 26px;
 margin-top: 20px;
@@ -179,7 +179,7 @@ top: 11px ;
 width: 240px;
 /* background: rgb(253, 160, 242); */
 /* box-shadow: 0 0 1px; */
-}input#MainContent_TextBoxBuscar {
+}input#TextBoxBuscar {
 width: 360px;
 margin-top: 7px;
 padding: 0px 25px;
@@ -188,7 +188,7 @@ height: 20px;
 border-radius: 3px;
 box-shadow: inset 0 0 2px;
 }
-input#MainContent_BotonBuscar {
+input#BotonBuscar {
 background: white;
 border: none;
 height: 27px;

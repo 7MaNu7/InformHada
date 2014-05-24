@@ -43,7 +43,7 @@
                      OnChanged="OnRatingChanged"
 >
                 </asp:Rating>
-           
+                
             </div>
             <div class="serie_contenido_d">
                <h2>Sinopsis</h2>

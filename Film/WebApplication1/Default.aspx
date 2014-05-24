@@ -1,11 +1,20 @@
-﻿<%@ Page Title="Página principal" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="Página principal" Language="C#" AutoEventWireup="true"
     CodeBehind="Default.aspx.cs" Inherits="WebApplication1._Default" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="http://demos.myjqueryplugins.com/jrating/jquery/jRating.jquery.css" type="text/css">
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
-<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
-    <link href="/Styles/Default.css" rel="stylesheet" type="text/css" />
-</asp:Content>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title> </title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/Default.css" rel="stylesheet" type="text/css" />
 
-<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+</head>
+<body>
+    <form id="Form2" runat="server">
      <script>
          $(document).ready(function () {
              $(window).bind('scroll', function () {
@@ -30,6 +39,7 @@
             <h2>InformaTV</h2>
             <p>La mejor información de tus peliculas y series preferidas.</p>
             <div style="position:relative;">
+
                 <asp:TextBox ID="TextBoxBuscar" runat="server" placeholder="Buscar Peliculas y Series"></asp:TextBox>
                 <i style="color: rgba(0, 0, 0, 0.54);
                             font-size: 14px;
@@ -37,7 +47,7 @@
 position: absolute;
 left: calc(50% - 199px);" class="fa fa-search">
                 </i>
-                <asp:Button ID="BotonBuscar" runat="server" OnClick="BotonBuscarOnClick" Text="Buscar" /> 
+                <asp:Button ID="BotonBuscar" UseSubmitBehavior="true" runat="server" OnClick="BotonBuscarOnClick" Text="Buscar" /> 
            </div>
         </div>
    </div>
@@ -177,4 +187,5 @@ left: calc(50% - 199px);" class="fa fa-search">
 
 
   </div>
-</asp:Content>
+
+</form></body>    
