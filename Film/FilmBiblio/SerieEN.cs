@@ -61,6 +61,12 @@ namespace FilmBiblio
             Trailer = ptrailer;
         }
 
+        //True si es una serie
+        public bool EsSerie(int id_film)
+        {
+            return serieCad.EsSerie(id_film);
+        }
+
         //True si un usuario ha votado este film
         public bool HaVotado(int id_usuario)
         {

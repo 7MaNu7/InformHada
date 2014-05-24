@@ -23,7 +23,31 @@ namespace FilmBiblio
         // Funciones //
         ///////////////
 
-        //True si ha votado este film
+        //True si es una serie
+        public bool EsSerie(int id_film)
+        {
+            bool test = false;
+            string orden = "select * from film where id=" + id_film + " and " + id_film + "in (select id from serie)";
+            SqlConnection c = new SqlConnection(conexion);
+
+            try
+            {
+                c.Open();
+                SqlCommand select = new SqlCommand(orden, c);
+                SqlDataReader read = select.ExecuteReader();
+                while (read.HasRows)
+                {
+                    test = true;
+                    break;
+                }
+                read.Close();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            finally { c.Close(); }
+
+            return test;
+        }
+
         //True si ha votado este film
         public bool HaVotado(int id_film, int id_usuario)
         {
