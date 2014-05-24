@@ -10,9 +10,11 @@
          <!-- CABECERA DEL CAPITULO  -->
         <div class="cabecera_capitulo">
             <div class="portada_capitulo" style="background-image:url('');">
-                <img class="fondoblurred" src="http://hdwpapers.com/download/vikings_tv_desktop_wallpaper-1920x1080.jpg" alt="fotou_portada"/>
-            </div>
-             <img class="caratula" src="http://pics.filmaffinity.com/Vikingos_Vikings_Serie_de_TV-616055151-large.jpg" alt="fotou_perfil"/>
+                <asp:Image ID="fondo" CssClass="fondoblurred" runat="server" />
+             </div>
+
+             <asp:Image ID="caratula" CssClass="caratula" runat="server" />
+
              <div class="info_cabecera">
                 <h2> <asp:Literal ID="LiteralTitulo" runat="server"> </asp:Literal> </h2>
                 <p>Serie: <asp:Literal ID="LiteralSerie" runat="server"> </asp:Literal> </p>

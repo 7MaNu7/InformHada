@@ -10,9 +10,9 @@
          <!-- CABECERA DEL CAPITULO  -->
         <div class="cabecera_capitulo">
             <div class="portada_capitulo" style="background-image:url('');">
-                <img class="fondoblurred" src="http://hdwpapers.com/download/vikings_tv_desktop_wallpaper-1920x1080.jpg" alt="fotou_portada"/>
+                <img class="fondoblurred" src="http://dfghj7h6esbng.cloudfront.net/wp-content/uploads/2013/10/EEEEE.jpg" alt="fotou_portada"/>
             </div>
-             <img class="caratula" src="http://pics.filmaffinity.com/Vikingos_Vikings_Serie_de_TV-616055151-large.jpg" alt="fotou_perfil"/>
+             <img class="caratula" src="http://1.bp.blogspot.com/-vxniewvE-is/Uev-hLHff4I/AAAAAAAAYFE/M2-s72D2iM4/s1600/13060086-vista-frontal-de-un-rollo-de-pelicula-con-una-tira-de-pelicula-delante-de-el-3d.jpg" alt="fotou_perfil"/>
              <div class="info_cabecera">
                 <h2> 
                     <asp:TextBox ID="TextBoxTitulo" placeholder="Título"  runat="server" > </asp:TextBox> 

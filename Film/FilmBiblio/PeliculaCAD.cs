@@ -125,7 +125,7 @@ namespace FilmBiblio
             orden += "'" + pelicula.Genero + "', ";
             orden += "'" + pelicula.Reparto + "', ";
             orden += "'" + pelicula.BandaSonora + "', ";
-            orden += pelicula.Puntuacion + ", ";
+            orden += "NULL , ";
             orden += "'" + pelicula.Portada + "', ";
             orden += "'" + pelicula.Caratula + "', ";
             orden += "'" + pelicula.Trailer + "')";

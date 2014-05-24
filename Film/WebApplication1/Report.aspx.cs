@@ -55,6 +55,7 @@ namespace WebApplication1
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 LabelConfirmacion.Text = "No se pudo enviar el mensaje. Inténtelo de nuevo en unos minutos";  
             }
         }

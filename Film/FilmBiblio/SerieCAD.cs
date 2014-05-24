@@ -157,7 +157,7 @@ namespace FilmBiblio
             orden += "'" + serie.Caratula + "', ";
             orden += "'" + serie.Trailer + "')";
 
-            String orden2 = "insert into pelicula values " + "(" + id + ")";
+            String orden2 = "insert into serie values " + "(" + id + ")";
 
             SqlConnection c = new SqlConnection(conexion);
             try

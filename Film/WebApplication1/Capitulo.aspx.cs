@@ -27,6 +27,9 @@ namespace WebApplication1
             string id_serie = Request.QueryString["id1"];
             string id_capitulo = Request.QueryString["id2"];
 
+            caratula.ImageUrl = "/img/film/caratula/" + id_serie + ".jpg";
+            fondo.ImageUrl = "/img/film/portada/" + id_serie + ".jpg";
+
             if (Session["usuario"] == null)
             {
                 BotonEditar.Visible = false;

@@ -10,7 +10,7 @@ namespace WebApplication1
 {
     public partial class AddEditPelicula : System.Web.UI.Page
     {
-        private FilmBiblio.PeliculaEN pelicula= new FilmBiblio.PeliculaEN();
+        private FilmBiblio.PeliculaEN pelicula = new FilmBiblio.PeliculaEN();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,9 +37,6 @@ namespace WebApplication1
                 }
                 else                                                    //Para añadir un film
                 {
-                    ImagenPortada.ImageUrl = "~/img/film/portada/00.jpg";
-                    ImagenCaratula.ImageUrl = "~/img/film/caratula/00.jpg";                    
-
                     LiteralTitulo.Visible = false;
                     BotonAddEdit.Text = "Añadir película";
                 }
@@ -51,7 +48,8 @@ namespace WebApplication1
         {
             int id = Convert.ToInt32(Request.QueryString["id"]);
             Response.BufferOutput = true;
-            if (id!=0)
+
+            if (id != 0)
             {
                 //Guardar datos y update
                 pelicula.Id = id;
@@ -64,7 +62,34 @@ namespace WebApplication1
                 pelicula.BandaSonora = TextBoxBandaSonora.Text;
                 pelicula.Trailer = TextBoxTrailer.Text;
                 pelicula.UpdatePelicula();
-                
+
+                //int max = pelicula.MaximoId();
+                if (FileUploadControl.HasFile)
+                {
+                    try
+                    {
+                        string filename = Path.GetFileName(FileUploadControl.FileName);
+                        FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + id + ".jpg");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+                if (FileUpload1.HasFile)
+                {
+                    try
+                    {
+                        string filename = Path.GetFileName(FileUpload1.FileName);
+                        FileUpload1.SaveAs(Server.MapPath("~/img/film/portada/") + id + ".jpg");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+                Response.Redirect("Pelicula.aspx?id=" + id);
+
             }
             else
             {
@@ -78,39 +103,65 @@ namespace WebApplication1
                 pelicula.BandaSonora = TextBoxBandaSonora.Text;
                 pelicula.Trailer = TextBoxTrailer.Text;
                 pelicula.InsertarPelicula();
+
+                int id_nuevo = pelicula.MaximoId();
+
+                if (FileUpload1.HasFile)
+                {
+                    try
+                    {
+                        string filename = Path.GetFileName(FileUpload1.FileName);
+                        FileUpload1.SaveAs(Server.MapPath("~/img/film/portada/") + id_nuevo + ".jpg");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        string filename = Path.GetFileName(FileUpload1.FileName);
+                        FileUpload1.SaveAs(Server.MapPath("~/img/film/portada/") + "00" + ".jpg");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+
+
+                if (FileUploadControl.HasFile)
+                {
+                    try
+                    {
+                        string filename = Path.GetFileName(FileUpload1.FileName);
+                        FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + id_nuevo + ".jpg");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        string filename = Path.GetFileName(FileUpload1.FileName);
+                        FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + "00" + ".jpg");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+
+                Response.Redirect("Pelicula.aspx?id=" + id_nuevo);
             }
 
-            int max = pelicula.MaximoId();
-            if (FileUploadControl.HasFile)
-            {
-                try
-                {
-                    string filename = Path.GetFileName(FileUploadControl.FileName);
-                    if (id==0)
-                        FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + max+1 + ".jpg");
-                    else
-                        FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + pelicula.Id + ".jpg");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            }
-            if (FileUpload1.HasFile)
-            {
-                try
-                {
-                    string filename = Path.GetFileName(FileUpload1.FileName);
-                    FileUpload1.SaveAs(Server.MapPath("~/img/film/portada/") + pelicula.Id + ".jpg");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            }
-            Response.Redirect("Pelicula.aspx?id=" + id);
+
         }
-
-       
     }
 }

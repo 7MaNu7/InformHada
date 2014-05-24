@@ -36,7 +36,7 @@ namespace WebApplication1
                 }
                 else
                 {
-                    BotonAddEdit.Text = "Añadir película";
+                    BotonAddEdit.Text = "Añadir serie";
                 }
             }
 
@@ -46,6 +46,7 @@ namespace WebApplication1
         {
             int id = Convert.ToInt32(Request.QueryString["id"]);
             Response.BufferOutput = true;
+
             if (id != 0)
             {
                 //Guardar datos y update
@@ -59,11 +60,39 @@ namespace WebApplication1
                 serie.BandaSonora = TextBoxBandaSonora.Text;
                 serie.Trailer = TextBoxTrailer.Text;
                 serie.UpdateSerie();
-            //    
+
+                //int max = serie.MaximoId();
+                if (FileUploadControl.HasFile)
+                {
+                    try
+                    {
+                        string filename = Path.GetFileName(FileUploadControl.FileName);
+                        FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + id + ".jpg");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+                if (FileUpload1.HasFile)
+                {
+                    try
+                    {
+                        string filename = Path.GetFileName(FileUpload1.FileName);
+                        FileUpload1.SaveAs(Server.MapPath("~/img/film/portada/") + id + ".jpg");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+                Response.Redirect("serie.aspx?id=" + id);
+
             }
             else
             {
                 //Guardar datos y insert
+                serie.Titulo = TextBoxTitulo.Text;
                 serie.Director = TextBoxDirector.Text;
                 serie.Ano = int.Parse(TextBoxAno.Text);
                 serie.Sinopsis = TextBoxSinopsis.Text;
@@ -72,40 +101,65 @@ namespace WebApplication1
                 serie.BandaSonora = TextBoxBandaSonora.Text;
                 serie.Trailer = TextBoxTrailer.Text;
                 serie.InsertarSerie();
+
+                int id_nuevo = serie.MaximoId();
+
+                if (FileUpload1.HasFile)
+                {
+                    try
+                    {
+                        string filename = Path.GetFileName(FileUpload1.FileName);
+                        FileUpload1.SaveAs(Server.MapPath("~/img/film/portada/") + id_nuevo + ".jpg");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        string filename = Path.GetFileName(FileUpload1.FileName);
+                        FileUpload1.SaveAs(Server.MapPath("~/img/film/portada/") + "00" + ".jpg");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+
+
+                if (FileUploadControl.HasFile)
+                {
+                    try
+                    {
+                        string filename = Path.GetFileName(FileUpload1.FileName);
+                        FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + id_nuevo + ".jpg");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        string filename = Path.GetFileName(FileUpload1.FileName);
+                        FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + "00" + ".jpg");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+
+                Response.Redirect("serie.aspx?id=" + id_nuevo);
             }
-            int max = serie.MaximoId();
-            if (FileUploadControl.HasFile)
-            {
-                try
-                {
-                    string filename = Path.GetFileName(FileUploadControl.FileName);
-                    if (id == 0)
-                        FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + max + 1 + ".jpg");
-                    else
-                        FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + serie.Id + ".jpg");
-                    //   StatusLabel.Text = "Upload status: File uploaded!";
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                    //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
-                }
-            }
-            if (FileUpload1.HasFile)
-            {
-                try
-                {
-                    string filename = Path.GetFileName(FileUpload1.FileName);
-                    FileUpload1.SaveAs(Server.MapPath("~/img/film/portada/") + serie.Id + ".jpg");
-                    //   StatusLabel.Text = "Upload status: File uploaded!";
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                    //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
-                }
-            }
-            Response.Redirect("serie.aspx?id=" + id);
+
+
         }
         
     }
