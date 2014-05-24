@@ -98,6 +98,14 @@ namespace WebApplication1
 
         }
 
+        protected void BotonEliminarUsuarioOnClick(object sender, EventArgs e)
+        {
+            usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
+            usuario.BorrarUsuario();
+            Session["usuario"] = usuario = null;
+            Response.Redirect("Default.aspx");
+        }
+
         //Validaciones
 
         protected void EmailYaExiste(object sender, ServerValidateEventArgs e)

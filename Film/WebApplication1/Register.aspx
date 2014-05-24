@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="Registrarse" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeBehind="Register.aspx.cs" Inherits="WebApplication1.Account.Register" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <link href="/Styles/Register.css" rel="stylesheet" type="text/css" />
 </asp:Content>
@@ -36,7 +38,7 @@
             </p>
 
             <asp:Label ID="Label1" runat="server" >Fecha nacimiento:</asp:Label>
-            <asp:TextBox ID="calendario" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBoxFecha" runat="server"></asp:TextBox>
 
             <p style="vertical-align:top;">Sexo:</p>
             <div style="display:inline;">
@@ -104,6 +106,8 @@
             <p><asp:CustomValidator ID="ValidarEmailYaExiste" runat="server" ControlToValidate="TextBoxEmail" ValidationGroup="1"
                    OnServerValidate="EmailYaExiste" ErrorMessage="Ya hay una cuenta con este email" ForeColor="Red"> 
                 </asp:CustomValidator></p>
+
+            
 
             <asp:Button ID="BotonRegistro" ValidationGroup="1" CssClass="completar" runat="server" 
                 OnClick="BotonRegistroOnClick" Text="Completar registro" />                   

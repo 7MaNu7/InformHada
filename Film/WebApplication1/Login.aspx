@@ -20,7 +20,8 @@
                 ControlToValidate="TextBoxEmail" Text="¡Introduce tu e-mail!" ForeColor="White">                            
          </asp:RequiredFieldValidator>
 
-         <asp:TextBox ID="TextBoxPsswd" runat="server" TextMode="Password" Text="Contraseña">PASSWORD</asp:TextBox>
+         <asp:TextBox ID="TextBoxPsswd" runat="server" placeholder="Contraseña" TextMode="Password" >
+         PASSWORD</asp:TextBox>
          <asp:RequiredFieldValidator ID="ValidarPsswdRelleno" runat="server" ValidationGroup="1"
                 ControlToValidate="TextBoxPsswd" Text="¡Introduce tu contraseña!" ForeColor="White">                            
          </asp:RequiredFieldValidator>

@@ -37,10 +37,20 @@
 
                     <asp:CustomValidator ID="ValidarEmailYaExiste" runat="server" 
                         ControlToValidate="TextBoxEmail" ValidationGroup="1" ForeColor="Red"
-                        OnServerValidate="EmailYaExiste" ErrorMessage="Ya hay una cuenta con este email"> 
+                        OnServerValidate="EmailYaExiste" ErrorMessage="¡¡Ya hay una cuenta con este email!!"> 
                     </asp:CustomValidator>
                     
-                    <p><asp:TextBox CssClass="cabecerasAddEdita" ID="TextBoxEmail" runat="server">e-mail</asp:TextBox></p>
+                    <p>
+                    
+                        <asp:TextBox CssClass="cabecerasAddEdita" 
+                            ID="TextBoxEmail" runat="server">e-mail</asp:TextBox>
+                    
+                        <asp:RequiredFieldValidator ID="ValidarEmailRelleno" runat="server"
+                            ErrorMessage="¡Escribe un email!" ValidationGroup="1" ForeColor="Red"
+                            ControlToValidate="TextBoxEmail" >        
+                         </asp:RequiredFieldValidator>
+
+                    </p>
              </div>
          </div>
 
@@ -100,7 +110,11 @@
 
                 <div class="informacionpersonal" style="border-top: solid 4px rgb(158, 108, 108);">
                     <h2>Herramientas</h2>
-                    <p>Eliminar mi cuenta</p>
+                    
+                    <p> <asp:Button ID="BotonEliminarUsuario" ForeColor="Blue" runat="server" 
+                            Text="Eliminar mi cuenta" OnClick="BotonEliminarUsuarioOnClick" 
+                                BorderStyle="none" BorderWidth="0" Width="0" /> </p>
+
                 </div>
                  
                  <asp:Button ID="BotonEditar" ValidationGroup="1" CssClass="botonanadireditarusr"

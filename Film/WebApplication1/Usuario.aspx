@@ -85,9 +85,16 @@
 
                 <div class="informacionpersonal" style="border-top: solid 4px rgb(158, 108, 108);">
                     <h2>Herramientas</h2>
-                    <p> <asp:HyperLink ID="HyperLinkAddPelicula" runat="server" EnableViewState="false" PostBackUrl="String"> Añadir película </asp:HyperLink> </p>
-                    <p> <asp:HyperLink ID="HyperLinkAddSerie" runat="server" EnableViewState="false" PostBackUrl="String"> Añadir serie </asp:HyperLink> </p>
-                    <p> <asp:Button ID="BotonEliminarUsuario" runat="server" OnClick="BotonEliminarUsuarioOnClick" Text="Eliminar mi cuenta" BorderStyle="none" BorderWidth="0" Width="0" /> </p>
+
+                    <p> <asp:HyperLink ID="HyperLinkAddPelicula" runat="server" 
+                            EnableViewState="false" PostBackUrl="String"> Añadir película </asp:HyperLink> </p>
+
+                    <p> <asp:HyperLink ID="HyperLinkAddSerie" runat="server" 
+                        EnableViewState="false" PostBackUrl="String"> Añadir serie </asp:HyperLink> </p>
+
+                    <p> <asp:Button ID="BotonEliminarUsuario" ForeColor="Blue" runat="server" Text="Eliminar mi cuenta" 
+                         OnClick="BotonEliminarUsuarioOnClick" BorderStyle="none" BorderWidth="0" Width="0" /> </p>
+
                 </div>
                 <asp:Button ID="BotonEditar" CssClass="botonanadireditarusr" runat="server" OnClick="BotonEditarOnClick" Text="Editar" />
             </div>
