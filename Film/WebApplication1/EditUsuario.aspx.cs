@@ -39,7 +39,6 @@ namespace WebApplication1
             if (Session["usuario"] == null)
             {
                 Response.Redirect("Default.aspx");
-                //BotonEditar.Text = "Completar registro";
             }
         }
 
@@ -51,48 +50,59 @@ namespace WebApplication1
             {
                 if(Page.IsValid)
                 {
-                    //Guardar datos y update
-                    usuario.Usuario = TextBoxUsuario.Text;
-                    if (TextBoxPsswd.Text != "")
-                        usuario.Psswd = TextBoxPsswd.Text;
-                    usuario.Pais = TextBoxPais.Text;
-                    usuario.Provincia = TextBoxProvincia.Text;
-                    usuario.FechaNacimiento = TextBoxFechaNacimiento.Text;
-                    usuario.Sexo = Sexo.Text;
-                    usuario.Email = TextBoxEmail.Text;
-                    usuario.Informacion = TextBoxInformacion.Text;
+                    DateTime fec = Convert.ToDateTime(TextBoxFechaNacimiento.Text.ToString());
 
-                    usuario.UpdateUsuario();
+                    if (fec.Year < 1940 || fec.Year > 2010)
+                    {
+                        ValidandoFecha.IsValid = false;
+                        ValidandoFecha.Visible = true;
+                    }
+                    else
+                    {
 
-                    if (FileUpload2.HasFile)
-                    {
-                        try
+                        //Guardar datos y update
+                        usuario.Usuario = TextBoxUsuario.Text;
+                        if (TextBoxPsswd.Text != "")
+                            usuario.Psswd = TextBoxPsswd.Text;
+                        usuario.Pais = TextBoxPais.Text;
+                        usuario.Provincia = TextBoxProvincia.Text;
+                        usuario.FechaNacimiento = TextBoxFechaNacimiento.Text;
+                        usuario.Sexo = Sexo.Text;
+                        usuario.Email = TextBoxEmail.Text;
+                        usuario.Informacion = TextBoxInformacion.Text;
+
+                        usuario.UpdateUsuario();
+
+                        if (FileUpload2.HasFile)
                         {
-                            string filename = Path.GetFileName(FileUpload1.FileName);
-                            FileUpload2.SaveAs(Server.MapPath("~/img/users/portada/") + usuario.Id + ".jpg");
-                            //   StatusLabel.Text = "Upload status: File uploaded!";
+                            try
+                            {
+                                string filename = Path.GetFileName(FileUpload1.FileName);
+                                FileUpload2.SaveAs(Server.MapPath("~/img/users/portada/") + usuario.Id + ".jpg");
+                                //   StatusLabel.Text = "Upload status: File uploaded!";
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.Message);
+                                //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                            }
                         }
-                        catch (Exception ex)
+                        if (FileUploadControl.HasFile)
                         {
-                            Console.WriteLine(ex.Message);
-                            //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                            try
+                            {
+                                string filename = Path.GetFileName(FileUploadControl.FileName);
+                                FileUploadControl.SaveAs(Server.MapPath("~/img/users/") + usuario.Id + ".jpg");
+                                //   StatusLabel.Text = "Upload status: File uploaded!";
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.Message);
+                                //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                            }
                         }
+                        Response.Redirect("Usuario.aspx");
                     }
-                    if (FileUploadControl.HasFile)
-                    {
-                        try
-                        {
-                            string filename = Path.GetFileName(FileUploadControl.FileName);
-                            FileUploadControl.SaveAs(Server.MapPath("~/img/users/") + usuario.Id + ".jpg");
-                            //   StatusLabel.Text = "Upload status: File uploaded!";
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine(ex.Message);
-                            //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
-                        }
-                    }
-                    Response.Redirect("Usuario.aspx");
                 }
             }
 

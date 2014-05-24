@@ -48,11 +48,11 @@
                 height="21px"  BorderStyle="none" border-bottom-style="none"  ImageUrl="/img/calendario_icono.jpg" /></span>
 
             <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="Server" 
-             EnableScriptGlobalization="true" EnableScriptLocalization="true"/>
+                EnableScriptGlobalization="true" EnableScriptLocalization="true"/>
             </asp:ToolkitScriptManager>
 
             <asp:CalendarExtender ID="CalendarioAJAX" TargetControlID="TextBoxFecha" 
-             PopupButtonID="ImagenCalendario" runat="server"  DefaultView="Years">
+                PopupButtonID="ImagenCalendario" runat="server"  DefaultView="Years">
             </asp:CalendarExtender> 
 
             <p style="vertical-align:top;">Sexo:</p>

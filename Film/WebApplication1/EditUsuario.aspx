@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="Add Usuario" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeBehind="EditUsuario.aspx.cs" Inherits="WebApplication1.AddEditUsuario" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <link href="/Styles/Usuario.css" rel="stylesheet" type="text/css" />
 </asp:Content>
@@ -67,9 +69,25 @@
                            ControlToValidate="TextBoxUsuario" ErrorMessage="¡Introduce el usuario!"> 
                         </asp:RequiredFieldValidator>
                     <p>
+
+                    <asp:CustomValidator runat="server" ID="ValidandoFecha" ErrorMessage="Debe ser una fecha entre 1904 y 2010"
+                         ForeColor="Red" ControlToValidate="TextBoxFechaNacimiento" ValidationGroup="1">
+                    </asp:CustomValidator>
                     
-                    <asp:TextBox ID="TextBoxFechaNacimiento" PlaceHolder="Fecha de nacimiento" runat="server"></asp:TextBox></p>
-                    
+                    <span>
+                        <asp:TextBox ID="TextBoxFechaNacimiento" PlaceHolder="Fecha de nacimiento" runat="server"></asp:TextBox>
+                        <asp:ImageButton runat="server" ID="ImagenCalendario" border-width="0" border-bottom="none" width="21px"
+                            height="21px"  BorderStyle="none" border-bottom-style="none"  ImageUrl="/img/calendario_icono.jpg" />
+                    </span>
+
+                    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="Server" 
+                        EnableScriptGlobalization="true" EnableScriptLocalization="true"/>
+                    </asp:ToolkitScriptManager>
+                        
+                    <asp:CalendarExtender ID="CalendarioAJAX" TargetControlID="TextBoxFechaNacimiento" 
+                        PopupButtonID="ImagenCalendario" runat="server"  DefaultView="Years">
+                    </asp:CalendarExtender>
+
                     <p>Sexo:</p>
                     <asp:RadioButtonList ID="Sexo" runat="server" CellPadding="8" TextAlign="Left" RepeatDirection="Horizontal">
                          <asp:ListItem ID="SexoHombre" runat="server" value="Varón" />
