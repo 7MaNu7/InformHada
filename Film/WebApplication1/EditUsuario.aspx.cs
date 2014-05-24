@@ -49,13 +49,7 @@ namespace WebApplication1
 
             if (usuario != null)
             {
-                string psswd1 = TextBoxPsswd.Text;
-                string psswd2 = TextBoxPsswd2.Text;
-                if (psswd1 != psswd2)
-                {
-                    ValidarPsswdIguales.IsValid = false;
-                }
-                else
+                if(Page.IsValid)
                 {
                     //Guardar datos y update
                     usuario.Usuario = TextBoxUsuario.Text;
@@ -117,14 +111,5 @@ namespace WebApplication1
             }
         }
 
-        protected void ComprobarPsswd(object sender, ServerValidateEventArgs e)
-        {
-            string psswd1 = TextBoxPsswd.Text;
-            string psswd2 = TextBoxPsswd2.Text;
-            if (psswd1 != psswd2)
-            {
-                ValidarPsswdIguales.IsValid = false;
-            }
-        }
     }
 }

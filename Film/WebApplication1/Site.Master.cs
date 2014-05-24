@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace WebApplication1
 {
@@ -13,7 +14,7 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            usuarioLogeado = (FilmBiblio.UsuarioEN)Session["usuario"];
+           usuarioLogeado = (FilmBiblio.UsuarioEN)Session["usuario"];
             if (usuarioLogeado == null)
             {
                 BotonIniciarSesion.Text = "Iniciar Sesión";
@@ -41,5 +42,14 @@ namespace WebApplication1
             string texto = TextBoxBuscar.Text;
             Response.Redirect("ResultadosBusqueda.aspx?texto=" + texto);
         }
+
+        /*private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                string texto = TextBoxBuscar.Text;
+                Response.Redirect("ResultadosBusqueda.aspx?texto=" + texto);
+            }
+        }*/
     }
 }

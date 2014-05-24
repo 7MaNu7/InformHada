@@ -30,10 +30,15 @@
                 </h2>
                     
                     <asp:RegularExpressionValidator 
-                    ID="RegularExpressionEmail" runat="server" 
-                    ErrorMessage="Escriba un email válido como: ejemplo@dominio.extension" ForeColor="Red"
-                    ControlToValidate="TextBoxEmail" ValidationExpression="\S+@\S+\.\S+">                    
+                        ID="RegularExpressionEmail" runat="server" ValidationGroup="1"
+                        ErrorMessage="Escriba un email válido como: ejemplo@dominio.extension" ForeColor="Red"
+                        ControlToValidate="TextBoxEmail" ValidationExpression="\S+@\S+\.\S+">                    
                     </asp:RegularExpressionValidator>
+
+                    <asp:CustomValidator ID="ValidarEmailYaExiste" runat="server" 
+                        ControlToValidate="TextBoxEmail" ValidationGroup="1" ForeColor="Red"
+                        OnServerValidate="EmailYaExiste" ErrorMessage="Ya hay una cuenta con este email"> 
+                    </asp:CustomValidator>
                     
                     <p><asp:TextBox CssClass="cabecerasAddEdita" ID="TextBoxEmail" runat="server">e-mail</asp:TextBox></p>
              </div>
@@ -45,33 +50,43 @@
                 <p id="errorvalidacion" style="visibility:hidden;">Algún campo no se ha introducido correctamente</p>
                 <div class="informacionpersonal">
                     <h2>Información personal: </h2>
-                    <p><asp:TextBox ID="TextBoxUsuario" runat="server" PlaceHolder="Usuario" ></asp:TextBox></p>
-                    <asp:RequiredFieldValidator ID="UserNameReq" runat="server" ControlToValidate="TextBoxUsuario" ErrorMessage="¡Introduce el usuario!"> </asp:RequiredFieldValidator>
-                    <p><asp:TextBox ID="TextBoxFechaNacimiento" PlaceHolder="Fecha de nacimiento" runat="server"></asp:TextBox></p>
+                    
+                    <p>
+                        <asp:TextBox ID="TextBoxUsuario" runat="server" PlaceHolder="Usuario" ></asp:TextBox></p>
+                        <asp:RequiredFieldValidator ID="UserNameReq" ValidationGroup="1" runat="server"
+                           ControlToValidate="TextBoxUsuario" ErrorMessage="¡Introduce el usuario!"> 
+                        </asp:RequiredFieldValidator>
+                    <p>
+                    
+                    <asp:TextBox ID="TextBoxFechaNacimiento" PlaceHolder="Fecha de nacimiento" runat="server"></asp:TextBox></p>
+                    
                     <p>Sexo:</p>
                     <asp:RadioButtonList ID="Sexo" runat="server" CellPadding="8" TextAlign="Left" RepeatDirection="Horizontal">
                          <asp:ListItem ID="SexoHombre" runat="server" value="Varón" />
                          <asp:ListItem ID="SexoMujer" runat="server" value="Mujer" />
                     </asp:RadioButtonList>
+
                     <p><asp:TextBox ID="TextBoxPais" PlaceHolder="Pais" runat="server"></asp:TextBox></p>
                     <p><asp:TextBox ID="TextBoxProvincia" PlaceHolder="Provincia" runat="server"></asp:TextBox></p>
+                
                 </div>
+
                 <div class="infoamigos">
                     <h2>Nueva contraseña</h2>
                     <p><asp:TextBox ID="TextBoxPsswd" runat="server" TextMode="Password"></asp:TextBox></p>
                     
                     <asp:RegularExpressionValidator 
-                        ID="RegularExpressionContraseña" runat="server" 
+                        ID="RegularExpressionContraseña" runat="server" ValidationGroup="1"
                         ErrorMessage="La contraseña debe tener de 6 a 20 caracteres" ForeColor="Red"
                         ControlToValidate="TextBoxPsswd" ValidationExpression="\S{5,20}">                    
                     </asp:RegularExpressionValidator>
 
                     <p><asp:TextBox ID="TextBoxPsswd2" runat="server" TextMode="Password"></asp:TextBox></p>
                 
-                    <asp:CustomValidator ID="ValidarPsswdIguales" runat="server" ControlToValidate="TextBoxPsswd" 
-                        OnServerValidate="ComprobarPsswd" ForeColor="Red"
-                        ErrorMessage="¡Las contraseñas deben ser iguales!"> 
-                    </asp:CustomValidator>
+                    <asp:CompareValidator ID="CompareValidator1" runat="server" ValidationGroup="1"
+                        ErrorMessage="¡Las contraseñas deben ser iguales!" ForeColor="Red"
+                        ControlToValidate="TextBoxPsswd2" ControlToCompare="TextBoxPsswd" >
+                    </asp:CompareValidator>
                 
                 </div>
                 
@@ -88,7 +103,8 @@
                     <p>Eliminar mi cuenta</p>
                 </div>
                  
-                 <asp:Button ID="BotonEditar" CssClass="botonanadireditarusr" runat="server" Text="Crear usuario" OnClick="BotonEditarOnClick" />
+                 <asp:Button ID="BotonEditar" ValidationGroup="1" CssClass="botonanadireditarusr"
+                  runat="server" Text="Crear usuario" OnClick="BotonEditarOnClick" />
             </div>
          </div>   
       
