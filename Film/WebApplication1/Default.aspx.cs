@@ -39,7 +39,7 @@ namespace WebApplication1
             HyperRegistro.NavigateUrl = "Login.aspx";
             HyperLinkPeliculas.NavigateUrl = "Peliculas.aspx";
             HyperLinkSeries.NavigateUrl = "Series.aspx";
-            HyperLinkUsuario.NavigateUrl = "Usuario.aspx?par1=verUsuario";
+            HyperLinkUsuario.NavigateUrl = "Usuario.aspx";
             HyperLinkAnadirPelicula.NavigateUrl = "AddEditPelicula.aspx";
             HyperLinkAnadirSerie.NavigateUrl = "AddEditSerie.aspx";
             HyperLinkAbout.NavigateUrl = "About.aspx";

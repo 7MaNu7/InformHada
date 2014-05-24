@@ -20,7 +20,7 @@ namespace WebApplication1
                     Response.Redirect("Default.aspx");
 
                 int id = Convert.ToInt32(Request.QueryString["id"]);
-                if (id != 0)
+                if (id != 0)                                            //Para editar un film
                 {
                     TextBoxTitulo.Visible = false;
                     pelicula.Id = id;
@@ -35,8 +35,11 @@ namespace WebApplication1
                     TextBoxTrailer.Text = pelicula.Trailer;
                     BotonAddEdit.Text = "Guardar cambios";
                 }
-                else
+                else                                                    //Para añadir un film
                 {
+                    ImagenPortada.ImageUrl = "~/img/film/portada/00.jpg";
+                    ImagenCaratula.ImageUrl = "~/img/film/caratula/00.jpg";                    
+
                     LiteralTitulo.Visible = false;
                     BotonAddEdit.Text = "Añadir película";
                 }
@@ -62,12 +65,11 @@ namespace WebApplication1
                 pelicula.Trailer = TextBoxTrailer.Text;
                 pelicula.UpdatePelicula();
                 
-}
+            }
             else
             {
                 //Guardar datos y insert
                 pelicula.Titulo = TextBoxTitulo.Text;
-
                 pelicula.Director = TextBoxDirector.Text;
                 pelicula.Ano = int.Parse(TextBoxAno.Text);
                 pelicula.Sinopsis = TextBoxSinopsis.Text;
@@ -77,6 +79,7 @@ namespace WebApplication1
                 pelicula.Trailer = TextBoxTrailer.Text;
                 pelicula.InsertarPelicula();
             }
+
             int max = pelicula.MaximoId();
             if (FileUploadControl.HasFile)
             {
@@ -87,12 +90,10 @@ namespace WebApplication1
                         FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + max+1 + ".jpg");
                     else
                         FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + pelicula.Id + ".jpg");
-                 //   StatusLabel.Text = "Upload status: File uploaded!";
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-                  //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                 }
             }
             if (FileUpload1.HasFile)
@@ -101,12 +102,10 @@ namespace WebApplication1
                 {
                     string filename = Path.GetFileName(FileUpload1.FileName);
                     FileUpload1.SaveAs(Server.MapPath("~/img/film/portada/") + pelicula.Id + ".jpg");
-                    //   StatusLabel.Text = "Upload status: File uploaded!";
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-                    //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                 }
             }
             Response.Redirect("Pelicula.aspx?id=" + id);

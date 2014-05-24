@@ -20,8 +20,7 @@ namespace WebApplication1
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            HyperLinkAddPelicula.NavigateUrl = "AddEditPelicula.aspx?par1=anadirPelicula";
+            HyperLinkAddPelicula.NavigateUrl = "AddEditPelicula.aspx";
 
             if (Session["usuario"] == null)
                 HyperLinkAddPelicula.Visible = false;

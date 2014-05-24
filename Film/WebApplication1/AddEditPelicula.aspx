@@ -9,19 +9,19 @@
 
         <!-- CABECERA DE LA SERIE  -->
         <div class="cabecera_pelicula">
+
             <div class="portada_serie" style="background-image:url('');">
-                <img class="fondoblurred" src="http://3.bp.blogspot.com/-tREmR3WN5LE/UwryZrZBKPI/AAAAAAAAu-s/E_UwmO8UvKM/s1600/divergente-banner.jpg" alt="fotou_portada"/>
+                <asp:Image ID="ImagenPortada" CssClass="fondoblurred" runat="server"/>
                 <div id="mybutton2">
                     Cambiar Imagen
                     <asp:FileUpload CssClass="upload"  id="FileUpload1" runat="server" /> 
                 </div>
             </div>
-             <img class="caratula" src="http://s3-eu-west-1.amazonaws.com/abandomedia/db/foto/db_18973_41.jpg" alt="fotou_perfil"/>
-              
-              <div id="mybutton">
+
+             <asp:Image ID="ImagenCaratula" CssClass="caratula" runat="server"/>             
+             <div id="mybutton">
                 Cambiar Imagen
                 <asp:FileUpload CssClass="upload"  id="FileUploadControl" runat="server" /> 
-                
             </div>
               
              <div class="info_cabecera">
@@ -35,12 +35,10 @@
                     </asp:RequiredFieldValidator>
                 </h2>
                 
-                
                 <p> <asp:TextBox ID="TextBoxDirector" PlaceHolder="Director" runat="server" >  </asp:TextBox> </p>
                 <p> <asp:TextBox ID="TextBoxGenero" PlaceHolder="Genero" runat="server" >  </asp:TextBox> </p>
                 <p> <asp:TextBox ID="TextBoxBandaSonora" PlaceHolder="Banda sonora" runat="server"></asp:TextBox> </p>
                 <p> <asp:TextBox ID="TextBoxAno" PlaceHolder="Año" runat="server" ></asp:TextBox> </p>
-               
         
              </div>
          </div>
