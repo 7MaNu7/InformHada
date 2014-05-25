@@ -45,7 +45,7 @@
         <div class="pelicula_contenido">
             <div class="pelicula_contenido_i">
                 <asp:Button ID="BotonAddEdit" CssClass="anadir" runat="server" Text="Guardar cambios"
-                     OnClick="BotonAddEditOnClick" />
+                     OnClick="BotonAddEditOnClick" ValidationGroup="1" />
             </div>
             <div class="pelicula_contenido_d">
                <h2>Sinopsis</h2>

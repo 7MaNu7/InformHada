@@ -28,13 +28,13 @@
                 <p>Temporada: <asp:TextBox ID="TextBoxTemporada" placeholder="Nº Temporada" runat="server" > </asp:TextBox> 
                     <asp:RequiredFieldValidator CssClass="ValidarTitulo" ID="ValidarTemporadaRellena" runat="server" 
                         ForeColor="White" ErrorMessage="Escribe la temporada"
-                        ControlToValidate="TextBoxTitulo" ValidationGroup="1"> 
+                        ControlToValidate="TextBoxTemporada" ValidationGroup="1"> 
                     </asp:RequiredFieldValidator>
                 </p>
                 <p>Capítulo nº: <asp:TextBox ID="TextBoxNCapitulo" placeholder="Nº capitulo" runat="server"> </asp:TextBox> 
                     <asp:RequiredFieldValidator CssClass="ValidarTitulo" ID="ValidarCapituloRelleno" runat="server" 
                         ForeColor="White" ErrorMessage="Escribe el capítulo"
-                        ControlToValidate="TextBoxTitulo" ValidationGroup="1"> 
+                        ControlToValidate="TextBoxNCapitulo" ValidationGroup="1"> 
                     </asp:RequiredFieldValidator>
 
                     <asp:CustomValidator ID="ValidarTemporadaNCapitulo" runat="server" CssClass="ValidarTitulo" 
@@ -56,13 +56,17 @@
             </div>
             <div class="contenido_capitulo_d">
                <h2>Sinopsis 
-                <span> <asp:HyperLink ID="HyperLinkEditarCapitulo" runat="server" Text="Editar"> </asp:HyperLink> </span>
+                <span> <asp:HyperLink ID="HyperLinkEditarCapitulo" runat="server" Text="Editar"> 
+                        </asp:HyperLink> 
+                </span>
                </h2>
                
                <p> <asp:TextBox ID="TextBoxSinopsis" runat="server" TextMode="MultiLine"> </asp:TextBox> </p>
 
                <div class="volver_serie" style="float:right;">
-                <p> <asp:HyperLink ID="HyperLinkVolverSerie" runat="server" Text="Volver a la serie"> </asp:HyperLink> </p>
+                <p> <asp:HyperLink ID="HyperLinkVolverSerie" runat="server" Text="Volver a la serie"> 
+                    </asp:HyperLink>
+               </p>
                </div>
             </div>
 

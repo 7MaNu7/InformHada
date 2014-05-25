@@ -51,122 +51,120 @@ namespace WebApplication1
         {
             int id = Convert.ToInt32(Request.QueryString["id"]);
             Response.BufferOutput = true;
-
-            if (id != 0)
-            {
-                //Guardar datos y update
-                pelicula.Id = id;
-                pelicula = pelicula.DamePelicula();
-                pelicula.Director = TextBoxDirector.Text;
-                pelicula.Ano = Convert.ToInt32(TextBoxAno.Text);
-                pelicula.Sinopsis = TextBoxSinopsis.Text;
-                pelicula.Genero = TextBoxGenero.Text;
-                pelicula.Reparto = TextBoxReparto.Text;
-                pelicula.BandaSonora = TextBoxBandaSonora.Text;
-                pelicula.Trailer = TextBoxTrailer.Text;
-
-                pelicula.UpdatePelicula();
-
-                //int max = pelicula.MaximoId();
-                if (FileUploadControl.HasFile)
+            
+                if (id != 0)
                 {
-                    try
-                    {
-                        string filename = Path.GetFileName(FileUploadControl.FileName);
-                        FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + id + ".jpg");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                }
-                if (FileUpload1.HasFile)
-                {
-                    try
-                    {
-                        string filename = Path.GetFileName(FileUpload1.FileName);
-                        FileUpload1.SaveAs(Server.MapPath("~/img/film/portada/") + id + ".jpg");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                }
-                Response.Redirect("Pelicula.aspx?id=" + id);
-
-            }
-            else
-            {
-                //Guardar datos y insert
-                pelicula.Titulo = TextBoxTitulo.Text;
-                pelicula.Director = TextBoxDirector.Text;
-                if (TextBoxAno.Text != "")
+                    //Guardar datos y update
+                    pelicula.Id = id;
+                    pelicula = pelicula.DamePelicula();
+                    pelicula.Director = TextBoxDirector.Text;
                     pelicula.Ano = Convert.ToInt32(TextBoxAno.Text);
-                pelicula.Sinopsis = TextBoxSinopsis.Text;
-                pelicula.Genero = TextBoxGenero.Text;
-                pelicula.Reparto = TextBoxReparto.Text;
-                pelicula.BandaSonora = TextBoxBandaSonora.Text;
-                pelicula.Trailer = TextBoxTrailer.Text;
-                pelicula.InsertarPelicula();
+                    pelicula.Sinopsis = TextBoxSinopsis.Text;
+                    pelicula.Genero = TextBoxGenero.Text;
+                    pelicula.Reparto = TextBoxReparto.Text;
+                    pelicula.BandaSonora = TextBoxBandaSonora.Text;
+                    pelicula.Trailer = TextBoxTrailer.Text;
 
-                int id_nuevo = pelicula.MaximoId();
+                    pelicula.UpdatePelicula();
 
-                if (FileUpload1.HasFile)
-                {
-                    try
+                    //int max = pelicula.MaximoId();
+                    if (FileUploadControl.HasFile)
                     {
-                        string filename = Path.GetFileName(FileUpload1.FileName);
-                        FileUpload1.SaveAs(Server.MapPath("~/img/film/portada/") + id_nuevo + ".jpg");
+                        try
+                        {
+                            string filename = Path.GetFileName(FileUploadControl.FileName);
+                            FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + id + ".jpg");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
                     }
-                    catch (Exception ex)
+                    if (FileUpload1.HasFile)
                     {
-                        Console.WriteLine(ex.Message);
+                        try
+                        {
+                            string filename = Path.GetFileName(FileUpload1.FileName);
+                            FileUpload1.SaveAs(Server.MapPath("~/img/film/portada/") + id + ".jpg");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
                     }
+                    Response.Redirect("Pelicula.aspx?id=" + id);
+
                 }
                 else
                 {
-                    try
-                    {
-                        string filename = Path.GetFileName(FileUpload1.FileName);
-                        FileUpload1.SaveAs(Server.MapPath("~/img/film/portada/") + "00" + ".jpg");
+                    //Guardar datos y insert
+                    pelicula.Titulo = TextBoxTitulo.Text;
+                    pelicula.Director = TextBoxDirector.Text;
+                    if (TextBoxAno.Text != "")
+                        pelicula.Ano = Convert.ToInt32(TextBoxAno.Text);
+                    pelicula.Sinopsis = TextBoxSinopsis.Text;
+                    pelicula.Genero = TextBoxGenero.Text;
+                    pelicula.Reparto = TextBoxReparto.Text;
+                    pelicula.BandaSonora = TextBoxBandaSonora.Text;
+                    pelicula.Trailer = TextBoxTrailer.Text;
+                    pelicula.InsertarPelicula();
 
-                    }
-                    catch (Exception ex)
+                    int id_nuevo = pelicula.MaximoId();
+
+                    if (FileUpload1.HasFile)
                     {
-                        Console.WriteLine(ex.Message);
+                        try
+                        {
+                            string filename = Path.GetFileName(FileUpload1.FileName);
+                            FileUpload1.SaveAs(Server.MapPath("~/img/film/portada/") + id_nuevo + ".jpg");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
                     }
-                }
+                    else
+                    {
+                        try
+                        {
+                            string filename = Path.GetFileName(FileUpload1.FileName);
+                            FileUpload1.SaveAs(Server.MapPath("~/img/film/portada/") + "00" + ".jpg");
+
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
+                    }
 
 
-                if (FileUploadControl.HasFile)
-                {
-                    try
+                    if (FileUploadControl.HasFile)
                     {
-                        string filename = Path.GetFileName(FileUpload1.FileName);
-                        FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + id_nuevo + ".jpg");
+                        try
+                        {
+                            string filename = Path.GetFileName(FileUpload1.FileName);
+                            FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + id_nuevo + ".jpg");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        Console.WriteLine(ex.Message);
+                        try
+                        {
+                            string filename = Path.GetFileName(FileUpload1.FileName);
+                            FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + "00" + ".jpg");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
                     }
-                }
-                else
-                {
-                    try
-                    {
-                        string filename = Path.GetFileName(FileUpload1.FileName);
-                        FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + "00" + ".jpg");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                }
 
-                Response.Redirect("Pelicula.aspx?id=" + id_nuevo);
+                    Response.Redirect("Pelicula.aspx?id=" + id_nuevo);
             }
-
-
         }
     }
 }
