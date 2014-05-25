@@ -22,7 +22,7 @@
               <div id="mybutton">
                 Cambiar Imagen
                 <asp:FileUpload CssClass="upload"  id="FileUploadControl" runat="server" /> 
-            </div>
+              </div>
               
              <div class="info_cabecera">
                 

@@ -123,20 +123,6 @@ namespace WebApplication1
                             Console.WriteLine(ex.Message);
                         }
                     }
-                    else
-                    {
-                        try
-                        {
-                            string filename = Path.GetFileName(FileUpload1.FileName);
-                            FileUpload1.SaveAs(Server.MapPath("~/img/film/portada/") + "00" + ".jpg");
-
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine(ex.Message);
-                        }
-                    }
-
 
                     if (FileUploadControl.HasFile)
                     {
@@ -144,18 +130,6 @@ namespace WebApplication1
                         {
                             string filename = Path.GetFileName(FileUpload1.FileName);
                             FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + id_nuevo + ".jpg");
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine(ex.Message);
-                        }
-                    }
-                    else
-                    {
-                        try
-                        {
-                            string filename = Path.GetFileName(FileUpload1.FileName);
-                            FileUploadControl.SaveAs(Server.MapPath("~/img/film/caratula/") + "00" + ".jpg");
                         }
                         catch (Exception ex)
                         {
