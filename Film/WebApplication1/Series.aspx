@@ -8,7 +8,22 @@
     <div  style="
     position: absolute;
     padding-top: 33px;">
-   
+   <style>
+   body {
+        background: url('http://k45.kn3.net/707DBBD0B.png') ;
+
+        }
+   .page
+   {
+       background:none !important;
+   }
+   .main a:visited {
+    color: white;
+    }
+    .main a {
+    color: rgba(36, 36, 36, 0.8) !important;
+    }
+   </style>
     <h2> <asp:HyperLink ID="HyperLinkAddSerie" runat="server" EnableViewState="false" PostBackUrl="String" style="padding: 25px 25px 1.5px 25px;"> Añadir serie </asp:HyperLink> </h2>        
 
     <div class="peliculas_contenido" style="padding: 25px 25px 1.5px 25px;">

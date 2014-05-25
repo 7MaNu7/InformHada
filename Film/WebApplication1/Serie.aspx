@@ -48,7 +48,8 @@
                <h2>Reparto</h2>
                <p><asp:Literal ID="reparto" runat="server"></asp:Literal></p>
                 <h2>Trailer</h2>
-                <asp:Literal ID="trailer" runat="server"></asp:Literal>
+               <asp:Literal ID="trailer" runat="server"></asp:Literal>
+
                 
                 <br />
 
