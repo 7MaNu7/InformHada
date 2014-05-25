@@ -49,8 +49,7 @@ namespace WebApplication1
                         
                         LiteralSerie.Text = serie.Titulo.ToString();
                         
-                        TextBoxNCapitulo.Text = "Número del capítulo";
-                        TextBoxSinopsis.Text = "Descripción sobre el capítulo";
+                        
                     }
                     else
                     {
