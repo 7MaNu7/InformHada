@@ -100,11 +100,11 @@ namespace WebApplication1
             {
                 BotonAmigo.Visible = false;
 
-                d = usuario.DameAmigos();
+                d = usuario.DameAmigos(5);
                 ListViewAmigos.DataSource = d;
                 ListViewAmigos.DataBind();
 
-                d = usuario.DameUsuariosQuizasConozca();
+                d = usuario.DameUsuariosQuizasConozca(5);
                 ListViewQuizasConozcas.DataSource = d;
                 ListViewQuizasConozcas.DataBind();
             }
@@ -112,11 +112,11 @@ namespace WebApplication1
 
             if (!Page.IsPostBack && id != 0)
             {
-                d = amigo.DameAmigos();
+                d = amigo.DameAmigos(5);
                 ListViewAmigos.DataSource = d;
                 ListViewAmigos.DataBind();
 
-                d = amigo.DameUsuariosQuizasConozca();
+                d = amigo.DameUsuariosQuizasConozca(5);
                 ListViewQuizasConozcas.DataSource = d;
                 ListViewQuizasConozcas.DataBind();
 

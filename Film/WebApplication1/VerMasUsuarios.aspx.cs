@@ -28,7 +28,7 @@ namespace WebApplication1
 
             if (!Page.IsPostBack)
             {
-                d = usuario.DameUsuariosQuizasConozca();
+                d = usuario.DameUsuariosQuizasConozca(0);
                 ListViewQuizasConozcas.DataSource = d;
                 ListViewQuizasConozcas.DataBind();
             }
@@ -46,7 +46,7 @@ namespace WebApplication1
             usuario.Id = id;
             usuario.DameUsuario();*/
 
-            d = usuario.DameUsuariosQuizasConozca();
+            d = usuario.DameUsuariosQuizasConozca(0);
             ListViewQuizasConozcas.DataSource = d;
             ListViewQuizasConozcas.DataBind();
         }

@@ -22,10 +22,10 @@
 }
 
 .infocabecera {
-    position: absolute;
-    bottom: 30px;
-    left: calc(50% - 170px);
-    color: White;
+position: absolute;
+bottom: 60px;
+left: calc(50% - 170px);
+color: white;
 }
 .infocabecera h2
 {
@@ -174,3 +174,15 @@ padding-top: 18px;
 color: rgb(77, 77, 77);
 }
 
+input.cabecerasAddEdita {
+Width: 238px;
+border: none;
+padding: 2px;
+padding-left: 7px;
+background: none;
+color: white;
+/* border-bottom: solid 1px; */
+border-left: solid 1px rgb(255, 255, 255);
+box-shadow: 0 0 88px rgba(34, 33, 33, 1);
+text-shadow: 0 0 5px black;
+}
