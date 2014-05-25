@@ -436,6 +436,8 @@ opacity:0.8;
 width: 32px;
 padding-left: 2px;
 border-radius: 2px;
+background: url('/img/users/0.jpg');
+background-size: contain;
 }
 
 
@@ -605,4 +607,34 @@ box-shadow: 0 0 11px -1px rgba(0, 0, 0, 0.63);
 
 background: url('/img/film/caratula/0.jpg');
 
+}
+
+
+.info_cabecera input {
+border: none;
+padding: 2px;
+padding-left: 7px;
+background: none;
+color: white;
+/* border-bottom: solid 1px; */
+border-left: solid 1px rgb(255, 255, 255);
+box-shadow: 0 0 88px rgba(34, 33, 33, 1);
+text-shadow: 0 0 5px black;
+}
+
+.info_cabecera input::-webkit-input-placeholder { /* WebKit browsers */
+    color:    white;
+    text-shadow: 0 0 5px black;
+}
+.info_cabecera input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    white;
+    text-shadow: 0 0 5px black;
+}
+.info_cabecera input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    white;
+    text-shadow: 0 0 5px black;
+}
+.info_cabecera input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    white;
+    text-shadow: 0 0 5px black;
 }

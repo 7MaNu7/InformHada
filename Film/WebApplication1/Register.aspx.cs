@@ -23,7 +23,10 @@ namespace WebApplication1.Account
             {
                 if (Page.IsValid)
                 {
-                    DateTime fec = Convert.ToDateTime(TextBoxFecha.Text.ToString());
+                      DateTime fec=Convert.ToDateTime("1/1/1941");
+                      if (TextBoxFecha.Text != "")
+                      
+                          fec = Convert.ToDateTime(TextBoxFecha.Text.ToString());
 
                     if (fec.Year < 1940 || fec.Year > 2010)
                     {

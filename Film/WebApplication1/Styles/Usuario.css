@@ -163,3 +163,14 @@ padding: 0px;
 cursor: pointer;
 color: #696969;
 }
+input#MainContent_VerMasAmigos, input#MainContent_VerMasPosiblesAmigos{
+clear: both;
+display: table;
+background: none;
+border: none;
+cursor: pointer;
+width: 100%;
+padding-top: 18px;
+color: rgb(77, 77, 77);
+}
+

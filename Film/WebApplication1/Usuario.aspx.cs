@@ -38,7 +38,7 @@ namespace WebApplication1
                     BotonEditar.Visible = false;
                     Panel1.Visible = false;
                 }
-                DateTime fechanacimiento = Convert.ToDateTime( amigo.FechaNacimiento);
+                DateTime fechanacimiento = Convert.ToDateTime(amigo.FechaNacimiento);
                 LiteralNombre1.Text = amigo.Usuario;
                 LiteralNombre.Text = amigo.Usuario;
                 LiteralFechaNacimiento.Text = fechanacimiento.ToShortDateString();
@@ -73,7 +73,7 @@ namespace WebApplication1
                 LiteralEmail1.Text = usuario.Email;
                 LiteralEmail.Text = usuario.Email;
                 LiteralInformacion.Text = usuario.Informacion;
-                
+
 
                 imgperfil.ImageUrl = "~/img/users/" + usuario.Id.ToString() + ".jpg";
                 portada.ImageUrl = "~/img/users/portada/" + usuario.Id.ToString() + ".jpg";
@@ -84,10 +84,10 @@ namespace WebApplication1
                 Response.Redirect("Default.aspx");
             }
 
-            HyperLinkAddPelicula.NavigateUrl="AddEditPelicula.aspx?par1=anadirPelicula";
-            HyperLinkAddSerie.NavigateUrl="AddEditSerie.aspx?par1=anadirSerie";
-            
-            if (Session["usuario"]!=null)
+            HyperLinkAddPelicula.NavigateUrl = "AddEditPelicula.aspx?par1=anadirPelicula";
+            HyperLinkAddSerie.NavigateUrl = "AddEditSerie.aspx?par1=anadirSerie";
+
+            if (Session["usuario"] != null)
             {
                 BotonEditar.Text = "Editar";
             }
@@ -99,7 +99,7 @@ namespace WebApplication1
             if (id == usuario.Id || id == 0)
             {
                 BotonAmigo.Visible = false;
-                
+
                 d = usuario.DameAmigos();
                 ListViewAmigos.DataSource = d;
                 ListViewAmigos.DataBind();
@@ -110,7 +110,7 @@ namespace WebApplication1
             }
 
 
-            if (!Page.IsPostBack && id!=0 )
+            if (!Page.IsPostBack && id != 0)
             {
                 d = amigo.DameAmigos();
                 ListViewAmigos.DataSource = d;
@@ -130,10 +130,10 @@ namespace WebApplication1
         protected void BotonAmigoOnClick(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(Request.QueryString["id"]);
-                
-            if (Session["usuario"] != null && id!=0)
+
+            if (Session["usuario"] != null && id != 0)
             {
-               usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
+                usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
 
                 amigo.Id = id;
                 amigo = amigo.DameUsuario();
@@ -163,7 +163,7 @@ namespace WebApplication1
         protected void BotonEditarOnClick(object sender, EventArgs e)
         {
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
-            if (usuario!=null)
+            if (usuario != null)
             {
                 Response.Redirect("EditUsuario.aspx");
             }
@@ -173,7 +173,7 @@ namespace WebApplication1
         {
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
             int id = Convert.ToInt32(Request.QueryString["id"]);
-<<<<<<< HEAD
+            //<<<<<<< HEAD
             if (usuario != null && id != 0) //ver amigos de otros
             {
                 Response.Redirect("VerMasAmigos.aspx?id=" + id.ToString());
@@ -183,20 +183,20 @@ namespace WebApplication1
                 Response.Redirect("VerMasAmigos.aspx?id=" + usuario.Id.ToString());
             }
             else if (usuario == null) //para ver amigos de otros te tienes que loguear
-=======
-            if (usuario != null && id!=0)           //ver amigos de otros
-            {
-                Response.Redirect("VerMasAmigos.aspx?id="+id.ToString());
-            }
-            else if (id == 0 && usuario!=null)      //ver tus propios amigos
-            {
-                Response.Redirect("VerMasAmigos.aspx?id=" + usuario.Id.ToString());
-            }
-            else if (usuario == null)   //para ver amigos de otros te tienes que loguear
->>>>>>> 7f3ba08be7517c7ed03712d97c1dfb7895a95bf1
-            {
-                Response.Redirect("Login.aspx");
-            }
+                //=======
+                if (usuario != null && id != 0)           //ver amigos de otros
+                {
+                    Response.Redirect("VerMasAmigos.aspx?id=" + id.ToString());
+                }
+                else if (id == 0 && usuario != null)      //ver tus propios amigos
+                {
+                    Response.Redirect("VerMasAmigos.aspx?id=" + usuario.Id.ToString());
+                }
+                else if (usuario == null)   //para ver amigos de otros te tienes que loguear
+                //>>>>>>> 7f3ba08be7517c7ed03712d97c1dfb7895a95bf1
+                {
+                    Response.Redirect("Login.aspx");
+                }
         }
 
         protected void VerMasPosiblesAmigosOnClick(object sender, EventArgs e)
@@ -204,12 +204,13 @@ namespace WebApplication1
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
             //"quizas conozcas a" solo se muestra al propio usuario, no en los demas perfiles
             if (usuario != null)
-<<<<<<< HEAD
+            //<<<<<<< HEAD
             { //se sacaran amigos de amigo
-=======
-            {                                                //se sacaran amigos de amigo
->>>>>>> 7f3ba08be7517c7ed03712d97c1dfb7895a95bf1
-                Response.Redirect("VerMasUsuarios.aspx");
+                //=======
+                {                                                //se sacaran amigos de amigo
+                    //>>>>>>> 7f3ba08be7517c7ed03712d97c1dfb7895a95bf1
+                    Response.Redirect("VerMasUsuarios.aspx");
+                }
             }
         }
     }
