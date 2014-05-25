@@ -56,13 +56,14 @@ namespace WebApplication1
                 caratula.ImageUrl = "/img/film/caratula/"+pelicula.Id+".jpg";
                 fondo.ImageUrl = "/img/film/portada/" + pelicula.Id + ".jpg";
                 titulo.Text = pelicula.Titulo;
+
                 musica.Text = pelicula.BandaSonora;
                 sinopsis.Text = pelicula.Sinopsis;
                 director.Text = pelicula.Director;
                 trailer.Text = pelicula.Trailer;
-                puntuacion.Text = pelicula.Puntuacion.ToString();
-                reparto.Text = pelicula.Reparto.ToString();
-                ano.Text = pelicula.Ano.ToString();
+                puntuacion.Text = Convert.ToString( pelicula.Puntuacion);
+                reparto.Text = Convert.ToString(pelicula.Reparto);
+                ano.Text = Convert.ToString(pelicula.Ano);
                 
             }
             if (usuario != null)

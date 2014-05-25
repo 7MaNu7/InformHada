@@ -9,10 +9,13 @@
 
 .caratula {
 position: absolute;
-bottom: -29px;
+bottom: -28px;
 left: 89px;
 width:200px;
+background: url('/img/film/caratula/0.jpg');
+min-height:260px;
 }
+
 
 .puntuacion 
 {

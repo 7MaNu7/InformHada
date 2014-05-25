@@ -33,6 +33,9 @@ namespace WebApplication1
                     TextBoxBandaSonora.Text = serie.BandaSonora;
                     TextBoxTrailer.Text = serie.Trailer;
                     BotonAddEdit.Text = "Guardar cambios";
+                    TextBoxTitulo.Visible = false;
+                    caratula.ImageUrl = "/img/film/caratula/" + serie.Id + ".jpg";
+                    portada.ImageUrl = "/img/film/portada/" + serie.Id + ".jpg";
                 }
                 else
                 {
@@ -94,7 +97,8 @@ namespace WebApplication1
                 //Guardar datos y insert
                 serie.Titulo = TextBoxTitulo.Text;
                 serie.Director = TextBoxDirector.Text;
-                serie.Ano = int.Parse(TextBoxAno.Text);
+                if (TextBoxAno.Text != "")
+                    serie.Ano = Convert.ToInt32(TextBoxAno.Text);
                 serie.Sinopsis = TextBoxSinopsis.Text;
                 serie.Genero = TextBoxGenero.Text;
                 serie.Reparto = TextBoxReparto.Text;

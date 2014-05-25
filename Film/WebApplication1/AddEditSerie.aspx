@@ -9,14 +9,14 @@
 
         <!-- CABECERA DE LA SERIE  -->
         <div class="cabecera_pelicula">
-            <div class="portada_serie" style="background-image:url('');">
-                <img class="fondoblurred" src="http://dfghj7h6esbng.cloudfront.net/wp-content/uploads/2013/10/EEEEE.jpg" alt="fotou_portada"/>
+            <div class="portada_serie">
+                <asp:Image ID="portada" CssClass="fondoblurred" runat="server" />
                  <div id="mybutton2">
                     Cambiar Imagen
                     <asp:FileUpload CssClass="upload"  id="FileUpload1" runat="server" /> 
                 </div>
             </div>
-             <img class="caratula" src="http://1.bp.blogspot.com/-vxniewvE-is/Uev-hLHff4I/AAAAAAAAYFE/M2-s72D2iM4/s1600/13060086-vista-frontal-de-un-rollo-de-pelicula-con-una-tira-de-pelicula-delante-de-el-3d.jpg" alt="fotou_perfil"/>
+            <asp:Image ID="caratula" CssClass="caratula" runat="server" />
               
               <div id="mybutton">
                 Cambiar Imagen
@@ -66,16 +66,7 @@
                     </asp:TextBox>
                 </p>
                 
-                <h2>Capitulos - <span style="
-                                background: rgba(195, 195, 199, 0.44);
-                                font-size: 15px;
-                                vertical-align: middle;
-                                cursor: pointer;
-                                padding: 4px 12px 4px 12px;
-                                border-radius: 4px;">AÑADIR</span>
-                </h2>
                 
-                </div>
             </div>
         </div>
     </div>

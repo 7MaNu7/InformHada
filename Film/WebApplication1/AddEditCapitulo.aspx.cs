@@ -56,6 +56,8 @@ namespace WebApplication1
                     {
                         //Editar capítulo
                         BotonAddEdit.Text = "Guadar cambios";
+                        caratula.ImageUrl = "/img/film/caratula/" + capitulo.Id + ".jpg";
+                        caratula.ImageUrl = "/img/film/portada/" + capitulo.Id + ".jpg";
                         TextBoxTitulo.Text = capitulo.Titulo.ToString();
                         LiteralSerie.Text = serie.Titulo.ToString();
                         TextBoxTemporada.Text = capitulo.Temporada.ToString();

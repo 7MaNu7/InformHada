@@ -22,6 +22,8 @@ namespace WebApplication1
                 {
                     LiteralNombre.Text = usuario.Usuario;
                     TextBoxUsuario.Text = usuario.Usuario;
+                    caratula.ImageUrl = "/img/users/" + usuario.Id + ".jpg";
+                    fondo.ImageUrl = "/img/users/portada/" + usuario.Id + ".jpg";
                     TextBoxPais.Text = usuario.Pais;
                     if (usuario.Sexo == "Varón")
                         SexoHombre.Selected = true;

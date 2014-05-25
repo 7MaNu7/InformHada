@@ -12,7 +12,7 @@
 
        <!-- CABECERA DE LA PELICULA  -->
         <div class="cabecera_serie">
-            <div class="portada_serie" style="background-image:url('');">
+            <div class="portada_serie">
                 <asp:Image ID="fondo" CssClass="fondoblurred" runat="server" />           
             </div>
             <asp:Image ID="caratula" CssClass="caratula" runat="server" />

@@ -14,6 +14,7 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!Page.IsPostBack)
             {
                 if (Session["usuario"] == null)
@@ -33,6 +34,8 @@ namespace WebApplication1
                     TextBoxReparto.Text = pelicula.Reparto;
                     TextBoxBandaSonora.Text = pelicula.BandaSonora;
                     TextBoxTrailer.Text = pelicula.Trailer;
+                    caratula.ImageUrl = "/img/film/caratula/" + pelicula.Id + ".jpg";
+                    portada.ImageUrl = "/img/film/portada/" + pelicula.Id + ".jpg";
                     BotonAddEdit.Text = "Guardar cambios";
                 }
                 else                                                    //Para añadir un film
@@ -61,6 +64,7 @@ namespace WebApplication1
                 pelicula.Reparto = TextBoxReparto.Text;
                 pelicula.BandaSonora = TextBoxBandaSonora.Text;
                 pelicula.Trailer = TextBoxTrailer.Text;
+
                 pelicula.UpdatePelicula();
 
                 //int max = pelicula.MaximoId();
@@ -96,7 +100,8 @@ namespace WebApplication1
                 //Guardar datos y insert
                 pelicula.Titulo = TextBoxTitulo.Text;
                 pelicula.Director = TextBoxDirector.Text;
-                pelicula.Ano = int.Parse(TextBoxAno.Text);
+                if (TextBoxAno.Text != "")
+                    pelicula.Ano = Convert.ToInt32(TextBoxAno.Text);
                 pelicula.Sinopsis = TextBoxSinopsis.Text;
                 pelicula.Genero = TextBoxGenero.Text;
                 pelicula.Reparto = TextBoxReparto.Text;

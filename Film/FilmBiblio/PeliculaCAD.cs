@@ -115,7 +115,8 @@ namespace FilmBiblio
         {
             int id = MaximoId();
             id++;
-
+            if (pelicula.Ano==null )
+                pelicula.Ano=0;
             String orden ="insert into film values ";
 			orden+="( "+ id+", ";
 			orden+="'"+pelicula.Titulo+"', ";

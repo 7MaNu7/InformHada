@@ -64,49 +64,54 @@ namespace WebApplication1
                     BotonEditar.NavigateUrl = "AddEditserie.aspx?id=" + id;
                     BotonReport.NavigateUrl = "Report.aspx";
                     HyperLinkAddCapitulo.NavigateUrl = "AddEditCapitulo.aspx?id1=" + serie.Id;
+                        
+                        serie = serie.DameSerie();
+                        
+                        titulo.Text = serie.Titulo;
+                        musica.Text = serie.BandaSonora;
+                        sinopsis.Text = serie.Sinopsis;
+                        trailer.Text = serie.Trailer;
+                        puntuacion.Text = serie.Puntuacion.ToString();
 
-                    serie = serie.DameSerie();
-                    titulo.Text = serie.Titulo;
-                    musica.Text = serie.BandaSonora;
-                    sinopsis.Text = serie.Sinopsis;
-                    trailer.Text = serie.Trailer;
-                    puntuacion.Text = serie.Puntuacion.ToString();
-                    reparto.Text = serie.Reparto.ToString();
-                    ano.Text = serie.Ano.ToString();
-                    caratula.ImageUrl = "/img/film/caratula/" + serie.Id + ".jpg";
-                    fondo.ImageUrl = "/img/film/portada/" + serie.Id + ".jpg";
+                        reparto.Text = serie.Reparto;
+                        ano.Text = Convert.ToString( serie.Ano);
+                        caratula.ImageUrl = "/img/film/caratula/" + serie.Id + ".jpg";
+                        fondo.ImageUrl = "/img/film/portada/" + serie.Id + ".jpg";
 
-                    //Acordeon para los capítulos
-                    FilmBiblio.CapituloEN capitulo = new FilmBiblio.CapituloEN();
-                    Label lblTitle;
-                    Label lblContent;
-                    DataTable dt = new DataTable();
-                    AjaxControlToolkit.AccordionPane pn;
-                    DataSet d = new DataSet();
-                    d = capitulo.DameCapitulos(serie.Id);
-                    for (int i = 1; i <= capitulo.Temporadas(serie.Id); i++)
-                    {
-                        dt = d.Tables[0];
-                        pn = new AjaxControlToolkit.AccordionPane();
-                        pn.ID = "Pane" + i;
-                        lblTitle = new Label();
-                        lblContent = new Label();
-                        lblTitle.Text = "<h3 class='temporada_nombre'>Temporada " + i.ToString() + "</h3>";
-                        string contenido = "";
-                        foreach (DataRow dr in dt.Rows)
+                        //Acordeon para los capítulos
+                        FilmBiblio.CapituloEN capitulo = new FilmBiblio.CapituloEN();
+                        Label lblTitle;
+                        Label lblContent;
+                        DataTable dt = new DataTable();
+                        AjaxControlToolkit.AccordionPane pn;
+                        DataSet d = new DataSet();
+                        d = capitulo.DameCapitulos(serie.Id);
+                        for (int i = 1; i <= capitulo.Temporadas(serie.Id); i++)
                         {
-                            if (dr["temporada"].ToString() == i.ToString())
-                                contenido += "<a class='capitulo_nombre' href='Capitulo.aspx?id2=" + dr["id"].ToString() + "&id1=" + serie.Id + "'>" + dr["titulo"].ToString() + "</a>";
+                            dt = d.Tables[0];
+                            pn = new AjaxControlToolkit.AccordionPane();
+                            pn.ID = "Pane" + i;
+                            lblTitle = new Label();
+                            lblContent = new Label();
+                            lblTitle.Text = "<h3 class='temporada_nombre'>Temporada " + i.ToString() + "</h3>";
+                            string contenido = "";
+                            foreach (DataRow dr in dt.Rows)
+                            {
+                                if (dr["temporada"].ToString() == i.ToString())
+                                    contenido += "<a class='capitulo_nombre' href='Capitulo.aspx?id2=" + dr["id"].ToString() + "&id1=" + serie.Id + "'>" + dr["titulo"].ToString() + "</a>";
+                            }
+
+                            lblContent = new Label();
+                            lblContent.Text = contenido;
+                            pn.ContentContainer.Controls.Add(lblContent);
+                            pn.HeaderContainer.Controls.Add(lblTitle);
+                            pn.ContentContainer.Controls.Add(lblContent);
+                            Accordion1.Panes.Add(pn);
                         }
 
-                        lblContent = new Label();
-                        lblContent.Text = contenido;
-                        pn.ContentContainer.Controls.Add(lblContent);
-                        pn.HeaderContainer.Controls.Add(lblTitle);
-                        pn.ContentContainer.Controls.Add(lblContent);
-                        Accordion1.Panes.Add(pn);
                     }
-                }
+                    
+                
                 else
                 {
                     Response.Redirect("Series.aspx");
