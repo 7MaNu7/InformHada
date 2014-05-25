@@ -51,7 +51,6 @@ namespace WebApplication1
             {
                 d = pelicula.DamePeliculasRecientes(numero);
                 ListViewRecientes.DataSource = d;
-               
                 ListViewRecientes.DataBind();
 
                 d = serie.DameSeriesRecientes(numero);

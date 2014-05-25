@@ -51,6 +51,7 @@ namespace WebApplication1
 
                 imgperfil.ImageUrl = "~/img/users/" + amigo.Id.ToString() + ".jpg";
                 portada.ImageUrl = "~/img/users/portada/" + amigo.Id.ToString() + ".jpg";
+
                 if (usuario.sonAmigos(id))
                 {
                     BotonAmigo.Text = "Eliminar amigo";

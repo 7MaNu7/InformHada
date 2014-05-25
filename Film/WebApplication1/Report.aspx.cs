@@ -40,7 +40,7 @@ namespace WebApplication1
                     de_quien = new MailAddress("desconocido@gmail.com", "desconocido");
                 }
 
-                MailAddress a_quien = new MailAddress("encaramorosb@gmail.com", "Encarna");
+                MailAddress a_quien = new MailAddress("informhada@gmail.com", "InformaTV");
                 mensaje.From = de_quien;
 
                 mensaje.To.Add(a_quien);
@@ -49,8 +49,10 @@ namespace WebApplication1
                 mensaje.Body = texto_report;
                 smtpClient.EnableSsl = true;
 
-                smtpClient.Credentials = new System.Net.NetworkCredential("jorgeazorin@gmail.com", "48720521N");
+                smtpClient.Credentials = new System.Net.NetworkCredential("informhada@gmail.com", "eduardomanteca");
                 smtpClient.Send(mensaje);
+
+                TextBoxReport.Text = "";
                 LabelConfirmacion.Text = "Mensaje enviado";
             }
             catch (Exception ex)
