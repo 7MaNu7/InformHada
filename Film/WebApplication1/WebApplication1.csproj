@@ -121,7 +121,11 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Styles\Usuario.css" />
+    <Content Include="Styles\VerMas.css" />
+    <Content Include="Styles\VerMasAmigos.css" />
     <Content Include="Usuario.aspx" />
+    <Content Include="VerMasAmigos.aspx" />
+    <Content Include="VerMasUsuarios.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -277,6 +281,20 @@
     </Compile>
     <Compile Include="Usuario.aspx.designer.cs">
       <DependentUpon>Usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerMasAmigos.aspx.cs">
+      <DependentUpon>VerMasAmigos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerMasAmigos.aspx.designer.cs">
+      <DependentUpon>VerMasAmigos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerMasUsuarios.aspx.cs">
+      <DependentUpon>VerMasUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerMasUsuarios.aspx.designer.cs">
+      <DependentUpon>VerMasUsuarios.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

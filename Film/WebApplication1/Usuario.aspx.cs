@@ -73,6 +73,7 @@ namespace WebApplication1
                 LiteralEmail1.Text = usuario.Email;
                 LiteralEmail.Text = usuario.Email;
                 LiteralInformacion.Text = usuario.Informacion;
+                
 
                 imgperfil.ImageUrl = "~/img/users/" + usuario.Id.ToString() + ".jpg";
                 portada.ImageUrl = "~/img/users/portada/" + usuario.Id.ToString() + ".jpg";
@@ -165,6 +166,34 @@ namespace WebApplication1
             if (usuario!=null)
             {
                 Response.Redirect("EditUsuario.aspx");
+            }
+        }
+
+        protected void VerMasAmigosOnClick(object sender, EventArgs e)
+        {
+            usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
+            int id = Convert.ToInt32(Request.QueryString["id"]);
+            if (usuario != null && id!=0)           //ver amigos de otros
+            {
+                Response.Redirect("VerMasAmigos.aspx?id="+id.ToString());
+            }
+            else if (id == 0 && usuario!=null)      //ver tus propios amigos
+            {
+                Response.Redirect("VerMasAmigos.aspx?id=" + usuario.Id.ToString());
+            }
+            else if (usuario == null)   //para ver amigos de otros te tienes que loguear
+            {
+                Response.Redirect("Login.aspx");
+            }
+        }
+
+        protected void VerMasPosiblesAmigosOnClick(object sender, EventArgs e)
+        {
+            usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
+            //"quizas conozcas a" solo se muestra al propio usuario, no en los demas perfiles
+            if (usuario != null)
+            {                                                //se sacaran amigos de amigo
+                Response.Redirect("VerMasUsuarios.aspx");
             }
         }
     }
