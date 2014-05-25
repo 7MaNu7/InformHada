@@ -43,8 +43,7 @@
                              </a>
                          </ItemTemplate>
                     </asp:ListView>
-                    <p>Ver más</p>
-
+                    <asp:Button ID="VerMasAmigos" runat="server" Text="Ver más" OnClick="VerMasAmigosOnClick" />
                    
 
                 </div>
@@ -62,7 +61,8 @@
                          </ItemTemplate>
                     </asp:ListView>
 
-                    <p>Ver más</p>
+                    <asp:Button ID="VerMasPosiblesAmigos" runat="server" Text="Ver más" OnClick="VerMasPosiblesAmigosOnClick" />
+                   
 
                     </asp:Panel>
 
@@ -90,7 +90,5 @@
                 <asp:Button ID="BotonEditar" CssClass="botonanadireditarusr" runat="server" OnClick="BotonEditarOnClick" Text="Editar" />
             </div>
          </div>
-        
-
-    </div>
+        </div>
 </asp:Content>
