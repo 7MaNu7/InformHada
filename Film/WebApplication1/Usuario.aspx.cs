@@ -81,7 +81,7 @@ namespace WebApplication1
             }
             else
             {
-                Response.Redirect("Default.aspx");
+                Response.Redirect("Error.aspx");
             }
 
             HyperLinkAddPelicula.NavigateUrl = "AddEditPelicula.aspx?par1=anadirPelicula";

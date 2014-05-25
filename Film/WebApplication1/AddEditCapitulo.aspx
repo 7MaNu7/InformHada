@@ -61,7 +61,7 @@
                 </span>
                </h2>
                
-               <p> <asp:TextBox placeholder="Escribir sinopsis aqui" ID="TextBoxSinopsis" runat="server" TextMode="MultiLine"> </asp:TextBox> </p>
+               <p> <asp:TextBox ID="TextBoxSinopsis" runat="server" TextMode="MultiLine"> </asp:TextBox> </p>
 
                <div class="volver_serie" style="float:right;">
                 <p> <asp:HyperLink ID="HyperLinkVolverSerie" runat="server" Text="Volver a la serie"> 

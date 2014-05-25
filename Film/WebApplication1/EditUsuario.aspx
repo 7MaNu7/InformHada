@@ -78,7 +78,7 @@
                     <span>
                         <asp:TextBox ID="TextBoxFechaNacimiento" PlaceHolder="Fecha de nacimiento" runat="server"></asp:TextBox>
                         <asp:ImageButton runat="server" ID="ImagenCalendario" border-width="0" border-bottom="none" width="21px"
-                            height="21px"  BorderStyle="none" border-bottom-style="none"  ImageUrl="/img/calendario_icono.jpg" />
+                            height="21px" vertical-align="middle"  BorderStyle="none" border-bottom-style="none"  ImageUrl="/img/calendario_icono.jpg" />
                     </span>
 
                     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="Server" 
