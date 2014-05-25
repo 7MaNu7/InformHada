@@ -14,7 +14,7 @@ namespace WebApplication1.Account
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["usuario"] = null;
         }
 
         protected void BotonRegistroOnClick(object sender, EventArgs e)

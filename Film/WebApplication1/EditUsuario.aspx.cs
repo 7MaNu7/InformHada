@@ -40,7 +40,7 @@ namespace WebApplication1
             }
             if (Session["usuario"] == null)
             {
-                Response.Redirect("Default.aspx");
+                Response.Redirect("Error.aspx");
             }
         }
 

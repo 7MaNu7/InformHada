@@ -18,7 +18,7 @@ namespace WebApplication1
             if (!Page.IsPostBack)
             {
                 if (Session["usuario"] == null)
-                    Response.Redirect("Default.aspx");
+                    Response.Redirect("Error.aspx");
 
                 int id = Convert.ToInt32(Request.QueryString["id"]);
                 if (id != 0)                                            //Para editar un film

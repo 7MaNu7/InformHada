@@ -21,6 +21,9 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuario"] == null)
+                Response.Redirect("Error.aspx");
+
             usuario=(FilmBiblio.UsuarioEN)Session["usuario"]; 
             /*int id = Convert.ToInt32(Request.QueryString["id"]);
             usuario.Id = id;
@@ -28,7 +31,7 @@ namespace WebApplication1
 
             if (!Page.IsPostBack)
             {
-                d = usuario.DameUsuariosQuizasConozca(0);
+                d = usuario.DameUsuariosQuizasConozca();
                 ListViewQuizasConozcas.DataSource = d;
                 ListViewQuizasConozcas.DataBind();
             }
@@ -46,7 +49,7 @@ namespace WebApplication1
             usuario.Id = id;
             usuario.DameUsuario();*/
 
-            d = usuario.DameUsuariosQuizasConozca(0);
+            d = usuario.DameUsuariosQuizasConozca();
             ListViewQuizasConozcas.DataSource = d;
             ListViewQuizasConozcas.DataBind();
         }
