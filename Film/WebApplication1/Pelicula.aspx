@@ -51,7 +51,11 @@
                <p><asp:Literal ID="reparto" runat="server"></asp:Literal></p>
             
                 <h2>Trailer</h2>
-                <asp:Literal ID="trailer" runat="server"></asp:Literal>
+                               <iframe width="820" height="400" src="//www.youtube.com/embed/<asp:Literal ID="trailer" runat="server"></asp:Literal>?rel=0" frameborder="0" allowfullscreen></iframe>
+
+              <br />
+
+                <br />
                 <asp:Panel ID="Panelcomentar" runat="server">
                 <br />
 
