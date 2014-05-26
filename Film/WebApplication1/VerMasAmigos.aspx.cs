@@ -31,7 +31,7 @@ namespace WebApplication1
 
             if (!Page.IsPostBack)
             {
-                d = usuario.DameAmigos();
+                d = usuario.DameAmigos(0);
                 ListViewAmigos.DataSource = d;
                 ListViewAmigos.DataBind();
             }
@@ -49,7 +49,7 @@ namespace WebApplication1
             usuario.Id = id;
             usuario.DameUsuario();
 
-            d = usuario.DameAmigos();
+            d = usuario.DameAmigos(0);
             ListViewAmigos.DataSource = d;
             ListViewAmigos.DataBind();
         }

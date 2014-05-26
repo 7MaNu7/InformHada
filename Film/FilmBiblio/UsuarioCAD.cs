@@ -315,14 +315,20 @@ namespace FilmBiblio
         }
 
         //Devuelve una bd con los amigos y su información
-        public DataSet DameAmigos(int id)
+        public DataSet DameAmigos(int id, int numero)
         {
             SqlConnection c = new SqlConnection(conexion);
             DataSet bdvirtual = new DataSet();
+            String select_amigos;
 
             try
             {
-                String select_amigos = "Select id2 from amigos where id1="+id;
+
+                if (numero != 0)
+                    select_amigos = "Select top " + numero + " id2 from amigos where id1=" + id;
+                else
+                    select_amigos = "Select id2 from amigos where id1=" + id;
+
                 SqlDataAdapter ejecuta = new SqlDataAdapter(select_amigos, c);
                 ejecuta.Fill(bdvirtual, "series");
             }
@@ -374,14 +380,20 @@ namespace FilmBiblio
         }
 
         //Devuelve una bd con los amigos y su información
-        public DataSet DameAmigosDeAleatorio(int id_amigo, int id_usuario)
+        public DataSet DameAmigosDeAleatorio(int id_amigo, int id_usuario, int numero)
         {
             SqlConnection c = new SqlConnection(conexion);
             DataSet bdvirtual = new DataSet();
 
+            String select_amigos;
+
             try
             {
-                String select_amigos = "select id2 from amigos where id1=" + id_amigo;
+                if (numero != 0)
+                    select_amigos = "select  top " + numero + " id2 from amigos where id1=" + id_amigo;
+                else
+                    select_amigos = "select id2 from amigos where id1=" + id_amigo;
+
                 select_amigos += "and id2!="+id_usuario+" and id2 not in (select id2 from amigos where id1="+id_usuario+")";
                 SqlDataAdapter ejecuta = new SqlDataAdapter(select_amigos, c);
                 ejecuta.Fill(bdvirtual, "series");
@@ -393,12 +405,13 @@ namespace FilmBiblio
         }
 
         //Devuelve la información de todas los usuarios que quizás conozca el usuario (amigos de amigos)
-        public DataSet DameUsuariosQuizasConozca(int id)
+        public DataSet DameUsuariosQuizasConozca(int id, int numero)
         {
             SqlConnection c = new SqlConnection(conexion);
             DataSet bdvirtual = new DataSet();
             int id_amigo=DameUsuarioAleatorio(id);
-            bdvirtual = DameAmigosDeAleatorio(id_amigo, id);            
+            bdvirtual = DameAmigosDeAleatorio(id_amigo, id, numero);
+            
             return bdvirtual;
         }
     }   

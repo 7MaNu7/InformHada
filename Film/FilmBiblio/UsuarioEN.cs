@@ -137,9 +137,9 @@ namespace FilmBiblio
         }
 
         //Devuelve un array con los amigos del usuario
-        public DataSet DameAmigos()
+        public DataSet DameAmigos(int numero)
         {
-            bd = usuarioCad.DameAmigos(this.id);
+            bd = usuarioCad.DameAmigos(this.id, numero);
             return bd;
         }
 
@@ -151,9 +151,9 @@ namespace FilmBiblio
         }
 
         //Devuelve la información de todas los usuarios que quizás conozca el usuario (amigos de amigos)
-        public DataSet DameUsuariosQuizasConozca()
+        public DataSet DameUsuariosQuizasConozca(int numero)
         {
-            bd = usuarioCad.DameUsuariosQuizasConozca(this.id);
+            bd = usuarioCad.DameUsuariosQuizasConozca(this.id, numero);
             return bd;
         }
 

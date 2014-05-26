@@ -23,7 +23,7 @@
 
 .infocabecera {
 position: absolute;
-bottom: 58px;
+bottom: 60px;
 left: calc(50% - 170px);
 color: white;
 }
@@ -184,4 +184,17 @@ color: white;
 border-left: solid 1px rgb(255, 255, 255);
 box-shadow: 0 0 88px rgba(34, 33, 33, 1);
 text-shadow: 0 0 5px black;
+}
+
+input.cabecerasAddEdita {
+	Width: 238px;
+	border: none;
+	padding: 2px;
+	padding-left: 7px;
+	background: none;
+	color: white;
+	/* border-bottom: solid 1px; */
+	border-left: solid 1px rgb(255, 255, 255);
+	box-shadow: 0 0 88px rgba(34, 33, 33, 1);
+	text-shadow: 0 0 5px black;
 }

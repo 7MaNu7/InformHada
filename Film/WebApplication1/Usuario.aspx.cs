@@ -101,15 +101,17 @@ namespace WebApplication1
                 BotonEditar.Visible = false;
             }
 
+            int cantidad = 5;
+
             if (id == usuario.Id || id == 0)
             {
                 BotonAmigo.Visible = false;
 
-                d = usuario.DameAmigos();
+                d = usuario.DameAmigos(cantidad);
                 ListViewAmigos.DataSource = d;
                 ListViewAmigos.DataBind();
 
-                d = usuario.DameUsuariosQuizasConozca();
+                d = usuario.DameUsuariosQuizasConozca(cantidad);
                 ListViewQuizasConozcas.DataSource = d;
                 ListViewQuizasConozcas.DataBind();
             }
@@ -117,11 +119,11 @@ namespace WebApplication1
 
             if (!Page.IsPostBack && id != 0)
             {
-                d = amigo.DameAmigos();
+                d = amigo.DameAmigos(cantidad);
                 ListViewAmigos.DataSource = d;
                 ListViewAmigos.DataBind();
 
-                d = amigo.DameUsuariosQuizasConozca();
+                d = amigo.DameUsuariosQuizasConozca(cantidad);
                 ListViewQuizasConozcas.DataSource = d;
                 ListViewQuizasConozcas.DataBind();
 

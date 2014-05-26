@@ -61,10 +61,8 @@
                          </ItemTemplate>
                     </asp:ListView>
 
-                    <asp:Button ID="VerMasPosiblesAmigos" runat="server" Text="Ver más" OnClick="VerMasPosiblesAmigosOnClick" />
-                   
-
-                    
+                    <asp:Button ID="VerMasPosiblesAmigos" runat="server" Text="Ver más" 
+                        OnClick="VerMasPosiblesAmigosOnClick" />                   
 
                 </div>
                 </asp:Panel>

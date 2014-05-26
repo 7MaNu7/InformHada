@@ -48,9 +48,7 @@ namespace WebApplication1
                         Page.Title = "Añadiendo capítulo a "+serie.Titulo;
                         
                         BotonAddEdit.Text = "Añadir capítulo";
-                        LiteralSerie.Text = serie.Titulo.ToString();                        
-                        TextBoxNCapitulo.Text = "Número del capítulo";
-                        TextBoxSinopsis.Text = "Descripción sobre el capítulo";
+                        LiteralSerie.Text = serie.Titulo.ToString();            
                     }
                     else
                     {
