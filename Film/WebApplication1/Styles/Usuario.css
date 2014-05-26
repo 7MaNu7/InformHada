@@ -22,10 +22,10 @@
 }
 
 .infocabecera {
-    position: absolute;
-    bottom: 30px;
-    left: calc(50% - 170px);
-    color: White;
+position: absolute;
+bottom: 58px;
+left: calc(50% - 170px);
+color: white;
 }
 .infocabecera h2
 {

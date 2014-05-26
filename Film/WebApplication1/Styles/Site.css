@@ -610,7 +610,7 @@ background: url('/img/film/caratula/0.jpg');
 }
 
 
-.info_cabecera input {
+.info_cabecera input, input#MainContent_TextBoxEmail {
 border: none;
 padding: 2px;
 padding-left: 7px;

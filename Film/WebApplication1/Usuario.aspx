@@ -64,9 +64,10 @@
                     <asp:Button ID="VerMasPosiblesAmigos" runat="server" Text="Ver más" OnClick="VerMasPosiblesAmigosOnClick" />
                    
 
-                    </asp:Panel>
+                    
 
                 </div>
+                </asp:Panel>
             </div>
             <div class="usuarioinfcolder">
                 <div class="informacionpersonal" style="border-top: solid 4px rgb(51, 162, 197)">
