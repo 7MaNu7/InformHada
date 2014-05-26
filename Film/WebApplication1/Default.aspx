@@ -32,39 +32,34 @@
     <div class="cabecerausuario">
         <div class="fondo_cabecera" style="background-image:url('');">
             <div class="oscurecer"></div>
-             <asp:Image runat="server" CssClass="fondoblurred" ID="cabecera_fondo" ImageUrl="~/img/homecover.png" /> 
+            <img class="foto_cabecera" src="/img/fondo.png" alt="foto_portada"/>
         </div>
        
         <div class="infocabecera">
             <h2>InformaTV</h2>
             <p>La mejor información de tus peliculas y series preferidas.</p>
             <div style="position:relative;">
-
                 <asp:TextBox ID="TextBoxBuscar" runat="server" placeholder="Buscar Peliculas y Series"></asp:TextBox>
-                <i style="color: rgba(0, 0, 0, 0.54);
-                            font-size: 14px;
-                           top: 10px;
-position: absolute;
-left: calc(50% - 199px);" class="fa fa-search">
-                </i>
+                <i style="color: rgba(0, 0, 0, 0.54);font-size: 14px;top: 10px;position: absolute;left: calc(50% - 199px);" class="fa fa-search"></i>
                 <asp:Button ID="BotonBuscar" UseSubmitBehavior="true" runat="server" OnClick="BotonBuscarOnClick" Text="Buscar" /> 
-           </div>
+            </div>
         </div>
-   </div>
+    </div>
 
 
    <div class="contenido">
-    <div id="menuizq" class="menuizq">
-         <asp:HyperLink ID="HyperLinkPeliculas" runat="server" EnableViewState="false" PostBackUrl="String"> Ver peliculas </asp:HyperLink> 
-         <asp:HyperLink ID="HyperLinkSeries" runat="server" EnableViewState="false" PostBackUrl="String"> Ver series </asp:HyperLink> 
-         <asp:HyperLink ID="HyperLinkAbout" runat="server" EnableViewState="false" PostBackUrl="String"> Quienes somos </asp:HyperLink> 
-         <asp:HyperLink ID="HyperLinkReport" runat="server" EnableViewState="false" PostBackUrl="String"> Reportar error </asp:HyperLink> 
-         <asp:HyperLink ID="HyperRegistro" runat="server" PostBackUrl="String"> Entrar / Registrarse</asp:HyperLink>
-         <asp:HyperLink ID="HyperLinkUsuario" runat="server" EnableViewState="false" PostBackUrl="String"> Ver mi usuario </asp:HyperLink> 
-         <asp:HyperLink ID="HyperLinkAnadirPelicula" runat="server" EnableViewState="false" PostBackUrl="String"> Añadir pelicula </asp:HyperLink> 
-         <asp:HyperLink ID="HyperLinkAnadirSerie" runat="server" EnableViewState="false" PostBackUrl="String"> Añadir serie </asp:HyperLink>  
-         <asp:Button ID="BotonCerrar" runat="server" OnClick="CerrarOnClick" Text="Cerrar sesion" CssClass="cerrarsesion"></asp:Button>
-    </div>
+
+        <div id="menuizq" class="menuizq">
+             <asp:HyperLink ID="HyperLinkPeliculas" runat="server" EnableViewState="false" PostBackUrl="String"> Ver peliculas </asp:HyperLink> 
+             <asp:HyperLink ID="HyperLinkSeries" runat="server" EnableViewState="false" PostBackUrl="String"> Ver series </asp:HyperLink> 
+             <asp:HyperLink ID="HyperLinkAbout" runat="server" EnableViewState="false" PostBackUrl="String"> Quienes somos </asp:HyperLink> 
+             <asp:HyperLink ID="HyperLinkReport" runat="server" EnableViewState="false" PostBackUrl="String"> Reportar error </asp:HyperLink> 
+             <asp:HyperLink ID="HyperRegistro" runat="server" PostBackUrl="String"> Entrar / Registrarse</asp:HyperLink>
+             <asp:HyperLink ID="HyperLinkUsuario" runat="server" EnableViewState="false" PostBackUrl="String"> Ver mi usuario </asp:HyperLink> 
+             <asp:HyperLink ID="HyperLinkAnadirPelicula" runat="server" EnableViewState="false" PostBackUrl="String"> Añadir pelicula </asp:HyperLink> 
+             <asp:HyperLink ID="HyperLinkAnadirSerie" runat="server" EnableViewState="false" PostBackUrl="String"> Añadir serie </asp:HyperLink>  
+             <asp:Button ID="BotonCerrar" runat="server" OnClick="CerrarOnClick" Text="Cerrar sesion" CssClass="cerrarsesion"></asp:Button>
+        </div>
 
     <div class="cabecera_contenido">
         <h2>
