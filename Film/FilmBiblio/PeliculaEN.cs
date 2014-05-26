@@ -28,8 +28,6 @@ namespace FilmBiblio
         private string reparto;      //El conjunto de artistas/actores de la película
         private string bandaSonora;     //La banda sonora de la película
         private float puntuacion;       //La puntuación media de la película
-        private string portada;         //Imagen de la portada de la película
-        private string caratula;        //Imagen de la carátula de la película
         private string trailer;         //Trailer de la película
 
         ///////////////
@@ -46,7 +44,7 @@ namespace FilmBiblio
 
         //Constructor con parámetros que son las propiedades de dicha película
         public PeliculaEN(int pid, string ptitulo, string pdirector, int pano, string psinopsis, string pgenero, string preparto,
-            string pbandaSonora, float puntuacion, string pportada, string pcaratula, string ptrailer)
+            string pbandaSonora, float puntuacion, string ptrailer)
         {
             id = pid;
             titulo = ptitulo;
@@ -57,8 +55,6 @@ namespace FilmBiblio
             reparto = preparto;
             bandaSonora = pbandaSonora;
             this.puntuacion = puntuacion;
-            portada = pportada;
-            caratula = pcaratula;
             trailer = ptrailer;
         }
 
@@ -205,20 +201,6 @@ namespace FilmBiblio
         {
             get { return puntuacion; }
             set { puntuacion = value; }
-        }
-
-        //Desde fuera de la clase se puede obtener la portada y modificarla
-        public String Portada
-        {
-            get { return portada; }
-            set { portada = value; }
-        }
-
-        //Desde fuera de la clase se puede obtener la caratula y modificarla
-        public String Caratula
-        {
-            get { return caratula; }
-            set { caratula = value; }
         }
 
         //Desde fuera de la clase se puede obtener el trailer y modificarlo

@@ -30,8 +30,6 @@ namespace FilmBiblio
         private string email;           //El email del usuario
         private ArrayList amigos;       //Un vector del tipo UsuarioEn con sus amigos
         private string informacion;     //La información que el usuario quiera poner en su perfil
-        private string fotoPerfil;     //Será una url con la dirección de la imagen
-        private string fotoPortada;    //Será una url con la dirección de la imagen
  
 
         ///////////////
@@ -43,7 +41,7 @@ namespace FilmBiblio
 
         //Constructor con parámetros que son las propiedades de dicho usuario
         public UsuarioEN(int pid, string pusuario, string ppsswd, string ppais, string pprovincia, 
-            string pfecha, string sexo, string pemail, ArrayList pamigos, string informacion, string imagen1, string imagen2)
+            string pfecha, string sexo, string pemail, ArrayList pamigos, string informacion)
         {
             id = pid;
             usuario = pusuario;
@@ -55,8 +53,6 @@ namespace FilmBiblio
             this.sexo = sexo;
             amigos = (ArrayList)pamigos.Clone();
             this.informacion = informacion;
-            fotoPerfil = imagen1;
-            fotoPortada = imagen2;
         }
 
         //True si este emil con esta contraseña están en la BD
@@ -235,18 +231,5 @@ namespace FilmBiblio
             set { informacion = value; }
         }
 
-        //Desde fuera de la clase se puede obtener la imágen de perfil del usuario y modificarla
-        public String FotoPerfil
-        {
-            get { return fotoPerfil; }
-            set { fotoPerfil = value; }
-        }
-
-        //Desde fuera de la clase se puede obtener la imágen de la portada del usuario y modificarla
-        public String FotoPortada
-        {
-            get { return fotoPortada; }
-            set { fotoPortada = value; }
-        }
     }
 }

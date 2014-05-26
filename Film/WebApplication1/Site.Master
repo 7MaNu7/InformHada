@@ -25,7 +25,7 @@
                             <asp:MenuItem NavigateUrl="~/Peliculas.aspx" Text="Películas"/>
                             <asp:MenuItem NavigateUrl="~/Series.aspx" Text="Series"/>
                             <asp:MenuItem NavigateUrl="~/Usuario.aspx" Text="Usuario"/>
-                            <asp:MenuItem NavigateUrl="~/About.aspx" Text="Acerca de"/>
+                            <asp:MenuItem NavigateUrl="~/About.aspx" Text="Quienes somos"/>
                         </Items>
                     </asp:Menu>
                 </div>

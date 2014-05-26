@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Vikings - Capitulo 1" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeBehind="Capitulo.aspx.cs" Inherits="WebApplication1.Capitulo" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">

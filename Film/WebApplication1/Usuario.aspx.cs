@@ -33,6 +33,8 @@ namespace WebApplication1
                 amigo.Id = id;
                 amigo = amigo.DameUsuario();
 
+                Page.Title = amigo.Usuario;
+
                 if (Convert.ToInt32(id_usuario) != usuario.Id)
                 {
                     BotonEditar.Visible = false;
@@ -64,6 +66,9 @@ namespace WebApplication1
             else if (Session["usuario"] != null && id == 0)
             {
                 usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
+
+                Page.Title = usuario.Usuario;
+
                 LiteralNombre1.Text = usuario.Usuario;
                 LiteralNombre.Text = usuario.Usuario;
                 LiteralFechaNacimiento.Text = usuario.FechaNacimiento.ToString();

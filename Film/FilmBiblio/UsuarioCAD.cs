@@ -27,7 +27,7 @@ namespace FilmBiblio
         public bool ExisteCuenta(string email, string psswd)
         {
             bool test = false;
-            string orden = "select * from Usuario where email='" + email + "' and psswd='"+psswd+"'";
+            string orden = "select * from usuario where email='" + email + "' and psswd='"+psswd+"'";
             SqlConnection c = new SqlConnection(conexion);
 
             try
@@ -167,9 +167,7 @@ namespace FilmBiblio
             orden += "'" + usuario.FechaNacimiento + "', ";
             orden += "'" + usuario.Sexo + "', ";
             orden += "'" + usuario.Email + "', ";
-            orden += "'" + usuario.Informacion + "', ";
-            orden += "'" + usuario.FotoPerfil + "', ";
-            orden += "'" + usuario.FotoPortada + "')";
+            orden += "'" + usuario.Informacion + "')";
 
             SqlConnection c = new SqlConnection(conexion);
             try
@@ -193,9 +191,7 @@ namespace FilmBiblio
             orden += "fechaNacimiento = '" + usuario.FechaNacimiento + "', ";
             orden += "sexo = '" + usuario.Sexo + "', ";
             orden += "email = '" + usuario.Email + "', ";
-            orden += "informacion = '" + usuario.Informacion + "', ";
-            orden += "fotoPerfil = '" + usuario.FotoPerfil + "', ";
-            orden += "fotoPortada = '" + usuario.FotoPortada + "' ";
+            orden += "informacion = '" + usuario.Informacion + "' ";
             orden += "where id = " + usuario.Id;
 
             SqlConnection c = new SqlConnection(conexion);

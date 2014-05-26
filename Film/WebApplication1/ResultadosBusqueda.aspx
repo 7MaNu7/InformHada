@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Página principal" Language="C#" AutoEventWireup="true"
+﻿<%@ Page Title="Resultados búsqueda" Language="C#" AutoEventWireup="true"
     CodeBehind="ResultadosBusqueda.aspx.cs" Inherits="WebApplication1.ResultadosBusqueda" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">

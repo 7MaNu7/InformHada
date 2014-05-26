@@ -24,6 +24,9 @@ namespace WebApplication1
                 {
                     serie.Id = id;
                     serie = serie.DameSerie();
+
+                    Page.Title = "Editando " + serie.Titulo;
+
                     LiteralTitulo.Text = serie.Titulo;
                     TextBoxDirector.Text = serie.Director;
                     TextBoxAno.Text = serie.Ano.ToString();
@@ -39,6 +42,8 @@ namespace WebApplication1
                 }
                 else
                 {
+                    Page.Title = " Añadiendo serie";
+                    LiteralTitulo.Visible = false;
                     BotonAddEdit.Text = "Añadir serie";
                 }
             }

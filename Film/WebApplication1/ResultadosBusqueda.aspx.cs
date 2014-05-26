@@ -34,6 +34,7 @@ namespace WebApplication1
             {
                 HyperRegistro.Visible = false;
             }
+
             HyperRegistro.NavigateUrl = "Login.aspx";
             HyperLinkPeliculas.NavigateUrl = "Peliculas.aspx";
             HyperLinkSeries.NavigateUrl = "Series.aspx";

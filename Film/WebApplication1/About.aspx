@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Acerca de nosotros" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="Quienes somos" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeBehind="About.aspx.cs" Inherits="WebApplication1.About" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
@@ -11,7 +11,7 @@
         <!-- CABECERA DE LA PELICULA -->
         <div class="cabecera_about">
             <div class="portada_about" style="background-image:url('');">
-                <img class="fondoblurred" src="http://t3.gstatic.com/images?q=tbn:ANd9GcQExlQNgwgAIZb_PS-hrpzUKe4fSpVLuXqrJrrdV-Rt1dcc41PQ" alt="fotou_portada"/>
+                <asp:Image runat="server" CssClass="fondoblurred" ID="cabecera_fondo" ImageUrl="~/img/quienessomos.jpg" /> 
             </div>
              <div class="info_cabecera">
                 <h2> Acerca de nosotros </h2>
@@ -28,14 +28,22 @@
                     películas, series y los capítulos de las distintas. </p>
                 <p> Además, si se es usuario, la persona puede añadir nuevas películas, series o editar su información.  </p>
                 <p> Contará con un un perfil propio, tendrá su lista de amigos, etc. </p>
+                
+                <h2>
+                    Fundadores
+                </h2>
+                <p> Daniel Moreno Gonzalez - @DanyMorenoG94 </p>
+                <p> Encarna Amorós Beneite - @EncarnaAmoros </p>
+                <p> Jorge Vicente Azorín Martí - @JorgeAzorin </p>
+                <p> Hector Compañ Gabucio - @Dorito4 </p>
+                <p> Manuel José Verdú Ramón - @ManuVerdu7 </p>
+                <p> Vicente Martín Rueda - @SantoFrost </p>
+                
                 <h2>
                     Contacto
                 </h2>
                 <p>
-                    654789657
-                </p>
-                <p>
-                    film@gmail.com
+                    informhada@gmail.com
                 </p>
 
 

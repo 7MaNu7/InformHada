@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Añadir capitulo" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeBehind="AddEditCapitulo.aspx.cs" Inherits="WebApplication1.AddCapitulo" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">

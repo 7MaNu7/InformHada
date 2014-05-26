@@ -11,7 +11,7 @@
         <!-- CABECERA DE LA PELICULA -->
         <div class="cabecerausuario">
             <div class="fondoblurreddiv" style="background-image:url('');">
-                <img class="fondoblurred" src="http://t2.gstatic.com/images?q=tbn:ANd9GcTwEaCBoPO_dL1YCDML3W9Ui9nDaPdYMw1hIwvYGpQ5OotBMxyN" alt="fotou_portada"/>
+                <asp:Image runat="server" CssClass="fondoblurred" ID="cabecera_fondo" ImageUrl="~/img/reporterror.jpg" /> 
             </div>
              <div class="infocabecera">
                 <h2> Reportar error </h2>

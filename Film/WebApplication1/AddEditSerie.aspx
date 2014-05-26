@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Anadir o Editar película" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeBehind="AddEditSerie.aspx.cs" Inherits="WebApplication1.AddEditSerie" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">

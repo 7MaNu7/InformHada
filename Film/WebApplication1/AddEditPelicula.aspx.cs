@@ -26,6 +26,9 @@ namespace WebApplication1
                     TextBoxTitulo.Visible = false;
                     pelicula.Id = id;
                     pelicula = pelicula.DamePelicula();
+
+                    Page.Title = "Editando " + pelicula.Titulo;
+
                     LiteralTitulo.Text = pelicula.Titulo;
                     TextBoxDirector.Text = pelicula.Director;
                     TextBoxAno.Text = pelicula.Ano.ToString();
@@ -40,6 +43,7 @@ namespace WebApplication1
                 }
                 else                                                    //Para añadir un film
                 {
+                    Page.Title = "Añadiendo película";
                     LiteralTitulo.Visible = false;
                     BotonAddEdit.Text = "Añadir película";
                 }

@@ -45,16 +45,19 @@ namespace WebApplication1
                     if (id_capitulo == null)
                     {
                         //Añadiendo capitulo
-                        BotonAddEdit.Text = "Añadir";
+                        Page.Title = "Añadiendo capítulo a "+serie.Titulo;
                         
-                        LiteralSerie.Text = serie.Titulo.ToString();
-                        
+                        BotonAddEdit.Text = "Añadir capítulo";
+                        LiteralSerie.Text = serie.Titulo.ToString();                        
                         TextBoxNCapitulo.Text = "Número del capítulo";
                         TextBoxSinopsis.Text = "Descripción sobre el capítulo";
                     }
                     else
                     {
                         //Editar capítulo
+
+                        Page.Title = "Editando el capítulo " + capitulo.Titulo;
+
                         BotonAddEdit.Text = "Guadar cambios";
                         caratula.ImageUrl = "/img/film/caratula/" + capitulo.Id + ".jpg";
                         caratula.ImageUrl = "/img/film/portada/" + capitulo.Id + ".jpg";

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" 
+﻿<%@ Page Title="Quizás conozcas a " Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" 
 CodeBehind="VerMasUsuarios.aspx.cs" Inherits="WebApplication1.VerMasUsuarios" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">

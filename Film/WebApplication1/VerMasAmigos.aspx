@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="VerMasAmigos.aspx.cs" Inherits="WebApplication1.VerMasAmigos" %>
+﻿<%@ Page Title="Amigos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="VerMasAmigos.aspx.cs" Inherits="WebApplication1.VerMasAmigos" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 <link href="/Styles/VerMasAmigos.css" rel="stylesheet" type="text/css" />

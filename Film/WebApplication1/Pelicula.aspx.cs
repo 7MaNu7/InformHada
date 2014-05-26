@@ -53,6 +53,9 @@ namespace WebApplication1
                 BotonReport.NavigateUrl = "Report.aspx";
 
                 pelicula = pelicula.DamePelicula();
+
+                Page.Title = pelicula.Titulo;
+
                 caratula.ImageUrl = "/img/film/caratula/"+pelicula.Id+".jpg";
                 fondo.ImageUrl = "/img/film/portada/" + pelicula.Id + ".jpg";
                 titulo.Text = pelicula.Titulo;
@@ -107,9 +110,12 @@ namespace WebApplication1
         {
             if (usuario != null)
             {
+                int id_pelicula = Convert.ToInt32(Request.QueryString["id"]);
+                pelicula.Id = id_pelicula;
+
                 pelicula.AnyadirPuntuacionPelicula(usuario.Id, Convert.ToSingle(e.Value.ToString()) * 2);
                 pelicula.DamePelicula();
-                puntuacion.Text = pelicula.Puntuacion.ToString();
+                puntuacion.Text = pelicula.Puntuacion.ToString();   
             }
         }
 

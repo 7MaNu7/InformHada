@@ -58,6 +58,8 @@ namespace WebApplication1
                 capitulo.Id = Convert.ToInt32(id_capitulo);
                 capitulo = capitulo.DameCapitulo();
 
+                Page.Title = serie.Titulo + " - " + capitulo.Titulo;
+
                 HyperLinkVolverSerie.NavigateUrl = "Serie.aspx?id=" + serie.Id;
                 BotonEditar.NavigateUrl = "AddEditCapitulo.aspx?id1=" + id_serie + "&id2="+id_capitulo;
                 BotonReport.NavigateUrl = "Report.aspx";

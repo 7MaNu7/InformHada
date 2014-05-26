@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Mario" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeBehind="Usuario.aspx.cs" Inherits="WebApplication1.Usuario" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">

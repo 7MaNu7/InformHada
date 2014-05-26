@@ -108,10 +108,7 @@ namespace FilmBiblio
             else
                 orden1 = "update votar set voto=" + calificacion + " where usuario= " + id_usuario + " and film= " + id;
 
-
             string orden2 = "select avg(voto) from votar where film=" + id;
-
-
 
             SqlConnection c = new SqlConnection(conexion);
 
@@ -153,8 +150,6 @@ namespace FilmBiblio
             orden += "'" + serie.Reparto + "', ";
             orden += "'" + serie.BandaSonora + "', ";
             orden += serie.Puntuacion + ", ";
-            orden += "'" + serie.Portada + "', ";
-            orden += "'" + serie.Caratula + "', ";
             orden += "'" + serie.Trailer + "')";
 
             String orden2 = "insert into serie values " + "(" + id + ")";
@@ -184,8 +179,6 @@ namespace FilmBiblio
             orden += "genero = '" + serie.Genero + "', ";
             orden += "bandaSonora = '" + serie.BandaSonora + "', ";
             orden += "puntuacion = " + serie.Puntuacion + ", ";
-            orden += "portada = " + serie.Portada + ", ";
-            orden += "caratula = " + serie.Caratula + " ";
             orden += "trailer = " + serie.Trailer + " ";
             orden += "where id = " + serie.Id;
 
@@ -265,8 +258,6 @@ namespace FilmBiblio
                 serie.Reparto = read["reparto"].ToString();
                 serie.BandaSonora = read["bandaSonora"].ToString();
                 serie.Puntuacion = Convert.ToSingle(read["puntuacion"].ToString());
-                serie.Portada = read["portada"].ToString();
-                serie.Caratula = read["caratula"].ToString();
                 serie.Trailer = read["trailer"].ToString();
                 read.Close();
             }
