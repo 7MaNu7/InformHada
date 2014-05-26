@@ -74,7 +74,7 @@ namespace WebApplication1
                     sinopsis.Text = serie.Sinopsis;
                     trailer.Text = serie.Trailer;
                     puntuacion.Text = serie.Puntuacion.ToString();
-
+                    director.Text = serie.Director.ToString();
                     reparto.Text = serie.Reparto;
                     ano.Text = Convert.ToString( serie.Ano);
                     caratula.ImageUrl = "/img/film/caratula/" + serie.Id + ".jpg";
