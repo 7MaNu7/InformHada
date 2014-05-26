@@ -167,7 +167,6 @@ namespace WebApplication1
                 serie.AnyadirPuntuacionSerie(usuario.Id, Convert.ToSingle(e.Value.ToString()) * 2);
                 serie.DameSerie();
                 puntuacion.Text = serie.Puntuacion.ToString();
-                Response.Redirect("Serie.aspx?id=" + serie.Id);
             }
         }
 
