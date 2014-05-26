@@ -10,7 +10,7 @@
 
         <!-- CABECERA DE LA PELICULA -->
         <div class="cabecera_about">
-            <div class="portada_about" style="background-image:url('');">
+            <div class="portada_about">
                 <asp:Image runat="server" CssClass="fondoblurred" ID="cabecera_fondo" ImageUrl="~/img/quienessomos.jpg" /> 
             </div>
              <div class="info_cabecera">

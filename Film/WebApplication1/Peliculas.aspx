@@ -10,7 +10,7 @@
     padding-top: 33px;">
    <style>
    body {
-        background: url('http://k45.kn3.net/707DBBD0B.png') ;
+        background: url('/img/fondovermas.png') ;
 
         }
    .page

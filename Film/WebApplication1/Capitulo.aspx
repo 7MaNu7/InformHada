@@ -9,7 +9,7 @@
 
          <!-- CABECERA DEL CAPITULO  -->
         <div class="cabecera_capitulo">
-            <div class="portada_capitulo" style="background-image:url('');">
+            <div class="portada_capitulo">
                 <asp:Image ID="fondo" CssClass="fondoblurred" runat="server" />
              </div>
 
@@ -31,48 +31,31 @@
 
             </div>
             <div class="contenido_capitulo_d">
-               <h2>Sinopsis - <!--<span style="
-                                background: rgba(195, 195, 199, 0.44);
-                                font-size: 15px;
-                                vertical-align: middle;
-                                cursor: pointer;
-                                padding: 4px 12px 4px 12px;
-                                border-radius: 4px;">EDITAR</span>-->
-                                <!--<span> <asp:HyperLink ID="HyperLinkEditarCapitulo" runat="server" Text="Editar"> </asp:HyperLink> </span>-->
-               </h2>
+               <h2>Sinopsis</h2>
                <p> <asp:Literal ID="LiteralSinopsis" runat="server"> </asp:Literal> </p>
 
                <div class="volver_serie" style="float:right;">
-                <p> <asp:HyperLink ID="HyperLinkVolverSerie" runat="server" Text="Volver a la serie"> </asp:HyperLink> </p>
-               </div>
+                    <p> <asp:HyperLink ID="HyperLinkVolverSerie" runat="server" Text="Volver a la serie"> </asp:HyperLink> </p>
+               </div><br /><br />
+               
+               
+               
+               <asp:Panel ID="Panelcomentar" runat="server">
+               <h2><asp:Literal ID="LiteralComentar" runat="server" ></asp:Literal></h2>
+               <div class="comentario">
+                    <div class="comentario_img">
+                        <asp:Image ID="imagen_user" runat="server" CssClass="imagencomentar" />
+                    </div>
+                    <div class="comentario_txt">     
+                        <span class="comentario_p" > <asp:TextBox ID="TextBoxComentario" placeholder="Danos tu opinión." TextMode="MultiLine" runat="server" style="height: 61px;
+                        min-height: 20px;
+                        width: 497px;
+                        margin: 0px;
+                        border: none; " > </asp:TextBox> </span>
 
-
-
-
-                <br />
-
-                <br />
-                <asp:Panel ID="Panelcomentar" runat="server">
-                <h2> 
-                    <asp:Literal ID="LiteralComentar" runat="server" > </asp:Literal> 
-                
-                </h2>
-                <div class="comentario">
-                                <div class="comentario_img">
-                                    <asp:Image ID="imagen_user" runat="server" CssClass="imagencomentar" />
-                                </div>
-                                <div class="comentario_txt">     
-                                    <span class="comentario_p" > <asp:TextBox ID="TextBoxComentario" placeholder="Danos tu opinión." TextMode="MultiLine" runat="server" style="height: 61px;
-                                    min-height: 20px;
-                                    width: 497px;
-                                    margin: 0px;
-                                    border: none; " > </asp:TextBox> </span>
-
-                                </div>
-                                  <asp:Button ID="BotonComentar"  runat="server" OnClick="ComentarOnClick" Text="Comentar" CssClass="btncomentar" />
-                            </div>
-                
-              
+                    </div>
+                    <asp:Button ID="BotonComentar"  runat="server" OnClick="ComentarOnClick" Text="Comentar" CssClass="btncomentar" />
+                </div>
                 </asp:Panel>
 
 
@@ -93,7 +76,6 @@
                                     runat="server" ToolTip=<%# Eval("usuario")%> Text="Eliminar" 
                                     OnClick="Eliminarcomentario" OnLoad="mostrar"  
                                     CommandArgument=<%# Eval("id")%> />
-
                                 </div>
                             </div>
                         </ItemTemplate>

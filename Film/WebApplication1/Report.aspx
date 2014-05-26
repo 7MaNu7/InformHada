@@ -10,7 +10,7 @@
 
         <!-- CABECERA DE LA PELICULA -->
         <div class="cabecerausuario">
-            <div class="fondoblurreddiv" style="background-image:url('');">
+            <div class="fondoblurreddiv" >
                 <asp:Image runat="server" CssClass="fondoblurred" ID="cabecera_fondo" ImageUrl="~/img/reporterror.jpg" /> 
             </div>
              <div class="infocabecera">

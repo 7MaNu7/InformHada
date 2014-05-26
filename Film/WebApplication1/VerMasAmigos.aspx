@@ -5,13 +5,13 @@
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div  style="
-    position: absolute;
+     margin:auto;
     padding-top: 33px;">
 
-    <asp:Literal ID="LiteralListaAmigos" runat="server"></asp:Literal>
+    
         <style>
    body {
-        background: url('http://k45.kn3.net/707DBBD0B.png') ;
+        background: url('/img/fondovermas.png') ;
 
         }
    .page
@@ -25,27 +25,27 @@
     color: rgba(36, 36, 36, 0.8) !important;
     }
    </style>
-    <div class="peliculas_contenido" style="padding: 25px 25px 1.5px 25px;">
-       <div style="display:table;">
+    <div class="peliculas_contenido" style="padding: 25px 25px 1.5px 25px; margin:auto;" >
+       <div style="display:table;margin:auto;">
+       <p><asp:Literal ID="LiteralListaAmigos" runat="server"></asp:Literal></p>
         <asp:ListView ID="ListViewAmigos"  runat="server">
-            
             <ItemTemplate>
-                <td>
                   <a style="display: table-cell;float: left; text-decoration:none; color:Gray;"  
-                  href="Usuario.aspx?id=<asp:Literal ID="Literal5" Text='<%# Eval("id2")%>'  runat="server"></asp:Literal>">
-                
-                    <div class="peliculacaratula">
-                        <asp:Image ID="Image1" CssClass="peliculacaratulaimg" runat="server"  ImageUrl='<%# "/img/users/"+ Eval("id2")+".jpg"%>' />
-                        <p><asp:Literal ID="LiteralNombre" runat="server"></asp:Literal></p>
-                        <div class="infopelicula">
-                            <p>Usuario: <asp:Literal ID="LiteralUsuario" runat="server"></asp:Literal></p>
-                        </div>
-                    </div>
-                    </a>
-                </td>
+                  href="usuario.aspx?id=<%# Eval("id2")%> ">
+                        <img 
+                        style="
+                            width: 100px;
+                            height: 100px;
+                            
+                            background:url('<%# "/img/users/"+ Eval("id2")+".jpg"%>');
+                            background-size: cover;
+                            margin: 7px;
+                            border: none;
+                            box-shadow: 0 0 5px;
+                            " /> 
+                        </a> 
             </ItemTemplate>
         </asp:ListView>
-
         </div>
         <div class="datapager">
         <asp:DataPager ID="DataPagerProducts" runat="server" PagedControlID="ListViewAmigos"

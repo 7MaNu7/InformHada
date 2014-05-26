@@ -34,7 +34,7 @@
     <div class="cabecerausuario">
         <div class="fondo_cabecera" style="background-image:url('');">
             <div class="oscurecer"></div>
-            <img class="foto_cabecera" src="http://www.pordede.com/content/homecover.png" alt="foto_portada"/>
+            <img class="foto_cabecera" src="/img/fondo.png" alt="foto_portada"/>
         </div>
        
         <div class="infocabecera">
