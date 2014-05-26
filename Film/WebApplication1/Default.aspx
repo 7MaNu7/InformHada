@@ -32,7 +32,7 @@
     <div class="cabecerausuario">
         <div class="fondo_cabecera" style="background-image:url('');">
             <div class="oscurecer"></div>
-            <img class="foto_cabecera" src="http://www.pordede.com/content/homecover.png" alt="foto_portada"/>
+             <asp:Image runat="server" CssClass="fondoblurred" ID="cabecera_fondo" ImageUrl="~/img/homecover.png" /> 
         </div>
        
         <div class="infocabecera">
