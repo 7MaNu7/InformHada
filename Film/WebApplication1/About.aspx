@@ -26,24 +26,50 @@
                 </h2>
                 <p> El propósito de esta página es la de una aplicación web a la que puedan acceder las distintas personas para consultar información sobre
                     películas, series y los capítulos de las distintas. </p>
-                <p> Además, si se es usuario, la persona puede añadir nuevas películas, series o editar su información.  </p>
-                <p> Contará con un un perfil propio, tendrá su lista de amigos, etc. </p>
-                
+                <p> Además, si se es usuario, la persona puede añadir nuevas películas, series, contar con un perfil propio, añadir amigos, comentar los distintos films...  </p>
+                 
                 <h2>
                     Fundadores
                 </h2>
-                <p> Daniel Moreno Gonzalez - @DanyMorenoG94 </p>
-                <p> Encarna Amorós Beneite - @EncarnaAmoros </p>
-                <p> Jorge Vicente Azorín Martí - @JorgeAzorin </p>
-                <p> Hector Compañ Gabucio - @Dorito4 </p>
-                <p> Manuel José Verdú Ramón - @ManuVerdu7 </p>
-                <p> Vicente Martín Rueda - @SantoFrost </p>
+                <p> Daniel Moreno Gonzalez -  <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="https://twitter.com/DanyMorenoG94"
+                                                 ForeColor="blueViolet" Text="@DanyMorenoG94">
+                                              </asp:HyperLink> 
+                </p>
+                <p> Encarna Amorós Beneite -  <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="https://twitter.com/EncarnaAmoros"
+                                                 ForeColor="blueViolet" Text="@EncarnaAmoros">
+                                              </asp:HyperLink> 
+                </p>
+                <p> Jorge Vicente Azorín Martí - <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="https://twitter.com/JorgeAzorin"
+                                                 ForeColor="blueViolet" Text="@JorgeAzorin">
+                                                </asp:HyperLink> 
+                </p>
+                <p> Hector Compañ Gabucio - <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="https://twitter.com/Dorito4"
+                                                 ForeColor="blueViolet" Text="@Dorito4">
+                                                </asp:HyperLink> 
+                </p>
+                <p> Manuel José Verdú Ramón - <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="https://twitter.com/ManuVerdu7"
+                                                 ForeColor="blueViolet" Text="@ManuVerdu7">
+                                                </asp:HyperLink> 
+                </p>
+                <p> Vicente Martín Rueda - <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="https://twitter.com/SantoFrost"
+                                                 ForeColor="blueviolet" Text="@SantoFrost">
+                                                </asp:HyperLink> 
+                </p>
                 
+                <h2>
+                    Twitter <asp:HyperLink ID="tuiter" runat="server" NavigateUrl="http://twitter.com/share?url=<?php the_permalink() ?>" rel="nofollow" class="twitter-share-button" data-text="Que buenas películas y series en @WebInformaTV :)" data-count="vertical"  data-lang="es" > Tweet </asp:HyperLink>
+                    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+                    
+                </h2>
+                 <p>¡Síguenos!  <asp:HyperLink runat="server" NavigateUrl="https://twitter.com/@WebInformaTV"
+                                 ForeColor="blueViolet" Text="@WebInformaTV">
+                                 </asp:HyperLink>
+                </p>
                 <h2>
                     Contacto
                 </h2>
                 <p>
-                    informhada@gmail.com
+                    <asp:HyperLink runat="server" ForeColor="BlueViolet" Text="informhada@gmail.com" ></asp:HyperLink>
                 </p>
 
 
