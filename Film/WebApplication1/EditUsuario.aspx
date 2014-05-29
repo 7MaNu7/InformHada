@@ -95,8 +95,8 @@
                          <asp:ListItem ID="SexoMujer" runat="server" value="Mujer" />
                     </asp:RadioButtonList>
 
-                    <p><asp:TextBox ID="TextBoxPais" PlaceHolder="Pais" runat="server"></asp:TextBox></p>
-                    <p><asp:TextBox ID="TextBoxProvincia" PlaceHolder="Provincia" runat="server"></asp:TextBox></p>
+                    <p>Pais: <asp:TextBox ID="TextBoxPais" PlaceHolder="Pais" runat="server"></asp:TextBox></p>
+                    <p>Provincia: <asp:TextBox ID="TextBoxProvincia" PlaceHolder="Provincia" runat="server"></asp:TextBox></p>
                 
                 </div>
 

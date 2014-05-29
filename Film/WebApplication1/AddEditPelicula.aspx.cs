@@ -71,7 +71,6 @@ namespace WebApplication1
 
                     pelicula.UpdatePelicula();
 
-                    //int max = pelicula.MaximoId();
                     if (FileUploadControl.HasFile)
                     {
                         try

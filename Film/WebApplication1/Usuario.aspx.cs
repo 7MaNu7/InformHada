@@ -40,10 +40,13 @@ namespace WebApplication1
                     BotonEditar.Visible = false;
                     Panel1.Visible = false;
                 }
-                DateTime fechanacimiento = Convert.ToDateTime(amigo.FechaNacimiento);
+                if (amigo.FechaNacimiento != null)
+                {
+                    DateTime fechanacimiento = Convert.ToDateTime(amigo.FechaNacimiento);
+                    LiteralFechaNacimiento.Text = fechanacimiento.ToShortDateString();
+                }
                 LiteralNombre1.Text = amigo.Usuario;
                 LiteralNombre.Text = amigo.Usuario;
-                LiteralFechaNacimiento.Text = fechanacimiento.ToShortDateString();
                 LiteralSexo.Text = amigo.Sexo;
                 LiteralProvincia.Text = amigo.Provincia;
                 LiteralPais.Text = amigo.Pais;
@@ -180,7 +183,7 @@ namespace WebApplication1
         {
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
             int id = Convert.ToInt32(Request.QueryString["id"]);
-            //<<<<<<< HEAD
+            
             if (usuario != null && id != 0) //ver amigos de otros
             {
                 Response.Redirect("VerMasAmigos.aspx?id=" + id.ToString());
@@ -190,7 +193,7 @@ namespace WebApplication1
                 Response.Redirect("VerMasAmigos.aspx?id=" + usuario.Id.ToString());
             }
             else if (usuario == null) //para ver amigos de otros te tienes que loguear
-                //=======
+                
                 if (usuario != null && id != 0)           //ver amigos de otros
                 {
                     Response.Redirect("VerMasAmigos.aspx?id=" + id.ToString());
@@ -200,7 +203,6 @@ namespace WebApplication1
                     Response.Redirect("VerMasAmigos.aspx?id=" + usuario.Id.ToString());
                 }
                 else if (usuario == null)   //para ver amigos de otros te tienes que loguear
-                //>>>>>>> 7f3ba08be7517c7ed03712d97c1dfb7895a95bf1
                 {
                     Response.Redirect("Login.aspx");
                 }
@@ -210,14 +212,12 @@ namespace WebApplication1
         {
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
             //"quizas conozcas a" solo se muestra al propio usuario, no en los demas perfiles
+            
             if (usuario != null)
-            //<<<<<<< HEAD
             { //se sacaran amigos de amigo
-                //=======
-                {                                                //se sacaran amigos de amigo
-                    //>>>>>>> 7f3ba08be7517c7ed03712d97c1dfb7895a95bf1
-                    Response.Redirect("VerMasUsuarios.aspx");
-                }
+             
+                   Response.Redirect("VerMasUsuarios.aspx");
+             
             }
         }
     }

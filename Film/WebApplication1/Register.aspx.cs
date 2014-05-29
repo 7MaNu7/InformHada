@@ -45,6 +45,7 @@ namespace WebApplication1.Account
                         usuario.Email = TextBoxEmail.Text;
 
                         usuario.InsertarUsuario();
+                        Session["usuario"] = usuario;
                         Response.Redirect("Default.aspx");                    
                     }
                 }

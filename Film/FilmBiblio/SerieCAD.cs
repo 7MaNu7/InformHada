@@ -177,9 +177,10 @@ namespace FilmBiblio
             orden += "ano = " + serie.Ano + ", ";
             orden += "sinopsis = '" + serie.Sinopsis + "', ";
             orden += "genero = '" + serie.Genero + "', ";
+            orden += "reparto = '" + serie.Reparto + "', ";
             orden += "bandaSonora = '" + serie.BandaSonora + "', ";
             orden += "puntuacion = " + serie.Puntuacion + ", ";
-            orden += "trailer = " + serie.Trailer + " ";
+            orden += "trailer = '" + serie.Trailer + "' ";
             orden += "where id = " + serie.Id;
 
             SqlConnection c = new SqlConnection(conexion);

@@ -60,12 +60,11 @@
                    </asp:TextBox>
                </p>
             
-                <h2>Trailer</h2>
+                <h2>Trailer</h2> Indique el id del video de YouTube, como por ejemplo: 426QdCdtZlk
                 <p> <asp:TextBox ID="TextBoxTrailer" runat="server" TextMode="MultiLine"
-                        style="width:945px;" placeholder="Indique el enlace o archivo del trailer de la serie">
+                        style="width:945px;" placeholder="Indique el id del video de YouTube, como por ejemplo: 426QdCdtZlk">
                     </asp:TextBox>
                 </p>
-                
                 
             </div>
         </div>

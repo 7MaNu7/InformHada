@@ -69,7 +69,6 @@ namespace WebApplication1
                 serie.Trailer = TextBoxTrailer.Text;
                 serie.UpdateSerie();
 
-                //int max = serie.MaximoId();
                 if (FileUploadControl.HasFile)
                 {
                     try

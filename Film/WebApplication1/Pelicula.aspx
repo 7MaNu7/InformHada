@@ -19,6 +19,7 @@
              <div class="info_cabecera">
                 <h2><asp:Literal ID="titulo" runat="server"></asp:Literal></h2>
                 <p>Director: <asp:Literal ID="director" runat="server"></asp:Literal></p>
+                <p>Genero: <asp:Literal ID="genero" runat="server" >  </asp:Literal> </p>
                 <p>Soundtrack: <asp:Literal ID="musica" runat="server"></asp:Literal></p>
                 <p>Año: <asp:Literal ID="ano" runat="server"></asp:Literal></p>
              </div>
@@ -42,6 +43,8 @@
 >
                 </asp:Rating>
                 
+                <asp:Label runat="server" ID="Puntos" ForeColor="Red" ></asp:Label>
+
             </div>
             <div class="serie_contenido_d">
                <h2>Sinopsis</h2>

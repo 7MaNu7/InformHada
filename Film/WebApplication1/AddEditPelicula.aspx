@@ -57,9 +57,10 @@
                <h2>Reparto</h2>
                <p> <asp:TextBox ID="TextBoxReparto" runat="server" TextMode="MultiLine"
                 style="height:50px; width:945px;" placeholder="Escriba el reparto de actores que participan en la película"></asp:TextBox> </p>
-                <h2>Trailer</h2>
+                <h2>Trailer</h2> Indique el id del video de YouTube, como por ejemplo: 426QdCdtZlk
                 <p> <asp:TextBox ID="TextBoxTrailer" runat="server" TextMode="MultiLine" style="width:945px;"
                         placeholder="Indique el id del video de YouTube, como por ejemplo: 426QdCdtZlk" ></asp:TextBox> </p>
+                 
                 </div>
             </div>
         </div>

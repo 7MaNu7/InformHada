@@ -23,6 +23,8 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Puntos.Visible = false;
+
             if (Session["usuario"] == null)
             {
                 BotonEditar.Visible = false;
@@ -46,12 +48,10 @@ namespace WebApplication1
             }
             else
             {
-               
-                pelicula.Id = Convert.ToInt32(id);
-
                 BotonEditar.NavigateUrl = "AddEditPelicula.aspx?id="+id;
                 BotonReport.NavigateUrl = "Report.aspx";
 
+                pelicula.Id = Convert.ToInt32(id);
                 pelicula = pelicula.DamePelicula();
 
                 Page.Title = pelicula.Titulo;
@@ -61,6 +61,7 @@ namespace WebApplication1
                 titulo.Text = pelicula.Titulo;
 
                 musica.Text = pelicula.BandaSonora;
+                genero.Text = pelicula.Genero;
                 sinopsis.Text = pelicula.Sinopsis;
                 director.Text = pelicula.Director;
                 trailer.Text = pelicula.Trailer;
@@ -115,7 +116,9 @@ namespace WebApplication1
 
                 pelicula.AnyadirPuntuacionPelicula(usuario.Id, Convert.ToSingle(e.Value.ToString()) * 2);
                 pelicula.DamePelicula();
-                puntuacion.Text = pelicula.Puntuacion.ToString();   
+                puntuacion.Text = pelicula.Puntuacion.ToString();
+                Puntos.Visible = true;
+                Puntos.Text = "Debe refrescar la página para ver la puntuación actualizada";
             }
         }
 

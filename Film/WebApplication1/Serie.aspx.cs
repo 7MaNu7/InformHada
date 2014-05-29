@@ -25,6 +25,7 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             serie = new FilmBiblio.SerieEN();
+            Puntos.Visible = false;
 
             if (Session["usuario"] == null)                 //Parte pública (ve comentarios, reportar error)
             {
@@ -70,6 +71,7 @@ namespace WebApplication1
                     Page.Title = serie.Titulo;
 
                     titulo.Text = serie.Titulo;
+                    genero.Text = serie.Genero;
                     musica.Text = serie.BandaSonora;
                     sinopsis.Text = serie.Sinopsis;
                     trailer.Text = serie.Trailer;
@@ -127,15 +129,6 @@ namespace WebApplication1
                 ListViewComentarios.DataBind();
             }
 
-
-            /*if (usuario != null)
-                Rating1.CurrentRating = Convert.ToInt32(Math.Round(Convert.ToDecimal(serie.Puntuacion) / 2));
-            else
-                Rating1.Visible = false;*/
-            
-
-
-
         }
 
         //Al darle al botón comentar se inserta el comentario
@@ -167,6 +160,8 @@ namespace WebApplication1
                 serie.AnyadirPuntuacionSerie(usuario.Id, Convert.ToSingle(e.Value.ToString()) * 2);
                 serie.DameSerie();
                 puntuacion.Text = serie.Puntuacion.ToString();
+                Puntos.Visible = true;
+                Puntos.Text = "Debe refrescar la página para ver la puntuación actualizada";
             }
         }
 

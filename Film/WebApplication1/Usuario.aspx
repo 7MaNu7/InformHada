@@ -31,7 +31,8 @@
                     <p> <asp:Literal ID="LiteralNombre" runat="server"> </asp:Literal></p>
                     <p> <asp:Literal ID="LiteralFechaNacimiento" runat="server"> </asp:Literal></p>
                     <p> <asp:Literal ID="LiteralSexo" runat="server"> </asp:Literal></p>
-                    <p> <asp:Literal ID="LiteralProvincia" runat="server"> </asp:Literal> , <asp:Literal ID="LiteralPais" runat="server"> </asp:Literal> </p>
+                    <p> <asp:Literal ID="LiteralProvincia" runat="server"> </asp:Literal> </p>
+                    <p> <asp:Literal ID="LiteralPais" runat="server"> </asp:Literal> </p>
                     <p> <asp:Literal ID="LiteralEmail" runat="server"> </asp:Literal>  </p>
                 </div>
                 <div class="infoamigos">
