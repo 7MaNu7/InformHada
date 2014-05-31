@@ -16,15 +16,21 @@ namespace WebApplication1
             Session["usuario"] = null;
         }
 
+        //cuando se le da a iniciar sesion
         protected void IniciarSesionOnClick(object sender, EventArgs e)
         {
             string email = TextBoxEmail.Text;
+            //a traves del email (que no se repite) obtenemos su usuario
             usuario = usuario.DameUsuarioPorEmail(email);
 
+            //los campos deben ser correctos
             if (Page.IsValid)
             {
+                //la sesion es la del usuario cogido antes
                 Session["usuario"] = usuario;
+                //media hora dura la sesion
                 Session.Timeout = 30;
+                //despues de iniciar sesion vamos a la pagina principal
                 Response.Redirect("Default.aspx");
             }
             else
@@ -33,7 +39,7 @@ namespace WebApplication1
             }
 
         }
-
+        //validacion de que no exista ya el email
         protected void ComprobarCuenta(object sender, ServerValidateEventArgs e)
         {
             string email = TextBoxEmail.Text;

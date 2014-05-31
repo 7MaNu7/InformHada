@@ -19,12 +19,14 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //al darle a añadir nos manda a la pagina de añadir
             HyperLinkAddSerie.NavigateUrl = "AddEditPelicula.aspx";
 
+            //solo podras añadir series estando logeado
             if (Session["usuario"] == null)
                 HyperLinkAddSerie.Visible = false;
 
+            //mostrar las series de la bd
             if (!Page.IsPostBack)
             {
                 d = serie.DameSeries();
@@ -32,7 +34,7 @@ namespace WebApplication1
                 ListViewSeries.DataBind();
             }
         }
-
+        //paginacion para el listview de las series
         protected void DataPagerProducts_PreRender(object sender, EventArgs e)
         {
             d = serie.DameSeries();

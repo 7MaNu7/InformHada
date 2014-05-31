@@ -25,17 +25,23 @@ namespace WebApplication1
             
             usuarioLogeado = (FilmBiblio.UsuarioEN)Session["usuario"];
 
+            //si no estas logeado no puedes acceder a la parte privada
             if (usuarioLogeado == null)
             {
                 HyperLinkAnadirPelicula.Visible = false;
                 HyperLinkAnadirSerie.Visible = false;
                 HyperLinkUsuario.Visible = false;
+
+                //no puedes cerrar sesion si no has iniciado antes
                 BotonCerrar.Visible = false;
             }
             else
             {
+                //si no estas logeado sale la opcion de iniciar/registrarse
                 HyperRegistro.Visible = false;
             }
+
+            //paginas a las que te llevan los link del menu
             HyperRegistro.NavigateUrl = "Login.aspx";
             HyperLinkPeliculas.NavigateUrl = "Peliculas.aspx";
             HyperLinkSeries.NavigateUrl = "Series.aspx";
@@ -45,6 +51,7 @@ namespace WebApplication1
             HyperLinkAbout.NavigateUrl = "About.aspx";
             HyperLinkReport.NavigateUrl = "Report.aspx";
 
+            //cantidad resumen de peliculas y series que se sacan en los listview siguientes
             int numero = 10;
 
             if (!Page.IsPostBack)
@@ -67,14 +74,18 @@ namespace WebApplication1
             }
         }
 
+        //cuando buscamos en la barra
         protected void BotonBuscarOnClick(object sender, EventArgs e)
         {
+            //te lleva a la pagina de resultados de esa busqueda
             string texto = TextBoxBuscar.Text;
             Response.Redirect("ResultadosBusqueda.aspx?texto="+texto);
         }
 
+        //si le das a cerrar sesion
         protected void CerrarOnClick(object sender, EventArgs e)
         {
+            //sesion cerrada y refrescar a default (menu cambia al cerrar sesion)
             Session["usuario"] = null;
             Response.Redirect("Default.aspx");
         }

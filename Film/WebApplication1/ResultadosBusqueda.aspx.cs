@@ -24,6 +24,7 @@ namespace WebApplication1
         {
             usuarioLogeado = (FilmBiblio.UsuarioEN)Session["usuario"];
 
+            //no se pueden hacer cosas de la parte privada sin estar logeado
             if (usuarioLogeado == null)
             {
                 HyperLinkAnadirPelicula.Visible = false;
@@ -31,10 +32,11 @@ namespace WebApplication1
                 HyperLinkUsuario.Visible = false;
             }
             else
-            {
+            {   
+                //si estas logeado no sale la opcion de logearse
                 HyperRegistro.Visible = false;
             }
-
+            //direcciones a las que se accede al pulsar en el menu
             HyperRegistro.NavigateUrl = "Login.aspx";
             HyperLinkPeliculas.NavigateUrl = "Peliculas.aspx";
             HyperLinkSeries.NavigateUrl = "Series.aspx";
@@ -44,15 +46,18 @@ namespace WebApplication1
             HyperLinkAbout.NavigateUrl = "About.aspx";
             HyperLinkReport.NavigateUrl = "Report.aspx";
 
+            //lo que se ha buscado lo cogemos de la url
             String texto = Request.QueryString["texto"];
 
             if (!Page.IsPostBack)
             {
-
+                //si se ha buscado algo
                 if (texto != null && texto != "")
                 {
+                    //contara la cantidad de resultados
                     int cant = 0;
                    
+                    //mostramos las peliculas de la busqueda
                     d = pelicula.DamePeliculasBusqueda(texto);
                     ListViewPeliculas.DataSource = d;
                     if (d != null)
@@ -62,6 +67,7 @@ namespace WebApplication1
 
                     cant += d.Tables[0].Rows.Count;
 
+                    //mostramos las series de la busqueda
                     d = serie.DameSeriesBusqueda(texto);
                     ListViewSeries.DataSource = d;
                     if (d != null)
@@ -75,6 +81,7 @@ namespace WebApplication1
                     ListViewCapitulos.DataSource = d;
                     ListViewCapitulos.DataBind();*/
 
+                    //mostramos los usuarios de la busqueda
                     d = usuario.DameUsuariosBusqueda(texto);
                     ListViewUsuarios.DataSource = d;
                     ListViewUsuarios.DataBind();
@@ -86,16 +93,19 @@ namespace WebApplication1
 
                     cant += d.Tables[0].Rows.Count;
 
+                    //mensaje de resultados encontrados
                     LiteralResultado.Text = cant.ToString() + " resultados de buscar " + "\"" + texto.ToUpper() + "\"";
                 }
-                else
+                else     //si no se ha hecho busqueda valida
                     Response.Redirect("Default.aspx");
 
             }
         }
 
+        //en la pagina de resultados se puede buscar
         protected void BotonBuscarOnClick(object sender, EventArgs e)
         {
+            //se vuelve a esta pagina con la nueva busqueda
             string texto = TextBoxBuscar.Text;
             Response.Redirect("ResultadosBusqueda.aspx?texto=" + texto);
         }

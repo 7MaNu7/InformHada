@@ -16,18 +16,22 @@ namespace WebApplication1.Account
         {
             Session["usuario"] = null;
         }
-
+        //cuando le das a registrarte
         protected void BotonRegistroOnClick(object sender, EventArgs e)
         {
+            //asegurandonos de que no estas logeado
             if (Session["usuario"] == null)
             {
+                //los campos tienen que ser validos
                 if (Page.IsValid)
                 {
+                    
                       DateTime fec=Convert.ToDateTime("1/1/1941");
                       if (TextBoxFecha.Text != "")
                       
                           fec = Convert.ToDateTime(TextBoxFecha.Text.ToString());
 
+                    //debe de ser una fecha valida (que sea factible)
                     if (fec.Year < 1940 || fec.Year > 2010)
                     {
                         ValidandoFecha.IsValid = false;
@@ -43,9 +47,11 @@ namespace WebApplication1.Account
                         usuario.FechaNacimiento = TextBoxFecha.Text;
                         usuario.Sexo = Sexo.Text;
                         usuario.Email = TextBoxEmail.Text;
-
+                        //usuario registrado y logeado al mismo tiempo
                         usuario.InsertarUsuario();
                         Session["usuario"] = usuario;
+
+                        //bienvenido a la pagina principal
                         Response.Redirect("Default.aspx");                    
                     }
                 }
@@ -57,6 +63,7 @@ namespace WebApplication1.Account
         protected void EmailYaExiste(object sender, ServerValidateEventArgs e)
         {
             string email = TextBoxEmail.Text;
+            //si se intenta registrar con un email existente el campo no es valido
             if (usuario.ExisteEmail(email))
             {
                 ValidarEmailYaExiste.Visible = true;

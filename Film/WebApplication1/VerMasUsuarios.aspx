@@ -48,7 +48,7 @@ CodeBehind="VerMasUsuarios.aspx.cs" Inherits="WebApplication1.VerMasUsuarios" %>
         </asp:ListView>
         </div>
         <div class="datapager">
-        <asp:DataPager ID="DataPagerProducts" runat="server" PagedControlID="ListViewAmigos"
+        <asp:DataPager ID="DataPagerProducts" runat="server" PagedControlID="ListViewQuizasConozcas"
     PageSize="20" OnPreRender="DataPagerProducts_PreRender">
     <Fields>
         <asp:NextPreviousPagerField ShowFirstPageButton="True" ShowNextPageButton="False" />

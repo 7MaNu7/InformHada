@@ -20,13 +20,16 @@ namespace WebApplication1
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            //si pulsas en añadir pelicula te manda a añadir una
             HyperLinkAddPelicula.NavigateUrl = "AddEditPelicula.aspx";
 
+            //para poder añadir una pelicula tienes que logearte
             if (Session["usuario"] == null)
                 HyperLinkAddPelicula.Visible = false;
 
             if (!Page.IsPostBack)
             {
+                //mostrar en formato listview las peliculas de la bd
                 d = pelicula.DamePeliculas();
                 ListViewPeliculas.DataSource = d;
                 ListViewPeliculas.DataBind();
@@ -34,7 +37,7 @@ namespace WebApplication1
               
             }
         }
-
+        //metodo para paginar el listview de las peliculas
         protected void DataPagerProducts_PreRender(object sender, EventArgs e)
         {
             d = pelicula.DamePeliculas();

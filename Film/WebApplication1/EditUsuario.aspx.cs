@@ -18,8 +18,10 @@ namespace WebApplication1
 
             if (!Page.IsPostBack)
             {
+                //para editar tu usuario tendras que estar logeado primero
                 if (usuario != null)
                 {
+                    //se cogen todos los campos y las imagenes guardadas por defecto
                     LiteralNombre.Text = usuario.Usuario;
                     TextBoxUsuario.Text = usuario.Usuario;
                     caratula.ImageUrl = "/img/users/" + usuario.Id + ".jpg";
@@ -38,22 +40,25 @@ namespace WebApplication1
                     BotonEditar.Text = "Guardar cambios";
                 }
             }
+            //en cambio si intentas editar sin logearte se impide
             if (Session["usuario"] == null)
             {
                 Response.Redirect("Error.aspx");
             }
         }
 
+        //al pulsar editar en mi usuario
         protected void BotonEditarOnClick(object sender, EventArgs e)
         {
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
 
             if (usuario != null)
             {
+                //tienen que cumplirse las validaciones de los campos
                 if(Page.IsValid)
                 {
                     DateTime fec = Convert.ToDateTime(TextBoxFechaNacimiento.Text.ToString());
-
+                    //se debe escoger una fecha razonable, que sea verdadera
                     if (fec.Year < 1940 || fec.Year > 2010)
                     {
                         ValidandoFecha.IsValid = false;
@@ -74,11 +79,12 @@ namespace WebApplication1
                         usuario.Informacion = TextBoxInformacion.Text;
 
                         usuario.UpdateUsuario();
-
+                        //si se ha editado el fondo 
                         if (FileUpload2.HasFile)
                         {
                             try
                             {
+                                //guardamos el archivo en el directorio especificado
                                 string filename = Path.GetFileName(FileUpload1.FileName);
                                 FileUpload2.SaveAs(Server.MapPath("~/img/users/portada/") + usuario.Id + ".jpg");
                                 //   StatusLabel.Text = "Upload status: File uploaded!";
@@ -89,10 +95,12 @@ namespace WebApplication1
                                 //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                             }
                         }
+                        //si se ha editado la foto de perfil
                         if (FileUploadControl.HasFile)
                         {
                             try
                             {
+                                //guardamos el archivo en el directorio especificado
                                 string filename = Path.GetFileName(FileUploadControl.FileName);
                                 FileUploadControl.SaveAs(Server.MapPath("~/img/users/") + usuario.Id + ".jpg");
                                 //   StatusLabel.Text = "Upload status: File uploaded!";
@@ -103,16 +111,18 @@ namespace WebApplication1
                                 //  StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                             }
                         }
+                        //tras editar se vuelve a mi usuario
                         Response.Redirect("Usuario.aspx");
                     }
                 }
             }
 
         }
-
+        //eliminar cuenta
         protected void BotonEliminarUsuarioOnClick(object sender, EventArgs e)
         {
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
+            //borramos el usuario, cerramos sesion, y vuelta a la pagina principal
             usuario.BorrarUsuario();
             Session["usuario"] = usuario = null;
             Response.Redirect("Default.aspx");
@@ -124,7 +134,7 @@ namespace WebApplication1
         {
             string email = TextBoxEmail.Text;
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
-
+            //si ya esta en la base de datos no es una entrada valida para el campo
             if (usuario.ExisteEmail(email) && usuario.Email != email)
             {
                 e.IsValid = false;

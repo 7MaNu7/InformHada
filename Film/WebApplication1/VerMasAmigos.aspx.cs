@@ -21,6 +21,7 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //si no estas logeado no se permite
             if(Session["usuario"]==null)
                 Response.Redirect("Error.aspx");
 
@@ -29,19 +30,23 @@ namespace WebApplication1
             usuario.Id = id;
             usuario=usuario.DameUsuario();
 
+            //mostrar la lista de amigos
             if (!Page.IsPostBack)
             {
                 d = usuario.DameAmigos(0);
                 ListViewAmigos.DataSource = d;
-                ListViewAmigos.DataBind();
+                if(d!=null)
+                  ListViewAmigos.DataBind();
             }
 
+            //la cantidad de amigos
             if (d.Tables[0].Rows.Count == 0)
                 LiteralListaAmigos.Text = "La lista de amigos está vacia";
             else
                 LiteralListaAmigos.Text = d.Tables[0].Rows.Count.ToString() + " amigos:";
         }
 
+        //paginacion de los amigos
         protected void DataPagerProducts_PreRender(object sender, EventArgs e)
         {
           //  usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
@@ -51,7 +56,8 @@ namespace WebApplication1
 
             d = usuario.DameAmigos(0);
             ListViewAmigos.DataSource = d;
-            ListViewAmigos.DataBind();
+            if(d!=null)
+                ListViewAmigos.DataBind();
         }
     }
 }

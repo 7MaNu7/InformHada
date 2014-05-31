@@ -21,11 +21,12 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //sacamos el id de usuario de la url
             int id = Convert.ToInt32(Request.QueryString["id"]);
 
+            //si esta logeado pero viendo un usuario (id) distinto al suyo
             if (id != 0 && Session["usuario"] != null)
             {
-
                 usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
 
                 string id_usuario = Request.QueryString["id"];
@@ -35,11 +36,15 @@ namespace WebApplication1
 
                 Page.Title = amigo.Usuario;
 
+                
                 if (Convert.ToInt32(id_usuario) != usuario.Id)
                 {
+                    //no puedes editar un usuario ajeno al tuyo
                     BotonEditar.Visible = false;
+                    //ni ver sus recomendaciones de "quizas conzozcas a"
                     Panel1.Visible = false;
                 }
+                //mostrar los datos del usuario y sus imagenes
                 if (amigo.FechaNacimiento != null)
                 {
                     DateTime fechanacimiento = Convert.ToDateTime(amigo.FechaNacimiento);
@@ -57,20 +62,23 @@ namespace WebApplication1
                 imgperfil.ImageUrl = "~/img/users/" + amigo.Id.ToString() + ".jpg";
                 portada.ImageUrl = "~/img/users/portada/" + amigo.Id.ToString() + ".jpg";
 
+                //si lo tienes agregado lo puedes eliminar
                 if (usuario.sonAmigos(id))
                 {
                     BotonAmigo.Text = "Eliminar amigo";
                 }
-                else
+                else  //si no lo tienes de amigo puedes agregarlo
                 {
                     BotonAmigo.Text = "Añadir amigo";
                 }
-            }
+            }   //si estas logeado y viendo tu propio usuario
             else if (Session["usuario"] != null && id == 0)
             {
                 usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
 
                 Page.Title = usuario.Usuario;
+
+                //mostrar datos de la bd
 
                 LiteralNombre1.Text = usuario.Usuario;
                 LiteralNombre.Text = usuario.Usuario;
@@ -82,19 +90,20 @@ namespace WebApplication1
                 LiteralEmail.Text = usuario.Email;
                 LiteralInformacion.Text = usuario.Informacion;
 
-
+                //imagenes guardadas
                 imgperfil.ImageUrl = "~/img/users/" + usuario.Id.ToString() + ".jpg";
                 portada.ImageUrl = "~/img/users/portada/" + usuario.Id.ToString() + ".jpg";
 
             }
-            else
+            else  //si tratas de ver usuario sin logearte
             {
                 Response.Redirect("Error.aspx");
             }
-
+            //herramientas del usuario
             HyperLinkAddPelicula.NavigateUrl = "AddEditPelicula.aspx?par1=anadirPelicula";
             HyperLinkAddSerie.NavigateUrl = "AddEditSerie.aspx?par1=anadirSerie";
 
+            //para editar tienes que estar logeado
             if (Session["usuario"] != null)
             {
                 BotonEditar.Text = "Editar";
@@ -103,23 +112,25 @@ namespace WebApplication1
             {
                 BotonEditar.Visible = false;
             }
-
+            //cantidad de amigos y "quizas conozcas a" a mostrar
             int cantidad = 5;
 
             if (id == usuario.Id || id == 0)
             {
                 BotonAmigo.Visible = false;
 
+                //lista de amigos
                 d = usuario.DameAmigos(cantidad);
                 ListViewAmigos.DataSource = d;
                 ListViewAmigos.DataBind();
 
+                //lista de sugerencias
                 d = usuario.DameUsuariosQuizasConozca(cantidad);
                 ListViewQuizasConozcas.DataSource = d;
                 ListViewQuizasConozcas.DataBind();
             }
 
-
+            //si no es tu usuario no puedes editar ni eliminar cuenta
             if (!Page.IsPostBack && id != 0)
             {
                 d = amigo.DameAmigos(cantidad);
@@ -136,11 +147,12 @@ namespace WebApplication1
 
 
         }
-
+        //boton de añadir/eliminar amigo
         protected void BotonAmigoOnClick(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(Request.QueryString["id"]);
 
+            //no tiene que ser tu propio usuario, pero tienes que estar logeado
             if (Session["usuario"] != null && id != 0)
             {
                 usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
@@ -148,12 +160,13 @@ namespace WebApplication1
                 amigo.Id = id;
                 amigo = amigo.DameUsuario();
 
+                //si lo tienes agregado has optado por eliminar
                 if (usuario.sonAmigos(id))
                 {
                     usuario.EliminarAmigo(amigo);
                     Response.Redirect("Usuario.aspx?id=" + id);
                 }
-                else
+                else   //sino por añadir
                 {
                     usuario.AnyadirAmigo(amigo);
                     Response.Redirect("Usuario.aspx?id=" + id);
@@ -161,7 +174,7 @@ namespace WebApplication1
             }
 
         }
-
+        //eliminar cuenta
         protected void BotonEliminarUsuarioOnClick(object sender, EventArgs e)
         {
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
@@ -169,7 +182,7 @@ namespace WebApplication1
             Session["usuario"] = usuario = null;
             Response.Redirect("Default.aspx");
         }
-
+        //editar cuenta
         protected void BotonEditarOnClick(object sender, EventArgs e)
         {
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
@@ -178,7 +191,7 @@ namespace WebApplication1
                 Response.Redirect("EditUsuario.aspx");
             }
         }
-
+        //ver más 
         protected void VerMasAmigosOnClick(object sender, EventArgs e)
         {
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
@@ -193,21 +206,11 @@ namespace WebApplication1
                 Response.Redirect("VerMasAmigos.aspx?id=" + usuario.Id.ToString());
             }
             else if (usuario == null) //para ver amigos de otros te tienes que loguear
-                
-                if (usuario != null && id != 0)           //ver amigos de otros
-                {
-                    Response.Redirect("VerMasAmigos.aspx?id=" + id.ToString());
-                }
-                else if (id == 0 && usuario != null)      //ver tus propios amigos
-                {
-                    Response.Redirect("VerMasAmigos.aspx?id=" + usuario.Id.ToString());
-                }
-                else if (usuario == null)   //para ver amigos de otros te tienes que loguear
-                {
-                    Response.Redirect("Login.aspx");
-                }
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
-
+        //ver mas usuarios sugeridos
         protected void VerMasPosiblesAmigosOnClick(object sender, EventArgs e)
         {
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];

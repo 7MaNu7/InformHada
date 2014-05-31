@@ -21,6 +21,7 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //si no estas logeado no se permite
             if (Session["usuario"] == null)
                 Response.Redirect("Error.aspx");
 
@@ -29,19 +30,21 @@ namespace WebApplication1
             usuario.Id = id;
             usuario=usuario.DameUsuario();*/
 
+            //mostrar lista de sugerencias mas amplia
             if (!Page.IsPostBack)
             {
                 d = usuario.DameUsuariosQuizasConozca(0);
                 ListViewQuizasConozcas.DataSource = d;
-                ListViewQuizasConozcas.DataBind();
+                if(d!=null)
+                    ListViewQuizasConozcas.DataBind();
             }
-
+            //cantidad de sugerencias
             if (d.Tables[0].Rows.Count == 0)
                 LiteralListaAmigos.Text = "no se han encontrado sugerencias, inténtelo más tarde";
             else
                 LiteralListaAmigos.Text = d.Tables[0].Rows.Count.ToString() + " usuarios:";
         }
-
+        //paginacion de sugerencias
         protected void DataPagerProducts_PreRender(object sender, EventArgs e)
         {
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
@@ -51,7 +54,8 @@ namespace WebApplication1
 
             d = usuario.DameUsuariosQuizasConozca(0);
             ListViewQuizasConozcas.DataSource = d;
-            ListViewQuizasConozcas.DataBind();
+            if(d!=null)
+             ListViewQuizasConozcas.DataBind();
         }
     }
 }
