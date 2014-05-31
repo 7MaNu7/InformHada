@@ -44,8 +44,14 @@
             </asp:CustomValidator>
 
             <span><asp:TextBox ID="TextBoxFecha" runat="server"></asp:TextBox>
-            <asp:ImageButton runat="server" ID="ImagenCalendario" border-width="0" border-bottom="none" width="21px"
-                height="21px"  BorderStyle="none" border-bottom-style="none"  ImageUrl="/img/calendario_icono.jpg" /></span>
+                <asp:ImageButton runat="server" ID="ImagenCalendario" border-width="0" border-bottom="none" width="21px"
+                    height="21px"  BorderStyle="none" border-bottom-style="none"  ImageUrl="/img/calendario_icono.jpg" />
+                <asp:RegularExpressionValidator 
+                    ID="ValidarFormatoFecha" runat="server" ValidationGroup="1"
+                    ErrorMessage="El formato de la fecha debe ser: DD/MM/AAAA (ej: 01/10/1994)" ForeColor="Red"
+                     ControlToValidate="TextBoxFecha" ValidationExpression="\d{2}/\d{2}/\d{4}">                    
+                </asp:RegularExpressionValidator>
+            </span>
 
             <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="Server" 
                 EnableScriptGlobalization="true" EnableScriptLocalization="true"/>
@@ -90,7 +96,7 @@
                 <asp:RegularExpressionValidator 
                     ID="RegularExpressionContraseña" runat="server" ValidationGroup="1"
                     ErrorMessage="La contraseña debe tener de 6 a 20 caracteres" ForeColor="Red"
-                     ControlToValidate="TextBoxPsswd" ValidationExpression="\S{5,20}">                    
+                     ControlToValidate="TextBoxPsswd" ValidationExpression="\S{6,20}">                    
                 </asp:RegularExpressionValidator>
 
             </p>

@@ -88,6 +88,11 @@
                     <asp:CalendarExtender ID="CalendarioAJAX" TargetControlID="TextBoxFechaNacimiento" 
                         PopupButtonID="ImagenCalendario" runat="server"  DefaultView="Years">
                     </asp:CalendarExtender>
+                    <asp:RegularExpressionValidator 
+                        ID="ValidarFormatoFecha" runat="server" ValidationGroup="1"
+                        ErrorMessage="Formato fecha: DD/MM/AAAA (ej: 01/10/1994)" ForeColor="Red"
+                        ControlToValidate="TextBoxFechaNacimiento" ValidationExpression="\d{2}/\d{2}/\d{4}">                    
+                     </asp:RegularExpressionValidator>
 
                     <p>Sexo:</p>
                     <asp:RadioButtonList ID="Sexo" runat="server" CellPadding="8" TextAlign="Left" RepeatDirection="Horizontal">
