@@ -56,9 +56,9 @@ namespace WebApplication1
 
                         Page.Title = "Editando el capítulo " + capitulo.Titulo;
 
-                        BotonAddEdit.Text = "Guadar cambios";
-                        caratula.ImageUrl = "/img/film/caratula/" + capitulo.Id + ".jpg";
-                        caratula.ImageUrl = "/img/film/portada/" + capitulo.Id + ".jpg";
+                        BotonAddEdit.Text = "Guardar cambios";
+                        caratula.ImageUrl = "/img/film/caratula/" + capitulo.Serie + ".jpg";
+                        portada.ImageUrl = "/img/film/portada/" + capitulo.Serie + ".jpg";
                         TextBoxTitulo.Text = capitulo.Titulo.ToString();
                         LiteralSerie.Text = serie.Titulo.ToString();
                         TextBoxTemporada.Text = capitulo.Temporada.ToString();
@@ -85,7 +85,7 @@ namespace WebApplication1
                 {
                     capitulo.Id = Convert.ToInt32(id_capitulo);
                     capitulo = capitulo.DameCapitulo();
-                    BotonAddEdit.Text = "Guadar cambios";
+                    BotonAddEdit.Text = "Guardar cambios";
                 }
 
                 serie.Id = Convert.ToInt32(id_serie);
