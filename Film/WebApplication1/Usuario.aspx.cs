@@ -79,11 +79,17 @@ namespace WebApplication1
                 Page.Title = usuario.Usuario;
 
                 //mostrar datos de la bd
-                usuario.FechaNacimiento.ToString();
-                ;
+                if(usuario.FechaNacimiento!=null)
+                    usuario.FechaNacimiento.ToString();
+                
                 LiteralNombre1.Text = usuario.Usuario;
                 LiteralNombre.Text = usuario.Usuario;
-                LiteralFechaNacimiento.Text = Convert.ToDateTime(usuario.FechaNacimiento.ToString()).ToShortDateString();
+               
+                if(usuario.FechaNacimiento != null)
+                {
+                    LiteralFechaNacimiento.Text = Convert.ToDateTime(usuario.FechaNacimiento.ToString()).ToShortDateString();
+                }
+                
                 LiteralSexo.Text = usuario.Sexo;
                 LiteralProvincia.Text = usuario.Provincia;
                 LiteralPais.Text = usuario.Pais;

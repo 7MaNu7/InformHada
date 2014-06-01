@@ -58,7 +58,7 @@
             </asp:ToolkitScriptManager>
 
             <asp:CalendarExtender ID="CalendarioAJAX" TargetControlID="TextBoxFecha" 
-                PopupButtonID="ImagenCalendario" runat="server"  DefaultView="Years">
+                PopupButtonID="ImagenCalendario"  runat="server"  DefaultView="Years">
             </asp:CalendarExtender> 
 
             <p style="vertical-align:top;">Sexo:</p>

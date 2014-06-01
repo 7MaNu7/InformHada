@@ -33,7 +33,15 @@ namespace WebApplication1
                         SexoMujer.Selected = true;
 
                     TextBoxProvincia.Text = usuario.Provincia;
-                    TextBoxFechaNacimiento.Text = Convert.ToDateTime(usuario.FechaNacimiento.ToString()).ToShortDateString();
+                    if(usuario.FechaNacimiento!=null)
+                        TextBoxFechaNacimiento.Text = Convert.ToDateTime(usuario.FechaNacimiento.ToString()).ToShortDateString();
+
+                    if (usuario.FechaNacimiento != null)
+                    {
+                        DateTime fechanacimiento = Convert.ToDateTime(usuario.FechaNacimiento);
+                        TextBoxFechaNacimiento.Text = fechanacimiento.ToShortDateString();
+                    }
+                    
                     TextBoxEmail.Text = usuario.Email;
                     TextBoxInformacion.Text = usuario.Informacion;
 

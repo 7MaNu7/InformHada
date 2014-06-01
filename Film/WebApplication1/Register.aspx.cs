@@ -28,7 +28,6 @@ namespace WebApplication1.Account
                     
                       DateTime fec=Convert.ToDateTime("1/1/1941");
                       if (TextBoxFecha.Text != "")
-                      
                           fec = Convert.ToDateTime(TextBoxFecha.Text.ToString());
 
                     //debe de ser una fecha valida (que sea factible)
@@ -44,7 +43,12 @@ namespace WebApplication1.Account
                         usuario.Psswd = TextBoxPsswd.Text;
                         usuario.Pais = TextBoxPais.Text;
                         usuario.Provincia = TextBoxProvincia.Text;
-                        usuario.FechaNacimiento = TextBoxFecha.Text;
+
+                        if (TextBoxFecha.Text != "")
+                            usuario.FechaNacimiento = TextBoxFecha.Text;
+                        else
+                            usuario.FechaNacimiento = null;
+
                         usuario.Sexo = Sexo.Text;
                         usuario.Email = TextBoxEmail.Text;
                         //usuario registrado y logeado al mismo tiempo
