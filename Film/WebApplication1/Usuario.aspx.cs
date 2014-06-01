@@ -79,10 +79,11 @@ namespace WebApplication1
                 Page.Title = usuario.Usuario;
 
                 //mostrar datos de la bd
-
+                usuario.FechaNacimiento.ToString();
+                ;
                 LiteralNombre1.Text = usuario.Usuario;
                 LiteralNombre.Text = usuario.Usuario;
-                LiteralFechaNacimiento.Text = usuario.FechaNacimiento.ToString();
+                LiteralFechaNacimiento.Text = Convert.ToDateTime(usuario.FechaNacimiento.ToString()).ToShortDateString();
                 LiteralSexo.Text = usuario.Sexo;
                 LiteralProvincia.Text = usuario.Provincia;
                 LiteralPais.Text = usuario.Pais;
@@ -180,7 +181,24 @@ namespace WebApplication1
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
             // Delete a file by using File class static method...
             string path;
+            string path2;
             path = Server.MapPath("~/img/users/") + usuario.Id + ".jpg";
+            path2 = Server.MapPath("~/img/users/portada/") + usuario.Id + ".jpg";
+            if (System.IO.File.Exists(path2))
+            {
+                // Use a try block to catch IOExceptions, to
+                // handle the case of the file already being
+                // opened by another process.
+                try
+                {
+                    System.IO.File.Delete(path2);
+                }
+                catch (System.IO.IOException g)
+                {
+                    Console.WriteLine(g.Message);
+                    return;
+                }
+            }
             if (System.IO.File.Exists(path))
             {
                 // Use a try block to catch IOExceptions, to
