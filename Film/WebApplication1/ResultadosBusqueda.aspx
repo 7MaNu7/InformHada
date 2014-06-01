@@ -144,13 +144,9 @@
                 <td>
                         <a style="display: table-cell;float: left; text-decoration:none; color:Gray;"  href="Usuario.aspx?id=<asp:Literal ID="Literal5" Text='<%# Eval("id")%>'  runat="server"></asp:Literal>">
                 
-                        <div class="peliculacaratula">
-                            <asp:Image ID="Image1" CssClass="peliculacaratulaimg" runat="server"  ImageUrl='<%# "/img/users/"+ Eval("id")+".jpg"%>' />
-                            <p><asp:Literal ID="Literal1" Text='<%# Eval("usuario")%>' runat="server"></asp:Literal></p>
-                            <div class="infopelicula">
-                                <p>Usuario: <asp:Literal ID="Literal2" Text='<%# Eval("usuario")%>' runat="server"></asp:Literal></p>
-                            </div>
-                        </div>
+                            <asp:Image style="background: url('/img/users/0.jpg');
+background-size: contain;" ID="Image1" Width="150px" Height="150px" CssClass="peliculacaratulaimg" runat="server"  ImageUrl='<%# "/img/users/"+ Eval("id")+".jpg"%>' />
+                           
                         </a>
                 </td>
             </ItemTemplate>

@@ -93,8 +93,9 @@ float: left;
 width: 45px;
 height: 45px;
 margin: 3px;
+background: url('/img/users/0.jpg');
+background-size: contain;
 }
-
 
 .infoamigos p
 {
