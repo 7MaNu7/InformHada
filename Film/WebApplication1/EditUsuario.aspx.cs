@@ -33,10 +33,8 @@ namespace WebApplication1
                         SexoMujer.Selected = true;
 
                     TextBoxProvincia.Text = usuario.Provincia;
-                    if(usuario.FechaNacimiento!=null)
-                        TextBoxFechaNacimiento.Text = Convert.ToDateTime(usuario.FechaNacimiento.ToString()).ToShortDateString();
 
-                    if (usuario.FechaNacimiento != null)
+                    if (usuario.FechaNacimiento != null && usuario.FechaNacimiento!="")
                     {
                         DateTime fechanacimiento = Convert.ToDateTime(usuario.FechaNacimiento);
                         TextBoxFechaNacimiento.Text = fechanacimiento.ToShortDateString();
@@ -83,7 +81,12 @@ namespace WebApplication1
                             usuario.Psswd = TextBoxPsswd.Text;
                         usuario.Pais = TextBoxPais.Text;
                         usuario.Provincia = TextBoxProvincia.Text;
-                        usuario.FechaNacimiento = TextBoxFechaNacimiento.Text;
+
+                        if (TextBoxFechaNacimiento.Text != "")
+                            usuario.FechaNacimiento = TextBoxFechaNacimiento.Text;
+                        else
+                            usuario.FechaNacimiento = null;
+
                         usuario.Sexo = Sexo.Text;
                         usuario.Email = TextBoxEmail.Text;
                         usuario.Informacion = TextBoxInformacion.Text;
