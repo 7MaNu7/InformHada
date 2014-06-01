@@ -112,23 +112,26 @@ namespace WebApplication1
         protected void ValidandoTemporadaNCapitulo(object sender, ServerValidateEventArgs e)
         {
             int id_serie = Convert.ToInt32(Request.QueryString["id1"].ToString());
+            string id_capitulop = Request.QueryString["id2"];
 
-            if (TextBoxTemporada.Text.ToString() == "")
-                ValidarTemporadaRellena.IsValid = false;
-            else if (TextBoxNCapitulo.Text.ToString() == "")
-                ValidarCapituloRelleno.IsValid = false;
-            else
+            if (id_capitulop == "" || id_capitulop == null)
             {
-                int temporada =  Convert.ToInt32(TextBoxTemporada.Text.ToString());
-                int id_capitulo =  Convert.ToInt32(TextBoxNCapitulo.Text.ToString());
-                if (capitulo.TemporadaCapituloRepetido(id_serie, temporada, id_capitulo))
+
+                if (TextBoxTemporada.Text.ToString() == "")
+                    ValidarTemporadaRellena.IsValid = false;
+                else if (TextBoxNCapitulo.Text.ToString() == "")
+                    ValidarCapituloRelleno.IsValid = false;
+                else
                 {
-                    ValidarTemporadaNCapitulo.Visible = true;
-                    e.IsValid = false;
-                    
+                    int temporada = Convert.ToInt32(TextBoxTemporada.Text.ToString());
+                    int id_capitulo = Convert.ToInt32(TextBoxNCapitulo.Text.ToString());
+                    if (capitulo.TemporadaCapituloRepetido(id_serie, temporada, id_capitulo))
+                    {
+                        ValidarTemporadaNCapitulo.Visible = true;
+                        e.IsValid = false;
+                    }
+                }
             }
-            
-        }
      }
 
 }
