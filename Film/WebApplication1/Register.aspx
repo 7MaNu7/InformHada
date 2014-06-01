@@ -72,7 +72,7 @@
         </div>
         <div class="columna">
             <p>
-                <asp:Label ID="LabelEmail" runat="server">Correo electrónico:</asp:Label>
+                <asp:Label ID="LabelEmail" autocomplete="off" runat="server">Correo electrónico:</asp:Label>
                 <asp:Label ID="LabelCampobligatorio2" runat="server" ForeColor="Red" > (*) </asp:Label>
                 <asp:RequiredFieldValidator ID="ValidarEmailRelleno" runat="server" ValidationGroup="1"
                     ControlToValidate="TextBoxEmail" ErrorMessage="¡Escribe tu email!" ForeColor="Red">                            
@@ -84,7 +84,7 @@
 
             </p>
             <p>
-                <asp:Label ID="LabelPsswd" runat="server" >Contraseña:</asp:Label>
+                <asp:Label ID="LabelPsswd" runat="server" autocomplete="off" >Contraseña:</asp:Label>
                 <asp:Label ID="LabelCampoObligatorio3" runat="server" ForeColor="Red" > (*) </asp:Label>
                  <asp:RequiredFieldValidator ID="ValidarPsswdRelleno" runat="server" ValidationGroup="1"
                     ControlToValidate="TextBoxPsswd" Text="¡Escribe tu contraseña!" ForeColor="Red">                            

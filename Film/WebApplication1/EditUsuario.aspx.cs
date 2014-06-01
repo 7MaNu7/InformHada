@@ -32,7 +32,10 @@ namespace WebApplication1
                     else if (usuario.Sexo == "Mujer")
                         SexoMujer.Selected = true;
 
-                    TextBoxProvincia.Text = usuario.Provincia;
+                    if (usuario.Provincia == null || usuario.Provincia == "")
+                        TextBoxProvinciaUsuario.Text = "";
+                    else
+                        TextBoxProvinciaUsuario.Text = usuario.Provincia;
 
                     if (usuario.FechaNacimiento != null && usuario.FechaNacimiento!="")
                     {
@@ -77,10 +80,10 @@ namespace WebApplication1
 
                         //Guardar datos y update
                         usuario.Usuario = TextBoxUsuario.Text;
-                        if (TextBoxPsswd.Text != "")
-                            usuario.Psswd = TextBoxPsswd.Text;
+                        if (TextBoxPsswdUsuario.Text != "")
+                            usuario.Psswd = TextBoxPsswdUsuario.Text;
                         usuario.Pais = TextBoxPais.Text;
-                        usuario.Provincia = TextBoxProvincia.Text;
+                        usuario.Provincia = TextBoxProvinciaUsuario.Text;
 
                         if (TextBoxFechaNacimiento.Text != "")
                             usuario.FechaNacimiento = TextBoxFechaNacimiento.Text;

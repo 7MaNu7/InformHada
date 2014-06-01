@@ -101,25 +101,25 @@
                     </asp:RadioButtonList>
 
                     <p>Pais: <asp:TextBox ID="TextBoxPais" PlaceHolder="Pais" runat="server"></asp:TextBox></p>
-                    <p>Provincia: <asp:TextBox ID="TextBoxProvincia" PlaceHolder="Provincia" runat="server"></asp:TextBox></p>
+                    <p>Provincia: <asp:TextBox ID="TextBoxProvinciaUsuario" autocomplete="off" PlaceHolder="Provincia" runat="server"></asp:TextBox></p>
                 
                 </div>
 
                 <div class="infoamigos">
                     <h2>Nueva contraseña</h2>
-                    <p><asp:TextBox ID="TextBoxPsswd" runat="server" TextMode="Password"></asp:TextBox></p>
+                    <p><asp:TextBox ID="TextBoxPsswdUsuario" autocomplete="off" runat="server" TextMode="Password"></asp:TextBox></p>
                     
                     <asp:RegularExpressionValidator 
                         ID="RegularExpressionContraseña" runat="server" ValidationGroup="1"
                         ErrorMessage="La contraseña debe tener de 6 a 20 caracteres" ForeColor="Red"
-                        ControlToValidate="TextBoxPsswd" ValidationExpression="\S{5,20}">                    
+                        ControlToValidate="TextBoxPsswdUsuario" ValidationExpression="\S{5,20}">                    
                     </asp:RegularExpressionValidator>
 
                     <p><asp:TextBox ID="TextBoxPsswd2" runat="server" TextMode="Password"></asp:TextBox></p>
                 
                     <asp:CompareValidator ID="CompareValidator1" runat="server" ValidationGroup="1"
                         ErrorMessage="¡Las contraseñas deben ser iguales!" ForeColor="Red"
-                        ControlToValidate="TextBoxPsswd2" ControlToCompare="TextBoxPsswd" >
+                        ControlToValidate="TextBoxPsswd2" ControlToCompare="TextBoxPsswdUsuario" >
                     </asp:CompareValidator>
                 
                 </div>
