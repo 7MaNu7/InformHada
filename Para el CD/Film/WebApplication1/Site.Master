@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication1.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="http://demos.myjqueryplugins.com/jrating/jquery/jRating.jquery.css" type="text/css">
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title> </title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="clear hideSkiplink" style="overflow:hidden">
+                <div style="float:left">
+                    <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Página principal"/>
+                            <asp:MenuItem NavigateUrl="~/Peliculas.aspx" Text="Películas"/>
+                            <asp:MenuItem NavigateUrl="~/Series.aspx" Text="Series"/>
+                            <asp:MenuItem NavigateUrl="~/Usuario.aspx" Text="Usuario"/>
+                            <asp:MenuItem NavigateUrl="~/About.aspx" Text="Quienes somos"/>
+                        </Items>
+                    </asp:Menu>
+                </div>
+                <div class="loginDisplay">
+               
+                <asp:Button ID="BotonIniciarSesion" UseSubmitBehavior="false" runat="server"  Onclick="BotonLoginOnClick" Text="Iniciar sesión"  />
+            </div>
+                <div class="menu_buscar">
+                    <asp:Button ID="BotonBuscar" UseSubmitBehavior="true" Text="Buscar" runat="server" OnClick="BotonBuscarOnClick" />
+                   <asp:TextBox id="TextBoxBuscar" placeholder="  Buscar" TextMode="SingleLine" Columns="22" runat="server" />
+        
+                </div>
+
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        <script type="text/javascript" src="http://demos.myjqueryplugins.com/jrating/jquery/jRating.jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                // simple jRating call
+                $(".basic").jRating({
+                    decimalLength: 0,
+                    step: true,
+                    showRateInfo: false  
+            
+            });
+        });
+</script>
+    </div>
+    </form>
+</body>
+</html>
+
+
+
+

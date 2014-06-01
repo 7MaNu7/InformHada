@@ -1,0 +1,58 @@
+﻿body {
+}
+
+.cabecerausuario {
+    position: relative;
+}
+
+.fondoblurreddiv {
+    height: 215px;
+    overflow: hidden;
+}
+
+.infocabecera {
+    position: absolute;
+    bottom: 57px;
+    left: 160px; /*336px;*/
+    color: white;
+}
+.infocabecera h2
+{
+    color:White;
+    font-size:50px;
+}
+
+
+.fondoblurred
+{
+    min-width: calc( 100% + 46px);
+    margin: -27px;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+
+.pelicula_contenido_d {
+    margin-left: 335px;
+    margin-right: 300px;
+    text-align: justify;
+}
+
+
+.pelicula_contenido_i {
+position: absolute;
+left: 90px;
+top: 22px;
+}
+
+.pelicula_contenido {
+position: relative;
+}
+
+.pelicula_contenido asp:TextBox
+{
+    height:100px;
+    width:100px; 
+}

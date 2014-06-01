@@ -1,0 +1,53 @@
+﻿.cabecera_about {
+    position: relative;
+}
+
+.portada_about {
+    height: 215px;
+    overflow: hidden;
+}
+
+.info_cabecera {
+    position: absolute;
+    bottom: 57px;
+    left: 160px; /*336px;*/
+    color: white;
+}
+.info_cabecera h2
+{
+    color:White;
+    font-size:50px;
+}
+
+
+.fondoblurred
+{
+    min-width: calc( 100% + 46px);
+    margin: -27px;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+
+.contenido_about_d {
+    margin-left: 335px;
+    margin-right: 300px;
+    text-align: justify;
+}
+
+
+.contenido_about_i {
+position: absolute;
+left: 90px;
+top: 22px;
+}
+
+.contenido_about {
+position: relative;
+}
+
+#BotonIniciarSesion {
+color:rgba(0, 0, 0, 0.55);
+}

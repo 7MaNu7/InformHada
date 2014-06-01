@@ -1,0 +1,115 @@
+﻿.cabecera_capitulo {
+    position: relative;
+}
+
+.portada_capitulo {
+    height: 315px;
+    overflow: hidden;
+}
+
+.caratula {
+position: absolute;
+bottom: -46px;
+left: 89px;
+width:200px;
+background: url('/img/film/caratula/0.jpg');
+min-height:240px;
+}
+
+.info_cabecera {
+    position: absolute;
+    bottom: 57px;
+    left: 336px;
+    color: white;
+}
+.info_cabecera h2
+{
+    color:White;
+    font-size:50px;
+}
+
+
+.fondoblurred
+{
+    min-width: calc( 100% + 46px);
+    margin: -27px;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+.contenido_capitulo {
+position: relative;
+}
+.contenido_capitulo_d {
+    margin-left: 335px;
+    margin-right: 100px;
+    text-align: justify;
+}
+
+
+.contenido_capitulo_i {
+position: absolute;
+left: 88px;
+top: 39px;
+width: 201px;
+}
+.Serie_capitulos p {
+padding: 2px 0px 2px 7px;
+margin: 0;
+margin-left: 29px;
+border-left: solid 2px rgb(194, 194, 188);
+}
+
+.Serie_capitulos h2 {
+    padding-left: 15px;
+    color: rgb(43, 43, 43);
+    margin-bottom: 8px;
+}
+
+.Serie_capitulos, .volver_serie a 
+{
+     color: Gray;
+     text-decoration:none;
+}
+
+.anadir, .reportar{
+width: 100%;
+border: none;
+height: 30px;
+margin: 0px 0px 8px 0px;
+cursor:pointer;
+border-radius: 2px;
+color: white;
+font-weight: bold;
+font-size: 15px;
+box-shadow: 0 0 7px -3px rgba(0, 0, 0, 0.52);
+display: block;
+text-align: center;
+vertical-align: middle;
+font-size: 19px;
+padding-top: 4px;
+}
+
+.anadir
+{
+background: rgb(30, 103, 196);
+border-bottom: solid 2px rgb(66, 66, 155);
+}
+
+.reportar
+{
+   background: rgb(196, 30, 30);
+   border-bottom: solid 2px rgb(196, 30, 30);
+}
+
+.ValidarTitulo
+{
+    color: rgb(255, 255, 255);
+    visibility: visible;
+    font-size: 16px;
+    background: rgba(48, 48, 48, 0.53);
+    padding: 1px 6px 5px 5px;
+    border-radius: 2px;
+}
