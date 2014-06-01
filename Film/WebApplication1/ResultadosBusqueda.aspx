@@ -140,15 +140,12 @@
         <table>
             <tr>
             <asp:ListView ID="ListViewUsuarios" runat="server">
-            <ItemTemplate>
-                <td>
-                        <a style="display: table-cell;float: left; text-decoration:none; color:Gray;"  href="Usuario.aspx?id=<asp:Literal ID="Literal5" Text='<%# Eval("id")%>'  runat="server"></asp:Literal>">
-                
-                            <asp:Image style="background: url('/img/users/0.jpg');
-background-size: contain;" ID="Image1" Width="150px" Height="150px" CssClass="peliculacaratulaimg" runat="server"  ImageUrl='<%# "/img/users/"+ Eval("id")+".jpg"%>' />
-                           
-                        </a>
-                </td>
+           <ItemTemplate>
+                  <a style="display: table-cell;float: left; margin: 7px; height: 100px; border: none; text-decoration:none; color:Gray;" href="usuario.aspx?id=<%# Eval("id")%> ">
+                    <div style="background:url( '/img/users/0.jpg'); background-size: cover; box-shadow: 0 0 5px;" >
+                        <img style=" width: 100px; height: 100px; background:url('<%# "/img/users/"+ Eval("id")+".jpg"%>'); background-size: cover; " />
+                    </div> 
+                 </a> 
             </ItemTemplate>
             </asp:ListView>
             </tr>

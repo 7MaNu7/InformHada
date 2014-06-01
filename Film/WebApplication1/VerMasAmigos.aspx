@@ -30,20 +30,11 @@
        <p><asp:Literal ID="LiteralListaAmigos" runat="server"></asp:Literal></p>
         <asp:ListView ID="ListViewAmigos"  runat="server">
             <ItemTemplate>
-                  <a style="display: table-cell;float: left; text-decoration:none; color:Gray;"  
-                  href="usuario.aspx?id=<%# Eval("id2")%> ">
-                        <img 
-                        style="
-                            width: 100px;
-                            height: 100px;
-                            
-                            background:url('<%# "/img/users/"+ Eval("id2")+".jpg"%>');
-                            background-size: cover;
-                            margin: 7px;
-                            border: none;
-                            box-shadow: 0 0 5px;
-                            " /> 
-                        </a> 
+                  <a style="display: table-cell;float: left; margin: 7px; border: none; text-decoration:none; color:Gray;" href="usuario.aspx?id=<%# Eval("id2")%> ">
+                    <div style="background:url( '/img/users/0.jpg'); height: 100px; background-size: cover; box-shadow: 0 0 5px;" >
+                        <img style=" width: 100px; height: 100px; background:url('<%# "/img/users/"+ Eval("id2")+".jpg"%>'); background-size: cover; " />
+                    </div> 
+                 </a> 
             </ItemTemplate>
         </asp:ListView>
         </div>
