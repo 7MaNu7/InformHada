@@ -57,7 +57,9 @@ namespace WebApplication1
                 //tienen que cumplirse las validaciones de los campos
                 if(Page.IsValid)
                 {
-                    DateTime fec = Convert.ToDateTime(TextBoxFechaNacimiento.Text.ToString());
+                    DateTime fec = Convert.ToDateTime("01/01/1941");
+                    if (TextBoxFechaNacimiento.Text != "")
+                        fec = Convert.ToDateTime(TextBoxFechaNacimiento.Text.ToString());
                     //se debe escoger una fecha razonable, que sea verdadera
                     if (fec.Year < 1940 || fec.Year > 2010)
                     {
@@ -122,6 +124,24 @@ namespace WebApplication1
         protected void BotonEliminarUsuarioOnClick(object sender, EventArgs e)
         {
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
+            string path;
+            path = Server.MapPath("~/img/users/") + usuario.Id + ".jpg";
+            if (System.IO.File.Exists(path))
+            {
+                // Use a try block to catch IOExceptions, to
+                // handle the case of the file already being
+                // opened by another process.
+                try
+                {
+                    System.IO.File.Delete(path);
+                }
+                catch (System.IO.IOException g)
+                {
+                    Console.WriteLine(g.Message);
+                    return;
+                }
+            }
+            
             //borramos el usuario, cerramos sesion, y vuelta a la pagina principal
             usuario.BorrarUsuario();
             Session["usuario"] = usuario = null;

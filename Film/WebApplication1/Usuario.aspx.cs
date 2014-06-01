@@ -178,9 +178,29 @@ namespace WebApplication1
         protected void BotonEliminarUsuarioOnClick(object sender, EventArgs e)
         {
             usuario = (FilmBiblio.UsuarioEN)Session["usuario"];
+            // Delete a file by using File class static method...
+            string path;
+            path = Server.MapPath("~/img/users/") + usuario.Id + ".jpg";
+            if (System.IO.File.Exists(path))
+            {
+                // Use a try block to catch IOExceptions, to
+                // handle the case of the file already being
+                // opened by another process.
+                try
+                {
+                    System.IO.File.Delete(path);
+                }
+                catch (System.IO.IOException g)
+                {
+                    Console.WriteLine(g.Message);
+                    return;
+                }
+            }
+            
             usuario.BorrarUsuario();
             Session["usuario"] = usuario = null;
             Response.Redirect("Default.aspx");
+
         }
         //editar cuenta
         protected void BotonEditarOnClick(object sender, EventArgs e)
