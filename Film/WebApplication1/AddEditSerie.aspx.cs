@@ -67,6 +67,8 @@ namespace WebApplication1
                 serie.Id = id;
                 serie = serie.DameSerie();
                 serie.Director = TextBoxDirector.Text;
+                if (TextBoxAno.Text == "" || TextBoxAno.Text == null)
+                    TextBoxAno.Text = "0";
                 serie.Ano = Convert.ToInt32(TextBoxAno.Text);
                 serie.Sinopsis = TextBoxSinopsis.Text;
                 serie.Genero = TextBoxGenero.Text;

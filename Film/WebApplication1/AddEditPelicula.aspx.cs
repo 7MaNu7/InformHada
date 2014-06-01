@@ -69,6 +69,8 @@ namespace WebApplication1
                     pelicula.Id = id;
                     pelicula = pelicula.DamePelicula();
                     pelicula.Director = TextBoxDirector.Text;
+                    if (TextBoxAno.Text == "" || TextBoxAno.Text == null)
+                        TextBoxAno.Text = "0";
                     pelicula.Ano = Convert.ToInt32(TextBoxAno.Text);
                     pelicula.Sinopsis = TextBoxSinopsis.Text;
                     pelicula.Genero = TextBoxGenero.Text;

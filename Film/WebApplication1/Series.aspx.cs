@@ -20,7 +20,7 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             //al darle a añadir nos manda a la pagina de añadir
-            HyperLinkAddSerie.NavigateUrl = "AddEditPelicula.aspx";
+            HyperLinkAddSerie.NavigateUrl = "AddEditSerie.aspx";
 
             //solo podras añadir series estando logeado
             if (Session["usuario"] == null)
