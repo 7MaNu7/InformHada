@@ -25,25 +25,6 @@ namespace WebApplication1
             if(Session["usuario"]==null)
                 Response.Redirect("Error.aspx");
 
-           // user=(FilmBiblio.UsuarioEN)Session["usuario"]; 
-            int id = Convert.ToInt32(Request.QueryString["id"]);
-            usuario.Id = id;
-            usuario=usuario.DameUsuario();
-
-            //mostrar la lista de amigos
-            if (!Page.IsPostBack)
-            {
-                d = usuario.DameAmigos(0);
-                ListViewAmigos.DataSource = d;
-                if(d!=null)
-                  ListViewAmigos.DataBind();
-            }
-
-            //la cantidad de amigos
-            if (d.Tables[0].Rows.Count == 0)
-                LiteralListaAmigos.Text = "La lista de amigos está vacia";
-            else
-                LiteralListaAmigos.Text = d.Tables[0].Rows.Count.ToString() + " amigos:";
         }
 
         //paginacion de los amigos
@@ -56,8 +37,12 @@ namespace WebApplication1
 
             d = usuario.DameAmigos(0);
             ListViewAmigos.DataSource = d;
-            if(d!=null)
-                ListViewAmigos.DataBind();
+            ListViewAmigos.DataBind();
+
+            if (d.Tables[0].Rows.Count == 0)
+                LiteralListaAmigos.Text = "La lista de amigos está vacia";
+            else
+                LiteralListaAmigos.Text = d.Tables[0].Rows.Count.ToString() + " amigo/s:";
         }
     }
 }
